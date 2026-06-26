@@ -93,9 +93,9 @@ Before handoff:
 
 ## Hard rules
 
-- Observe and report, never set Maharat's strategy, offer, price, or copy.
-- A competitor's claim is never Maharat's permission: no accreditation implication, no
-  unconfirmed instructor names carried over, no invented Skill Path titles.
+- Observe and report, never set the brand's strategy, offer, price, or copy.
+- A competitor's claim is never the brand's permission: never imply a credential or accreditation
+  you do not hold, no unconfirmed names carried over, no invented offer titles.
 - Public sources only, cited and dated. No login-gated or ToS-violating scraping. No personal
   data captured.
 - No em dashes, no tatweel, Western numerals only.

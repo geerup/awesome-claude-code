@@ -23,8 +23,8 @@ agent never authors events and data-tracking-engineer never authors page copy or
 
 Inputs consumed:
 - The QA-passed `web-design-package` from `web-designer`: the build-ready `design_spec` (layout,
-  responsive grid, design tokens, interaction states, RTL behavior, accessibility, performance)
-  that the page realizes. The page design is not originated here; it comes from web design.
+  responsive grid, design tokens, interaction states, direction behavior, accessibility,
+  performance) that the page realizes. The page design is not originated here; it comes from web design.
 - Approved creative and copy for the page (streams 3, 4), QA-passed. Page copy is never
   invented here; it comes from the QA-passed copy-package.
 - The active `briefs/` file: offer, gate type (email or WhatsApp), price and promotion only if
@@ -41,7 +41,7 @@ qa            { skill_eval, arabic_qa, brand_qa }
 open_items    platform-not-confirmed, mobile-mapping-to-confirm (from data-tracking-engineer)
 brief_refs    offer, gate type, price/promotion if shown
 body:
-  page          landing page spec or build ref, RTL-correct
+  page          landing page spec or build ref, direction-correct for the in-scope language
   gate          signup gate type (email | whatsapp) and platform wiring
   event_plan    owned by data-tracking-engineer, carried here, not authored here
 ```
@@ -50,16 +50,17 @@ body:
 
 1. Validate inbound envelopes (creative-package, copy-package): right campaign_id, status at
    least qa-passed. If incomplete, stop and return it.
-2. Implement the landing page from the web-designer's `design_spec`: on brand, RTL-correct,
-   fast, uncluttered. Visual constants #141414, #1A1A1A, emerald #009975. One clear CTA. Copy is
-   dropped in from the copy-package. The design is realized, not re-invented here.
-3. Wire the signup gate per the brief (email or WhatsApp). ManyChat captures Instagram leads
-   but does not send email, so the email handoff to the engine is an open integration item.
+2. Implement the landing page from the web-designer's `design_spec`: on brand, correct in any
+   in-scope language direction, fast, uncluttered. Apply the active profile visual constants
+   (`context/brand-voice.md`). One clear CTA. Copy is dropped in from the copy-package. The design
+   is realized, not re-invented here.
+3. Wire the signup gate per the brief (email or WhatsApp). A social-lead capture tool may collect
+   leads but not send email, so the email handoff to the engine is an open integration item.
    Block on the platform open item before wiring an actual send.
 4. Request the `event_plan` from `data-tracking-engineer` and carry it into the package. Do not
    author events here; that ownership is theirs.
-5. Run operational verification: the page renders RTL-correct and the gate submits to the right
-   destination. A failing check blocks the package from the gate.
+5. Run operational verification: the page renders direction-correct for the in-scope language and
+   the gate submits to the right destination. A failing check blocks the package from the gate.
 6. Assemble the `conversion-package` and route the go-live decision to the human gate, with the
    compliance-privacy-reviewer and brand-qa verdicts attached.
 
@@ -75,15 +76,17 @@ conformance, which both run separately. The wireframe hands to the designer for 
 ## Tools (allowlist-gated)
 
 Once approved, behind the human gate: Playwright or a browser MCP for platforms without an API
-(for example ManyChat). Publishing the page and wiring a live send are gated actions. Event and
+(for example a social-lead capture tool). Publishing the page and wiring a live send are gated
+actions. Event and
 warehouse MCP tools (GA4, Pixel/CAPI, BigQuery) belong to `data-tracking-engineer`, not here.
 The frontmatter `tools:` carry only the local file tools; no unapproved MCP tool is listed there.
 
 ## Failure modes and escalation
 
 - Missing brief variable (gate type, offer to show): stop and ask. Never guess.
-- Failed gate (skill eval, arabic-copy-qa on page copy, brand-qa, compliance-privacy): the
-  package returns with the exact fix list, fix and resubmit to the same gate.
+- Failed gate (skill eval, english-copy-qa on page copy, arabic-copy-qa when Arabic is in scope,
+  brand-qa, compliance-privacy): the package returns with the exact fix list, fix and resubmit to
+  the same gate.
 - Blocked open item (platform not confirmed): the page and gate design proceed; the live send
   and go-live are blocked and surfaced at the human gate.
 - Conflict (page layout vs RTL correctness, two valid gate wirings): escalate to orchestrator.
@@ -92,8 +95,9 @@ The frontmatter `tools:` carry only the local file tools; no unapproved MCP tool
 
 Trigger: "Wire the conversion path for the launch page."
 Output sketch (no invented values):
-- page: RTL-correct landing spec, #141414 background, one emerald CTA, copy from the
-  QA-passed copy-package, no accreditation language.
+- page: direction-correct landing spec, the active profile visual constants
+  (`context/brand-voice.md`), one clear CTA, copy from the QA-passed copy-package, no
+  accreditation language.
 - gate: email opt-in, platform marked OPEN ITEM until named; wiring of the live send blocked.
 - event_plan: carried from data-tracking-engineer (page_view, gate_view, submit, confirm).
 - open_items: platform-not-confirmed, mobile-mapping-to-confirm.
@@ -101,7 +105,8 @@ Output sketch (no invented values):
 ## Decision heuristics and pre-handoff checklist
 
 - Is all page copy from the QA-passed copy-package, none invented here?
-- Does the page render RTL-correct, with Western numerals and no em dashes?
+- Does the page render direction-correct for the in-scope language, with no em dashes (and
+  Western numerals when Arabic is in scope)?
 - Is the event_plan present and sourced from data-tracking-engineer, not authored here?
 - Is the platform open item surfaced and the live send blocked until it is confirmed?
 - Are operational checks passed before the package reaches the gate?
@@ -111,8 +116,10 @@ Output sketch (no invented values):
 
 - Never put personal or sensitive data in URL parameters or tracking.
 - Confirm the gate platform before wiring sends. Block on the open platform item if unresolved.
-- RTL must render correctly. Western numerals. No em dashes. No tatweel.
-- Never imply certificate accreditation on the page. Empowering framing, never deficit-framed.
+- The in-scope language direction must render correctly. No em dashes. When Arabic is in scope:
+  Western numerals, no tatweel.
+- Never imply a credential or accreditation you do not hold on the page. Empowering framing,
+  never deficit-framed.
 
 ## Handoff contract
 

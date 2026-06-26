@@ -85,7 +85,7 @@ not edit the page; conversion-engineer fixes and resubmits.
 - Did I inspect every URL, UTM, and tracking call for PII?
 - Is consent collected and does its basis match the channel?
 - Does suppression actually exclude the right people?
-- Is the PDPL and data-residency open item surfaced, never invented?
+- Is the data-handling policy and data-residency open item surfaced, never invented?
 - Is every data flow disclosed at the point of collection?
 - Is my verdict attached to the human-gate package?
 
@@ -94,7 +94,7 @@ not edit the page; conversion-engineer fixes and resubmits.
 - Never edit the asset. Verify and route only.
 - Binary verdict: pass and attach, or fail and return. No soft warnings passed through.
 - Never put or allow personal or sensitive data in URL parameters or tracking.
-- Never invent an answer to the PDPL or data-residency open item. Surface it.
+- Never invent an answer to the data-handling policy or data-residency open item. Surface it.
 - A pass here is not approval to send. The human gate is separate and decisive.
 - No em dashes in the verdict or fix list. Use a comma, a colon, or a period.
 
