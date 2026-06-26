@@ -1,0 +1,65 @@
+{
+  "skill": "paid-campaign-build",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals paid-campaign-build, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals paid-campaign-build; description includes trigger phrases."
+    },
+    {
+      "id": "staged-paused",
+      "description": "The entire structure is built paused and never spends or goes live on its own.",
+      "type": "automatic",
+      "rule": "Steps and hard rules state everything is built paused and the build never spends or flips live."
+    },
+    {
+      "id": "structure-complete",
+      "description": "staged_structure covers campaign, ad sets, ads, targeting, placements, budget, and schedule.",
+      "type": "automatic",
+      "rule": "Output staged_structure includes campaign, ad sets, ads, targeting, placements, budget, and schedule."
+    },
+    {
+      "id": "adset-mapped-to-variants",
+      "description": "Each ad set maps to one creative variant and one copy variant by id.",
+      "type": "automatic",
+      "rule": "Steps and template bind every ad set to a creative variant id and a copy variant id."
+    },
+    {
+      "id": "budgets-targets-from-brief",
+      "description": "Budget, bid, target, schedule, and geo all trace to the brief; missing means stop and ask.",
+      "type": "automatic",
+      "rule": "Hard rules require every budget, bid, target, schedule, and geo to trace to the brief and forbid assumption."
+    },
+    {
+      "id": "prelaunch-checklist-present",
+      "description": "A pre-launch checklist covers pixel firing, UTMs, naming, budget cap, and end date and gates the package.",
+      "type": "automatic",
+      "rule": "Output includes a checklist covering pixel firing, UTMs, naming, budget cap, end date; a failing check blocks the gate."
+    },
+    {
+      "id": "prelaunch-checklist-expanded",
+      "description": "The pre-launch checklist also verifies a live test event in Events Manager, the conversion event and its location, audience geo and demographics, bid strategy and amount, creative spell-check, video captions, and for search negative keywords, match types, and ad assets.",
+      "type": "automatic",
+      "rule": "Checklist additionally covers a live test event in Events Manager, conversion event and conversion location, audience geo and demographics, bid strategy and bid amount, creative spell-check, video captions, and search-only negative keywords, match types, and ad assets or extensions; each is pass/fail and a failing check blocks the gate."
+    },
+    {
+      "id": "no-pii-in-tracking",
+      "description": "No personal or sensitive data in URL parameters or tracking; no accreditation implication.",
+      "type": "automatic",
+      "rule": "Hard rules forbid personal or sensitive data in URL parameters and forbid accreditation implication."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file and in-platform copy.",
+      "type": "automatic",
+      "rule": "File contains no em dash glyph, no tatweel (U+0640), and no Eastern Arabic numerals (U+0660 to U+0669)."
+    },
+    {
+      "id": "fills-paid-launch-package",
+      "description": "Output populates the staged_structure and checklist fields of the paid-launch-package.",
+      "type": "manual",
+      "rule": "Output is described as the staged_structure and checklist fields of the paid-launch-package per handoff-contract.md."
+    }
+  ]
+}

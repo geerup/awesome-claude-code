@@ -1,0 +1,65 @@
+{
+  "skill": "offer-and-angle",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'offer-and-angle'."
+    },
+    {
+      "id": "produces-angle-and-framing",
+      "description": "Produces the angle and offer_framing fields.",
+      "type": "automatic",
+      "rule": "Output names both angle and offer_framing, matching the strategy-artifact body in handoff-contract.md."
+    },
+    {
+      "id": "angle-has-rationale",
+      "description": "The angle carries a rationale tied to the segments.",
+      "type": "manual",
+      "rule": "The angle states the core message and why it works for the named segments and the offer, not just a slogan."
+    },
+    {
+      "id": "price-only-if-supplied",
+      "description": "Price is shown only when the brief supplies it.",
+      "type": "manual",
+      "rule": "Offer framing shows a price or promotion only when the brief provides it and the asset calls for it; an ASSUMPTION price is framed without a number and flagged, never invented."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "No invented offer, Skill Path title, instructor name, or accreditation.",
+      "type": "manual",
+      "rule": "The framing references only offers, prices, titles, and instructors traceable to the brief or context; absent ones trigger stop-and-ask, and no accreditation is implied."
+    },
+    {
+      "id": "angle-ties-to-segment-pain-or-gain",
+      "description": "The angle relieves a named pain or creates a named gain tied to a specific segment.",
+      "type": "manual",
+      "rule": "A pains-and-gains pass precedes the angle, listing per-segment pains and gains drawn from the segment 'why' and context (never invented), and the angle's rationale relieves a named pain or creates a named gain for a specific segment."
+    },
+    {
+      "id": "competitive-alternative-named",
+      "description": "The offer framing names the competitive alternative and how the positioning beats it.",
+      "type": "manual",
+      "rule": "Offer framing includes an alternative field naming what the reader does instead today (free content on social, another app, or nothing) and states how the positioning beats it; the alternative is a real one, never a straw man or invented."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no U+0640 tatweel character appear in any file in this skill."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "The angle is empowering, not deficit-framed.",
+      "type": "manual",
+      "rule": "The angle speaks to what the reader can build, never to what they lack or should be ashamed of, per context/brand-voice.md."
+    }
+  ]
+}

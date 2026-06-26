@@ -1,0 +1,71 @@
+{
+  "skill": "media-list-outreach",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'media-list-outreach'."
+    },
+    {
+      "id": "media-list-from-brief",
+      "description": "The media list maps to the target markets and angle and invents no outlet or contact.",
+      "type": "manual",
+      "rule": "Body builds the media list from the target markets and angle, with each entry carrying outlet, contact role, relevance, and channel, and stops-and-asks when an outlet, contact, or contact source is absent rather than inventing it."
+    },
+    {
+      "id": "journalist-data-handling",
+      "description": "Journalist personal contact data is handled need-to-know and never mishandled or exposed.",
+      "type": "manual",
+      "rule": "Body states a journalist's personal contact data is need-to-know, never echoed into a tracking parameter, public thread, or shared link, and never exposed beyond the outreach, and surfaces the PDPL and data-residency open item when relevant."
+    },
+    {
+      "id": "outreach-is-gated",
+      "description": "Outreach is a gated action; nothing sends without the human gate.",
+      "type": "manual",
+      "rule": "Body states outreach is a gated action, nothing sends without the human gate, approval is per outreach action, and silence is not approval."
+    },
+    {
+      "id": "pitch-inside-boundary",
+      "description": "The pitch draws only from the sayable set and references QA-passed copy by id.",
+      "type": "manual",
+      "rule": "Body states the pitch draws only from the sayable set, references QA-passed pitch copy variants by id rather than writing copy, and bars unannounced plans, roadmap, fundraising, and unconfirmed instructor names from any pitch."
+    },
+    {
+      "id": "embargo-opt-in",
+      "description": "An embargo is opt-in, agreed by the journalist in advance and recorded before the full release is shared.",
+      "type": "manual",
+      "rule": "Body and template treat any embargo as opt-in: ask the journalist first with a short interest note, record the opt-in per recipient, share the full release only after the recorded opt-in, mark the embargo line (date, time, timezone) at the top and repeat it in the pitch subject and body, keep the embargo list small (5 to 10 beat reporters), and carry 'embargo not yet agreed by recipient' as a distinct open item from 'embargo not confirmed'."
+    },
+    {
+      "id": "pitch-shape",
+      "description": "The pitch shape is briefed for the copywriters: short, beat-specific, personalized, one ask, tested subject line.",
+      "type": "manual",
+      "rule": "Body and template brief the pitch as under about 100 words, beat-specific, personalized to the reporter's prior coverage, with one clear ask and a tested subject line, drawn only from the sayable set, while still routing the copy through the copy QA, compliance, and brand gates and not writing final copy here."
+    },
+    {
+      "id": "no-invented-specifics-no-accreditation",
+      "description": "No invented outlet, contact, Skill Path title, content lineup, instructor name, offer, price, or target, and no accreditation claim.",
+      "type": "manual",
+      "rule": "Body forbids inventing an outlet, contact, Skill Path title, content lineup, instructor name, offer, price, or target, and bars any accreditation implication in a pitch."
+    },
+    {
+      "id": "compliance-routing",
+      "description": "The data handling routes to compliance-privacy-reviewer and the send runs the compliance check.",
+      "type": "manual",
+      "rule": "Body routes the data-handling check to compliance-privacy-reviewer and runs compliance-privacy-check for the data handling and the send before the human gate."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable media list and outreach template exists.",
+      "type": "automatic",
+      "rule": "templates/media-list-and-outreach.md exists and contains media_list, data_handling, outreach_plan, pitch shape, embargo opt-in, distribution_note, and open_items sections."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash, the U+0640 tatweel, or Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!-- 13 Footer. Social icons (image elements), www line, sender postal identity, unsubscribe.
+     Stable across all sends. The unsubscribe link is REQUIRED in every email.
+     Maps to data-ortto-module="social" data-slot="element" (icons) plus data-slot="structural"
+     (www, unsubscribe) plus a copy slot (sender identity). Social icons are the getbee icon set
+     from the references. The unsubscribe href is the platform merge tag wired at send.
+     Sender postal identity is the real Maharat sender address (the privacy policy), Western
+     numerals per the constitution. AR shown below; the EN parity is
+     "Maharat for Education, P.O Box 77983, Abu Dhabi, United Arab Emirates". The renderer
+     (scripts/email_render.py STRINGS) emits the language-matched line per email. -->
+<mj-section background-color="#1A1A1A" padding="28px 24px 10px" border-top="1px solid #262626">
+  <mj-column>
+    <mj-social font-size="0" icon-size="30px" mode="horizontal" align="center" padding="0">
+      <mj-social-element name="facebook-noshare" href="https://www.facebook.com/people/Maharat/100090569760903/"
+                         src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-white/facebook@2x.png" alt="فيسبوك" />
+      <mj-social-element name="instagram-noshare" href="https://www.instagram.com/maharatarabia/"
+                         src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-white/instagram@2x.png" alt="إنستغرام" />
+      <mj-social-element name="twitter-noshare" href="https://twitter.com/maharatarabia/"
+                         src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-white/twitter@2x.png" alt="إكس" />
+      <mj-social-element name="linkedin-noshare" href="https://www.linkedin.com/company/maharatarabia/"
+                         src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outline-circle-white/linkedin@2x.png" alt="لينكدإن" />
+    </mj-social>
+    <mj-text align="center" color="#9A9A9A" font-size="13px" padding="10px 0 2px">
+      <a href="https://www.maharat.com" style="color:#9A9A9A;text-decoration:none;">www.maharat.com</a>
+    </mj-text>
+    <mj-text align="center" color="#6F6F6F" font-size="12px" line-height="1.7" padding="2px 0">
+      مهارات للتعليم، ص.ب 77983، أبوظبي، الإمارات العربية المتحدة
+    </mj-text>
+    <mj-text align="center" color="#6F6F6F" font-size="12px" padding="6px 0 0">
+      <a href="{{unsubscribe_url}}" style="color:#6F6F6F;text-decoration:underline;">إلغاء الاشتراك</a>
+    </mj-text>
+  </mj-column>
+</mj-section>

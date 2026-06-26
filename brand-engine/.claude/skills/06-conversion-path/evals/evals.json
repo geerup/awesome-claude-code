@@ -1,0 +1,53 @@
+{
+  "skill": "06-conversion-path",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md has YAML frontmatter with exactly name and description, and the name matches the directory.",
+      "type": "automatic",
+      "rule": "Frontmatter contains keys name and description only; name equals 06-conversion-path; description is one sentence with trigger phrases."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "The hub routes to both sub-skills landing-page and event-tracking and does not build the artifacts itself.",
+      "type": "automatic",
+      "rule": "Body names landing-page and event-tracking with a routing rule for each."
+    },
+    {
+      "id": "emits-conversion-package",
+      "description": "The hub assembles and emits the conversion-package with the exact body fields from handoff-contract.md.",
+      "type": "automatic",
+      "rule": "Output section lists page, gate, event_plan, open_items wrapped in the common envelope."
+    },
+    {
+      "id": "follows-sop-06",
+      "description": "The hub follows sops/06-conversion-path.md, with operational verification before the human gate.",
+      "type": "manual",
+      "rule": "Steps mirror the SOP: validate envelope, route, operational verification, surface open items, gate go-live."
+    },
+    {
+      "id": "no-personal-data-in-urls",
+      "description": "Hard rule present: no personal or sensitive data in URL parameters or tracking.",
+      "type": "automatic",
+      "rule": "Body states no personal or sensitive data in URL parameters or tracking."
+    },
+    {
+      "id": "platform-open-item-surfaced",
+      "description": "The gate platform is an open item; design proceeds but go-live is blocked until confirmed.",
+      "type": "automatic",
+      "rule": "Body marks platform-not-confirmed as an open item and blocks gate go-live until confirmed."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the SKILL.md and evals.",
+      "type": "automatic",
+      "rule": "File contains no em dash character, no tatweel, no Eastern Arabic numerals."
+    },
+    {
+      "id": "no-accreditation-implication",
+      "description": "The page must never imply certificates are accredited.",
+      "type": "automatic",
+      "rule": "Hard rules include never imply certificates are accredited."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "skill": "warehouse-query",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'warehouse-query' and the description includes trigger phrases."
+    },
+    {
+      "id": "anchored-to-success-metric",
+      "description": "The query is anchored to the strategy-artifact success_metric and never an invented metric.",
+      "type": "manual",
+      "rule": "Body maps the monitoring question to the success_metric set in the strategy-artifact, stops-and-asks if it is absent, and never invents a metric or substitutes a vanity metric."
+    },
+    {
+      "id": "query-spec-shape",
+      "description": "The query is specified in natural language and SQL or the MCP call, with named tables and fields.",
+      "type": "manual",
+      "rule": "Body and template define a query_intent in natural language and a query as SQL or the BigQuery MCP call, naming source tables, fields, and the time window."
+    },
+    {
+      "id": "bigquery-mcp-gated",
+      "description": "The BigQuery MCP is not yet approved; the query is gated and added on approval, not assumed live.",
+      "type": "manual",
+      "rule": "Body states the BigQuery MCP is not yet approved, the query is gated and added on approval, and the skill does not run against the warehouse before approval."
+    },
+    {
+      "id": "surface-data-access-open-items",
+      "description": "Data-access open items are surfaced rather than filled by assumption.",
+      "type": "manual",
+      "rule": "Body surfaces data-access open items (MCP approval, missing table, unconfirmed field, instrumentation gap) instead of assuming a table or field."
+    },
+    {
+      "id": "no-personal-data-exposed",
+      "description": "No personal or sensitive data is exposed in query outputs.",
+      "type": "manual",
+      "rule": "Body states no personal or sensitive data appears in a query output, only the fields the metric needs are selected, and no personal data goes in a tracking parameter."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable warehouse query spec template exists.",
+      "type": "automatic",
+      "rule": "templates/warehouse-query-spec.md exists and contains question, success_metric, query_intent, query, data_access_open_items, and privacy_note sections."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash, the U+0640 tatweel, or Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "skill": "08-monitoring-optimization",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals '08-monitoring-optimization'."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "Hub routes to performance-readout and ab-test-plan.",
+      "type": "automatic",
+      "rule": "Body references both sub-skills by name, performance-readout and ab-test-plan, and states when each applies."
+    },
+    {
+      "id": "measure-against-strategy-metric",
+      "description": "Every read is measured against the strategy-artifact success_metric.",
+      "type": "manual",
+      "rule": "Body states reads measure against the success_metric set in the strategy-artifact, and stops-and-asks if the success_metric is absent, never inventing one after the fact."
+    },
+    {
+      "id": "no-vanity-metrics",
+      "description": "Vanity metrics are excluded.",
+      "type": "manual",
+      "rule": "Body states no vanity metrics, and that a vanity metric is never substituted for the success_metric."
+    },
+    {
+      "id": "propose-not-act",
+      "description": "Optimization moves are proposals through the human gate.",
+      "type": "manual",
+      "rule": "Body states the skill proposes optimization moves and never pauses, shifts budget, or changes a send on its own; spend or send changes go through the human gate."
+    },
+    {
+      "id": "internal-gate-only",
+      "description": "Declares the correct gate for an internal stream-8 read.",
+      "type": "manual",
+      "rule": "States the gate is skill eval only, and that arabic-copy-qa and brand-qa apply only if customer-facing copy appears, consistent with runtime/verification.md."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "Neither SKILL.md nor any file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

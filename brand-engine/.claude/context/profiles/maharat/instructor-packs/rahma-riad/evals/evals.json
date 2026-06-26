@@ -1,0 +1,78 @@
+{
+ "skill": "instructor-marketing/rahma-riad",
+ "description": "Acceptance checks for rahma-riad assets (thin-evidence pack).",
+ "binding_sources": {
+  "facts": "context/instructors/rahma-riad.md"
+ },
+ "machine_checks": [
+  {
+   "id": "no-em-dash",
+   "severity": "hard",
+   "regex": "—",
+   "fail_if": "match",
+   "fix": "Replace em dash",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-en-dash",
+   "severity": "hard",
+   "regex": "–",
+   "fail_if": "match",
+   "fix": "Replace en dash",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-tatweel",
+   "severity": "hard",
+   "regex": "ـ",
+   "fail_if": "match",
+   "fix": "Remove tatweel",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-eastern-numerals",
+   "severity": "hard",
+   "regex": "[٠-٩۰-۹]",
+   "fail_if": "match",
+   "fix": "Western numerals",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-accreditation",
+   "severity": "hard",
+   "regex": "(معتمد|accredit)",
+   "fail_if": "match",
+   "fix": "No accreditation claims",
+   "applies_to": "assets"
+  }
+ ],
+ "llm_checks": [
+  {
+   "id": "status-gate",
+   "severity": "hard",
+   "rule": "Class existence itself unconfirmed: NO public-facing assets; internal drafts flagged 'blocked on status'."
+  },
+  {
+   "id": "claims-verified-only",
+   "severity": "hard",
+   "rule": "Only public-record framing rows run, phrased generally; all specifics held back."
+  },
+  {
+   "id": "register-policy",
+   "severity": "hard",
+   "rule": "MSA or brand EN."
+  }
+ ],
+ "golden_examples": [
+  {
+   "label": "pass",
+   "text": "تعلمي الغناء والأداء خطوة بخطوة.",
+   "why": "Framing-level only, MSA, clean."
+  },
+  {
+   "label": "fail",
+   "text": "أغنيتها حققت مليار مشاهدة — تعلمي السر!",
+   "why": "Unverified chart claim plus em dash."
+  }
+ ]
+}

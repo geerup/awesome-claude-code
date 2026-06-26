@@ -1,0 +1,71 @@
+{
+  "skill": "event-tracking",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals event-tracking, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals event-tracking; description names the funnel events through confirm, the post-signup revenue event, and the to-confirm mobile mapping."
+    },
+    {
+      "id": "four-events-present",
+      "description": "The plan defines the four funnel events page_view, gate_view, submit, confirm with fire conditions.",
+      "type": "automatic",
+      "rule": "Body lists page_view, gate_view, submit, confirm, each with a fire condition."
+    },
+    {
+      "id": "revenue-event-present",
+      "description": "The plan adds a post-signup revenue event (purchase or subscription_start) after confirm, mapped to GA4 purchase and Meta Purchase.",
+      "type": "automatic",
+      "rule": "Body defines a post-signup revenue event named purchase or subscription_start with a fire condition, and maps it to GA4 purchase and Meta Purchase."
+    },
+    {
+      "id": "capi-dedup",
+      "description": "An event_id deduplication rule is present for events sent by both Meta Pixel and CAPI.",
+      "type": "automatic",
+      "rule": "Body states that an event sent by both the Meta Pixel and the Conversions API must carry one shared event_id so it is not double-counted, and that the event_id is non-identifying. The test plan verifies deduplication."
+    },
+    {
+      "id": "pixel-capi-ga4-mapping",
+      "description": "Each event maps to Meta Pixel or CAPI and to GA4 with a destination event name.",
+      "type": "automatic",
+      "rule": "Output includes a Pixel or CAPI mapping and a GA4 mapping for the events."
+    },
+    {
+      "id": "no-personal-data-in-urls",
+      "description": "Hard rule present: no personal or sensitive data in URL parameters or tracking.",
+      "type": "automatic",
+      "rule": "Parameters section and hard rules state non-identifying values only; no email, phone, or name in a URL parameter."
+    },
+    {
+      "id": "mobile-mapping-to-confirm",
+      "description": "Mobile mapping (Apple IAP, Google Play) is flagged as a to-confirm open item, never guessed.",
+      "type": "automatic",
+      "rule": "Body marks Apple IAP and Google Play mapping as a to-confirm open item and forbids guessing it."
+    },
+    {
+      "id": "platform-open-item-surfaced",
+      "description": "Gate-side wiring blocks on the platform open item; web events are planned regardless.",
+      "type": "automatic",
+      "rule": "Body states the gate platform is an open item and gate-side wiring blocks until it is confirmed."
+    },
+    {
+      "id": "test-plan-before-golive",
+      "description": "A test plan requires each event to fire once, in order, before go-live.",
+      "type": "manual",
+      "rule": "Body specifies an operational test where each event fires once in order in a test session before the human gate."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no em dash character, no tatweel, no Eastern Arabic numerals."
+    },
+    {
+      "id": "fills-conversion-package-event-plan",
+      "description": "The output populates the event_plan field of the conversion-package.",
+      "type": "manual",
+      "rule": "Output is described as the event_plan field of the conversion-package."
+    }
+  ]
+}

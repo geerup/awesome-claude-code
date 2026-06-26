@@ -1,0 +1,53 @@
+{
+  "skill": "editorial-calendar",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'editorial-calendar'."
+    },
+    {
+      "id": "themes-mapped",
+      "description": "Every theme maps to the strategy angle and an SEO cluster.",
+      "type": "manual",
+      "rule": "Each calendar item carries an angle_link and an seo_cluster; no orphan themes."
+    },
+    {
+      "id": "cadence-and-owners",
+      "description": "Calendar sets a realistic cadence and a named owner per item.",
+      "type": "automatic",
+      "rule": "Output includes a cadence and an owner field on each item."
+    },
+    {
+      "id": "item-fields-complete",
+      "description": "Each item carries theme, mapping, format, date, owner, and status.",
+      "type": "automatic",
+      "rule": "Every item includes theme, angle_link, seo_cluster, format, target_date, owner, and status."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented offer, price, Skill Path title, or instructor name to justify a theme.",
+      "type": "manual",
+      "rule": "Themes reference only offers and titles traceable to the brief; absent ones trigger stop-and-ask, never invention or accreditation claims."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Theme framing is empowering, never deficit-framed.",
+      "type": "manual",
+      "rule": "Themes speak to what the reader can build, not to what they lack; no shaming, per brand-voice.md."
+    }
+  ]
+}

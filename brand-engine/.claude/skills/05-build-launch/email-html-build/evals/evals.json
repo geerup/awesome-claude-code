@@ -1,0 +1,83 @@
+{
+  "skill": "email-html-build",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals email-html-build, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals email-html-build; description includes trigger phrases."
+    },
+    {
+      "id": "assembled-not-sending",
+      "description": "The build is assembled and never sends or schedules a live send on its own.",
+      "type": "automatic",
+      "rule": "Steps and hard rules state the build is assembled, not sending, and never sends on its own."
+    },
+    {
+      "id": "live-text-not-image-only",
+      "description": "Every line of copy is a live HTML text slot bound to a data-copy-id; every image is text-free; an image-only send is a hard fail.",
+      "type": "automatic",
+      "rule": "Body and hard rules require every copy slot to be live text bound to a data-copy-id and tagged data-lang, every image text-free with descriptive alt, and forbid copy baked into a picture."
+    },
+    {
+      "id": "binds-to-qa-passed-copy",
+      "description": "Every copy slot binds to a QA-passed copy-package variant by data-copy-id; copy is never written or rewritten in the template.",
+      "type": "automatic",
+      "rule": "Steps and hard rules bind every copy slot to a data-copy-id, forbid free or rewritten copy, and block the build on a copy slot whose data-copy-id is not QA-passed."
+    },
+    {
+      "id": "assets-asset-qa-passed-and-cdn",
+      "description": "Every image module is email-asset-qa-passed, hosted on the approved Ortto CDN, and text-free; the ClassCardGrid carries status-cleared instructors or is omitted.",
+      "type": "automatic",
+      "rule": "Body and steps require every data-slot=element image to be email-asset-qa-passed, on the approved Ortto CDN, text-free, with alt, and the ClassCardGrid to carry only status-cleared instructors with rights-cleared covers or be omitted and flagged."
+    },
+    {
+      "id": "slot-attributes-well-formed",
+      "description": "Each module-bearing cell carries the slot attributes from the module map.",
+      "type": "automatic",
+      "rule": "Built cells carry data-ortto-module, data-slot, and where applicable data-role, data-lang, data-copy-id, and data-link-slot, per runtime/email-module-map.md."
+    },
+    {
+      "id": "one-primary-cta-vml",
+      "description": "Exactly one primary CTA per email, an MSO VML roundrect plus a non-mso pill, with a near-black label on emerald for WCAG AA.",
+      "type": "automatic",
+      "rule": "Body and hard rules require one primary CTA per email built as an MSO VML roundrect plus a non-mso pill, label near-black #141414 on emerald #009975, never white on emerald at normal weight."
+    },
+    {
+      "id": "brand-fonts-and-constants",
+      "description": "Brand fonts via the Ortto custom-fonts CSS (Lyon Arabic Display, 29LT Azer, Acumin Pro) and brand constants only (#141414, #1A1A1A, #009975); no font binary committed; gold and off-panel stay out.",
+      "type": "brand",
+      "rule": "Head links the Ortto custom-fonts CSS for the brand faces with the documented stacks, colors are the constitution constants, the pending gold #C4963C and panel #1c1c1c are absent from customer-facing email, and no font binary is embedded or committed."
+    },
+    {
+      "id": "sender-identity-and-unsubscribe",
+      "description": "Sender identity and an unsubscribe link are present in every email; no personal or sensitive data in any link.",
+      "type": "automatic",
+      "rule": "Every built email carries the sender identity and an unsubscribe link (the platform merge tag), and no link carries personal or sensitive data."
+    },
+    {
+      "id": "gate-order-stated",
+      "description": "The skill states the email gate order: skill eval, per-language copy QA by slot, email-asset-qa on every image module, accessibility-qa, compliance-privacy-check, brand-qa-reviewer, human gate.",
+      "type": "manual",
+      "rule": "The gate-order section names skill eval, then arabic-copy-qa or english-copy-qa per copy slot by data-lang, then email-asset-qa on every image module, then accessibility-qa, then compliance-privacy-check, then brand-qa-reviewer, then the human gate."
+    },
+    {
+      "id": "mjml-or-handbuilt-same-output",
+      "description": "MJML and hand-built paths produce the same slotted output; the committed slotted HTML is the source of truth; MJML is a local compiler, not an MCP server.",
+      "type": "manual",
+      "rule": "The build-path section states MJML compiles to the same slotted HTML the hand-built path produces, the committed slotted HTML is the source of truth, and MJML is an approved local build dependency, not an MCP server in settings.json."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented offer, price, title, name, date, or destination; missing means stop and ask.",
+      "type": "manual",
+      "rule": "Output traces every value to the copy-package, the asset set, or the brief, and invents no offer, price, title, name, date, or CTA destination."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no en dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no em dash (U+2014), no en dash (U+2013), no tatweel (U+0640), and no Eastern Arabic numerals (U+0660 to U+0669, U+06F0 to U+06F9)."
+    }
+  ]
+}

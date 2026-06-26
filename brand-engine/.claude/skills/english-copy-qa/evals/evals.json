@@ -1,0 +1,53 @@
+{
+  "skill": "english-copy-qa",
+  "checks": [
+    {
+      "id": "empowering-tone",
+      "description": "Copy is plain, confident, and empowering. It speaks to what the reader can become and is never deficit-framed, shaming, or hype-driven.",
+      "type": "tone",
+      "rule": "Flag any span that frames the reader as lacking, behind, or failing, or that leans on hype words. Pass only when the framing is empowering and confident."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash glyph anywhere in the English copy.",
+      "type": "mechanical",
+      "rule": "Scan for the em dash glyph (U+2014). Any occurrence is a fail; the fix replaces it with a comma, colon, or period."
+    },
+    {
+      "id": "western-numerals",
+      "description": "All digits are Western numerals 0 to 9, never Eastern Arabic numerals.",
+      "type": "mechanical",
+      "rule": "Scan for Eastern Arabic-Indic digits (U+0660 to U+0669). Any occurrence is a fail; the fix substitutes the Western numeral."
+    },
+    {
+      "id": "one-clear-cta",
+      "description": "Where a call to action applies, there is exactly one clear primary CTA, not zero and not competing CTAs.",
+      "type": "structure",
+      "rule": "If the asset type calls for action, fail when there is no clear CTA or when two or more CTAs compete. Mark not-applicable for copy with no intended action."
+    },
+    {
+      "id": "no-accreditation-implication",
+      "description": "Copy never states or implies that certificates are accredited.",
+      "type": "guardrail",
+      "rule": "Flag any wording that says or implies accreditation. Completion certificates are not accredited; any such claim is a fail."
+    },
+    {
+      "id": "no-invented-offers-titles",
+      "description": "No Skill Path title, content lineup item, instructor name, price, or offer appears unless confirmed in the brief or context.",
+      "type": "guardrail",
+      "rule": "Cross-check every named offer, title, instructor, and price against the brief and context. Any unconfirmed specific is a fail, not a guess."
+    },
+    {
+      "id": "plain-active-voice",
+      "description": "Short sentences, concrete nouns, active voice; no stiff, corporate, or over-explained phrasing.",
+      "type": "tone",
+      "rule": "Flag passive, corporate, or over-explained spans that break the plain, confident tone benchmark."
+    },
+    {
+      "id": "result-is-binary",
+      "description": "The gate returns a binary verdict with a structured fix list on fail.",
+      "type": "process",
+      "rule": "Result is pass only when every applicable check passes; otherwise fail with one fix item per failing check, each item naming the check, the quoted span, and the required change."
+    }
+  ]
+}

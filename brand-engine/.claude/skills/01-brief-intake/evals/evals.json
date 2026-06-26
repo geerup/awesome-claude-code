@@ -1,0 +1,53 @@
+{
+  "skill": "01-brief-intake",
+  "checks": [
+    {
+      "id": "hub-routes-to-subskills",
+      "description": "The hub names and routes to both sub-skills.",
+      "type": "automatic",
+      "rule": "SKILL.md references both brief-validate and kickoff-scope and states when each applies and their order (validate first, then scope)."
+    },
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains a name field equal to the directory name 01-brief-intake and a single rich description sentence with trigger phrases, and no other keys."
+    },
+    {
+      "id": "internal-gate-only",
+      "description": "Declares the correct gate for an internal stream-1 artifact.",
+      "type": "manual",
+      "rule": "States the gate is skill eval only, and that arabic-copy-qa and brand-qa apply only if customer-facing copy appears, consistent with runtime/verification.md."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "Stop-and-ask on missing variables.",
+      "type": "manual",
+      "rule": "States that a missing offer, price, target, segment size, or schedule is a stop-and-ask and is never invented."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash characters anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "Neither SKILL.md nor any file in this skill contains the em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (the Arabic-Indic 0 to 9 range) appear in any file; digits are written 0 to 9."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "The tatweel (kashida) character does not appear in any file."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Framing is empowering, not deficit-framed.",
+      "type": "manual",
+      "rule": "Any framing guidance speaks to what the reader can build, never to what they lack, consistent with context/brand-voice.md."
+    }
+  ]
+}

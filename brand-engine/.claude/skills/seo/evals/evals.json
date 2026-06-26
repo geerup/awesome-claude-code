@@ -1,0 +1,59 @@
+{
+  "skill": "seo",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "SKILL.md frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'seo'."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "Hub routes to keyword-and-intent-research, on-page-optimization, and technical-seo.",
+      "type": "automatic",
+      "rule": "Body references all three sub-skills by name: keyword-and-intent-research, on-page-optimization, technical-seo."
+    },
+    {
+      "id": "emits-seo-package",
+      "description": "Hub assembles the seo-package with the exact body fields.",
+      "type": "automatic",
+      "rule": "Output section names keyword_map, on_page_specs[], technical_findings[], content_briefs[], and open_items."
+    },
+    {
+      "id": "routes-content-briefs-downstream",
+      "description": "Hub hands content_briefs[] to content-marketer and copywriters, does not write final copy.",
+      "type": "manual",
+      "rule": "Body states content_briefs[] route to content-marketer and copywriter-ar and copywriter-en, and the seo-specialist does not author final copy."
+    },
+    {
+      "id": "bilingual-rtl-hreflang",
+      "description": "Hub handles Arabic and English with correct RTL and hreflang.",
+      "type": "manual",
+      "rule": "Body states Arabic-first handling with English in parallel, correct RTL, and hreflang for ar and en."
+    },
+    {
+      "id": "gate-stack-order",
+      "description": "Hub states the gate stack in order: skill eval, language copy QA, brand-qa-reviewer.",
+      "type": "automatic",
+      "rule": "Body lists skill eval, then arabic-copy-qa / english-copy-qa, then brand-qa-reviewer, per verification.md."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "Hub instructs reading offers, claims, and titles from the brief, never inventing.",
+      "type": "manual",
+      "rule": "Body states offers, prices, claims, Skill Path titles, and instructor names come from the brief or context, and the skill stops and asks when absent."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<!-- 02 Hero. Class key art, 600 wide, radius 16, text-free image element, alt required.
+     Maps to data-ortto-module="image" data-slot="element". Any headline over it is a live copy
+     slot (SectionHeading), never baked pixels. The src must be a text-free, rights-cleared,
+     email-asset-qa-passed asset.
+     LANGUAGE-MATCHED: the header is the real, verified class cover, language-matched, where
+     LEFTGRADIENT is the English page and RIGHTGRADIENT is the Arabic page (EC uses EN-PAGE /
+     AR-PAGE). A neutral cover (one image for both pages, for example BF_CLASSCOVER_LEFTRIGHTGRADIENT
+     or RA_..._NOGRADIENT) serves both. The renderer's hero_image carries src_en / src_ar (else a
+     neutral src), and scripts/email_render.py picks src_<lang>. The AR-page (RIGHTGRADIENT) cover
+     is shown below.
+     The covers are verified servable on CloudFront (the design proof) but CloudFront is NOT an
+     approved email host: stage the bytes to the Ortto CDN, or prove render with an inbox send-test,
+     and swap the src before send. Never use the *_CLASS_PAGE_* / og:image variant (it 403s). -->
+<mj-section background-color="#141414" padding="0">
+  <mj-column>
+    <mj-image src="https://dt92b02v6m7lx.cloudfront.net/BFBRIDAL_CLASSCOVER_DESKTOP_01_RIGHTGRADIENT.webp"
+              width="600px" alt="بسام فتّوح، يعلّم مكياج العروس، ماستركلاس على مهارات"
+              border-radius="16px" padding="0" />
+  </mj-column>
+</mj-section>

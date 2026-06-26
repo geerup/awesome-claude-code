@@ -1,0 +1,71 @@
+{
+  "skill": "brief-validate",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains a name field equal to brief-validate and a single rich description sentence with trigger phrases, and no other keys."
+    },
+    {
+      "id": "validates-all-template-sections",
+      "description": "Covers every template section.",
+      "type": "manual",
+      "rule": "The validation report walks all ten sections of briefs/_TEMPLATE-campaign-brief.md and assigns each field a status of PRESENT, ASSUMPTION, OPEN ITEM, or MISSING."
+    },
+    {
+      "id": "flags-assumptions-and-open-items",
+      "description": "Every ASSUMPTION and OPEN ITEM is listed explicitly.",
+      "type": "manual",
+      "rule": "The report contains a complete ASSUMPTION list and a complete OPEN ITEM list, with no field marked ASSUMPTION in the brief left unlisted."
+    },
+    {
+      "id": "stop-and-ask-on-missing",
+      "description": "Missing needed variables trigger stop-and-ask.",
+      "type": "manual",
+      "rule": "Any MISSING field the campaign needs to proceed produces a stop-and-ask entry naming the field, why it is needed, and what is blocked, and no value is invented for it."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "No invented offer, price, or target.",
+      "type": "manual",
+      "rule": "Offer, price, promotion, and target values are reported only as supplied by the brief; an absent one is flagged ASSUMPTION or MISSING, never filled in."
+    },
+    {
+      "id": "success-metric-smart-check",
+      "description": "The success metric is tested as SMART and a weak one becomes an open item.",
+      "type": "manual",
+      "rule": "The report runs a SMART check on success_metric (Specific, Measurable with a target number, Attainable, Relevant, Time-bound with a date). A metric lacking a number, lacking a date, or phrased vaguely is flagged as an OPEN ITEM stop-and-ask for Ahmed, and no number, date, or wording is invented to repair it; a metric already marked ASSUMPTION is reported as ASSUMPTION, not a silent pass."
+    },
+    {
+      "id": "background-and-key-message-present-or-flagged",
+      "description": "Background/context and key_message are checked and present or flagged.",
+      "type": "manual",
+      "rule": "The report checks the Background and context section (why_now, business_problem, prior_results) and the key_message field, assigning each a status of PRESENT, ASSUMPTION, OPEN ITEM, or MISSING. A silent gap is reported as MISSING and no rationale, prior result, or message is invented to fill it."
+    },
+    {
+      "id": "readiness-line",
+      "description": "A single readiness verdict is produced.",
+      "type": "automatic",
+      "rule": "The report ends with one readiness line: ready to scope, ready to scope with flagged assumptions, or blocked."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash characters anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "Neither SKILL.md nor the template nor evals contains the em dash character."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals and no tatweel (kashida) character appear in any file in this skill."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Framing is empowering, not deficit-framed.",
+      "type": "manual",
+      "rule": "Any framing language speaks to what the reader can build, never to what they lack, per context/brand-voice.md."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<!--
+  head.mjml: the shared head for every Maharat email build.
+  Brand fonts via the Ortto-hosted custom-fonts CSS (the ar2 reference pattern), brand constants,
+  the 600 wide attributes, and the mobile rules. Included with <mj-include path="..."> in the
+  base template. No font binary is embedded or committed; the inbox loads the font from the
+  hosted CSS. House style: no em dash, no en dash, no tatweel, Western numerals only.
+-->
+<mj-head>
+  <mj-title>Maharat</mj-title>
+  <mj-preview></mj-preview>
+  <mj-attributes>
+    <mj-all font-family="'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif" />
+    <mj-body background-color="#141414" />
+    <mj-section padding="0" />
+    <mj-text color="#E6E6E6" font-size="15px" line-height="1.7" align="right" />
+  </mj-attributes>
+  <mj-font name="Lyon Arabic Display" href="https://accounts-api-us.ortto.app/-/settings/custom-fonts.css?family=Lyon+Arabic+Display&k=bWFoYXJhdA" />
+  <mj-font name="Acumin Pro" href="https://accounts-api-us.ortto.app/-/settings/custom-fonts.css?family=Acumin+Pro&k=bWFoYXJhdA" />
+  <mj-style inline="inline">
+    .bul { color:#009975; font-weight:700; }
+  </mj-style>
+  <mj-style>
+    @media only screen and (max-width:600px) {
+      .px { padding-left:24px !important; padding-right:24px !important; }
+      .card { display:inline-block !important; width:31% !important; }
+    }
+  </mj-style>
+</mj-head>

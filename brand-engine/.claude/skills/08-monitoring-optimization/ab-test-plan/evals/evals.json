@@ -1,0 +1,71 @@
+{
+  "skill": "ab-test-plan",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'ab-test-plan'."
+    },
+    {
+      "id": "single-variable",
+      "description": "The test changes exactly one variable.",
+      "type": "manual",
+      "rule": "Body requires exactly one variable under test, holding everything else constant, and instructs narrowing the test if a second variable would move."
+    },
+    {
+      "id": "hypothesis-tied-to-metric",
+      "description": "The hypothesis is tied to the strategy-artifact success_metric.",
+      "type": "manual",
+      "rule": "Body requires a written hypothesis tied to the success_metric set in the strategy-artifact, not a vanity metric, and stops-and-asks if the success_metric is absent."
+    },
+    {
+      "id": "stop-rule-mandatory",
+      "description": "A stop rule is defined up front.",
+      "type": "manual",
+      "rule": "Body requires a stop rule (sample size or duration plus a decision threshold) set before the test runs, with no moving the goalposts after the fact."
+    },
+    {
+      "id": "sample-size-derived",
+      "description": "The sample size is derived from a baseline and an MDE, with a named method chosen before launch.",
+      "type": "manual",
+      "rule": "Body and template require a baseline rate, a minimum detectable effect, a derived per-arm sample size, and a significance level (or a named sequential or Bayesian method), with the method and stop rule chosen before launch and no peeking."
+    },
+    {
+      "id": "propose-not-act",
+      "description": "The test is a proposal through the human gate.",
+      "type": "manual",
+      "rule": "Body states the plan is a human-gate proposal and the skill never launches or spends on its own."
+    },
+    {
+      "id": "no-vanity-metrics",
+      "description": "Vanity metrics are excluded.",
+      "type": "manual",
+      "rule": "Body states the hypothesis judges against the success_metric, never a vanity metric."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable test-plan template exists.",
+      "type": "automatic",
+      "rule": "templates/ab-test-plan.md exists and contains variable_under_test, hypothesis, variants A and B, split/audience/window, and stop_rule sections."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

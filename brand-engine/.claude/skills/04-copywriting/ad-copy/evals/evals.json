@@ -1,0 +1,65 @@
+{
+  "skill": "ad-copy",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'ad-copy'."
+    },
+    {
+      "id": "variant-fields-complete",
+      "description": "Each variant has id, segment, headline, body, one cta, language.",
+      "type": "automatic",
+      "rule": "Every variant object includes id, segment, headline, body, cta, language (ar|en)."
+    },
+    {
+      "id": "one-clear-cta",
+      "description": "Each variant carries exactly one CTA.",
+      "type": "automatic",
+      "rule": "Each variant has a single cta value; no variant lists two competing actions."
+    },
+    {
+      "id": "variants-per-segment",
+      "description": "At least two variants per segment so a test can compare.",
+      "type": "manual",
+      "rule": "For every segment present, two or more distinct variants exist."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file or example copy.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Digits are Western numerals only.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669); digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in Arabic copy.",
+      "type": "automatic",
+      "rule": "The file contains zero U+0640 tatweel characters."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "No invented offer, price, Skill Path title, or instructor name.",
+      "type": "manual",
+      "rule": "Headlines and bodies reference only offers and prices traceable to the brief; absent ones trigger stop-and-ask."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Copy is empowering, never deficit-framed.",
+      "type": "manual",
+      "rule": "Variants speak to what the reader can build, not to what they lack; no shaming or hype."
+    },
+    {
+      "id": "frameworks-optional",
+      "description": "Named copy frameworks stay optional, the Arabic-first voice stays primary.",
+      "type": "manual",
+      "rule": "The 4 Us, PAS, AIDA, and the 4 Cs are offered as optional tools to test a line against and matched to funnel stage; they are not imposed as mandatory structure over the voice."
+    }
+  ]
+}

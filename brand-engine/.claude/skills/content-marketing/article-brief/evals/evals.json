@@ -1,0 +1,59 @@
+{
+  "skill": "article-brief",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'article-brief'."
+    },
+    {
+      "id": "one-target-query-intent",
+      "description": "Each brief sets one target query and one clear intent.",
+      "type": "manual",
+      "rule": "Each article_brief carries a single target_query and one intent; multi-intent briefs are split or focused."
+    },
+    {
+      "id": "brief-fields-complete",
+      "description": "Each brief carries target query, intent, outline, internal links, and one CTA.",
+      "type": "automatic",
+      "rule": "Every article_brief includes id, target_query, intent, outline, internal_links, and cta."
+    },
+    {
+      "id": "brief-not-final-copy",
+      "description": "The skill produces a brief, not final article copy.",
+      "type": "manual",
+      "rule": "Body states the article is authored later by copywriter-ar or copywriter-en, not in this skill."
+    },
+    {
+      "id": "one-cta",
+      "description": "Each brief sets exactly one CTA.",
+      "type": "automatic",
+      "rule": "Each article_brief has a single cta; no competing actions."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented offer, price, Skill Path title, or instructor name in the brief.",
+      "type": "manual",
+      "rule": "Brief references only offers and titles traceable to the source brief; absent ones trigger stop-and-ask, never accreditation claims."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "The brief frames the article empowering, never deficit-framed.",
+      "type": "manual",
+      "rule": "Outline and CTA speak to what the reader can build, not to what they lack, per brand-voice.md."
+    }
+  ]
+}

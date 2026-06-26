@@ -1,0 +1,91 @@
+{
+ "skill": "instructor-marketing/bassam-fattouh",
+ "description": "Acceptance checks for bassam-fattouh assets.",
+ "binding_sources": {
+  "facts": "context/instructors/bassam-fattouh.md"
+ },
+ "machine_checks": [
+  {
+   "id": "no-em-dash",
+   "severity": "hard",
+   "regex": "—",
+   "fail_if": "match",
+   "fix": "Replace em dash",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-en-dash",
+   "severity": "hard",
+   "regex": "–",
+   "fail_if": "match",
+   "fix": "Replace en dash",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-tatweel",
+   "severity": "hard",
+   "regex": "ـ",
+   "fail_if": "match",
+   "fix": "Remove tatweel",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-eastern-numerals",
+   "severity": "hard",
+   "regex": "[٠-٩۰-۹]",
+   "fail_if": "match",
+   "fix": "Western numerals",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-accreditation",
+   "severity": "hard",
+   "regex": "(معتمد|accredit)",
+   "fail_if": "match",
+   "fix": "No accreditation claims",
+   "applies_to": "assets"
+  },
+  {
+   "id": "blocked-deficit-framing",
+   "severity": "hard",
+   "regex": "(hide your flaws|عيوبك)",
+   "fail_if": "match",
+   "fix": "No deficit framing of the learner",
+   "applies_to": "assets"
+  }
+ ],
+ "llm_checks": [
+  {
+   "id": "status-gate",
+   "severity": "hard",
+   "rule": "Public-facing only when catalog public status is launched."
+  },
+  {
+   "id": "claims-verified-only",
+   "severity": "hard",
+   "rule": "Every factual claim matches a verified claims-table row; held-back rows never run."
+  },
+  {
+   "id": "register-policy",
+   "severity": "hard",
+   "rule": "New copy in Gulf-familiar MSA or brand-tone EN."
+  },
+  {
+   "id": "no-invented-product",
+   "severity": "hard",
+   "rule": "Titles, lessons, dates only as recorded."
+  }
+ ],
+ "golden_examples": [
+  {
+   "label": "pass",
+   "text": "تعلمي تقنيات باسم فتوح خطوة بخطوة.",
+   "why": "Verified, MSA, clean."
+  },
+  {
+   "label": "fail",
+   "text": "اخفي عيوبك مع مكياج باسم!",
+   "why": "Deficit framing, blocked."
+  }
+ ]
+}

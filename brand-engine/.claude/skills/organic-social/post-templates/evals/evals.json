@@ -1,0 +1,53 @@
+{
+  "skill": "post-templates",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'post-templates'."
+    },
+    {
+      "id": "templates-present",
+      "description": "All six post-format templates exist.",
+      "type": "automatic",
+      "rule": "templates/ contains story-engagement-sequence.md, countdown-launch-story.md, value-carousel.md, myth-buster-carousel.md, skills-roundup-carousel.md, and quote-inspiration-carousel.md."
+    },
+    {
+      "id": "campaign-agnostic-placeholders",
+      "description": "Templates use placeholders for campaign variables, never baked specifics.",
+      "type": "manual",
+      "rule": "Each template uses placeholders such as [KEYWORD], [OFFER], [INSTRUCTOR], [CLASS TITLE] and bakes no real offer, price, instructor name, or Skill Path title."
+    },
+    {
+      "id": "structure-not-captions",
+      "description": "Templates provide structure and slots, not final captions, and never publish.",
+      "type": "manual",
+      "rule": "Each template defines a beat or slide order with copy-overlay and CTA slots, states captions are routed to copywriter-ar and copywriter-en, and that publishing is a human-gate action."
+    },
+    {
+      "id": "engagement-and-cta-slots",
+      "description": "Interactive mechanics and CTA keyword are slots, never baked into art.",
+      "type": "manual",
+      "rule": "Where a poll, slider, countdown, or comment-to-DM keyword is used, the template marks space for the sticker and a [KEYWORD] slot rather than baking options or the keyword into the visual."
+    },
+    {
+      "id": "brand-visual-constants",
+      "description": "Templates reference the brand visual constants, not the source's bright backgrounds.",
+      "type": "manual",
+      "rule": "Visual direction references #141414, #1A1A1A, and #009975 and does not adopt the orange, red, pink, or yellow backgrounds from the source doc by default."
+    },
+    {
+      "id": "creative-rule-no-baked-arabic",
+      "description": "Arabic is never baked into a generated image.",
+      "type": "manual",
+      "rule": "Templates state that Arabic copy is an overlay slot filled by copywriter-ar and is never baked into a generated image."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash, the U+0640 tatweel, or Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

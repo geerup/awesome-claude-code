@@ -1,0 +1,74 @@
+<!-- 09 ClassCardGrid, the "our other classes" bottom row. THREE OTHER PORTRAIT instructor cards,
+     ONLY status-cleared instructors and rights-cleared, text-free portraits. Image elements,
+     rendered after the CTA.
+     Each card reproduces the maharat.com instructor grid card: a text-free on-brand #141414
+     portrait of the instructor (the same *_HOMEPORTRAIT_BOTTOMGRADIENT* / *BG_141414-BOTTOM-
+     GRADIENT* image the website grid uses) with an emerald accent rule, the instructor NAME
+     (Lyon Arabic Display for AR, Acumin Pro for EN), and the page-cleared "Teaches <subject>" /
+     "يعلّم <subject>" line as a LIVE HTML overlay in the lower third (valign bottom over the dark
+     portion, NEVER baked into the image). Language-matched: the AR card shows the Arabic name +
+     Arabic subject and links to the /ar class page, the EN card the English name + subject and the
+     /en page. The three are OTHER classes, never the email's own instructor. Each card is a single
+     link to its class page (it is NOT a CTA).
+     The renderer's class_cards carry portrait_src, name_ar / name_en, subject_ar / subject_en,
+     link_ar / link_en, and alt_ar / alt_en; scripts/email_render.py picks per language. This MJML
+     mirrors the committed slotted HTML (scripts/email_render.py is the source of truth).
+     If three status-cleared instructors with a servable, text-free portrait do not exist, OMIT this
+     block and flag it. The example below is the AR row of three OTHER classes (Toufic, Rahma,
+     Ragheb), shown for structure. The portraits are verified servable on CloudFront 2026-06-18;
+     stage to the Ortto CDN before send, the same as the hero.
+     The robust overlay pattern (per the Elda ar1 reference): a VML v:rect fill-frame fallback for
+     Outlook plus a table with a background image and the text valign bottom for other clients, is
+     emitted by the renderer; MJML's mj-image cannot express the live-text overlay, so the cards use
+     mj-raw to carry the exact overlay markup. -->
+<mj-text align="right" color="#FFFFFF" font-size="20px" font-weight="700" padding="20px 16px 14px"
+         font-family="'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif">
+  شاهد أيضًا على مهارات
+</mj-text>
+<mj-section background-color="#141414" padding="0 12px 14px">
+  <mj-column css-class="card" width="33%" padding="6px">
+    <mj-raw>
+      <a href="https://www.maharat.com/ar/class/business/toufic-kreidieh-teaches-building-and-growing-your-business" data-slot="element" style="display:block;text-decoration:none;border-radius:12px;overflow:hidden;">
+        <!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:176px;height:236px;"><v:fill type="frame" src="https://dt92b02v6m7lx.cloudfront.net/TK_HOMEPORTRAIT_BOTTOMGRADIENT.webp" color="#1A1A1A" /><v:textbox inset="0,0,0,0"><![endif]-->
+        <table role="presentation" width="176" cellpadding="0" cellspacing="0" background="https://dt92b02v6m7lx.cloudfront.net/TK_HOMEPORTRAIT_BOTTOMGRADIENT.webp" bgcolor="#1A1A1A" style="width:100%;max-width:176px;height:236px;background:url('https://dt92b02v6m7lx.cloudfront.net/TK_HOMEPORTRAIT_BOTTOMGRADIENT.webp') center/cover no-repeat,#1A1A1A;background-size:cover;background-position:center top;border-radius:12px;">
+          <tr><td valign="bottom" align="right" style="height:236px;padding:14px 12px;text-align:right;">
+            <div style="width:26px;height:3px;background:#009975;font-size:0;line-height:0;margin:0 0 8px;">&nbsp;</div>
+            <div data-slot="copy" data-role="card-name" data-lang="ar" style="color:#FFFFFF;font-size:15px;font-weight:700;line-height:1.3;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">توفيق كريدية</div>
+            <div data-slot="copy" data-role="card-subject" data-lang="ar" style="color:#E6E6E6;font-size:12px;line-height:1.4;padding-top:3px;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">يعلّم بناء وتنمية مشروعك</div>
+          </td></tr>
+        </table>
+        <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
+      </a>
+    </mj-raw>
+  </mj-column>
+  <mj-column css-class="card" width="33%" padding="6px">
+    <mj-raw>
+      <a href="https://www.maharat.com/ar/class/business/rahma-riad-teaches-building-a-career-in-the-digital-age" data-slot="element" style="display:block;text-decoration:none;border-radius:12px;overflow:hidden;">
+        <!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:176px;height:236px;"><v:fill type="frame" src="https://dt92b02v6m7lx.cloudfront.net/RR_HOMEPORTRAIT_BOTTOMGRADIENT.webp" color="#1A1A1A" /><v:textbox inset="0,0,0,0"><![endif]-->
+        <table role="presentation" width="176" cellpadding="0" cellspacing="0" background="https://dt92b02v6m7lx.cloudfront.net/RR_HOMEPORTRAIT_BOTTOMGRADIENT.webp" bgcolor="#1A1A1A" style="width:100%;max-width:176px;height:236px;background:url('https://dt92b02v6m7lx.cloudfront.net/RR_HOMEPORTRAIT_BOTTOMGRADIENT.webp') center/cover no-repeat,#1A1A1A;background-size:cover;background-position:center top;border-radius:12px;">
+          <tr><td valign="bottom" align="right" style="height:236px;padding:14px 12px;text-align:right;">
+            <div style="width:26px;height:3px;background:#009975;font-size:0;line-height:0;margin:0 0 8px;">&nbsp;</div>
+            <div data-slot="copy" data-role="card-name" data-lang="ar" style="color:#FFFFFF;font-size:15px;font-weight:700;line-height:1.3;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">رحمة رياض</div>
+            <div data-slot="copy" data-role="card-subject" data-lang="ar" style="color:#E6E6E6;font-size:12px;line-height:1.4;padding-top:3px;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">تعلّم بناء مسيرة في العصر الرقمي</div>
+          </td></tr>
+        </table>
+        <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
+      </a>
+    </mj-raw>
+  </mj-column>
+  <mj-column css-class="card" width="33%" padding="6px">
+    <mj-raw>
+      <a href="https://www.maharat.com/ar/class/music/ragheb-alama-teaches-music-and-performance" data-slot="element" style="display:block;text-decoration:none;border-radius:12px;overflow:hidden;">
+        <!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:176px;height:236px;"><v:fill type="frame" src="https://dt92b02v6m7lx.cloudfront.net/05032024_RaghebBG_141414-BOTTOM-GRADIENT-01.webp" color="#1A1A1A" /><v:textbox inset="0,0,0,0"><![endif]-->
+        <table role="presentation" width="176" cellpadding="0" cellspacing="0" background="https://dt92b02v6m7lx.cloudfront.net/05032024_RaghebBG_141414-BOTTOM-GRADIENT-01.webp" bgcolor="#1A1A1A" style="width:100%;max-width:176px;height:236px;background:url('https://dt92b02v6m7lx.cloudfront.net/05032024_RaghebBG_141414-BOTTOM-GRADIENT-01.webp') center/cover no-repeat,#1A1A1A;background-size:cover;background-position:center top;border-radius:12px;">
+          <tr><td valign="bottom" align="right" style="height:236px;padding:14px 12px;text-align:right;">
+            <div style="width:26px;height:3px;background:#009975;font-size:0;line-height:0;margin:0 0 8px;">&nbsp;</div>
+            <div data-slot="copy" data-role="card-name" data-lang="ar" style="color:#FFFFFF;font-size:15px;font-weight:700;line-height:1.3;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">راغب علامة</div>
+            <div data-slot="copy" data-role="card-subject" data-lang="ar" style="color:#E6E6E6;font-size:12px;line-height:1.4;padding-top:3px;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">يعلّم الموسيقى والأداء</div>
+          </td></tr>
+        </table>
+        <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
+      </a>
+    </mj-raw>
+  </mj-column>
+</mj-section>

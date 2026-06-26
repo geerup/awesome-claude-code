@@ -1,0 +1,71 @@
+{
+  "skill": "campaign-report",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'campaign-report'."
+    },
+    {
+      "id": "report-artifact-fields",
+      "description": "The report fills the report-artifact body fields.",
+      "type": "automatic",
+      "rule": "Body and template include results, what_worked, what_to_change, and learnings_log_ref, matching runtime/handoff-contract.md."
+    },
+    {
+      "id": "measure-against-strategy-metric",
+      "description": "Results are measured against the strategy-artifact success_metric.",
+      "type": "manual",
+      "rule": "Body restates and reports against the success_metric set in the strategy-artifact, and stops-and-asks if it is absent, never inventing a metric after the fact."
+    },
+    {
+      "id": "evidence-required",
+      "description": "What worked carries evidence.",
+      "type": "manual",
+      "rule": "Body requires every what_worked claim to carry a number with its source and window; no claim without evidence."
+    },
+    {
+      "id": "no-vanity-metrics",
+      "description": "Vanity metrics are excluded.",
+      "type": "manual",
+      "rule": "Body states no vanity metrics and names examples (impressions, raw reach, follower count) that do not substitute for the success_metric."
+    },
+    {
+      "id": "what-to-change-for-next-brief",
+      "description": "What to change is concrete and aimed at the next brief, as a recommendation.",
+      "type": "manual",
+      "rule": "Body requires what_to_change to be concrete and for the next brief, framed as a recommendation, never an action taken on a live campaign or a spend."
+    },
+    {
+      "id": "supporting-cuts-anchored-to-success-metric",
+      "description": "Optional supporting cuts are anchored to the success_metric and never replace it or add vanity metrics.",
+      "type": "manual",
+      "rule": "Body and template offer an optional supporting-cuts section (a funnel-stage view and a per-segment cut drawn from the strategy-artifact segments) that supports the success_metric, never replaces it, and never reintroduces vanity metrics (impressions, raw reach, follower count) into the verdict."
+    },
+    {
+      "id": "actions-have-owner-and-date",
+      "description": "Each what_to_change item carries an owner and a target date or brief.",
+      "type": "manual",
+      "rule": "Body and template require every what_to_change item to carry an owner and a target date (or target brief), so each recommendation is trackable and accountable; no owner-less or date-less change."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

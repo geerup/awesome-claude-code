@@ -1,0 +1,91 @@
+{
+  "skill": "subject-marketing/me",
+  "description": "Acceptance checks for any asset featuring Ahmed El Sanhoury (me). Machine checks run first via scripts/eval_runner.py (deterministic, regex and string based). LLM checks run second (judged by the reviewing agent). Any failed hard check is a hard stop returning to the author with the failing item and required fix. Then english-copy-qa (or arabic-copy-qa when Arabic is in scope), then brand-qa-reviewer, then the human gate. Checks marked applies_to=assets run only on generated marketing assets; governance docs (the fact file, the held-back ledger) are checked with --docs.",
+  "binding_sources": {
+    "facts": "context/subjects/me.md",
+    "catalog": "context/subjects/_CATALOG.md",
+    "voice": "skills/subject-marketing/me/voice.md"
+  },
+  "machine_checks": [
+    {
+      "id": "no-em-dash",
+      "severity": "hard",
+      "regex": "—",
+      "fail_if": "match",
+      "fix": "Replace em dash with comma, colon, or period",
+      "applies_to": "all"
+    },
+    {
+      "id": "no-en-dash",
+      "severity": "hard",
+      "regex": "–",
+      "fail_if": "match",
+      "fix": "Replace en dash with 'to' or a hyphen in ranges",
+      "applies_to": "all"
+    },
+    {
+      "id": "no-accreditation",
+      "severity": "hard",
+      "regex": "(accredit|certified by|chartered)",
+      "fail_if": "match",
+      "fix": "Never imply a credential or accreditation you do not hold; state only verified qualifications",
+      "applies_to": "assets"
+    },
+    {
+      "id": "no-tatweel",
+      "severity": "hard",
+      "regex": "ـ",
+      "fail_if": "match",
+      "fix": "Remove tatweel/kashida (only relevant when Arabic is in scope)",
+      "applies_to": "all"
+    },
+    {
+      "id": "no-eastern-numerals",
+      "severity": "hard",
+      "regex": "[٠-٩۰-۹]",
+      "fail_if": "match",
+      "fix": "Use Western numerals (only relevant when Arabic is in scope)",
+      "applies_to": "all"
+    }
+  ],
+  "_held_back_claim_blocks": "Add one machine_check per row in the held-back ledger of context/subjects/me.md, severity hard, applies_to assets, that blocks the exact unverified or under-NDA phrasing. /mine-subject me generates these from the ledger.",
+  "llm_checks": [
+    {
+      "id": "status-gate",
+      "severity": "hard",
+      "rule": "If the asset is public-facing, the catalog status for me must be 'public'. Until you confirm, status is 'internal': public assets are blocked, drafts carry a 'blocked on status' flag."
+    },
+    {
+      "id": "claims-verified-only",
+      "severity": "hard",
+      "rule": "Every factual claim about Ahmed (title, role, result, figure, affiliation) maps to a claims-table row in context/subjects/me.md marked 'verified' and stays within what the source supports. No overstatement."
+    },
+    {
+      "id": "consent-respected",
+      "severity": "hard",
+      "rule": "No client, employer, or collaborator is named publicly without recorded consent. No confidential or under-NDA work appears."
+    },
+    {
+      "id": "no-invented-detail",
+      "severity": "hard",
+      "rule": "Titles, dates, numbers, and project outcomes appear only as recorded in the fact file or the brief. Missing means to-confirm, not to-invent."
+    },
+    {
+      "id": "voice-fidelity",
+      "severity": "soft",
+      "rule": "Tone matches voice.md once mined: your register, hooks, and signature phrasing; not corporate, preachy, or hype."
+    }
+  ],
+  "golden_examples": [
+    {
+      "label": "pass",
+      "text": "Seeded stub. Replace with a real pass example once me.md has verified claims: a line built only from verified rows, plain and specific, no em dash.",
+      "why": "Verified claims only, brand register, house style."
+    },
+    {
+      "label": "fail",
+      "text": "Seeded stub. Replace with a real fail example: a line that overstates a title or cites an unverified figure, or uses an em dash.",
+      "why": "Unverified or overstated claim and/or house-style violation."
+    }
+  ]
+}

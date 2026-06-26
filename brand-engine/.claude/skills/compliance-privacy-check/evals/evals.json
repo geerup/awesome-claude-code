@@ -1,0 +1,71 @@
+{
+  "skill": "compliance-privacy-check",
+  "checks": [
+    {
+      "id": "no-pii-in-urls",
+      "description": "No personal or sensitive data appears in URL parameters, query strings, UTMs, or tracking payloads.",
+      "type": "privacy",
+      "rule": "Scan every link, UTM set, and tracking call. Any email, phone, name, or personal identifier in a URL or tracking payload is a fail; the fix removes it."
+    },
+    {
+      "id": "consent-correct",
+      "description": "Data is collected and used with valid consent for the stated purpose.",
+      "type": "compliance",
+      "rule": "Fail when consent is pre-checked, missing, or does not cover the purpose the data is used for."
+    },
+    {
+      "id": "suppression-correct",
+      "description": "The send audience excludes already-paying, unsubscribed, and hard-bounced contacts, and the exclusion is applied not just described.",
+      "type": "compliance",
+      "rule": "Fail when any of paying, unsubscribed, or hard-bounced contacts are not excluded from the send audience, or when suppression is named but not applied."
+    },
+    {
+      "id": "pdpl-residency-surfaced",
+      "description": "When the asset touches Saudi user data, sending, or storage, the Saudi PDPL and data-residency open item is surfaced for the human gate.",
+      "type": "compliance",
+      "rule": "Fail when Saudi user data is involved and the PDPL or data-residency open item is not surfaced. The item is flagged, never assumed resolved."
+    },
+    {
+      "id": "data-flows-disclosed",
+      "description": "Where collected data goes is disclosed to the user and stated in the package.",
+      "type": "privacy",
+      "rule": "Fail when a data flow (receiving platform, pixel, CAPI, third party) is undisclosed to the user or absent from the package."
+    },
+    {
+      "id": "no-accreditation-implication",
+      "description": "Compliance-facing copy never states or implies certificates are accredited.",
+      "type": "guardrail",
+      "rule": "Flag any wording implying accreditation. Completion certificates are not accredited; any such claim is a fail."
+    },
+    {
+      "id": "data-minimization",
+      "description": "The asset collects only the data the stated purpose needs; every field, parameter, and tracked attribute maps to a stated purpose.",
+      "type": "compliance",
+      "rule": "Required by Saudi PDPL and GDPR. Fail when data is collected without a purpose it serves; the fix removes the field or states the purpose. An unclear case is surfaced as an open item. The gate flags the gap, it does not resolve the minimization basis."
+    },
+    {
+      "id": "retention-stance",
+      "description": "A retention or deletion stance is present: how long the collected data is kept and the path by which it is deleted.",
+      "type": "compliance",
+      "rule": "Required by Saudi PDPL and GDPR. Fail when no retention or deletion stance is stated; the fix adds it. An unconfirmed period is surfaced as an open item. The gate flags the gap, it does not set the retention period."
+    },
+    {
+      "id": "data-subject-rights",
+      "description": "The asset states how data-subject access and deletion requests are handled: the route a user takes to reach or delete their data.",
+      "type": "compliance",
+      "rule": "Required by Saudi PDPL and GDPR. Fail when no access or deletion route is stated; the fix adds it. An unconfirmed process is surfaced as an open item. The gate flags the gap, it does not stand up the rights process."
+    },
+    {
+      "id": "no-tool-adoption",
+      "description": "The check does not adopt a tool, wire a platform, or resolve the platform open item.",
+      "type": "process",
+      "rule": "Fail when the asset assumes adoption of a tool not on the approved allowlist, or treats the platform or PDPL open item as resolved. Such items are flagged for build-vs-buy and Ahmed's approval."
+    },
+    {
+      "id": "result-is-binary",
+      "description": "The gate returns a binary verdict with a structured fix list on fail and open items attached.",
+      "type": "process",
+      "rule": "Result is pass only when every check passes; otherwise fail with one fix item per failing check. Correctly surfaced open items do not fail the gate; an unsurfaced relevant open item does."
+    }
+  ]
+}

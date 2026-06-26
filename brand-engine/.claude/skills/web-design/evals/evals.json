@@ -1,0 +1,65 @@
+{
+  "skill": "web-design",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'web-design'."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "Names the two sub-skills it routes to and the order.",
+      "type": "automatic",
+      "rule": "Body names web-experience-direction first (direction) then web-design-spec (build-ready spec) as the sub-skills it routes to."
+    },
+    {
+      "id": "produces-web-design-package",
+      "description": "Names the web-design-package with its exact body fields.",
+      "type": "automatic",
+      "rule": "Body lists the web-design-package fields information_architecture, ux_flow, wireframe, visual_direction, web_asset_brief, conversion_intent, design_spec, web_design_qa, matching runtime/handoff-contract.md."
+    },
+    {
+      "id": "gate-before-advance",
+      "description": "Names the gate stack before advance: each sub-skill eval, then web-design-qa, then brand-qa.",
+      "type": "manual",
+      "rule": "Body states each sub-skill skill eval runs, then web-design-qa on the spec, then brand-qa-reviewer, with compliance-privacy at the page in conversion-engineer."
+    },
+    {
+      "id": "no-arabic-in-images",
+      "description": "Forbids baking Arabic text into generated imagery; copy binds to variant ids.",
+      "type": "manual",
+      "rule": "Body states no Arabic text is baked into generated imagery and copy regions bind to QA-passed copy-package variant ids filled by copywriter-ar in stream 4."
+    },
+    {
+      "id": "tool-through-build-vs-buy",
+      "description": "Generative or build tool choice runs through build-vs-buy with Arabic as decisive filter.",
+      "type": "manual",
+      "rule": "Body states generative or build tool choice runs through build-vs-buy-eval, Arabic capability is the decisive filter, and no tool is adopted without approval."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "No invented Skill Path titles or instructor names; one primary action; no personal data in tracking.",
+      "type": "manual",
+      "rule": "Body states no invented Skill Path titles or instructor names, one primary action per view, no personal or sensitive data in tracking, and empowering not deficit-framed."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

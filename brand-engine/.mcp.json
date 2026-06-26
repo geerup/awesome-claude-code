@@ -1,0 +1,21 @@
+{
+  "_note": "Committed MCP config for the personal brand & career engine. It carries NO secrets: every credential is interpolated from an environment variable (for example ${FIRECRAWL_API_KEY}) supplied at runtime. It is committed (not gitignored) so Claude Code on the web loads the server at session start. The solo stack (Canva, Descript, Gmail, Google Drive, Google Calendar, GitHub) is connected through the Claude Code harness, NOT spun up here, so those servers are not listed in this file (see settings.json _session_provided_mcps). Only engine-spun servers belong here. Adoption does not grant the right to send, publish, or spend: those stay human-gate actions (you). Firecrawl is optional (WebSearch/WebFetch are the built-in default for research); to enable it, set FIRECRAWL_API_KEY, allow api.firecrawl.dev under Custom network access, and start a fresh session.",
+  "_maharat_profile_servers": "The Maharat meta-ads server (a read-only Graph API wrapper at .claude/scripts/meta_ads_mcp.py) is preserved but NOT enabled for the active profile. To run a maharat-profile paid campaign, add it back here and to settings.json enabledMcpjsonServers, with META_ADS_ACCESS_TOKEN. See references/maharat/2026-06-meta-ads-mcp-adoption-package.md.",
+  "mcpServers": {
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": { "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}" }
+    },
+    "substack-api": {
+      "_use": "Substack publishing for /substack-post (stream 7, creator content). Exposes create_draft_post (title, subtitle, body), which creates a DRAFT in your Substack, not a live publish. This fits the engine's draft-and-control rule: the engine assembles the post, you review and hit publish in Substack. Source: github.com/marcomoauro/substack-mcp. It uses Substack's unofficial session-token API, so treat it as best-effort and re-check after Substack changes. Needs three runtime env vars (no secrets committed): SUBSTACK_PUBLICATION_URL (your publication URL), SUBSTACK_SESSION_TOKEN (the substack.sid session cookie), and SUBSTACK_USER_ID. See context/04-tools-and-access.md for how to obtain them.",
+      "command": "npx",
+      "args": ["-y", "substack-mcp@latest"],
+      "env": {
+        "SUBSTACK_PUBLICATION_URL": "${SUBSTACK_PUBLICATION_URL}",
+        "SUBSTACK_SESSION_TOKEN": "${SUBSTACK_SESSION_TOKEN}",
+        "SUBSTACK_USER_ID": "${SUBSTACK_USER_ID}"
+      }
+    }
+  }
+}

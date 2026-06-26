@@ -1,0 +1,101 @@
+{
+  "skill": "onboarding-sequence",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals onboarding-sequence, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals onboarding-sequence."
+    },
+    {
+      "id": "reusable-ordered-flow",
+      "description": "The flow is an ordered, reusable shape, each message with trigger, segment, channel, and a copy variant ref.",
+      "type": "automatic",
+      "rule": "Output flow lists ordered messages, each with id, trigger, segment, channel, copy_ref, and subject_ref."
+    },
+    {
+      "id": "references-copy-by-id-not-writes",
+      "description": "Each message references a QA-passed copy variant by id; the flow never writes copy.",
+      "type": "automatic",
+      "rule": "Body states each message binds to a QA-passed copy-package variant id and that the flow sequences copy and does not write it."
+    },
+    {
+      "id": "activation-branch-gentle-retry",
+      "description": "Activation branches on the first step; not-yet-activated users get a gentle retry, not a louder pitch.",
+      "type": "manual",
+      "rule": "Body states the activation message branches and gives not-yet-activated users a gentle retry rather than a louder pitch."
+    },
+    {
+      "id": "welcome-and-onboarding-patterns",
+      "description": "The sub-skill carries both the WELCOME and the ONBOARDING / activation patterns, selected by audience and objective.",
+      "type": "automatic",
+      "rule": "Body presents a WELCOME pattern (new subscriber, relationship and first conversion) and an ONBOARDING / activation pattern (new signup or trial, activation), selected by the brief's audience and objective."
+    },
+    {
+      "id": "welcome-count-and-cadence",
+      "description": "WELCOME is 5 to 6 emails, email 1 within 5 minutes, cadence every 2 to 3 days, never daily.",
+      "type": "automatic",
+      "rule": "Body states WELCOME is 5 to 6 emails with email 1 within 5 minutes of signup, day 2 to 3, day 5 to 7, day 7 to 14, cadence every 2 to 3 days, never daily."
+    },
+    {
+      "id": "onboarding-trial-scaling",
+      "description": "Onboarding email count scales to the window: 7-day trial gets 5, 14-day gets 7, 30-day gets 8 to 10; general band 5 to 8 over 7 to 14 days.",
+      "type": "automatic",
+      "rule": "Body states a 7-day trial gets a compressed 5-email sequence, a 14-day window gets 7, a 30-day window gets 8 to 10 over 2 to 3 weeks, general band 5 to 8 over 7 to 14 days."
+    },
+    {
+      "id": "onboarding-five-anchor-types",
+      "description": "Onboarding anchors on 5 types: welcome, usage tips, sales touch, usage review, expiry warning.",
+      "type": "automatic",
+      "rule": "Body names the 5 anchor types: welcome, usage tips, sales touch, usage review, expiry warning."
+    },
+    {
+      "id": "time-based-then-behavior-layering",
+      "description": "A time-based foundation every new user gets, with behavior-triggered emails layered on top.",
+      "type": "manual",
+      "rule": "Body states a time-based foundation (for example a setup guide on day 1) with behavior-triggered emails layered on top (for example a help email if setup not done by day 3)."
+    },
+    {
+      "id": "instant-welcome-morning-sends",
+      "description": "The welcome or first touch is instant; morning local sends 8 AM to 10 AM perform best for the rest.",
+      "type": "automatic",
+      "rule": "Body states the welcome is instant and morning local sends roughly 8 AM to 10 AM tend to perform best for the rest of the arc."
+    },
+    {
+      "id": "activation-rate-success-metric",
+      "description": "The onboarding success metric is the activation rate (reaching the milestone), not open or click rate.",
+      "type": "manual",
+      "rule": "Body states the onboarding success metric is the activation rate, how many reach the defined milestone, and that it is not open or click rate."
+    },
+    {
+      "id": "audience-size-resolved-at-send",
+      "description": "Audience size is resolved from live data at send time.",
+      "type": "automatic",
+      "rule": "Body and output state audience_size is resolved at send from live data."
+    },
+    {
+      "id": "send-on-approval-sentence",
+      "description": "A one plain sentence send_on_approval describes what the send does and to how many.",
+      "type": "automatic",
+      "rule": "Output includes a send_on_approval one-sentence statement of what the send does and to how many."
+    },
+    {
+      "id": "suppression-correct",
+      "description": "Suppression excludes unsubscribes and hard bounces (and paying where applicable).",
+      "type": "automatic",
+      "rule": "Output suppression names unsubscribed and hard-bounced, and the flow excludes them."
+    },
+    {
+      "id": "platform-open-item-not-sendable",
+      "description": "The platform open item is surfaced; the package is not-sendable until confirmed and approved.",
+      "type": "automatic",
+      "rule": "Body marks the platform open item and marks the package design-only and not-sendable until the platform is confirmed and approved."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals, empowering not deficit-framed, RTL-safe Arabic.",
+      "type": "automatic",
+      "rule": "File contains no em dash, no tatweel, no Eastern Arabic numerals; any Arabic example is empowering and RTL-safe."
+    }
+  ]
+}

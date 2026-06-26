@@ -1,0 +1,71 @@
+{
+  "skill": "email-sequence-build",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals email-sequence-build, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals email-sequence-build; description includes trigger phrases."
+    },
+    {
+      "id": "assembled-not-sending",
+      "description": "The sequence is assembled and never sends or schedules a live send on its own.",
+      "type": "automatic",
+      "rule": "Steps and hard rules state the sequence is assembled, not sending, and the build never sends on its own."
+    },
+    {
+      "id": "platform-open-item-blocks",
+      "description": "Blocked on the email and WhatsApp platform OPEN ITEM until the platform is confirmed and approved.",
+      "type": "automatic",
+      "rule": "Body and hard rules require the platform to be confirmed and approved and forbid assuming a platform."
+    },
+    {
+      "id": "structure-complete",
+      "description": "staged_structure covers messages, triggers, delays, audience, and suppression.",
+      "type": "automatic",
+      "rule": "Output staged_structure includes messages, triggers, delays, audience, and suppression."
+    },
+    {
+      "id": "assembles-any-pattern",
+      "description": "The build assembles any sequence-standards pattern (welcome, onboarding, event, nonpayer, winback) without redesigning it.",
+      "type": "automatic",
+      "rule": "Body and template state the build assembles any pattern from skills/07-lifecycle-messaging/templates/sequence-standards.md and carries its design through unchanged."
+    },
+    {
+      "id": "preserves-triggers-and-cadence",
+      "description": "The assembled sequence preserves the pattern's triggers (time-based or behavior-triggered) and cadence, and stays not-sending until approved.",
+      "type": "automatic",
+      "rule": "Each message carries its trigger marked time-based or behavior-triggered, its delay and cadence are preserved from the source pattern, and the sequence is assembled paused and not sending until the human gate approves."
+    },
+    {
+      "id": "messages-bound-to-copy",
+      "description": "Each message binds to a copy-package variant id and a paired subject line; no free copy.",
+      "type": "automatic",
+      "rule": "Steps and template bind every message to a copy-package variant id and subject line and forbid invented copy."
+    },
+    {
+      "id": "suppression-and-no-pii",
+      "description": "Suppression is applied and no personal or sensitive data appears in any link.",
+      "type": "automatic",
+      "rule": "Hard rules apply suppression (paying, unsubscribed, excluded) and forbid personal or sensitive data in links."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented audience, schedule, titles, names, offers, or prices; missing means stop and ask.",
+      "type": "manual",
+      "rule": "Output traces audience and schedule to the lifecycle-package and brief and invents no titles, names, offers, or prices."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no em dash glyph, no tatweel (U+0640), and no Eastern Arabic numerals (U+0660 to U+0669)."
+    },
+    {
+      "id": "fills-paid-launch-package",
+      "description": "Output populates the staged_structure and checklist of the paid-launch-package for the sequence.",
+      "type": "manual",
+      "rule": "Output is described as the staged_structure and checklist of the paid-launch-package per handoff-contract.md."
+    }
+  ]
+}

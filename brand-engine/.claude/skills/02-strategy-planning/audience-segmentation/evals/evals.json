@@ -1,0 +1,53 @@
+{
+  "skill": "audience-segmentation",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'audience-segmentation'."
+    },
+    {
+      "id": "segment-fields-complete",
+      "description": "Each segment has name, size, definition, and why.",
+      "type": "automatic",
+      "rule": "Every segment object includes name, size, definition, and why, matching the segments[] shape in handoff-contract.md."
+    },
+    {
+      "id": "no-invented-sizes",
+      "description": "Segment sizes are never invented.",
+      "type": "manual",
+      "rule": "Each size is a figure traceable to data, the context planning estimate marked as an estimate, or flagged as resolved from live data at send time; no size is invented."
+    },
+    {
+      "id": "flags-live-data",
+      "description": "Where live data is needed, the skill flags it.",
+      "type": "manual",
+      "rule": "Sizes that cannot be confirmed from context are flagged as resolving from live data at send time and ride forward as open items."
+    },
+    {
+      "id": "workable-segment-set",
+      "description": "The segment set is small and workable.",
+      "type": "manual",
+      "rule": "The plan produces a small set, roughly three to five named segments, each defined and tied to the angle, not a long unusable list."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no U+0640 tatweel character appear in any file in this skill."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Segments are framed empowering, not deficit-framed.",
+      "type": "manual",
+      "rule": "A non-payer or lapsed contact is framed as ready to grow, never as a failure to be fixed, per context/brand-voice.md."
+    }
+  ]
+}

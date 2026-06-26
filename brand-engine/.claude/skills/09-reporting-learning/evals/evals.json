@@ -1,0 +1,65 @@
+{
+  "skill": "09-reporting-learning",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals '09-reporting-learning'."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "Hub routes to campaign-report and learnings-log.",
+      "type": "automatic",
+      "rule": "Body references both sub-skills by name, campaign-report and learnings-log, and states when each applies and their order."
+    },
+    {
+      "id": "emits-report-artifact",
+      "description": "Hub emits the report-artifact with its exact body fields.",
+      "type": "manual",
+      "rule": "Body names the report-artifact and lists its fields results, what_worked, what_to_change, learnings_log_ref, matching runtime/handoff-contract.md."
+    },
+    {
+      "id": "measure-against-strategy-metric",
+      "description": "Results are measured against the strategy-artifact success_metric.",
+      "type": "manual",
+      "rule": "Body states results measure against the success_metric set in the strategy-artifact, and stops-and-asks if the success_metric is absent, never inventing one after the fact."
+    },
+    {
+      "id": "no-vanity-metrics",
+      "description": "Vanity metrics are excluded.",
+      "type": "manual",
+      "rule": "Body states no vanity metrics, and that a vanity metric is never substituted for the success_metric."
+    },
+    {
+      "id": "propose-not-act",
+      "description": "What to change is a proposal, not an action on a live campaign.",
+      "type": "manual",
+      "rule": "Body states what_to_change is a recommendation for the next brief and the skill never acts on a live campaign or spends."
+    },
+    {
+      "id": "internal-gate-only",
+      "description": "Declares the correct gate for an internal stream-9 report.",
+      "type": "manual",
+      "rule": "States the gate is skill eval only, and that arabic-copy-qa and brand-qa apply only if customer-facing copy appears, consistent with runtime/verification.md."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "Neither SKILL.md nor any file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

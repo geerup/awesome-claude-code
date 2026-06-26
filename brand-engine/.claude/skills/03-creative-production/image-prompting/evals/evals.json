@@ -1,0 +1,59 @@
+{
+  "skill": "image-prompting",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals image-prompting, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals image-prompting; description includes trigger phrases."
+    },
+    {
+      "id": "prompts-english-text-free",
+      "description": "Prompts are written in English and describe text-free images with a no-text, no-Arabic-script negative instruction.",
+      "type": "automatic",
+      "rule": "Each prompt is English, states the image is text-free, and includes a negative instruction barring text and Arabic script."
+    },
+    {
+      "id": "no-arabic-baked-in",
+      "description": "No Arabic text is ever baked into a generated image; copy arrives as overlay in stream 4.",
+      "type": "automatic",
+      "rule": "Hard rules forbid baked Arabic and state copy-overlay slots stay empty for copywriter-ar."
+    },
+    {
+      "id": "dimensions-and-safe-areas",
+      "description": "Each asset brief specifies dimensions per placement and the safe areas.",
+      "type": "automatic",
+      "rule": "asset_briefs include dimensions and safe areas for every placement."
+    },
+    {
+      "id": "empty-copy-overlay-slots",
+      "description": "Copy-overlay slots are named and left empty, bound later to copy-package variant ids.",
+      "type": "automatic",
+      "rule": "asset_briefs define named copy-overlay slots that are empty and reserved for stream 4 copy."
+    },
+    {
+      "id": "designer-executes-and-design-qa",
+      "description": "Notes the designer executes visuals, runs design-qa, and keeps a human design check on Arabic.",
+      "type": "manual",
+      "rule": "Body states the designer executes generation, runs design-qa, and keeps a human design check on any Arabic."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented dimensions, placements, Skill Path titles, instructor names, offers, or prices; missing means stop and ask.",
+      "type": "automatic",
+      "rule": "Hard rules forbid invented values and require stop-and-ask on a missing variable."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no em dash glyph, no tatweel (U+0640), and no Eastern Arabic numerals (U+0660 to U+0669)."
+    },
+    {
+      "id": "fills-creative-package-prompts",
+      "description": "Output populates the prompts[] and asset_briefs[] fields of the creative-package.",
+      "type": "manual",
+      "rule": "Output is described as the prompts[] and asset_briefs[] fields of the creative-package per handoff-contract.md."
+    }
+  ]
+}
