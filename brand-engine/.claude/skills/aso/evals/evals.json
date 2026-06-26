@@ -1,0 +1,53 @@
+{
+  "skill": "aso",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals aso, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals 'aso' and the description includes trigger phrases."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "The hub routes to aso-keyword-research, store-listing-optimization, and store-creative-and-experiments and does not publish itself.",
+      "type": "automatic",
+      "rule": "Body references all three sub-skills with a routing rule and states the hub never publishes a store change."
+    },
+    {
+      "id": "emits-aso-package",
+      "description": "The hub assembles the aso-package with the exact body fields.",
+      "type": "automatic",
+      "rule": "Output names store (title, subtitle, description, keywords, localization), creatives, experiments, reviews_response_policy, and open_items wrapped in the common envelope."
+    },
+    {
+      "id": "arabic-first-with-english",
+      "description": "Store text is Arabic-first with English and routes through the copy gates.",
+      "type": "manual",
+      "rule": "Body states store text is Arabic-first with English and routes through copywriter-ar and the English copywriter for arabic-copy-qa and english-copy-qa."
+    },
+    {
+      "id": "publish-is-gated",
+      "description": "Publishing any store change is a gated action behind the human gate.",
+      "type": "manual",
+      "rule": "Body states publishing a store listing change, creative, or experiment is a gated action behind the human gate, per change and per campaign, and silence is not approval."
+    },
+    {
+      "id": "no-accreditation-claims",
+      "description": "No store field or creative implies a certificate is accredited.",
+      "type": "manual",
+      "rule": "Body forbids implying any certificate is accredited and bars fundraising, roadmap, or unannounced plans in store fields and creative."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "No invented Skill Path title, content lineup, instructor name, offer, or price; generated images stay text-free.",
+      "type": "manual",
+      "rule": "Body forbids inventing Skill Path titles, content lineup, instructor names, offers, and prices, instructs stop-and-ask when absent, and states generated images stay text-free with Arabic added in the build."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no U+2014 em dash, no U+0640 tatweel, and no Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

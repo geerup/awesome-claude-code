@@ -1,0 +1,59 @@
+{
+  "skill": "arabic-copy-qa",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "SKILL.md frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'arabic-copy-qa'."
+    },
+    {
+      "id": "seven-checks-present",
+      "description": "All seven Arabic checks are defined: MSA Gulf-familiar, Thmanyah tone, no tatweel, Western numerals, no em dash, empowering, RTL-safe.",
+      "type": "automatic",
+      "rule": "Body lists msa-gulf-familiar, thmanyah-tone, no-tatweel, western-numerals, no-em-dash, empowering-framing, rtl-safe."
+    },
+    {
+      "id": "gate-position",
+      "description": "Runs after the skill eval and before brand-qa-reviewer, only on Arabic copy.",
+      "type": "automatic",
+      "rule": "Body states it runs after the skill eval and before brand-qa-reviewer, on Arabic copy only, per verification.md."
+    },
+    {
+      "id": "structured-fix-list",
+      "description": "On fail, returns a structured fix list with check, quoted span, and fix per item.",
+      "type": "automatic",
+      "rule": "Output defines a per-item shape of check, span (quoted), fix; pass advances, fail returns the list."
+    },
+    {
+      "id": "verifier-not-author",
+      "description": "It never edits the copy; it is a verifier that passes or fails.",
+      "type": "automatic",
+      "rule": "Hard rules state never edit the copy, binary pass or fail, no item waved through."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Digits are Western numerals only.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669); digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel-rtl-safe",
+      "description": "No tatweel in the file, and the RTL-safe check is encoded.",
+      "type": "automatic",
+      "rule": "The file contains zero U+0640 tatweel characters and defines an rtl-safe check for mixed direction and numerals."
+    },
+    {
+      "id": "empowering-not-deficit",
+      "description": "Encodes the empowering, never deficit-framed check.",
+      "type": "manual",
+      "rule": "The empowering-framing check verifies copy speaks to what the reader can build, with no shame or hype, per brand-voice.md."
+    }
+  ]
+}

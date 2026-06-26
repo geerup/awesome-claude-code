@@ -1,0 +1,132 @@
+{
+  "skill": "instructor-marketing/mona-ataya",
+  "description": "Acceptance checks for any marketing asset featuring Mona Ataya. Machine checks run first via scripts/eval_runner.py (deterministic, regex and string based). LLM checks run second (judged by the reviewing agent). Any failed hard check is a hard stop returning to the author with the failing item and required fix. Then arabic-copy-qa, then brand-qa-reviewer, then the human gate. Checks marked applies_to=assets run only on generated marketing assets; governance docs (fact files, libraries documenting blocked claims) are checked with --docs.",
+  "binding_sources": {
+    "facts": "context/instructors/mona-ataya.md",
+    "catalog": "context/instructors/_CATALOG.md",
+    "voice": "skills/instructor-marketing/mona-ataya/voice.md"
+  },
+  "machine_checks": [
+    {
+      "id": "no-em-dash",
+      "severity": "hard",
+      "regex": "—",
+      "fail_if": "match",
+      "fix": "Replace em dash with comma, colon, or period",
+      "applies_to": "all"
+    },
+    {
+      "id": "no-en-dash",
+      "severity": "hard",
+      "regex": "–",
+      "fail_if": "match",
+      "fix": "Replace en dash with 'to' or a hyphen in ranges",
+      "applies_to": "all"
+    },
+    {
+      "id": "no-tatweel",
+      "severity": "hard",
+      "regex": "ـ",
+      "fail_if": "match",
+      "fix": "Remove tatweel/kashida",
+      "applies_to": "all"
+    },
+    {
+      "id": "no-eastern-numerals",
+      "severity": "hard",
+      "regex": "[٠-٩۰-۹]",
+      "fail_if": "match",
+      "fix": "Use Western numerals",
+      "applies_to": "all"
+    },
+    {
+      "id": "blocked-claim-60m",
+      "severity": "hard",
+      "regex": "60\\s*(مليون|million)",
+      "fail_if": "match",
+      "fix": "Unverified figure (claims row 4): use 'over 50 million' / 'أكثر من 50 مليون'",
+      "applies_to": "assets"
+    },
+    {
+      "id": "blocked-claim-under-10",
+      "severity": "hard",
+      "regex": "(تحت عمر|under (the )?age (of )?10|under 10)",
+      "fail_if": "match",
+      "fix": "Unverified detail (claims row 6): use '3 children' / '3 أطفال'",
+      "applies_to": "assets"
+    },
+    {
+      "id": "blocked-claim-2pct-internet",
+      "severity": "hard",
+      "regex": "2\\s*(%|بالمئة).{0,40}(إنترنت|internet)|((إنترنت|internet).{0,40}2\\s*(%|بالمئة))",
+      "fail_if": "match",
+      "fix": "Unverified stat (claims row 11): hold until confirmed",
+      "applies_to": "assets"
+    },
+    {
+      "id": "blocked-claim-90pct-fail",
+      "severity": "hard",
+      "regex": "90\\s*(%|بالمئة)",
+      "fail_if": "match",
+      "fix": "Disputed stat (claims row 12): does not run as stated; source a verified stat instead",
+      "applies_to": "assets"
+    },
+    {
+      "id": "no-accreditation",
+      "severity": "hard",
+      "regex": "(معتمدة?|اعتماد|accredit)",
+      "fail_if": "match",
+      "fix": "Never imply accreditation; certificates are completion certificates",
+      "applies_to": "assets"
+    }
+  ],
+  "llm_checks": [
+    {
+      "id": "status-gate",
+      "severity": "hard",
+      "rule": "If the asset is public-facing, the catalog public status for mona-ataya must be 'launched'. Currently 'unconfirmed': public assets are blocked, internal drafts carry a 'blocked on status' flag."
+    },
+    {
+      "id": "claims-verified-only",
+      "severity": "hard",
+      "rule": "Every factual claim about Mona Ataya, Mumzworld, Bayt.com, or Pharmacity matches a claims-table row marked 'verified' and stays within what the source supports. Pharmacity (row 20) is single-source: do not use until confirmed."
+    },
+    {
+      "id": "no-invented-product",
+      "severity": "hard",
+      "rule": "Class title, lesson list, launch dates, and playlist themes appear only as recorded in the fact file or the brief. Themes come from the confirmed playlist list."
+    },
+    {
+      "id": "promise-discipline",
+      "severity": "hard",
+      "rule": "Copy promises learning and tools, never outcomes: no implied funding success, acquisition, or guaranteed results."
+    },
+    {
+      "id": "register-policy",
+      "severity": "hard",
+      "rule": "Until the register policy is decided: new copy is Gulf-familiar MSA (or brand-tone English). Levantine colloquial only in quoted source reference."
+    },
+    {
+      "id": "voice-fidelity",
+      "severity": "soft",
+      "rule": "Tone matches voice.md: empathy before instruction, empowering framing, no fear-mongering, motherhood never framed as limitation, no get-rich-quick framing."
+    },
+    {
+      "id": "name-rendering",
+      "severity": "hard",
+      "rule": "Arabic name spelled as in the catalog pending official-asset confirmation; EN as 'Mona Ataya'."
+    }
+  ],
+  "golden_examples": [
+    {
+      "label": "pass",
+      "text": "بنيتُ شركة وجمعت أكثر من 50 مليون دولار وأنا أربي 3 أطفال. في هذا الصف أشارككم كيف فعلتها.",
+      "why": "Verified claims (rows 3, 5), MSA register, learning promise, house style."
+    },
+    {
+      "label": "fail",
+      "text": "جمعت 60 مليون دولار ورح علمكن تنجحوا أكيد.",
+      "why": "Unverified 60M (machine check blocked-claim-60m), colloquial register, guaranteed-outcome promise."
+    }
+  ]
+}

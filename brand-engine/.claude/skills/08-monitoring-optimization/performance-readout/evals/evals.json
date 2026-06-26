@@ -1,0 +1,65 @@
+{
+  "skill": "performance-readout",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'performance-readout'."
+    },
+    {
+      "id": "measure-against-strategy-metric",
+      "description": "Read is measured against the strategy-artifact success_metric.",
+      "type": "manual",
+      "rule": "Body restates and measures against the success_metric set in the strategy-artifact, and stops-and-asks if it is absent, never inventing a metric after the fact."
+    },
+    {
+      "id": "evidence-required",
+      "description": "What works and what does not each carry evidence.",
+      "type": "manual",
+      "rule": "Body requires every what_works and what_does_not_work claim to carry a number with its source and window."
+    },
+    {
+      "id": "no-vanity-metrics",
+      "description": "Vanity metrics are excluded.",
+      "type": "manual",
+      "rule": "Body states no vanity metrics and names examples (impressions, raw reach, follower count) that do not substitute for the success_metric."
+    },
+    {
+      "id": "supporting-cuts-anchored-to-success-metric",
+      "description": "Optional supporting cuts are anchored to the success_metric and never replace it or add vanity metrics.",
+      "type": "manual",
+      "rule": "Body and template offer an optional supporting-cuts section (a funnel-stage view and a per-segment cut drawn from the strategy-artifact segments) that supports the success_metric, never replaces it, and never reintroduces vanity metrics (impressions, raw reach, follower count) as a result."
+    },
+    {
+      "id": "propose-not-act",
+      "description": "Optimization moves are proposals through the human gate.",
+      "type": "manual",
+      "rule": "Body frames every proposed_optimization as a human-gate proposal and states the skill never pauses, shifts budget, or changes a send on its own."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable readout template exists.",
+      "type": "automatic",
+      "rule": "templates/performance-readout.md exists and contains success_metric, results, what_works, what_does_not_work, and proposed_optimizations sections."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

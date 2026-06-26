@@ -1,0 +1,59 @@
+{
+  "skill": "02-strategy-planning",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "SKILL.md frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals '02-strategy-planning'."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "Hub routes to audience-segmentation and offer-and-angle.",
+      "type": "automatic",
+      "rule": "Body references both sub-skills by name, audience-segmentation and offer-and-angle, and states when each applies and their order."
+    },
+    {
+      "id": "emits-strategy-artifact",
+      "description": "Hub assembles the strategy-artifact with the exact handoff-contract body fields.",
+      "type": "automatic",
+      "rule": "Output section names segments[], angle, offer_framing, channel_plan, and success_metric, matching handoff-contract.md."
+    },
+    {
+      "id": "internal-gate-only",
+      "description": "Declares the correct gate for an internal stream-2 artifact.",
+      "type": "manual",
+      "rule": "States the gate is skill eval only, and that arabic-copy-qa and brand-qa apply only if customer-facing copy appears, consistent with runtime/verification.md."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Any digits are Western numerals only.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic.",
+      "type": "automatic",
+      "rule": "The file contains zero U+0640 tatweel characters."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "Hub instructs reading offers, prices, and targets from the brief, never inventing.",
+      "type": "manual",
+      "rule": "Body states that offer, price, target, segment size, and success-metric number come from the brief or context, and a missing one is a stop-and-ask, never invented."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Hub references empowering, never deficit-framed voice.",
+      "type": "manual",
+      "rule": "Body ties strategy and angle to the Maharat empowering voice from brand-voice.md, not deficit framing."
+    }
+  ]
+}

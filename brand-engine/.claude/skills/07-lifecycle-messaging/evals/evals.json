@@ -1,0 +1,65 @@
+{
+  "skill": "07-lifecycle-messaging",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals the directory, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals 07-lifecycle-messaging."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "The hub routes to all five sub-skills and does not write copy or send itself.",
+      "type": "automatic",
+      "rule": "Body references segmentation-logic, nonpayer-email-flow, onboarding-sequence, event-sequence, and winback-flow with a routing rule."
+    },
+    {
+      "id": "selects-pattern-by-audience-and-objective",
+      "description": "The hub selects the sequence pattern by the brief's audience and objective via a selector, and points to the sequence-standards library.",
+      "type": "automatic",
+      "rule": "Body has a selector mapping audience and objective to a pattern (welcome, onboarding, event, non-payer, winback) and references templates/sequence-standards.md as the standards every pattern follows."
+    },
+    {
+      "id": "emits-lifecycle-package",
+      "description": "The hub assembles the lifecycle-package with the exact body fields from handoff-contract.md.",
+      "type": "automatic",
+      "rule": "Output names flow, audience_size, send_on_approval, suppression wrapped in the common envelope."
+    },
+    {
+      "id": "sequences-copy-not-writes",
+      "description": "The flow references QA-passed copy variants by id; it never writes copy.",
+      "type": "automatic",
+      "rule": "Body states each message references a QA-passed copy variant by id and the hub does not write copy."
+    },
+    {
+      "id": "platform-open-item-surfaced",
+      "description": "The platform is an open item; design proceeds but the package is not-sendable until confirmed.",
+      "type": "automatic",
+      "rule": "Body marks the platform open item and marks the lifecycle-package not-sendable until the platform is confirmed and approved."
+    },
+    {
+      "id": "suppression-correct",
+      "description": "Suppression excludes paying contacts, unsubscribes, and hard bounces, and is stated explicitly.",
+      "type": "automatic",
+      "rule": "Body states suppression is not optional and no paying contact, unsubscribe, or hard bounce receives a flow."
+    },
+    {
+      "id": "gate-stack-and-human-gate",
+      "description": "The hub states the gate stack in order then the human gate for the send.",
+      "type": "manual",
+      "rule": "Body lists skill eval, arabic-copy-qa, brand-qa-reviewer, then human gate for the send, per verification.md."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "The hub never invents the offer, price, schedule, Skill Path title, or instructor name.",
+      "type": "manual",
+      "rule": "Body instructs reading the offer, price, and schedule from the brief and stopping when absent, and forbids invented titles or instructor names."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no em dash character, no tatweel, no Eastern Arabic numerals."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "skill": "segmentation-logic",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals segmentation-logic, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals segmentation-logic."
+    },
+    {
+      "id": "entry-trigger-and-branches",
+      "description": "The logic defines an entry trigger and the engagement branches (opened, clicked, not-opened).",
+      "type": "automatic",
+      "rule": "Body and output define entry_trigger and branch conditions for openers, clickers, and non-openers."
+    },
+    {
+      "id": "non-opener-retry-not-louder",
+      "description": "Non-openers get a subject-line retry, not a louder pitch.",
+      "type": "manual",
+      "rule": "Body states non-openers receive a subject-line retry rather than a louder or more aggressive pitch."
+    },
+    {
+      "id": "segment-sizes-not-invented",
+      "description": "Segment sizes are resolved from live data and never invented.",
+      "type": "automatic",
+      "rule": "Body states segment sizes come from the data or are resolved at send time, and forbids inventing a size."
+    },
+    {
+      "id": "suppression-correct",
+      "description": "Suppression excludes paying contacts, unsubscribes, and hard bounces, stated explicitly with a source.",
+      "type": "automatic",
+      "rule": "Output suppression field names paying contacts, unsubscribed, and hard-bounced, with the source confirmed at build; suppression is not optional."
+    },
+    {
+      "id": "sunset-and-decay-suppression",
+      "description": "A sunset rule and engagement-decay suppression are defined: after roughly 90 to 180 days with no open or click, or 3 to 4 attempts, run a 1 to 3 email sunset then suppress.",
+      "type": "automatic",
+      "rule": "Body and output define a sunset_rule with an engagement-decay condition (no open or click in roughly 90 to 180 days, or 3 to 4 attempts), a 1 to 3 email sunset flow, then suppress, framed as deliverability and consent or PDPL hygiene; the window is not invented."
+    },
+    {
+      "id": "no-personal-data-in-urls",
+      "description": "Hard rule present: no personal or sensitive data in a tracking URL parameter.",
+      "type": "automatic",
+      "rule": "Hard rules state no personal or sensitive data in a tracking URL parameter."
+    },
+    {
+      "id": "timing-inside-send-window",
+      "description": "Inter-message timing is kept inside the brief send window.",
+      "type": "manual",
+      "rule": "Body states inter-message delays stay inside the send window from the brief."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no em dash character, no tatweel, no Eastern Arabic numerals."
+    }
+  ]
+}

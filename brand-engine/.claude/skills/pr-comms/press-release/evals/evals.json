@@ -1,0 +1,59 @@
+{
+  "skill": "press-release",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'press-release'."
+    },
+    {
+      "id": "runs-after-announcement-plan",
+      "description": "The release is drafted only after the announcement plan clears its guardrail check.",
+      "type": "manual",
+      "rule": "Body confirms the announcement-plan guardrail_check is a pass before any release is drafted and returns to announcement-plan on an open boundary."
+    },
+    {
+      "id": "arabic-first-structure",
+      "description": "The release is Arabic-first with a complete structure.",
+      "type": "manual",
+      "rule": "Body and template define an Arabic-first release with headline, dateline, lead, body, quote, boilerplate, and media contact, with the English version following the same facts and boundary."
+    },
+    {
+      "id": "sayable-facts-only",
+      "description": "Every claim traces to a sayable item; a claim with no sayable source is dropped.",
+      "type": "manual",
+      "rule": "Body states each claim traces to a sayable item from the cleared announcement plan and that a claim with no sayable source is dropped, not softened."
+    },
+    {
+      "id": "quote-approval-open-item",
+      "description": "The quote is attributed only to an approved spokesperson and approval is an open item.",
+      "type": "manual",
+      "rule": "Body and template attribute the quote only to the approved spokesperson and mark the quote text and its approval as an open item until confirmed."
+    },
+    {
+      "id": "no-roadmap-no-fundraising",
+      "description": "No roadmap, fundraising, unannounced plan, or unconfirmed instructor appears anywhere in the release.",
+      "type": "manual",
+      "rule": "Body bars roadmap, fundraising, unannounced plans, and unconfirmed instructor names from the release and boilerplate, allowing only public or brief-confirmed facts."
+    },
+    {
+      "id": "no-invented-specifics-no-accreditation",
+      "description": "No invented Skill Path titles, content lineup, instructor names, offers, prices, or targets, and no accreditation claim.",
+      "type": "manual",
+      "rule": "Body forbids inventing a Skill Path title, content lineup, instructor name, offer, price, or target, and bars any accreditation implication."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable press release template exists.",
+      "type": "automatic",
+      "rule": "templates/press-release.md exists and contains headline, lead, body, quote, boilerplate, media_contact, and open_items sections."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash, the U+0640 tatweel, or Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

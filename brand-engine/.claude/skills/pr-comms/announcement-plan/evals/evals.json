@@ -1,0 +1,65 @@
+{
+  "skill": "announcement-plan",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'announcement-plan'."
+    },
+    {
+      "id": "sayable-set-sourced",
+      "description": "The sayable set lists only public-already or brief-confirmed facts, each with its source.",
+      "type": "manual",
+      "rule": "Body builds a sayable set where every item is already public or confirmed in the brief and carries its source, with nothing promoted to sayable on assumption."
+    },
+    {
+      "id": "news-hook-present",
+      "description": "A one-line news hook is required, drawn only from the sayable set, with weak hooks flagged.",
+      "type": "manual",
+      "rule": "Body requires a one-line news hook (why this is news now) drawn only from the sayable set, forbids forced newsjacking or an invented moment, and flags a sayable announcement with no genuine hook as weak rather than silently passing it."
+    },
+    {
+      "id": "hold-out-set-complete",
+      "description": "The hold-out set always includes unannounced plans, roadmap, fundraising, unconfirmed names and titles, and accreditation.",
+      "type": "manual",
+      "rule": "Body builds a hold-out set that always includes unannounced plans, roadmap, fundraising, unconfirmed instructor names, unconfirmed Skill Path titles or content lineup, and any accreditation implication, each becoming an open item."
+    },
+    {
+      "id": "guardrail-check-gates",
+      "description": "The guardrail_check passes only if the announcement draws solely from the sayable set; a single hold-out leak is a fail.",
+      "type": "manual",
+      "rule": "Body produces a guardrail_check that passes only when the announcement draws solely from the sayable set, and a single hold-out leak is a fail returned with the offending span."
+    },
+    {
+      "id": "spokesperson-and-quote-gated",
+      "description": "Only an approved spokesperson is quoted; quote approval is an open item.",
+      "type": "manual",
+      "rule": "Body rules that only an approved spokesperson may be quoted and that quote approval is an open item until confirmed, never attributing an unconfirmed quote."
+    },
+    {
+      "id": "no-unannounced-plans-no-fundraising",
+      "description": "PR hard rule: unannounced plans, roadmap, fundraising, and unconfirmed instructors are always held out.",
+      "type": "manual",
+      "rule": "Body states the PR hard rule that unannounced plans, roadmap, fundraising, and unconfirmed instructor names are always in the hold-out set and only public or brief-confirmed facts are sayable."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "No invented Skill Path titles, content lineup, instructor names, offers, prices, or targets, and no accreditation claims.",
+      "type": "manual",
+      "rule": "Body forbids inventing a Skill Path title, content lineup, instructor name, offer, price, or target, instructs stop-and-ask when absent, and bars accreditation claims."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable announcement plan template exists.",
+      "type": "automatic",
+      "rule": "templates/announcement-plan.md exists and contains announcement_objective, news_hook, sayable_set, hold_out_set, spokesperson_and_quote, and guardrail_check sections."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash, the U+0640 tatweel, or Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "skill": "keyword-and-intent-research",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'keyword-and-intent-research'."
+    },
+    {
+      "id": "bilingual-keywords",
+      "description": "Research covers Arabic and English queries, Arabic-first, not literal translation.",
+      "type": "manual",
+      "rule": "Output produces ar and en queries side by side; English is parallel research, not a literal translation of the Arabic."
+    },
+    {
+      "id": "intent-tagged",
+      "description": "Each query carries a search intent.",
+      "type": "automatic",
+      "rule": "Each query is tagged informational, navigational, commercial, transactional, or generative."
+    },
+    {
+      "id": "ai-intent-recognized",
+      "description": "Generative (answer-engine) intent is a recognized intent alongside the classic four.",
+      "type": "automatic",
+      "rule": "The intent tag set includes generative (answer-engine) for clusters worth pursuing for AI-answer citation rather than rank."
+    },
+    {
+      "id": "clustered-and-prioritized",
+      "description": "Queries are grouped into clusters with one primary each and a priority.",
+      "type": "automatic",
+      "rule": "Output groups queries into clusters with a primary_query and a priority of high, medium, or low."
+    },
+    {
+      "id": "rtl-noted",
+      "description": "RTL is noted for Arabic queries.",
+      "type": "manual",
+      "rule": "Output notes RTL handling for Arabic queries so direction does not break."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented offer, price, Skill Path title, or instructor name to justify a query.",
+      "type": "manual",
+      "rule": "Clusters reference only offers and titles traceable to the brief; absent ones trigger stop-and-ask, never invention or accreditation claims."
+    }
+  ]
+}

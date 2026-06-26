@@ -1,0 +1,71 @@
+{
+  "skill": "build-vs-buy-eval",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'build-vs-buy-eval'."
+    },
+    {
+      "id": "borrow-before-build",
+      "description": "Checks for an existing tool before proposing to build.",
+      "type": "manual",
+      "rule": "Body requires checking for an existing framework or tool first, borrowing before inventing."
+    },
+    {
+      "id": "arabic-decisive-filter",
+      "description": "Arabic capability is the decisive filter for generative tools.",
+      "type": "manual",
+      "rule": "Body states that for any generative tool, Arabic capability (no tatweel, Western numerals, RTL-safe) is the decisive filter applied before other criteria, and a candidate that fails it is ruled out regardless of other strengths."
+    },
+    {
+      "id": "scored-criteria",
+      "description": "Candidates are scored on a fixed set of criteria.",
+      "type": "automatic",
+      "rule": "Body and scorecard define a fixed criteria set including Arabic capability, SOP fit, GCC/PDPL data fit, cost vs volume, integration effort, lock-in/exit, and maturity/support."
+    },
+    {
+      "id": "weights-and-moscow-flags",
+      "description": "Criteria carry a weight and a must-have versus nice-to-have flag, with Arabic capability still the hard gate.",
+      "type": "manual",
+      "rule": "Body and scorecard let the author set a weight and a must-have versus nice-to-have (MoSCoW) flag per criterion and take a weighted total, a candidate that fails any must-have is ruled out, and Arabic capability remains the existing hard gate applied before weighting that disqualifies a generative candidate regardless of weight, flag, or total."
+    },
+    {
+      "id": "propose-not-adopt",
+      "description": "Recommends, never adopts or wires a tool.",
+      "type": "manual",
+      "rule": "Body states the skill proposes only and never adopts or wires a tool; adoption is a human (Ahmed) decision landing as a settings.json allowlist change."
+    },
+    {
+      "id": "open-items-block-decision",
+      "description": "Names the open items that block a final decision.",
+      "type": "manual",
+      "rule": "Body and scorecard require listing the open items that block a final decision so a recommendation is not mistaken for a decision."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable scorecard template exists.",
+      "type": "automatic",
+      "rule": "templates/build-vs-buy-scorecard.md exists and contains capability, existing-tool check, scored shortlist, recommendation, and open items sections."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

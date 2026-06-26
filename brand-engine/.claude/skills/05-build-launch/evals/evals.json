@@ -1,0 +1,59 @@
+{
+  "skill": "05-build-launch",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals '05-build-launch'."
+    },
+    {
+      "id": "stub-status-noted",
+      "description": "States this is a stub hub and when the sub-skills are fleshed out.",
+      "type": "manual",
+      "rule": "Body states the sub-skills are fleshed out when a paid acquisition campaign is the active build, and names the intended sub-skills paid-campaign-build and email-sequence-build."
+    },
+    {
+      "id": "produces-paid-launch-package",
+      "description": "Names the paid-launch-package with its exact body fields.",
+      "type": "automatic",
+      "rule": "Body lists the paid-launch-package fields staged_structure, checklist, spend_on_approval, flips_live, matching runtime/handoff-contract.md."
+    },
+    {
+      "id": "follows-sop",
+      "description": "References the build-launch SOP.",
+      "type": "automatic",
+      "rule": "Body references sops/05-build-launch-paid.md as the procedure the build follows."
+    },
+    {
+      "id": "staged-paused-never-spends",
+      "description": "Everything is staged paused and the build never spends.",
+      "type": "manual",
+      "rule": "Body states everything is staged paused, the build never spends or flips anything live on its own, and spend_on_approval states the maximum spend with currency and window."
+    },
+    {
+      "id": "human-gate-go-live",
+      "description": "Going live is a human-gate decision.",
+      "type": "manual",
+      "rule": "Body states going live is a human-gate decision, per action and per campaign, never inferred from silence."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

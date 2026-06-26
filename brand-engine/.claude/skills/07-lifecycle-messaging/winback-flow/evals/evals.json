@@ -1,0 +1,71 @@
+{
+  "skill": "winback-flow",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals winback-flow, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals winback-flow; description carries reactivation trigger phrases."
+    },
+    {
+      "id": "rfm-recency-segmentation",
+      "description": "The flow segments lapsed contacts by recency, frequency, and value (RFM-style), not all the same.",
+      "type": "automatic",
+      "rule": "Body states lapsed contacts are segmented by recency, frequency, and value and consumes recency segments from segmentation-logic."
+    },
+    {
+      "id": "inactivity-triggers-30-60-90",
+      "description": "Inactivity triggers follow the 30, 60, and 90 day recency pattern since last open, click, or purchase.",
+      "type": "automatic",
+      "rule": "Body names inactivity triggers at 30, 60, and 90 days since the last open, click, or purchase."
+    },
+    {
+      "id": "three-to-five-messages",
+      "description": "The reactivation sequence is 3 to 5 messages, ordered, cadence confirmed in the brief.",
+      "type": "automatic",
+      "rule": "Output flow is an ordered 3 to 5 message reactivation sequence with cadence confirmed in the brief."
+    },
+    {
+      "id": "ordered-flow-fields",
+      "description": "The flow is ordered and each message has id, trigger, segment, channel, and a copy variant ref.",
+      "type": "automatic",
+      "rule": "Output flow lists ordered messages, each with id, trigger, segment, channel, copy_ref, and subject_ref."
+    },
+    {
+      "id": "references-copy-by-id-not-writes",
+      "description": "Each message references a QA-passed copy variant by id; the flow never writes copy.",
+      "type": "automatic",
+      "rule": "Body states each message binds to a QA-passed copy-package variant id and that the flow sequences copy and does not write it."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "Offer, price, promotion, discount, incentive, and inactivity threshold trace to the brief or live data; nothing invented.",
+      "type": "manual",
+      "rule": "Body forbids inventing an offer, price, promotion, discount, incentive, inactivity threshold, Skill Path title, or instructor name; recency segment sizes resolve from live data at send."
+    },
+    {
+      "id": "suppression-and-sunset-correct",
+      "description": "Suppression excludes paying contacts, unsubscribes, and hard bounces, and silent contacts enter the sunset-then-suppress step.",
+      "type": "automatic",
+      "rule": "Output suppression names paying contacts, unsubscribed, and hard-bounced, excludes them, and routes still-silent contacts to a sunset-then-suppress step."
+    },
+    {
+      "id": "audience-size-resolved-at-send",
+      "description": "Audience size and recency segment sizes are resolved from live data at send time, with a send_on_approval sentence.",
+      "type": "automatic",
+      "rule": "Body and output state audience_size and recency segment sizes resolve at send, and a one-sentence send_on_approval describes what the send does and to how many."
+    },
+    {
+      "id": "platform-open-item-not-sendable",
+      "description": "The platform open item is surfaced; the package is not-sendable until confirmed and approved.",
+      "type": "automatic",
+      "rule": "Body marks the platform open item and marks the package design-only and not-sendable until the platform is confirmed and approved."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals, empowering not deficit-framed, RTL-safe Arabic.",
+      "type": "automatic",
+      "rule": "File contains no em dash, no tatweel, no Eastern Arabic numerals; any Arabic example is empowering and RTL-safe."
+    }
+  ]
+}

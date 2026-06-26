@@ -1,0 +1,59 @@
+{
+  "skill": "paid-performance",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals paid-performance, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals 'paid-performance' and the description includes trigger phrases."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "The hub routes to all three sub-skills and does not build, launch, or spend itself.",
+      "type": "automatic",
+      "rule": "Body references media-plan, audience-and-bidding, and paid-optimization with a routing rule, and states the hub never builds, never launches, and never spends."
+    },
+    {
+      "id": "emits-media-plan-package",
+      "description": "The hub assembles the media-plan-package with the exact body fields.",
+      "type": "automatic",
+      "rule": "Output names channels, budget_split, audiences, bid_strategy, flighting, success_metric_link, spend_on_approval, and open_items wrapped in the common envelope."
+    },
+    {
+      "id": "hands-build-to-engineer",
+      "description": "The hub hands the build to paid-build-engineer (stream 5) rather than building itself.",
+      "type": "manual",
+      "rule": "Body states the build is handed to paid-build-engineer who stages the structure paused for the human gate."
+    },
+    {
+      "id": "spend-is-gated",
+      "description": "Spend is a gated action; nothing spends without the human gate.",
+      "type": "manual",
+      "rule": "Body states spend is a gated action, nothing spends without the human gate, approval is per launch and per campaign, and silence is not approval."
+    },
+    {
+      "id": "budget-and-target-from-brief",
+      "description": "Budget, target CPA or ROAS, schedule, and geo are brief inputs, never assumed.",
+      "type": "automatic",
+      "rule": "Body states budget, target CPA or ROAS, schedule, and geo come from the brief and instructs stop-and-ask when missing; never assume a budget or a target."
+    },
+    {
+      "id": "success-metric-link",
+      "description": "Every channel, budget split, and bid choice traces to the strategy-artifact success_metric.",
+      "type": "manual",
+      "rule": "Body sets success_metric_link so each channel, budget split, and bid choice traces to the strategy-artifact success_metric and the brief target."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "The hub never invents a Skill Path title, content lineup, instructor name, offer, price, or target, and bars accreditation and roadmap leaks.",
+      "type": "manual",
+      "rule": "Body forbids invented Skill Path titles, content lineup, instructor names, offers, prices, and targets, instructs stop-and-ask when absent, and bars accreditation claims and unannounced plans."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no U+2014 em dash, no U+0640 tatweel, and no Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

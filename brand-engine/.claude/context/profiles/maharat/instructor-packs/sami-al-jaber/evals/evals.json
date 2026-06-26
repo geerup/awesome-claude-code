@@ -1,0 +1,91 @@
+{
+ "skill": "instructor-marketing/sami-al-jaber",
+ "description": "Acceptance checks for sami-al-jaber assets (thin-evidence pack).",
+ "binding_sources": {
+  "facts": "context/instructors/sami-al-jaber.md"
+ },
+ "machine_checks": [
+  {
+   "id": "no-em-dash",
+   "severity": "hard",
+   "regex": "—",
+   "fail_if": "match",
+   "fix": "Replace em dash",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-en-dash",
+   "severity": "hard",
+   "regex": "–",
+   "fail_if": "match",
+   "fix": "Replace en dash",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-tatweel",
+   "severity": "hard",
+   "regex": "ـ",
+   "fail_if": "match",
+   "fix": "Remove tatweel",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-eastern-numerals",
+   "severity": "hard",
+   "regex": "[٠-٩۰-۹]",
+   "fail_if": "match",
+   "fix": "Western numerals",
+   "applies_to": "all"
+  },
+  {
+   "id": "no-accreditation",
+   "severity": "hard",
+   "regex": "(معتمد|accredit)",
+   "fail_if": "match",
+   "fix": "No accreditation claims",
+   "applies_to": "assets"
+  },
+  {
+   "id": "blocked-career-stats",
+   "severity": "hard",
+   "regex": "[0-9]+\\s*(هدف|مباراة|goals?|caps?)",
+   "fail_if": "match",
+   "fix": "Career stats unverified (claims row 3): no caps, goals, or records until each is confirmed",
+   "applies_to": "assets"
+  }
+ ],
+ "llm_checks": [
+  {
+   "id": "status-gate",
+   "severity": "hard",
+   "rule": "Class existence itself unconfirmed: NO public-facing assets; internal drafts flagged 'blocked on status'."
+  },
+  {
+   "id": "claims-verified-only",
+   "severity": "hard",
+   "rule": "Only public-record framing rows run, phrased generally; all specifics held back."
+  },
+  {
+   "id": "register-policy",
+   "severity": "hard",
+   "rule": "MSA or brand EN."
+  },
+  {
+   "id": "no-career-specifics",
+   "severity": "hard",
+   "rule": "No caps, goals, records, or years until each is verified."
+  }
+ ],
+ "golden_examples": [
+  {
+   "label": "pass",
+   "text": "الموهبة بداية، والاستمرارية تصنع المسيرة.",
+   "why": "Framing-level only, MSA, clean."
+  },
+  {
+   "label": "fail",
+   "text": "سجل 100 هدف دولي وسيعلمك السر!",
+   "why": "Unverified career stat (claims row 3)."
+  }
+ ]
+}

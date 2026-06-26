@@ -1,0 +1,23 @@
+<!--
+  base-template.mjml: the Maharat email base, composed from the component library by mj-include.
+  Compile with `npx mjml base-template.mjml -o ../build/base-template.html`.
+
+  This is the authoring convenience. The committed slotted HTML (the per-email files under the
+  campaign output) is the SOURCE OF TRUTH: it carries the full data-ortto-module / data-slot /
+  data-role / data-lang / data-copy-id / data-link-slot attributes and the MSO VML CTA fallback
+  that the gates read. MJML emits brand-correct table HTML; the slot attributes are applied to
+  match the source of truth (see README.md). Compiled output must equal the committed slotted HTML.
+
+  House style: no em dash, no en dash, no tatweel, Western numerals only.
+-->
+<mjml>
+  <mj-include path="./components/head.mjml" />
+  <mj-body background-color="#141414" width="600px">
+    <mj-include path="./components/01-logobar.mjml" />
+    <mj-include path="./components/02-hero.mjml" />
+    <mj-include path="./components/03-sectionheading.mjml" />
+    <mj-include path="./components/04-bodycopy.mjml" />
+    <mj-include path="./components/05-button.mjml" />
+    <mj-include path="./components/13-footer.mjml" />
+  </mj-body>
+</mjml>

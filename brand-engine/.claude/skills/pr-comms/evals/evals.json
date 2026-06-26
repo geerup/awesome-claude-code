@@ -1,0 +1,59 @@
+{
+  "skill": "pr-comms",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals the directory, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals 'pr-comms' and the description includes trigger phrases."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "The hub routes to all three sub-skills and does not write final copy or distribute itself.",
+      "type": "automatic",
+      "rule": "Body references announcement-plan, press-release, and media-list-outreach with a routing rule, and states the hub does not write final copy and does not distribute."
+    },
+    {
+      "id": "emits-pr-package",
+      "description": "The hub assembles the pr-package with the exact body fields.",
+      "type": "automatic",
+      "rule": "Output names announcement_plan, press_release_ref, media_list, guardrail_check, publish_on_approval, and open_items wrapped in the common envelope."
+    },
+    {
+      "id": "guardrail-check-first",
+      "description": "The announcement plan and its guardrail_check run first and gate any announcement.",
+      "type": "manual",
+      "rule": "Body routes to announcement-plan first to set what can be said and what must stay out and produce the guardrail_check, and no release or outreach proceeds until it clears."
+    },
+    {
+      "id": "distribution-is-gated",
+      "description": "Distribution and publishing are gated actions; nothing sends or publishes without the human gate.",
+      "type": "manual",
+      "rule": "Body states distribution and publishing are gated actions, nothing sends or publishes without the human gate, approval is per distribution action, and silence is not approval."
+    },
+    {
+      "id": "copy-routed-not-written",
+      "description": "Final copy is routed to copywriter-ar and the English copywriter and runs the copy QA gates; the hub references it by id.",
+      "type": "manual",
+      "rule": "Body routes final copy to copywriter-ar and the English copywriter, runs copy QA, compliance, then brand QA, and references QA-passed copy by id rather than writing copy."
+    },
+    {
+      "id": "no-unannounced-plans-no-fundraising",
+      "description": "PR hard rule: never name an unannounced plan, a roadmap, fundraising, or an unconfirmed instructor; only public or brief-confirmed facts.",
+      "type": "manual",
+      "rule": "Body states the PR hard rule barring unannounced plans, roadmap, fundraising, and unconfirmed instructor names, allows only what is already public or confirmed in the brief, and holds doubtful items out as open items."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "The hub never invents a Skill Path title, content lineup, instructor name, offer, price, or target, and bars accreditation claims.",
+      "type": "manual",
+      "rule": "Body forbids invented Skill Path titles, content lineup, instructor names, offers, prices, and targets, instructs stop-and-ask when absent, and bars accreditation claims."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals only across the file.",
+      "type": "automatic",
+      "rule": "File contains no U+2014 em dash, no U+0640 tatweel, and no Eastern Arabic numerals (U+0660 to U+0669)."
+    }
+  ]
+}

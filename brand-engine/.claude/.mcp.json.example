@@ -1,0 +1,53 @@
+{
+  "_note": "Full reference template for the engine's adopted MCP servers. The config Claude Code actually loads is the committed root .mcp.json, which lists only the servers whose runtime wiring is valid and uses ${ENV_VAR} interpolation so no secret is ever committed. Promote a server from this template into the root .mcp.json once its credentials are provisioned, and for email-whatsapp the vendor for email is now Ortto (see references/2026-06-ortto-mcp-knowledge-base.md), pending the region pick and the Saudi PDPL data-residency decision; WhatsApp stays a separate open BSP slot. enabledMcpjsonServers in .claude/settings.json must list the servers you enable. Adoption does not grant the right to send, publish, or spend: those stay human-gate actions.",
+  "mcpServers": {
+    "firecrawl": {
+      "_owner": "research-scout",
+      "_use": "research, competitor and landing-page scraping (streams 2 and 8)",
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": { "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}" }
+    },
+    "blotato": {
+      "_owner": "creative-director and organic-social",
+      "_use": "repurpose one video into many formats (stream 3 and organic)",
+      "_note": "Confirm the exact server command and package at install; key is provisioned by env.",
+      "command": "npx",
+      "args": ["-y", "blotato-mcp"],
+      "env": { "BLOTATO_API_KEY": "${BLOTATO_API_KEY}" }
+    },
+    "ortto": {
+      "_owner": "lifecycle-architect, data-tracking-engineer, analytics-reporter",
+      "_use": "email and engagement engine and MCP data layer (streams 7, 8, 9): read campaigns, contacts, audiences, schema, brand book, and reports; create and update HTML email assets. No send and no delete tools, so the actual send stays a gated action in the Ortto platform.",
+      "_open_item": "Set the region URL to match the account data hosting (us, eu, or au) per the Saudi PDPL data-residency decision; Ortto has no GCC region and EU is the closest. ORTTO_MCP_SCOPED_KEY is the scoped key from Ortto (CDP > Data sources > MCP), a secret: set it in env, never commit it. Run the Arabic render test before any live send. See references/2026-06-ortto-mcp-knowledge-base.md.",
+      "type": "http",
+      "url": "https://mcp-api-eu.ortto.app/mcp?jwt=${ORTTO_MCP_SCOPED_KEY}"
+    },
+    "ortto-rest": {
+      "_owner": "data-tracking-engineer and lifecycle-architect",
+      "_use": "Outbound send and contact write that the Ortto MCP does not expose (streams 5 and 7): POST /v1/transactional/send (email, with non_transactional: true for marketing mode), /v1/transactional/send-sms, /v1/person/merge, /v1/audience/subscribe, /v1/activities/create. The MCP drafts the asset, this sends it by asset_id. See references/2026-06-ortto-rest-api-send.md.",
+      "_open_item": "The Ortto REST API is plain HTTP on the ap3api.com host, not an MCP. It needs a thin MCP wrapper around the send and merge endpoints, or gated direct REST calls. ORTTO_API_KEY is a Custom API key (private), a secret: set it in env, never commit it. Set the region host to match the PDPL data-residency decision: api.ap3api.com (US), api.eu.ap3api.com (EU, recommended), api.au.ap3api.com (AU). Sending is governed by the per-campaign approval and the standing safeguards in CLAUDE.md principle 4 and runtime/send-safeguards.md. Inert until the wrapper is built and the key is provisioned.",
+      "command": "TBD-thin-ortto-rest-wrapper",
+      "args": [],
+      "env": { "ORTTO_API_KEY": "${ORTTO_API_KEY}" }
+    },
+    "whatsapp-bsp": {
+      "_owner": "lifecycle-architect and data-tracking-engineer",
+      "_use": "WhatsApp template sends and engagement events (stream 7), gated",
+      "_open_item": "Not covered by Ortto. Still an open BSP decision (for example 360dialog or Unifonic). Fill command, args, and env once the BSP is confirmed and the PDPL data-residency decision is made. Live send wiring stays blocked until then.",
+      "command": "TBD-once-bsp-confirmed",
+      "args": [],
+      "env": { "WHATSAPP_BSP_API_KEY": "${WHATSAPP_BSP_API_KEY}" }
+    },
+    "meta-ads": {
+      "_owner": "performance-marketer and paid-build-engineer",
+      "_use": "Read Meta Ads data for planning on streams 5 and 8 (ad accounts, audiences, reach, historical performance), and assemble staged, paused campaign structures on stream 5. Spend and go-live stay human-gate actions under runtime/send-safeguards.md.",
+      "_status": "PROPOSED 2026-06-24, staged for Ahmed's sign-off. NOT in the live root .mcp.json and NOT in settings.json enabledMcpjsonServers, so it does not load and is inert. Promote it to both only on an attributable approval. See references/2026-06-meta-ads-mcp-adoption-package.md and references/2026-06-meta-ads-mcp-research.md.",
+      "_validation": "Live read-only test 2026-06-24: META_ADS_ACCESS_TOKEN is a valid Graph API token (identity Ahmed Maharat); GET /me/adaccounts on API v25.0 returned the Maharat Ad Account (act_860178535040572, AED, Asia/Dubai), status ACTIVE. No write or spend call was made.",
+      "_open_item": "Two routes. Preferred per the readout: the official first-party server at https://mcp.facebook.com/ads, added as a Meta Business OAuth connector in the client (no committed secret, per-account beta access to confirm), which is not a .mcp.json env-token entry. Immediately wireable: a self-host community Meta Ads MCP keyed on the provisioned token below, the route the live test validated. Confirm the exact package, command, and env var name at install, as with blotato. Before enabling, deny the write and spend tools by default in the harness permission settings so only read tools are callable, and complete the PDPL read on any custom-audience data.",
+      "command": "python3",
+      "args": [".claude/scripts/meta_ads_mcp.py"],
+      "env": { "META_ADS_ACCESS_TOKEN": "${META_ADS_ACCESS_TOKEN}" }
+    }
+  }
+}

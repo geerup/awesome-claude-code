@@ -1,0 +1,59 @@
+{
+  "skill": "04-copywriting",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "SKILL.md frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals '04-copywriting'."
+    },
+    {
+      "id": "routes-to-subskills",
+      "description": "Hub routes to ad-copy, email-copy, and subject-lines.",
+      "type": "automatic",
+      "rule": "Body references all three sub-skills by name: ad-copy, email-copy, subject-lines."
+    },
+    {
+      "id": "emits-copy-package",
+      "description": "Hub assembles the copy-package with the exact handoff-contract body fields.",
+      "type": "automatic",
+      "rule": "Output section names variants[], subject_lines[], and fills, matching handoff-contract.md."
+    },
+    {
+      "id": "gate-stack-order",
+      "description": "Hub states the gate stack in order: skill eval, arabic-copy-qa, brand-qa-reviewer.",
+      "type": "automatic",
+      "rule": "Body lists the three gates in that order before advance, per verification.md."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Any digits are Western numerals only.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic.",
+      "type": "automatic",
+      "rule": "The file contains zero U+0640 tatweel characters."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "Hub instructs reading offers and prices from the brief, never inventing.",
+      "type": "manual",
+      "rule": "Body states that offer, price, Skill Path titles, and instructor names come from the brief or context, and the skill stops and asks when they are absent."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Hub references empowering, never deficit-framed voice.",
+      "type": "manual",
+      "rule": "Body ties copy to the Maharat empowering voice from brand-voice.md, not deficit framing."
+    }
+  ]
+}

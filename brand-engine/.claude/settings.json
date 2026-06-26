@@ -1,0 +1,49 @@
+{
+  "$comment": "Personal brand & career engine MCP allowlist. No tool is adopted without a build-vs-buy pass (skills/build-vs-buy-eval) and your approval. Sending, publishing, and spending are governed by CLAUDE.md principle 4: you approve each asset or campaign, then it executes within the standing safeguards in runtime/send-safeguards.md. Adoption alone does not authorize a send. Permission rules live in the harness settings, not here. English-first, no em dashes; Western numerals / no tatweel only when Arabic is in scope.",
+  "enabledMcpjsonServers": ["firecrawl"],
+  "_session_provided_mcps": {
+    "$comment": "The solo stack. These MCP servers are connected through the Claude Code harness (OAuth or session config), not spun up by this engine's .mcp.json, so they are not in enabledMcpjsonServers. They are the default tools for a one-person brand. Reasoning is always allowed; any send / publish / write stays a human-gate action (you).",
+    "canva": {
+      "owner": "creative-director, designer, web-designer",
+      "use": "visuals and brand assets: generate-design, brand templates, export, assets and brand kits (streams 3 and 6, and /build-visual)"
+    },
+    "descript": {
+      "owner": "creative-director, organic-social",
+      "use": "video and audio: edit by text, transcripts (feeds /ingest), repurpose clips (stream 3 and creator content)"
+    },
+    "gmail": {
+      "owner": "lifecycle-architect, pr-comms",
+      "use": "email and outreach as DRAFTS for your review; also the email-to-Substack publish path (stream 7, /substack-post). Sending stays human-gated."
+    },
+    "google_drive": {
+      "owner": "all",
+      "use": "documents and storage: read source material for /ingest, store outputs"
+    },
+    "google_calendar": {
+      "owner": "organic-social, content-marketer",
+      "use": "content calendar and scheduling cadence (organic and creator)"
+    },
+    "github": {
+      "owner": "web-designer, conversion-engineer",
+      "use": "ship and manage a static site / portfolio (GitHub Pages), version the engine (/build-website, /build-portfolio)"
+    }
+  },
+  "_builtin_tools": {
+    "$comment": "Not MCP. Always available.",
+    "websearch_webfetch": "research-scout and competitor-analyst (streams 2, 8): web research and page fetch, replacing the Maharat firecrawl default. firecrawl stays available as an optional enabled server for heavier crawls."
+  },
+  "_candidates_pending_approval": {
+    "$comment": "Documented, NOT enabled. Each needs a build-vs-buy pass (skills/build-vs-buy-eval) and your sign-off before moving to enabledMcpjsonServers or the session stack. Execution tools stay gated behind the human gate even after adoption.",
+    "website": ["wordpress (REST API or MCP; for /manage-site write access, app-password, gated)"],
+    "generative_media": ["image-gen MCP (Higgsfield already researched: references/maharat/2026-06-higgsfield-generative-tool-research.md)", "video-gen MCP"],
+    "publishing": ["substack API (default path is email-to-Substack via Gmail)"],
+    "scale_later": ["meta-ads", "google-ads", "ga4", "bigquery", "stripe", "google-search-console", "ahrefs-or-semrush"]
+  },
+  "_maharat_profile_tools": {
+    "$comment": "Adopted for the original Maharat engine, preserved for the archived maharat profile, NOT enabled for the active personal brand. Re-enable only if you run a maharat-profile campaign. Definitions and research live under references/maharat/ and the script wrappers in scripts/.",
+    "blotato": "video repurposing (superseded for solo by Descript)",
+    "ortto-rest": "Ortto email send/contact-write (superseded for solo by Gmail drafts)",
+    "email-whatsapp-platform": "Ortto + WhatsApp BSP send (WhatsApp deferred for solo)",
+    "meta-ads": "read-only Meta Ads via scripts/meta_ads_mcp.py (deferred until you run paid)"
+  }
+}

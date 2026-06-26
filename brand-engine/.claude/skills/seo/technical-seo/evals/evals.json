@@ -1,0 +1,71 @@
+{
+  "skill": "technical-seo",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'technical-seo'."
+    },
+    {
+      "id": "covers-core-areas",
+      "description": "Audit covers crawlability, speed, indexation, sitemaps, hreflang, RTL, and canonicalization.",
+      "type": "automatic",
+      "rule": "Body names crawlability, speed, indexation, sitemaps, hreflang, RTL correctness, and canonicalization."
+    },
+    {
+      "id": "hreflang-ar-en-reciprocal",
+      "description": "Hreflang is verified for ar and en, reciprocal and correctly coded.",
+      "type": "manual",
+      "rule": "Body verifies ar and en alternates per page, reciprocity confirmed, with correct language and region codes."
+    },
+    {
+      "id": "rtl-correctness",
+      "description": "RTL rendering is verified, including mixed AR, EN, and numerals.",
+      "type": "manual",
+      "rule": "Body checks Arabic pages render right-to-left and mixed content with numerals does not break direction."
+    },
+    {
+      "id": "cwv-thresholds-present",
+      "description": "Concrete Core Web Vitals thresholds are stated for the speed audit.",
+      "type": "automatic",
+      "rule": "Body and template state LCP at or under 2.5s, INP at or under 200ms, CLS at or under 0.1 at the 75th percentile, and note INP has replaced FID."
+    },
+    {
+      "id": "indexation-baseline-and-gap",
+      "description": "Indexation baseline and gap heuristic are stated.",
+      "type": "automatic",
+      "rule": "Body states the index,follow plus self-canonical plus 200 baseline, sitemaps carry only canonical 200 URLs, and an indexed-versus-canonical gap above roughly 30 percent is investigated on a quarterly cadence."
+    },
+    {
+      "id": "findings-have-severity-and-fix",
+      "description": "Each finding carries a severity and a concrete fix.",
+      "type": "automatic",
+      "rule": "Output findings[] include area, issue, severity (high|medium|low), affected_urls[], and fix."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "verify-not-assume",
+      "description": "No assumed findings, missing access flagged as open items.",
+      "type": "manual",
+      "rule": "Body states findings are verified not assumed, and missing access or data is flagged as an open item rather than guessed."
+    },
+    {
+      "id": "no-tool-without-approval",
+      "description": "No crawl or speed tool is adopted without approval.",
+      "type": "manual",
+      "rule": "Body states a crawl or speed tool is not adopted or wired without approval, per CLAUDE.md principle 3."
+    }
+  ]
+}

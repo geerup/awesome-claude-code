@@ -1,0 +1,738 @@
+Delivered-To: armankhederlarian@gmail.com
+Received: by 2002:a17:906:7c04:b0:aa1:e819:3e67 with SMTP id t4csp116850ejo;
+        Wed, 4 Dec 2024 01:11:19 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHfCpDhL8PK0B6jOVyQ++aO0VuHKGureC/Jz1cSVOZw1jQYPl/m5lWz2AJlazYqYW/7vOkv
+X-Received: by 2002:a17:90b:1b42:b0:2ee:c6c8:d8a2 with SMTP id 98e67ed59e1d1-2ef011fc61fmr7565824a91.14.1733303479618;
+        Wed, 04 Dec 2024 01:11:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1733303479; cv=none;
+        d=google.com; s=arc-20240605;
+        b=huxvuOfHYRVe492qpetambkQeBW2z3jHmk4nqPb82r4LE3xoKMsFrLPt5G7o1ZOpY9
+         J+9/3OkL4aJqc+FEYuafVmrWCEALEIesHQed0phvwXcU6kj3lf3dtv3J1eh96esMNpvl
+         A/a0eeHs6bFwPtrCUjzPgPVzuwhjYX9I2TPJOzBpaEBXInmj+ffeDBJiFt1114hagJ2R
+         QINrLP1MYtg5V0l6LI3EKn8ubj+NtirLbHJOlBP+XIDCxCE894pAGn3TezQk+VpF/dUk
+         D2nDycaNyzjOjnztgBDKPtkh7eqOpR/0w6HEvWOLC5PlTGDUS/in1aYMwEwzMZDX3a2g
+         D1sg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:from:subject:list-unsubscribe-post:reply-to
+         :list-unsubscribe:mime-version:date:message-id:to:dkim-signature;
+        bh=9GZV4nkkiVknfZSIsbrblKG5582BrXjeigALeaS0DpY=;
+        fh=VDaSN4oTGcBG8AxRziKbcytsKf3nELo4wXrRYz12gpA=;
+        b=S8cPRvDvTqJhIJXXGZs8OuJN+r0h+xmFGKUBVduuDcsVjHuJImIbRQnJYS7ZzHbbaT
+         tAd+fxr4kG5L/CfJtgDiSlk3bd9VMKSbf4JKcNdp9idaZdMRX+CMKsJMx33wDE3S9Wk+
+         Do3ORUeXBtKYMkoy/KEB7nTd37oMZReAIu6oK8YRrtCJkh8MZyJ5jNGb64X34hdC3Ftq
+         D0PkveReBZqfBZFTCk1+t2xAXNozV/g6bDDHTHD5bF00hYGjGXseH4AM7/JdnJkUJfGQ
+         PJKVaICqScIkLrxEDkHUSivVbjBLjZSkIxGxy6jH8Q32a8Z0ovEsj+Na4Eo3JA/jQiyf
+         5TRg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.masterclass.com header.s=scph0518 header.b=H2KGno+b;
+       spf=pass (google.com: domain of msprvs1=200680ru33esr=bounces-218881@bounces.masterclass.com designates 192.174.82.171 as permitted sender) smtp.mailfrom="msprvs1=200680rU33ESr=bounces-218881@bounces.masterclass.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=masterclass.com
+Return-Path: <msprvs1=200680rU33ESr=bounces-218881@bounces.masterclass.com>
+Received: from mta-82-171.sparkpostmail.com (mta-82-171.sparkpostmail.com. [192.174.82.171])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-2ef27095a0csi1295865a91.137.2024.12.04.01.11.19
+        for <armankhederlarian@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 04 Dec 2024 01:11:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of msprvs1=200680ru33esr=bounces-218881@bounces.masterclass.com designates 192.174.82.171 as permitted sender) client-ip=192.174.82.171;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.masterclass.com header.s=scph0518 header.b=H2KGno+b;
+       spf=pass (google.com: domain of msprvs1=200680ru33esr=bounces-218881@bounces.masterclass.com designates 192.174.82.171 as permitted sender) smtp.mailfrom="msprvs1=200680rU33ESr=bounces-218881@bounces.masterclass.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=masterclass.com
+X-MSFBL: j/aKvcClkPp9941d3aWD+AdJNNS/yRrF6n8NLOfkYc4=|eyJzdWJhY2NvdW50X2l
+	kIjoiMCIsInRlbmFudF9pZCI6InNwYyIsIm1lc3NhZ2VfaWQiOiI2NzQ2YjYxYzU
+	wNjcxODk4MmU5YyIsImN1c3RvbWVyX2lkIjoiMjE4ODgxIiwiciI6ImFybWFua2h
+	lZGVybGFyaWFuQGdtYWlsLmNvbSJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=email.masterclass.com; s=scph0518; t=1733303478;
+	i=@email.masterclass.com;
+	bh=9GZV4nkkiVknfZSIsbrblKG5582BrXjeigALeaS0DpY=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=H2KGno+bQ5fEDScUeUqnw/DXLKbu5CpgneTs/csSabmg65TpAoquGqDJoKbJEIMgE
+	 8RdwTYRo9yFFvOKrVXpQpMDEB95E4ZlmFXwJwP7ptfFkBY9TKvdpB+1frV8FHBlLdc
+	 xW6cDy3Q0lRFuiF0wCn7OgzA6mKH7uAw/IRmldmg=
+To: armankhederlarian@gmail.com
+Message-ID: <C9.E2.37693.6BC10576@i-07a32dda73a57e8e0.mta1vrest.sd.prd.sparkpost>
+Date: Wed, 04 Dec 2024 09:11:18 +0000
+Content-Type: multipart/alternative; boundary="_----s8VMao/osB6etEnaPOoGzA===_A9/E2-37693-6BC10576"
+MIME-Version: 1.0
+X-Campaign-ID: 11829664
+List-Unsubscribe: <https://links.masterclass.com/e/encryptedUnsubscribe?_r=c862c12dcd894e7aaa5de2c182120673&_s=343a85b684c4441a9d0565d46fbd3431&_t=ssl0uDaEM_po4l7DSy_TyHuhGVQ-42KAMK5-HhGzz_QQmoRaUZxokbcsPNwR73n8nKDTzvyaLSOiTYxjn02AMoaao8REjwPRb_zhuuH8lItpZMB5Aw2fPmvNbW_rgsfA>,<mailto:unsubscribe+11829664+15544140@unsubscribe.iterable.com>
+X-Message-ID: 343a85b684c4441a9d0565d46fbd3431
+X-Feedback-ID: 15544140:11829664:12738:iterable
+Reply-To: no.reply@masterclass.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: The Holiday Head Start Sale: Get 40% Off
+From: "MasterClass" <support@email.masterclass.com>
+Feedback-ID: 15544140:11829664:12738:iterable
+
+--_----s8VMao/osB6etEnaPOoGzA===_A9/E2-37693-6BC10576
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+The Holiday Head Start Sale: Get 40% Off  Share the possibilities of a more=
+ =0Afulfilling life and save big.=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =0A=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =0A =
+<https://masterclass.com/promotion> =0A=0A Give a gift that gives all year =
+=0A <https://masterclass.com/promotion> =0A=0A Build ideas into billion-dol=
+lar opportunities. Craft stories with your =0Asurroundings. Learn to stay t=
+imeless. Join MasterClass for access to hundreds =0Aof experts in business,=
+ wellness, entertainment, and more. Gift now to save =0A40%. Offer ends 12/=
+15.=0A=0A=0A Buy Now  <https://masterclass.com/promotion> =0A=0A Terms appl=
+y. =0A=0A=0A <https://masterclass.com/> =0A=0A <https://app.appsflyer.com/i=
+d1273867416>  =0A<https://app.appsflyer.com/com.yanka.mc>  =0A<https://www.=
+amazon.com/MasterClass-Learn-from-the-best/dp/B081QX5R8T>  =0A<https://chan=
+nelstore.roku.com/details/579323/masterclass-learn-new-skills> =0A=0A <http=
+s://www.tiktok.com/@masterclass>  <https://www.instagram.com/masterclass>=
+=0A <https://www.youtube.com/masterclass>  =0A<https://www.facebook.com/mas=
+terclassofficial>  =0A<https://www.linkedin.com/company/masterclassinc>  <h=
+ttps://x.com/masterclass> =0A Support  <https://www.masterclass.com/help-ce=
+nter> |  Gifts  =0A<https://www.masterclass.com/gift=3Futm_source=3DEmail&u=
+tm_medium=3DBB&utm_term=3DAq-Lifecycle&utm_content=3Dgift_footer&utm_campai=
+gn=3DMC>=0A|  MasterClass at Work  =0A<https://www.masterclass.com/for-busi=
+ness=3Futm_source=3DEmail&utm_medium=3DBB&utm_term=3DAq-Lifecycle&utm_conte=
+nt=3Datwork_footer&utm_campaign=3DMC>=0A=0A Privacy  <https://www.mastercla=
+ss.com/privacy> |  Terms  =0A<https://www.masterclass.com/terms> |  Unsubsc=
+ribe  =0A<https://links.masterclass.com/e/encryptedUnsubscribe=3F_r=3Dc862c=
+12dcd894e7aaa5de2c182120673&_s=3D343a85b684c4441a9d0565d46fbd3431&_t=3Dssl0=
+uDaEM_po4l7DSy_TyHuhGVQ-42KAMK5-HhGzz_QQmoRaUZxokbcsPNwR73n8nKDTzvyaLSOiTYx=
+jn02AMoaao8REjwPRb_zhuuH8lItpZMB5Aw2fPmvNbW_rgsfA>=0A =C2=A92024 MasterClas=
+s, 660 4th Street #443, San Francisco, CA 94107 USA =0AMasterClass and Now =
+You are trademarks owned by Yanka Industries, Inc.  =0A<http://www.mastercl=
+ass.com>
+--_----s8VMao/osB6etEnaPOoGzA===_A9/E2-37693-6BC10576
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html> <html xml:lang=3D"en" lang=3D"en" xmlns=3D"http://www.w3.or=
+g/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:v=
+=3D"urn:schemas-microsoft-com:vml"> <head> <meta http-equiv=3D"Content-Type=
+" content=3D"text/html; charset=3Dutf-8"> <meta name=3D"viewport" content=
+=3D"width=3Ddevice-width, initial-scale=3D1"> <meta http-equiv=3D"X-UA-Comp=
+atible" content=3D"IE=3DEdge"> <meta name=3D"format-detection" content=3D"t=
+elephone=3Dno, date=3Dno, address=3Dno, email=3Dno, url=3Dno"> <meta name=
+=3D"x-apple-disable-message-reformatting"> <title>The Holiday Head Start Sa=
+le: Get 40% Off</title> <meta name=3D"color-scheme" content=3D"light dark">=
+ <meta name=3D"supported-color-schemes" content=3D"light dark only"> <style=
+ type=3D"text/css">:root{color-scheme:light dark;supported-color-schemes:li=
+ght dark}@media(prefers-color-scheme:dark){.force-black{color:black!importa=
+nt}}</style> <style type=3D"text/css">u+.body .gmail-blend-screen{backgroun=
+d:#000;mix-blend-mode:screen}u+.body .gmail-blend-difference{background:#00=
+0;mix-blend-mode:difference}u+.body .gmail-blend-exclusion{mix-blend-mode:e=
+xclusion}u+.body .gmail-blend-multiply{mix-blend-mode:multiply}.brand-bulle=
+t{list-style-type:none}.brand-bullet li::before{content:'\2022';color:#ef45=
+62;display:inline-block;width:.75em;margin-left:-1em;font-size:20px;vertica=
+l-align:middle;line-height:inherit}.button:hover{opacity:.9}</style> <!--[i=
+f mso]><noscript> <xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsP=
+erInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml> </noscript><=
+![endif]--> <!--[if (gte mso 9)|(IE)]><style>sup{font-size:100%!important}<=
+/style><![endif]--> <!--[if (gte mso 9)|(IE)]><!--> <!--webfont <link/> goe=
+s here--> <style></style> <!--<![endif]--> </head> <body class=3D"body" wid=
+th=3D"100%" style=3D"margin: 0; padding: 0; background: #FAFAFA;">=0D=0A<di=
+v style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;bord=
+er:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!impor=
+tant;display:none!important;line-height:0px!important;"><img border=3D"0" w=
+idth=3D"1" height=3D"1" src=3D"http://tracking.masterclass.com/q/EaZXksPvqJ=
+HJCF_EVSqYNg~~/AANXAQA~/RgRpMqG2PVcDc3BjQgpnRrYcUGcYmC6cUhthcm1hbmtoZWRlcmx=
+hcmlhbkBnbWFpbC5jb21YBAAAAAA~" alt=3D""/></div>=0D=0A <div style=3D"display=
+: none; max-height: 0px; overflow: hidden; color: transparent; opacity: 0; =
+height: 0; width: 0; font-size: 0;"> Share the possibilities of a more fulf=
+illing life and save big.&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847=
+;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&z=
+wnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj=
+;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&n=
+bsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp=
+;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#=
+847;&zwnj;&nbsp; </div> <div style=3D"display: none; max-height: 0px; overf=
+low: hidden;" itemscope itemtype=3D"http://schema.org/EmailMessage"> <div i=
+temprop=3D"potentialAction" itemscope itemtype=3D"http://schema.org/ViewAct=
+ion"> <link itemprop=3D"target" href=3D"https://masterclass.com/promotion=
+=3Futm_gqa=3Dtrue"/> <meta itemprop=3D"name" content=3D"BUY NOW - Get 40% O=
+FF"/> </div> <meta itemprop=3D"description" content=3D"BUY NOW - Get 40% OF=
+F"/> </div> <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"640" align=3D"center" style=3D"max-width: 640px; wi=
+dth: 640px; margin: 0 auto; background: #000000; color: #FFFFFF;"> <!-- =F0=
+=9F=A6=B8=F0=9F=96=BC=EF=B8=8F HERO OR FULL WIDTH IMAGE --> <tr> <td align=
+=3D"center" style=3D"background: linear-gradient(#000000, #000000); backgro=
+und-color: #000000;"> <a style=3D"text-decoration: none;" href=3D"https://l=
+inks.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D3=
+43a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6EwoihQcvabtJJC9ur=
+3SXQF1zXI0SkG6Y5CeffSqOm320zDy5eXN36p-E04xsEt_ct2fApSI2laeDW29uuNcj49-2BcV4=
+W82DqZrY4dDHPprDKOd0PsZ5FuWomAofY_QA-BLEjN7yFZez1djCqLXuhdVzWbS8V4suiccqLAS=
+DgravPIogJp6gdBVH_-TLwef0jgjhIUdO0Rl1Qf8dEdK-kYuzI1mZpfWvX_M0wpcVuqT_s-raYS=
+texG8zIoN3-v9WWEOX9U_PTQqElah3iJjX0UMNsXuyG32cCLlAjQKZsgx6jRIhhsx0UZ2ainkEe=
+XZeRdnsetrdoPdonp9cs7qlqoSuNAro6T_v22tSgoTT-cBzTLQDYBKVkXG0bWI5GltzL8WS5l2z=
+47xXAA0cFvfiPM%3D"> <img src=3D"https://d15k2d11r6t6rl.cloudfront.net/publi=
+c/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa=
+5de2c182120673/Holiday/2024/Dedicated/PreHoliday/MasterClass-24Q4-PreHolida=
+y-General-Email1.jpg" style=3D"vertical-align: top; min-width: 640px; max-w=
+idth: 640px; width: 640px;" width=3D"640" alt=3D"Starts Now. GET 40% OFF. H=
+oliday Head Start Offer. Buy Now."> </a> </td> </tr> <!-- =F0=9F=94=A0 EMAI=
+L TITLE --> <tr> <td style=3D"padding: 48px 48px 12px; background: linear-g=
+radient(#000000, #000000); background-color: #000000;"> <div class=3D"gmail=
+-blend-screen"> <div class=3D"gmail-blend-difference"> <a style=3D"text-dec=
+oration: none; color: #FFFEF2;" href=3D"https://links.masterclass.com/u/cli=
+ck=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fb=
+d3431&_e=3DnfWADyvGtAiWX5UlIv8-6EwoihQcvabtJJC9ur3SXQF1zXI0SkG6Y5CeffSqOm32=
+0zDy5eXN36p-E04xsEt_ct2fApSI2laeDW29uuNcj49-2BcV4W82DqZrY4dDHPprDKOd0PsZ5Fu=
+WomAofY_QA-BLEjN7yFZez1djCqLXuhdVzWbS8V4suiccqLASDgravPIogJp6gdBVH_-TLwef0j=
+gjhIUdO0Rl1Qf8dEdK-kYuzI1mZpfWvX_M0wpcVuqTiIVR-I30sxQaTeEc9s7aGqsDqxb77RIaE=
+8UC1Dci-0-b5Kkz478lFuoF3uGEtEg03HL1qFwnMg75QRFGxnt3yEtUMd4sMQUzMeG-056moh_z=
+0eGCCmAAwVDf0oF0VMnFwPYv5MTNwMt_8FRoUGo7hby2h8irI5XTIrmo-9iipHA%3D"> <h1 st=
+yle=3D"font: bold 38px/50px Arial; text-align: center; margin: auto; max-wi=
+dth:560px;"> Give a gift that gives&nbsp;all&nbsp;year </h1> </a> </div> </=
+div> </td> </tr> <!-- =F0=9F=94=A4 PARAGRAPH --> <tr> <td style=3D"padding:=
+ 0 64px 24px; background: linear-gradient(#000000, #000000); background-col=
+or: #000000;"> <div class=3D"gmail-blend-screen"> <div class=3D"gmail-blend=
+-difference"> <p style=3D"font: normal 20px/30px Arial; color:#E0E0E0; text=
+-align: center; margin: 0 auto; max-width:480px;"> Build ideas into billion=
+-dollar opportunities. Craft stories with your surroundings. Learn to stay =
+timeless. Join MasterClass for access to hundreds of experts in business, w=
+ellness, entertainment, and more. Gift now to save 40%. Offer ends 12/15. <=
+/p> </div> </div> </td> </tr> <!-- =F0=9F=94=97 BUTTON --> <tr> <td align=
+=3D"center" style=3D"padding: 0 64px 24px; background: linear-gradient(#000=
+000, #000000); background-color: #000000;"> <a style=3D"text-decoration: no=
+ne;" href=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aa=
+a5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5Ul=
+Iv8-6EwoihQcvabtJJC9ur3SXQF1zXI0SkG6Y5CeffSqOm320zDy5eXN36p-E04xsEt_ct2fApS=
+I2laeDW29uuNcj49-2BcV4W82DqZrY4dDHPprDKOd0PsZ5FuWomAofY_QA-BLEjN7yFZez1djCq=
+LXuhdVzWbS8V4suiccqLASDgravPIogJp6gdBVH_-TLwef0jgjhIUdO0Rl1Qf8dEdK-kYuzI1mZ=
+pfWvX_M0wpcVuqTJxH36V3Z24MWW1ahGOcyAbdnos7vpLNt7Rsj9BBAfNGAvQZQTLld9veAsvO6=
+DdwUeh8wKPbfH_GCvjRpNt26HdB6t9Npa6sB3_jaC4tL-HvzdllnBYT2_ori5L_1uXbBR8YB-wG=
+TqvRJsZPqyQMiZXD0KOCf_-BZVwTBbHePEBI%3D"> <table role=3D"presentation" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center"> <tr> <td sty=
+le=3D"border-radius: 8px; color: #FFFFFF; padding: 16px 28px; text-align: c=
+enter; background: linear-gradient(#E32652, #E32652); background-color: #E3=
+2652;"> <div class=3D"gmail-blend-screen"> <div class=3D"gmail-blend-differ=
+ence"> <span style=3D"font: bold 18px/22px Arial; text-decoration: none; di=
+splay: block; white-space: nowrap;"> Buy Now </span> </div> </div> </td> </=
+tr> </table> </a> </td> </tr> <!-- =F0=9F=94=A4 LEGAL --> <tr> <td style=3D=
+"padding: 0 64px 32px; background: linear-gradient(#000000, #000000); backg=
+round-color: #000000;"> <div class=3D"gmail-blend-screen"> <div class=3D"gm=
+ail-blend-difference"> <p style=3D"font: normal 14px/14px Arial; color:#BDB=
+DBD; text-align: center; margin: 0 0 32px; letter-spacing:0.4px"> Terms app=
+ly. </p> </div> </div> </td> </tr> <!-- =F0=9F=8F=97=F0=9F=8E=B4=F0=9F=8E=
+=B4 SEPERATOR --> <tr> <td valign=3D"top" align=3D"center" style=3D"backgro=
+und: linear-gradient(#000000, #000000); background-color: #000000;"> <hr st=
+yle=3D"margin: 0; border-width: 0; height: 1px; width: 536px; background: #=
+828282; color: #828282;"> </td> </tr> <!-- =F0=9F=8F=97=F0=9F=94=B3=EF=B8=
+=8F SECTION CLOSER --> </table> <table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"640" style=3D"=
+background: #000000; background: linear-gradient(#000000, #000000); backgro=
+und-color: #000000; min-width: 640px; max-width: 640px; width: 640px; margi=
+n: 0 auto; padding: 0; "> <tr> <td align=3D"center" style=3D"padding: 48px =
+0; background: linear-gradient(#000000, #000000); background-color: #000000=
+;"> <a style=3D"text-decoration: none;" href=3D"https://links.masterclass.c=
+om/a/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0=
+565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6EwoihQcvabtJJC9ur3SXQEh5gV9m-fmqTUw=
+uotgZ7P4A9iBRg7Y4fTZGgk8FLU6Gaq_Bj7rAhxpc0-Z4wwcdlZTvrtnrj-6cARj-olcAiWgqZv=
+uZH1HS9y9HDdxdahgeY-R7yNIHIuGTYkPkrZ7MLOh5gwWxxaNHoZHVjJqCyO9BdKPULI0WJDQxR=
+YIkgOyVQMsPr5hTYesJIO23nQQEZEIvQalHi62Wh5y7lIC-SaYntCmsC-xNDbEbyh_aBWDL2WbD=
+KLBNd3q45Hfr1nUTngDwmQkrgHzMION5LXMTkumo6H9Q-2ocO8kuGnpdlcxgo71e-62P_Y8IsUC=
+3Q4FRHP1K8qj5pbyUOtf-I9VMk1D2vPA_6yUa-Gs_7HM2xPjSA%3D%3D"> <img src=3D"http=
+s://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46=
+bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa5de2c182120673/footer/masterclass-mo=
+nogram-red.png" width=3D"55" style=3D"vertical-align: middle; max-width: 55=
+px;" alt=3D"MasterClass"/> </a> </td> </tr> <tr> <td align=3D"center" style=
+=3D"padding: 0 0 24px; background: linear-gradient(#000000, #000000); backg=
+round-color: #000000;"> <table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"> <tr> <td align=3D"center" style=3D"padding: 0 5=
+px;"> <a style=3D"text-decoration: none;" href=3D"https://links.masterclass=
+.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a=
+9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6CnSgofXCBz7mIxbrm2YhkQ_-o10FX-ve=
+S15AXOjs9qpVxLYSLRveMkoCDI90wSlTZ-RVkaCWx5revvOrihKK3nAH7k__qctkf5DOYaD4fHk=
+bC-9GcGm33ICGabxPhzmJZOoceJCEO2j8E5jqWEhxD6ZDkLGbHsjSkdjJRUOQ-ImWSn7nWNxaml=
+mUosR2TD2kfazcxJVrtArKz9bAH2cjvXbCyzBM_1WfxWA4kBZCA5Q4wlqUKySeSRw_4aq3rUaAR=
+bGcTaSFRoYdSJ9OvnNv2GLtHMsiz7imupo3uuF_StkuBOM4sloDZUZE75b_NGBpHW1zHFQ0pqgJ=
+OvvEH2me-mhUqKZs-givpO7K_-_qPMae7UIyuhHmHhVDeUC6kZKP4rR4W4br_YgE9RyXsjadGk%=
+3D"> <img height=3D"36" style=3D"height: 36px; max-height: 36px;" alt=3D"Do=
+wnload on the Apple App Store" src=3D"https://d15k2d11r6t6rl.cloudfront.net=
+/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c12dcd89=
+4e7aaa5de2c182120673/footer/app/apple-solid-black.png"/> </a> </td> <td ali=
+gn=3D"center" style=3D"padding: 0 5px;"> <a style=3D"text-decoration: none;=
+" href=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5d=
+e2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8=
+-6CnSgofXCBz7mIxbrm2YhkTEan7be5B9vUO1gEuC8ngh1YHXpkdcpTVJ6jA0NhW3wDPmEfpO-z=
+uy_EgI9GXOaFH6K1CeuXtb9uzG7t82ULLitQuXOlP7tJqjVZTzZdBWVh-Rga9GzieDAk2z0oTXL=
+iGVrWWVwIQtYs1xduxxfuOtOwVePsa_UjSJL6FqrgOCNYrNMjis138yoN4UenLIUWhwHE4JnFa7=
+EIfCiYoBGmQHpObtAJ6SOXAeqgS_hTbZ5ImCA59bi59at6yBS9yXLSOKF8wPjxUTSetv34d-jGT=
+Qx6bDn1Dy3uYqgKb1mpWhWNS0fIwwhvbaJb3LBc0PjYGp-unbNjRp-j45pj6gfrMQ2gJHjm3nF0=
+Pn_1ZGe_rSwM8Z08KnMXu44OaYDEM_EXY%3D"> <img height=3D"36" style=3D"height: =
+36px; max-height: 36px;" alt=3D"Get it on Google Play" src=3D"https://d15k2=
+d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c=
+542cff6dd6a/c862c12dcd894e7aaa5de2c182120673/footer/app/google-solid-black.=
+png"/> </a> </td> <td align=3D"center" style=3D"padding: 0 5px;"> <a style=
+=3D"text-decoration: none;" href=3D"https://links.masterclass.com/u/click=
+=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3=
+431&_e=3DnfWADyvGtAiWX5UlIv8-6Gel81ymdGz3F-jl3hwdIorbnTcUoae6KV9_7fmFR4KR6o=
+506GEA6BviSxL9e_JYaJtl9IbIymX38r_lwUIgne4INmTjgxm5h7-EV6g5OBFePcWwvc9vyTHaN=
+MU1H2Fzb1BLVOwS4kOSHng60ks7T0sfLwWPVyAktwACO2Im0J1g9zsloX8TmIxkRjsDrfh3AOhO=
+KTMFQU0JpDhBN08co-iCeJ35ekC1MBB_yXI2XKj4BzuSoMGPL3mF9_o5puo4thB6Onfk7zbe_nZ=
+IzDQILW4bQ7T6sDYhL4y4RtVaO6YWtEM5tUCfz24mzMwOsteHEafVGpLwcBsjMFR-MEvHnbSShE=
+39xWayc6tROTGcrSouy74sZa79yKOx0uWn-fiprQx9pKJCt9uzEx-B4C1O-IAdKmz070dHMnc1S=
+f1VCnL7vFvtwL-DmoD9fYG8SjXT3w%3D%3D"> <img height=3D"36" style=3D"height: 3=
+6px; max-height: 36px;" alt=3D"Available at Amazon Appstore" src=3D"https:/=
+/d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-=
+bd7e-c542cff6dd6a/c862c12dcd894e7aaa5de2c182120673/footer/app/amazon-solid-=
+black.png"/> </a> </td> <td align=3D"center" style=3D"padding: 0 5px;"> <a =
+style=3D"text-decoration: none;" href=3D"https://links.masterclass.com/u/cl=
+ick=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46f=
+bd3431&_e=3DnfWADyvGtAiWX5UlIv8-6HDSrRDuo9vWIwyCiqJyK4XLEvdvRR-TiR0aCpqzbw9=
+rtoIOXn3gW-KPRZMybtOLsz5Ouz2lbwlTeUYJbW8riZjPynkSyFK3baJgTdM_8hHQby2VPTqQkB=
+AVzMxlcy6ct8f71b-ypfJNnHeY3LOhLT0YzWhSwS_7GBS7HfFcFJpI-75Gks5wztcDkAPPiIUjj=
+VLn3geUB6mrqI7zP4kMHeVq2mURLAe9Ko1KP6rWi3BrzdqNey6liZmt5B78T805sZC80rmanjRp=
+kEtM4GeUogOpCSGU6EkTq1cn3xEH4tRbTdJZjBjq1WWcatqynEgyoafCeLgP6MDT8lk3PIXgr0r=
+DDzi9cXiTrYEMQZK0XEbv_jTgdtTa6VsLA1E4TC_rOt-Z2X7m8vADetDj6NJ7Z69v3ECdCF8507=
+mmVidc3xaPpJoQTkaI6JsdAX6aMXUg0A%3D%3D"> <img height=3D"36" style=3D"height=
+: 36px; max-height: 36px;" alt=3D"Available on Roku Channel Store" src=3D"h=
+ttps://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a=
+-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa5de2c182120673/footer/app/roku-so=
+lid-black.png"/> </a> </td> </tr> </table> </td> </tr> <tr> <td align=3D"ce=
+nter" style=3D"padding: 0 0 24px; background: linear-gradient(#000000, #000=
+000); background-color: #000000;"> <table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0"> <tr> <td align=3D"center" style=3D"p=
+adding: 0 16px;"> <a style=3D"text-decoration: none;" href=3D"https://links=
+.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a=
+85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6A3PJfvOTsaE8cp6n3FCC=
+PEG7fs0sT-_QDowHETGOiz2kKAb_wg01o8Lm99IPeQfMKe9meBPSje6UCrP8aBPIUtdPkmitpJk=
+RnrgNRlY0z-OYhgeZHpzFTf5hIf4Nlegb5Gq60M4XcLhwDt0-HfgmHUrg9-X-oGpv01aZfFiSMe=
+T_Tw-sMEk19BxV2gOUzujyMHw12SfDSbrfIeVc1j9rkRKt2SoNlLuRD55gnA_Z-__Y9eRR79saP=
+fLzthTzAEQH6g85PC-aQElihC0oJlAF5f-aEhC8BEbs3ePuzsV49XWWK9P_pNMeJ_f3pl-Wbw6r=
+gSnIAex0q_S0oUiuelvlxzb-sxWv0kpnSGzo4nHHzbxcQ_QzYUqMPgFtjTnIMgeLwy1FHgkghri=
+BLVBJguwgOg%3D"> <img width=3D"32" style=3D"width: 32px; max-width: 32px;" =
+alt=3D"TikTok" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/In=
+tegrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa5de2c18212=
+0673/footer/app/tiktok-solid-black.png"/> </a> </td> <td align=3D"center" s=
+tyle=3D"padding: 0 16px;"> <a style=3D"text-decoration: none;" href=3D"http=
+s://links.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_=
+m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6C56mGUaLtkME=
+MwbIztcTNaJgxqxr3Gidqks-TXlFO0lJU9SxLI48eeuKc7Wu8HkyqZLaBzbBDrkFhVCxe-0ODSd=
+qe5NbjmCySxmduvuTES_3ZXtU9oUlPiAs1ahrgZBP03Z44s0TWEg_w3zq24TRolmpssQY1bV6bo=
+b2BaW9khlwGK0cGBY6UZxiv7RqrsAVWhNUXnQzxzTueJHmKybYkHKCcMzVsbzODFEGqtzPlLF56=
+iEKMOqCGKEa9JchWFVdp_4eSrjuliHr617kgOxLmJf-ymV_nqz0TNeE_-bSJjEsyOvLclJiRdsJ=
+BYBuDBSaaycbky91e60MhDvRhRtP02YF-lpKyi1tFVsxz1lHlZqMdtHDGWI1u1Sv21FWUwy6gzu=
+igwqXEBzcB9kCVPT6xU%3D"> <img width=3D"32" style=3D"width: 32px; max-width:=
+ 32px;" alt=3D"Instagram" src=3D"https://d15k2d11r6t6rl.cloudfront.net/publ=
+ic/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aa=
+a5de2c182120673/footer/app/instagram-solid-black.png"/> </a> </td> <td alig=
+n=3D"center" style=3D"padding: 0 16px;"> <a style=3D"text-decoration: none;=
+" href=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5d=
+e2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8=
+-6HhiTJh21vAIowkuwE707Qif-0_f9O4utNHk_mGsuxweQDMxhxSTfqPVcK4oBTbNGJFop4eYqB=
+F2WQT3MfU8XDcsGEjumZeiDDBKiBqkuPMRhZ2Fiw7pzXoewSc8ja0-tI8XzjvhxsWEi0Cr_0fjG=
+2lGlbuVXHN4fRHyGMU21S9yokPYOTTB7M6nDFBfgrgg5uiH7wb_da5e966Mx7rWz5ZpuWJ05IIY=
+8WtEzw3pGsklMQh7MG-z-HE1xQN0zmQmXtM2ORKSg2Umekf0Z-OL0KcMp3mntF0Z19EvZ1NVRL8=
+0jn5PtcHFpMJ5asiskbYq3g7v9wi7w8uimBjyV6-nFWT8-l1DfcNoGk_YPDxOoM0R3o2zokXs6F=
+hD3C2zsVN6y2ZIjxQbwNQ5utFQZzdcC44%3D"> <img width=3D"32" style=3D"width: 32=
+px; max-width: 32px;" alt=3D"YouTube" src=3D"https://d15k2d11r6t6rl.cloudfr=
+ont.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c=
+12dcd894e7aaa5de2c182120673/footer/app/youtube-solid-black.png"/> </a> </td=
+> <td align=3D"center" style=3D"padding: 0 16px;"> <a style=3D"text-decorat=
+ion: none;" href=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd=
+894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGt=
+AiWX5UlIv8-6CqwV1HKpIQmD74C9pKaxJHsWb5wl4MrJ7YI1WqmDTu0y_bjwzbnihpXlpF6ZY1J=
+bMywui5PUTvhlWTzULpo0Cx7bjTtLNS1LV3_4wVI9jO8nltIji8C3BIDn65jQuzSwxLbMdU8TIe=
+tw9lcPFZZ2Z7--1a3iSeAsn6AJvosuO52jh3ElipcZOuVF6po6wT_K3iFZ8HPVP4lWg69YrflTP=
+dtkLTDEzVOhlAIB2CUeOCC9tkLvum9uWGT_-ePU-QTtRZtDG7ieJUmG07bPjYzEGS0BQAjiVItR=
+osjc6L6WO8M9qHhxhervl2GMxB-HNbWnenlP-czxMFGiZLYadQwuhwd-KMKXdJjHvqJPQvoayzf=
+dLAdzBCVwDRy14JBBJQiAlEEnfPmM_KomrNO1v04myJM3kKyOqYkMZQNeyRK4qDf"> <img wid=
+th=3D"32" style=3D"width: 32px; max-width: 32px;" alt=3D"Facebook" src=3D"h=
+ttps://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a=
+-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa5de2c182120673/footer/app/faceboo=
+k-solid-black.png"/> </a> </td> <td align=3D"center" style=3D"padding: 0 16=
+px;"> <a style=3D"text-decoration: none;" href=3D"https://links.masterclass=
+.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a=
+9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6F_H7MGNvJUQXzlwSIAoieXqGFCD3OHSx=
+nYh5RUuPTNU9iEXMGrm3c7lq6UbOprd3ElnBaOc107bwLFyEtzdrzh7y5UVW2hP1h1cKKRiqRoK=
+rmm_7DYCKZC7GgTIXcySOq0hR57ZKDD3uhAiMre8-zXAB0IHUD3wKU7YGe0pdV-mjvuLzhcvdDS=
+Oq5AkTAhxOULaDbBcKuk85pbZer4LmTEHGYWpfkWSPyk0DbAdp48S9C7deIcf-i0dLw8NSnSes0=
+NciwD5z86XLY5fpaMig0UP3mRXks4-63xC6zQUhgcrQMqpF3RVqMc36fYMo5TPse_aJ4jYyx0Jq=
+cGDTDjYGWPyKEIR4VpaKWJ4r5iCEf1E3iRYktXFb8VX-mJ6AuDV6X-hQjR3lvmORSvLPvn9v4Zi=
+Q5b-kCn0H_SacKDobLmi"> <img width=3D"32" style=3D"width: 32px; max-width: 3=
+2px;" alt=3D"LinkedIn" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/=
+users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa5d=
+e2c182120673/footer/app/linkedin-solid-black.png"/> </a> </td> <td align=3D=
+"center" style=3D"padding: 0 16px;"> <a style=3D"text-decoration: none;" hr=
+ef=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c1=
+82120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6E7=
+oIz9KRewUvTg-LJIe_oyRgV5SO5NcC9aIbDiIK2yFNRXBAP0Iex7xTyBgvXnBISsmrnkgcznwDM=
+Tkha15-dwnV4viE1TUPqYNJy_JNQSBODNJQf65b-ZXsT8CWzuHHmAYLW0KF87K49aL2GpOxAeqY=
+ZgJ7xLGRxYBNA2hdq7dDrRPEbSrHCOaAx2ajiQ3fMWbizBu5eJfM4c6va8ZUKKIYDQojkrjaPmi=
+40KIcaUss3HDOASga7njSmVO7tDYV-n5azLJAg8IawRNZmQtvG6mdJLEFsoZ9fAaVoARJs6vt8q=
+5x44UkPuW6iU6tqRUayhDfZ5N_pfahviNqcaXMrerdWTKD2Xq31bKDuS4Y54oVqPkjxSOnxYbCr=
+7CaHcmEA%3D%3D"> <img width=3D"32" style=3D"width: 32px; max-width: 32px;" =
+alt=3D"X" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integra=
+tors/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/c862c12dcd894e7aaa5de2c182120673/=
+footer/app/x-solid-black.png"/> </a> </td> </tr> </table> </td> </tr> <tr> =
+<td align=3D"center" style=3D"padding: 0 0 32px; color: #FFFFFF; background=
+: linear-gradient(#000000, #000000); background-color: #000000;"> <div clas=
+s=3D"gmail-blend-screen"> <div class=3D"gmail-blend-difference"> <a style=
+=3D"font: 12px Arial; color: #FFFFFF; letter-spacing: 0.015em; text-decorat=
+ion: none;" href=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd=
+894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGt=
+AiWX5UlIv8-6JTqcfiMVsj_9sll2hiKhWC6esvJg3OKywLCoOw1nEPq2t47IWyuj_XJUFHhDixL=
+Ly9Ls_NG2tidw06dfs9R5qK_lJoNom7uVxYRiInTYKPvDEFGkViIAgWcMnuOd7vt3ieiFlVTLEl=
+32H_Qebiu2YXYAA7f0yWL2hBDZFls2KE5DTWAkkq3lpy6GQRlYNj57IFIxqjlcoVq7pCGbdDCj2=
+3VNmedwH4XT5l2C7-XzWTz4HdOgI38mi-MQvHlR37cN1E8qq1U9Sh1JvfZodROzSJEAIwWx0sEw=
+9d8xFP9mEGY988F_-j12o8TXEe0CmdF4NGiOHcqtTRS_0w8fdjGh8-l8rxylG3LolbntupSd12P=
+5cfWYvn2345ZFfijWUkIAMsqp_FdqF7ET6DZ4NrtcsE%3D"> Support </a> &nbsp;&nbsp;<=
+span style=3D"color: #8f8e88">|</span>&nbsp;&nbsp; <a style=3D"font: 12px A=
+rial; color: #FFFFFF; letter-spacing: 0.015em; text-decoration: none;" href=
+=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182=
+120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGtAiWX5UlIv8-6JTqc=
+fiMVsj_9sll2hiKhWARg1N9yBfzcarprWu963PYfxYNKhUrhpMbIzYkmssg3eDI6DMZP-FkOA4E=
+78J-Xe02FiB9olsIomgjjlG6Q_zDXfguzTVIba9X69x6MaPKbbVaradahXw50XHIIR_6HAMviu4=
+E5rzhb_PGbSZFmM742GNNm4eOy5M_jRE8KmIWAhXG76OM5vPTduQVgzKCGTNC6HzCYofY1s7SMo=
+2nthqcaMSK-Hb-z3idGe31cAR7UvdeQ4og55naVIp_ekRuI4qO85S4-sFm5RNN5lgnzTX00iMpx=
+KIajjKPexOxSoGepz5ka4GqVicHuO1PBxF0mltp-cF2BIChACGGC5kGl0xaokVdZBNYdny7ZoFw=
+RihTxkzVfSV8Lwq4fyOiQfNn5_zdBJ3e7mIjEyKADbttjnhoRUERNwVfivxeA9aA8nTdVPiIxRm=
+gbRu9Wlm1BJl-pf9mI7UhqIEqg_oFWY8-X6nQ_jJSWXxeE5KNA9gLd7L-KK_Ichid60XAR8T7O7=
+TrdtA%3D"> Gifts </a> &nbsp;&nbsp;<span style=3D"color: #8f8e88">|</span>&n=
+bsp;&nbsp; <a style=3D"font: 12px Arial; color: #FFFFFF; letter-spacing: 0.=
+015em; text-decoration: none;" href=3D"https://links.masterclass.com/u/clic=
+k=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd=
+3431&_e=3DnfWADyvGtAiWX5UlIv8-6JTqcfiMVsj_9sll2hiKhWAajCdytFSL9jIFHqlKYOOpT=
+gzVbYJRiB4u8hptYiJg861--NMoL_Qpz5mQco7rtGTpk5zc7SGC3WV3G14X9aOc-98reVsrOr63=
+HR5hMcCAc_7Qlusa08eqdNDgetUYUKTcdxpddpUkcYqskoNIo1Lr6vD_Nrye8LdLRa2lTVAdMd4=
+z4V1rhmFqb89wSCciu1aH6LyFEMy9cQwHxqTdyyrGPiAyoj0emHetNVjTq5Wnxek1bXkBpL7no5=
+90eqf5CRpPQoO9oAMf1K-PbN89vORNFljZfEasFahR7jqUP1_shewZ7AKbFEsime6kTfyfMNkeU=
+dnGVNTZPEdJonhsu9i0sUcqFgCEmhj691YbQfBt42nfIKvsjo7-MD2-HrSCaqvgZDePuFOlkNMB=
+UZMZ1trHoIG6Y2nbjc9LHfG8PUAkviwbMMImZhyuYeLUtfNyougHMiQhMGW1yUbudyH01WK8glc=
+9QTu8D5EloDfi6Lj6ZQabPLquOIiBEt2KLwI46wU%3D"> MasterClass at Work </a> <br/=
+><br/> <a style=3D"font: 12px Arial; color: #FFFFFF; letter-spacing: 0.015e=
+m; text-decoration: none;" href=3D"https://links.masterclass.com/u/click=3F=
+_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431=
+&_e=3DnfWADyvGtAiWX5UlIv8-6JTqcfiMVsj_9sll2hiKhWChYEZC5TNi_YCh1Y5rbKuZ4Z_Nt=
+FfYEbmZFEyFf1jN4roGcqjyyIWiE5iCzuBeIMoZgCz2Mih3ifPqFrnUL1BkIdW_e9e0i4dMiava=
+_kEBWx1NhrWyRKCx0i08Kf0zgg81Eb8rQDkIRzh6Vg2cydHBU3gJ-wYrsw9NnamsLKRiv2DS2de=
+x8HPLNCycGy9oIkGCzu8p0YQzV-uBMQ7PHg_W1PBsAM36jhVhW4KJXpBfB66sjDrYbZh6tt9bGY=
+K-td25VFtnDq8J5X60-_f9-rcVz6Cqngo-t3pTsvf9Eqbow2-hQPBDbCR-CQZmpeJ2FQjpIUdab=
+tMi014tlgmxtUlLpS8em0_-J7dSRvtxrwuR4x8aBnwKw_U5TtdnYswqkAE%3D"> Privacy </a=
+> &nbsp;&nbsp;<span style=3D"color: #8f8e88">|</span>&nbsp;&nbsp; <a style=
+=3D"font: 12px Arial; color: #FFFFFF; letter-spacing: 0.015em; text-decorat=
+ion: none;" href=3D"https://links.masterclass.com/u/click=3F_t=3Dc862c12dcd=
+894e7aaa5de2c182120673&_m=3D343a85b684c4441a9d0565d46fbd3431&_e=3DnfWADyvGt=
+AiWX5UlIv8-6JTqcfiMVsj_9sll2hiKhWCdBHU0TOjeqHmUJySQCHNqk0XfEvmWkfQjWDliK3Ps=
+NmsseEr_XEyBkESBwUkKzR30_GzQhch5NjU7y5b8KHsONShYZXa__HFPWbvw3gR4pfpXjzQqlH7=
+YcmkaKXzEAE4v4P6nlYVE-QBQBucEBLj5RIPIHmcWcdD4IKLMW5grtoOPvUcJZ0kW0ndurI7UzU=
+Sby-e0qiDK8LLv3v-XIb4if7B9EvaL7o4jGphTnr_QM_nE2cJ-sxHGRUlBvq8Lh1S4i63DTNVC6=
+k-Lv-yKomRT7WhzF9CKTXoAWOsXj4h3KbJva6WtjKY1s72g4cfjCJsHeR58Mrvsykvu4hctEGW7=
+Lv-ZEXQ6kC_qbWUIAW1COFQ042l_SXKvPShhUQ15pnY%3D"> Terms </a> &nbsp;&nbsp;<sp=
+an style=3D"color: #8f8e88">|</span>&nbsp;&nbsp; <a style=3D"font: 12px Ari=
+al; color: #FFFFFF; letter-spacing: 0.015em; text-decoration: none;" href=
+=3D"https://links.masterclass.com/e/encryptedUnsubscribe=3F_r=3Dc862c12dcd8=
+94e7aaa5de2c182120673&_s=3D343a85b684c4441a9d0565d46fbd3431&_t=3Dssl0uDaEM_=
+po4l7DSy_TyHuhGVQ-42KAMK5-HhGzz_QQmoRaUZxokbcsPNwR73n8nKDTzvyaLSOiTYxjn02AM=
+oaao8REjwPRb_zhuuH8lItpZMB5Aw2fPmvNbW_rgsfA"> Unsubscribe </a> </div> </div=
+> </td> </tr> <tr> <td valign=3D"top" align=3D"center" style=3D"padding: 0 =
+0 32px; color: #FFFFFF; background: linear-gradient(#000000, #000000); back=
+ground-color: #000000;"> <div class=3D"gmail-blend-screen"> <div class=3D"g=
+mail-blend-difference"> <a style=3D"font: 12px Arial; color: #FFFFFF; lette=
+r-spacing: 0.015em; text-decoration: none;" href=3D"https://links.mastercla=
+ss.com/u/click=3F_t=3Dc862c12dcd894e7aaa5de2c182120673&_m=3D343a85b684c4441=
+a9d0565d46fbd3431&_e=3D_N1cFKAWWpNzK21KnBgm4v8YpQall2CULmIx3-Not7yTGR5sEURU=
+NwmkkGPxpdl-XwxBxpKE_H4rn7IzV9ZzxK6Wb75SXfKK_ntVD3eUf_NH6kcHdNXmKfChYz63jOX=
+4ghmNfCKqR1mwXKAV0VAeiDQIsgS3793fnaoS9HMfDM1X2mj2fQnf5UwEbk33VBavNT1kV09d7K=
+kcakGwQiRfKNGrcp24FC4SKVpLTiAUTl_XTHu8wvaZLnbyFDfm0tdOWdBzMdNPAB_EWKkkLflAS=
+PWqVf61QTW0Yy4fCbAGcdSZ0Ri-CkGmjE_r3mzgkEE-aLZ8-DlEwIiH-P5rvekVAVx61wO8BQ6z=
+-Ie-vYfNhQpRxezm0xdKb_pnAurJ8oKjgHNDh60gSeB0OnDEA7cP9g%3D%3D"> &copy;2024 M=
+asterClass, 660 4th Street #443, San Francisco, CA&nbsp;94107&nbsp;USA <br/=
+> <b>MasterClass</b> and <b>Now You</b> are trademarks owned by Yanka&nbsp;=
+Industries,&nbsp;Inc. </a> </div> </div> </td> </tr> </table> =0D=0A<img bo=
+rder=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://tracking.masterc=
+lass.com/q/jY0rGa5z3GRNm_TryaSiBw~~/AANXAQA~/RgRpMqG2PlcDc3BjQgpnRrYcUGcYmC=
+6cUhthcm1hbmtoZWRlcmxhcmlhbkBnbWFpbC5jb21YBAAAAAA~">=0D=0A</body> </html><i=
+mg src=3D"https://links.masterclass.com/e/eo=3F_t=3Dc862c12dcd894e7aaa5de2c=
+182120673&amp;_m=3D343a85b684c4441a9d0565d46fbd3431&amp;_e=3Dssl0uDaEM_po4l=
+7DSy_TyHuhGVQ-42KAMK5-HhGzz_QQmoRaUZxokbcsPNwR73n8nKDTzvyaLSOiTYxjn02AMoaao=
+8REjwPRb_zhuuH8lItNTHMZqyJE9xgmvcTDdzMPLjIBQy52Y0iUsQhO4U09uw%3D%3D" style=
+=3D"border:0;width:1px;height:1px;border-width:0px!important;display:none!i=
+mportant;line-height:0!important;" width=3D"1" height=3D"1"/>
+--_----s8VMao/osB6etEnaPOoGzA===_A9/E2-37693-6BC10576--
+

@@ -1,0 +1,65 @@
+{
+  "skill": "learnings-log",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'learnings-log'."
+    },
+    {
+      "id": "append-only",
+      "description": "The log is appended to, never overwritten.",
+      "type": "manual",
+      "rule": "Body requires reading the existing log first and appending only, never overwriting, deleting, or reordering prior entries."
+    },
+    {
+      "id": "entry-fields-complete",
+      "description": "Each learning entry carries learning, evidence, campaign_id, date.",
+      "type": "automatic",
+      "rule": "Body and template define each entry with learning, evidence, campaign_id, and date fields."
+    },
+    {
+      "id": "returns-log-ref",
+      "description": "Returns the reference the campaign-report records as learnings_log_ref.",
+      "type": "manual",
+      "rule": "Body states the skill returns a learnings_log_ref (file and anchor) for the campaign-report."
+    },
+    {
+      "id": "tied-to-metric-not-vanity",
+      "description": "Learnings tie to the success_metric, not vanity metrics.",
+      "type": "manual",
+      "rule": "Body requires each learning to tie to the success_metric the strategy set, never a vanity metric or a metric invented after the fact."
+    },
+    {
+      "id": "no-invented-specifics",
+      "description": "Learnings stay portable, no invented specifics.",
+      "type": "manual",
+      "rule": "Body requires learnings to be portable with no invented offer, price, Skill Path title, or instructor name."
+    },
+    {
+      "id": "template-present",
+      "description": "A usable learnings-log template exists.",
+      "type": "automatic",
+      "rule": "templates/learnings-log.md exists and shows an append-only entry with learning, evidence, campaign_id, and date."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the skill files.",
+      "type": "automatic",
+      "rule": "No file in this skill contains the U+2014 em dash character."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Only Western numerals appear.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) appear in any file; digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in any Arabic text.",
+      "type": "automatic",
+      "rule": "No file contains the U+0640 tatweel character."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "skill": "summer-bassam-led-sale-sequence",
+  "campaign_id": "2026-07-summer-bassam-led-sale",
+  "description": "Per-email and per-sequence rubric for the 7-email Bassam-led Summer of Skills non-payer sequence. Two layers: machine_checks run by scripts/eval_runner.py (deterministic regex, hard stops), llm_checks judged by the reviewing agent (pass/fail plus a 1-5 quality score). The rubric is the pre-gate self-check loop; it does not replace the formal gate stack (arabic-copy-qa, english-copy-qa, email-asset-qa, accessibility-qa, compliance-privacy-check, brand-qa-reviewer, human gate).",
+  "machine_checks": [
+    {
+      "id": "no-em-or-en-dash",
+      "regex": "[—–]",
+      "fail_if": "match",
+      "severity": "hard",
+      "applies_to": "all",
+      "fix": "Remove the em dash or en dash. Use a comma, colon, or period."
+    },
+    {
+      "id": "no-tatweel",
+      "regex": "ـ",
+      "fail_if": "match",
+      "severity": "hard",
+      "applies_to": "all",
+      "fix": "Remove the tatweel/kashida character."
+    },
+    {
+      "id": "western-numerals-only",
+      "regex": "[٠-٩۰-۹]",
+      "fail_if": "match",
+      "severity": "hard",
+      "applies_to": "all",
+      "fix": "Replace Eastern Arabic numerals with Western numerals 0-9."
+    },
+    {
+      "id": "no-exclamation-in-copy",
+      "regex": "!|！",
+      "fail_if": "match",
+      "severity": "soft",
+      "applies_to": "all",
+      "fix": "Remove the exclamation mark. Confidence comes from the claim, not the punctuation."
+    },
+    {
+      "id": "sale-code-present",
+      "regex": "SUM30",
+      "fail_if": "no-match",
+      "severity": "hard",
+      "applies_to": "all",
+      "fix": "Each sale email (E5-E7) must carry the placeholder code SUM30 in its own PromoLine slot (held until confirmed)."
+    },
+    {
+      "id": "sale-terms-flagged",
+      "regex": "PLACEHOLDER, HELD",
+      "fail_if": "no-match",
+      "severity": "hard",
+      "applies_to": "all",
+      "fix": "Every unconfirmed sale term (percentage, code, date) must be flagged PLACEHOLDER, HELD until the human gate confirms it."
+    }
+  ],
+  "llm_checks": {
+    "per_email": [
+      { "id": "objective-fit", "description": "The email serves its act objective (E1-E2 Bassam hook, E3-E4 platform/self-development, E5-E7 sale announce/ending/last-day).", "score": "1-5" },
+      { "id": "one-cta", "description": "Exactly one CTA, and it serves the objective (a play or a subscribe step), not opens.", "score": "pass-fail" },
+      { "id": "subject-bar", "description": "Subject 20-60 chars, mobile band 30-40, front-loaded, no percentage and no 'last chance' phrase in the subject, true to the body.", "score": "pass-fail" },
+      { "id": "preheader-bar", "description": "Preheader 40-90 chars, adds a layer (does not repeat the subject); for E5-E7 it carries the calm dated deadline.", "score": "pass-fail" },
+      { "id": "body-length", "description": "Body is 2-4 short, scannable lines.", "score": "pass-fail" },
+      { "id": "empowering-premium", "description": "Empowering, never deficit-framed; premium, not hype or spam; no stacked urgency.", "score": "1-5" },
+      { "id": "claims-discipline", "description": "Only cleared Bassam facts (authority line, 20 lessons, free first lesson); only the three cleared instructors named in E3; no invented lessons/counts/quotes/awards/client names; no accreditation.", "score": "pass-fail" },
+      { "id": "sale-discipline", "description": "E5-E7 only: PromoLine carries SUM30 and a calm dated deadline; urgency reads premium; all sale values flagged HELD; no false scarcity.", "score": "pass-fail" },
+      { "id": "cta-destination", "description": "CTA points to the right place: class page (E1-E2), classes page (E3), plans page (E4-E7), language-matched /ar or /en.", "score": "pass-fail" }
+    ],
+    "per_sequence": [
+      { "id": "arc-integrity", "description": "Clean 2/2/3 arc with distinct act transitions and no repetition of the same value across emails.", "score": "1-5" },
+      { "id": "urgency-escalation", "description": "Urgency rises only in Act 3 and only by degree: E5 announce, E6 ending tomorrow, E7 last day. Bodies shorten toward E7.", "score": "1-5" },
+      { "id": "bilingual-parity", "description": "AR and EN carry the same promise, offer, and claims per email; language-appropriate gendered address is allowed and is not a divergence.", "score": "pass-fail" },
+      { "id": "voice-consistency", "description": "One consistent Maharat voice across all 14 variants; Thmanyah tone; brand lexicon.", "score": "1-5" },
+      { "id": "cadence-suppression-flags", "description": "Cadence and suppression are defined upstream, and every sale term and date is flagged as an open item for the gate.", "score": "pass-fail" }
+    ],
+    "loop": "Author -> score. Any machine_checks hard fail, any per-email pass-fail = fail, or any 1-5 score < 4 returns an exact fix list to the author and re-scores. Advance to the formal gate stack only when all checks pass."
+  }
+}

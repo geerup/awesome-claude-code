@@ -1,0 +1,53 @@
+{
+  "skill": "content-distribution",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'content-distribution'."
+    },
+    {
+      "id": "repurposes-to-formats",
+      "description": "Plan repurposes one article into email, organic-social, and other formats.",
+      "type": "automatic",
+      "rule": "Output derivatives[] include email and organic-social formats derived from one source article."
+    },
+    {
+      "id": "routes-to-owners",
+      "description": "Each derivative is routed to its producing owner, not authored here.",
+      "type": "manual",
+      "rule": "Body routes email to lifecycle-architect and copywriters and social to organic-social, and states this skill does not write final copy."
+    },
+    {
+      "id": "angle-carried",
+      "description": "Every derivative carries the source article angle and a CTA.",
+      "type": "automatic",
+      "rule": "Each derivative includes angle_carried and cta tied to the source article."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "no-invented-values",
+      "description": "No invented offer, price, Skill Path title, or instructor name in any derivative.",
+      "type": "manual",
+      "rule": "Derivatives reference only offers and titles traceable to the brief; absent ones trigger stop-and-ask, never accreditation claims."
+    },
+    {
+      "id": "no-tool-without-approval",
+      "description": "No distribution tool is adopted without approval.",
+      "type": "manual",
+      "rule": "Body states a distribution tool is not adopted or wired without approval, per CLAUDE.md principle 3."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "skill": "web-design-qa",
+  "checks": [
+    {
+      "id": "responsive-rtl",
+      "description": "The layout renders right-to-left correctly at every breakpoint; mixed Arabic, English, or numerals do not break direction, alignment, or reading order at any width.",
+      "type": "layout",
+      "rule": "Fail when the spec does not set direction rtl at every breakpoint, when Arabic reading order is not preserved, or when mixed Latin text or numerals flip the direction at any width."
+    },
+    {
+      "id": "visual-constants",
+      "description": "Design tokens match the brand constants: near-black background #141414, card surfaces #1A1A1A, primary accent emerald #009975, used as a highlight not a flood.",
+      "type": "brand",
+      "rule": "Fail when a color token departs from the constants, or when the emerald accent floods the layout instead of highlighting."
+    },
+    {
+      "id": "western-numerals-rendered",
+      "description": "Any numerals shown in rendered text are Western 0 to 9, never Eastern Arabic numerals.",
+      "type": "mechanical",
+      "rule": "Scan rendered text for Eastern Arabic-Indic digits (U+0660 to U+0669). Any occurrence is a fail; the fix substitutes the Western numeral."
+    },
+    {
+      "id": "no-baked-arabic-text",
+      "description": "No Arabic text is baked into a generated image; copy is real text bound to a copy-package variant id.",
+      "type": "guardrail",
+      "rule": "Fail when any Arabic text is rendered into a generated image. Copy binds to a copy-package variant id, never into the generated pixels."
+    },
+    {
+      "id": "responsive-breakpoints",
+      "description": "Breakpoints are declared and content reflows without clipping or overflow, with the primary action visible without a scroll on mobile.",
+      "type": "structure",
+      "rule": "Fail when breakpoints are missing, when content clips or overflows at a width, or when the primary action requires a scroll on mobile."
+    },
+    {
+      "id": "interaction-states",
+      "description": "Default, hover, focus, active, disabled, loading, and error states are specified for interactive elements.",
+      "type": "structure",
+      "rule": "Fail when an interactive element lacks a specified state, especially focus, disabled, loading, or error."
+    },
+    {
+      "id": "accessibility",
+      "description": "Contrast meets the bar, focus order is logical, structure is semantic, touch targets are sized, alt text slots exist.",
+      "type": "structure",
+      "rule": "Fail when contrast is below the bar, focus order is illogical, structure is not semantic, touch targets are too small, or alt text slots are missing."
+    },
+    {
+      "id": "performance-budget",
+      "description": "A render budget is stated, blocking assets are minimal, and image weight is noted.",
+      "type": "structure",
+      "rule": "Fail when no render budget is stated, when blocking assets are not minimized, or when image weight is unbounded."
+    },
+    {
+      "id": "one-primary-action",
+      "description": "Exactly one primary action per view, not two competing CTAs.",
+      "type": "structure",
+      "rule": "Fail when a view carries two competing primary actions instead of one clear primary action."
+    },
+    {
+      "id": "premium-uncluttered",
+      "description": "The result is premium and uncluttered: generous space, clear hierarchy, no visual noise.",
+      "type": "brand",
+      "rule": "Fail when the layout is cluttered or lacks a clear hierarchy in a way that breaks the premium, uncluttered brand bar."
+    },
+    {
+      "id": "human-check-preserved",
+      "description": "A human design check remains the final manual step after this gate and brand QA.",
+      "type": "process",
+      "rule": "Fail when the design is treated as publish-ready without a human design sign-off. Passing this gate and brand QA does not replace the manual check."
+    },
+    {
+      "id": "result-is-binary",
+      "description": "The gate returns a binary verdict with a structured fix list on fail.",
+      "type": "process",
+      "rule": "Result is pass only when every check passes; otherwise fail with one fix item per failing check, each naming the check, the quoted or described element, and the required change."
+    }
+  ]
+}

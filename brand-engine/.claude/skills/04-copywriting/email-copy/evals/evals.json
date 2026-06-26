@@ -1,0 +1,95 @@
+{
+  "skill": "email-copy",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'email-copy'."
+    },
+    {
+      "id": "variant-fields-complete",
+      "description": "Each email variant has id, segment, headline, body, one cta, language.",
+      "type": "automatic",
+      "rule": "Every variant object includes id, segment, headline, body, cta, language (ar|en)."
+    },
+    {
+      "id": "one-clear-cta",
+      "description": "Each email carries exactly one clear CTA.",
+      "type": "automatic",
+      "rule": "Each variant has a single cta; no email lists two competing actions or buttons."
+    },
+    {
+      "id": "body-length-bar",
+      "description": "Body is short, two to four short lines for a busy reader.",
+      "type": "manual",
+      "rule": "Body stays within roughly two to four short lines; no long paragraphs."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file or example copy.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals",
+      "description": "Digits are Western numerals only.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669); digits are 0-9 only."
+    },
+    {
+      "id": "no-tatweel",
+      "description": "No tatweel or kashida in Arabic copy.",
+      "type": "automatic",
+      "rule": "The file contains zero U+0640 tatweel characters."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "No invented offer, price, Skill Path title, or instructor name.",
+      "type": "manual",
+      "rule": "Body references only offers and prices traceable to the brief; absent ones trigger stop-and-ask."
+    },
+    {
+      "id": "empowering-framing",
+      "description": "Copy is empowering, never deficit-framed.",
+      "type": "manual",
+      "rule": "The email speaks to what the reader can build, not to what they lack; no shaming."
+    },
+    {
+      "id": "frameworks-optional",
+      "description": "Named copy frameworks stay optional, the Arabic-first voice stays primary.",
+      "type": "manual",
+      "rule": "The 4 Us, PAS, AIDA, and the 4 Cs are offered as optional tools to test a line against and matched to funnel stage; they are not imposed as mandatory structure over the voice."
+    },
+    {
+      "id": "preheader-paired",
+      "description": "The paired subject set carries a deliberate preheader.",
+      "type": "manual",
+      "rule": "The subject_lines set paired by subject_ref carries a deliberate preheader (roughly 40 to 90 characters, true to the body), set on purpose rather than spilled body text."
+    },
+    {
+      "id": "subject-length-20-to-60-mobile-30-to-40",
+      "description": "The subject is 20 to 60 characters, mobile band roughly 30 to 40, key word in the first 30.",
+      "type": "manual",
+      "rule": "The primary subject runs 20 to 60 characters, sits in the mobile band of roughly 30 to 40, and front-loads the key word inside the first 30 characters so the angle lands before truncation."
+    },
+    {
+      "id": "deliberate-preheader-40-to-90",
+      "description": "A deliberate preheader of about 40 to 90 characters that adds a promise, not a repeat of the subject.",
+      "type": "manual",
+      "rule": "The preheader is set on purpose, runs about 40 to 90 characters, adds a promise rather than repeating the subject, and is never left to spill body text."
+    },
+    {
+      "id": "send-trigger-stated",
+      "description": "The email states its send trigger: time-based or behavior-triggered.",
+      "type": "manual",
+      "rule": "The email states a send_trigger as time-based (a delay after the entry event) or behavior-triggered (a response to what the contact did or did not do), layered on the time-based foundation."
+    },
+    {
+      "id": "cta-serves-sequence-objective",
+      "description": "The single CTA and angle serve the objective of the sequence the email belongs to, for its audience.",
+      "type": "manual",
+      "rule": "The email names its sequence pattern and objective from sequence-standards.md, and its one CTA and angle serve that objective for that audience (relationship, activation, attendance, conversion, reactivation, or win back), measured by the objective metric, not opens."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "skill": "on-page-optimization",
+  "checks": [
+    {
+      "id": "frontmatter-shape",
+      "description": "Frontmatter has exactly name and description, name matches the directory.",
+      "type": "automatic",
+      "rule": "YAML frontmatter contains keys name and description only; name equals 'on-page-optimization'."
+    },
+    {
+      "id": "one-intent-per-page",
+      "description": "Each page spec serves exactly one clear search intent.",
+      "type": "manual",
+      "rule": "Each on_page_spec assigns the page a single primary_query and one intent; multi-intent pages are split or focused."
+    },
+    {
+      "id": "spec-fields-complete",
+      "description": "Each spec carries title, meta, headings, internal links, and schema.",
+      "type": "automatic",
+      "rule": "Every on_page_spec includes url, primary_query, title, meta, headings, internal_links, and schema."
+    },
+    {
+      "id": "bilingual-rtl",
+      "description": "Title and meta are produced in Arabic and English with correct RTL.",
+      "type": "manual",
+      "rule": "Title and meta exist in ar and en, Arabic-first, with RTL noted so direction does not break."
+    },
+    {
+      "id": "schema-no-invented-claims",
+      "description": "Schema markup carries no invented claims or unconfirmed titles.",
+      "type": "manual",
+      "rule": "Schema fields reference only values traceable to the brief; no invented Skill Path titles, instructor names, or accreditation claims."
+    },
+    {
+      "id": "ai-answer-structured",
+      "description": "A page serving generative intent is structured to be cited by answer engines.",
+      "type": "manual",
+      "rule": "When the page serves generative (answer-engine) intent, it leads with a clear definitional or direct answer, uses FAQ schema and question-led headings, and keeps claims self-contained for accurate quotation."
+    },
+    {
+      "id": "no-accreditation-implication",
+      "description": "No on-page element implies certificate accreditation.",
+      "type": "manual",
+      "rule": "No title, meta, heading, or schema field states or implies certificates are accredited."
+    },
+    {
+      "id": "no-em-dash",
+      "description": "No em dash character anywhere in the file.",
+      "type": "automatic",
+      "rule": "The file contains zero U+2014 em dash characters."
+    },
+    {
+      "id": "western-numerals-no-tatweel",
+      "description": "Western numerals only and no tatweel.",
+      "type": "automatic",
+      "rule": "No Eastern Arabic numerals (U+0660 to U+0669) and no tatweel (U+0640) appear."
+    },
+    {
+      "id": "no-invented-offer",
+      "description": "No invented offer, price, Skill Path title, or instructor name in any field.",
+      "type": "manual",
+      "rule": "Titles, metas, and schema reference only offers and titles traceable to the brief; absent ones trigger stop-and-ask."
+    }
+  ]
+}

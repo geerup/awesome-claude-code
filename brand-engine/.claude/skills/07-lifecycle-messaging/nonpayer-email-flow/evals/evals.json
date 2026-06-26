@@ -1,0 +1,59 @@
+{
+  "skill": "nonpayer-email-flow",
+  "checks": [
+    {
+      "id": "frontmatter-complete",
+      "description": "SKILL.md frontmatter has exactly name and description, name equals nonpayer-email-flow, description carries trigger phrases.",
+      "type": "automatic",
+      "rule": "Frontmatter keys are name and description only; name equals nonpayer-email-flow."
+    },
+    {
+      "id": "ordered-flow-fields",
+      "description": "The flow is ordered and each message has trigger, segment, channel, and a copy variant ref.",
+      "type": "automatic",
+      "rule": "Output flow lists ordered messages, each with id, trigger, segment, channel, copy_ref, and subject_ref."
+    },
+    {
+      "id": "references-copy-by-id-not-writes",
+      "description": "Each message references a QA-passed copy variant by id; the flow never writes copy.",
+      "type": "automatic",
+      "rule": "Body states each message binds to a QA-passed copy-package variant id and that the flow sequences copy and does not write it."
+    },
+    {
+      "id": "offer-traces-to-brief",
+      "description": "The offer, price, and promotion in the referenced copy trace exactly to the brief; nothing invented.",
+      "type": "manual",
+      "rule": "Body states the offer traces to the brief and forbids invented price, promotion, Skill Path title, or instructor name."
+    },
+    {
+      "id": "audience-size-resolved-at-send",
+      "description": "Audience size is resolved from live data at send time, with about 18,000 as the planning estimate.",
+      "type": "automatic",
+      "rule": "Body and output state audience_size is resolved at send, planning estimate about 18,000 non-payers."
+    },
+    {
+      "id": "send-on-approval-sentence",
+      "description": "A one plain sentence send_on_approval describes what the send does and to how many.",
+      "type": "automatic",
+      "rule": "Output includes a send_on_approval one-sentence statement of what the send does and to how many."
+    },
+    {
+      "id": "suppression-correct",
+      "description": "Suppression excludes paying contacts, unsubscribes, and hard bounces.",
+      "type": "automatic",
+      "rule": "Output suppression names paying contacts, unsubscribed, and hard-bounced, and the flow excludes them."
+    },
+    {
+      "id": "platform-open-item-not-sendable",
+      "description": "The platform open item is surfaced; the package is not-sendable until confirmed and approved.",
+      "type": "automatic",
+      "rule": "Body marks the platform open item and marks the package design-only and not-sendable until the platform is confirmed and approved."
+    },
+    {
+      "id": "brand-mechanical-rules",
+      "description": "No em dashes, no tatweel, Western numerals, empowering not deficit-framed, RTL-safe Arabic.",
+      "type": "automatic",
+      "rule": "File contains no em dash, no tatweel, no Eastern Arabic numerals; any Arabic example is empowering and RTL-safe."
+    }
+  ]
+}

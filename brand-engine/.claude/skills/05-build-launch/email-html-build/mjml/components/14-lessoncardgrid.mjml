@@ -1,0 +1,34 @@
+<!-- 14 LessonCardGrid, the multi-instructor offer grid (the extension set, per
+     context/email-design-system.md and context/multi-instructor-angles.md). UP TO THREE in-body
+     cards, each casting ONE instructor as ONE lesson toward the email's umbrella outcome: a
+     text-free, rights-cleared portrait (image element) plus three live copy slots, the outcome
+     headline (data-role="card-headline"), the "with <Name>, <credential>" line
+     (data-role="card-credential"), and a QUIET SECONDARY link (data-role="card-cta", a text link,
+     NEVER a second pill, so the email keeps one primary CTA). Only catalog-status-confirmed
+     instructors with a servable, text-free portrait; an unconfirmed instructor's card is DROPPED,
+     never improvised. This is ClassCardGrid's in-body sibling: ClassCardGrid is the "other classes"
+     footer (name + "Teaches X"), LessonCardGrid is the offer grid (outcome headline + credential +
+     link). scripts/email_render.py emits the full grid and is the source of truth; this MJML
+     mirrors it via mj-raw (mj-image cannot carry the live copy slots). The example below is one AR
+     card shown for structure; the renderer emits up to three from the spec's lesson_cards. The
+     headline, credential, and link labels are QA-passed copy bound by data-copy-id; the portrait is
+     a placeholder, staged to the Ortto CDN before send. -->
+<mj-text align="right" color="#009975" font-size="13px" font-weight="700" letter-spacing="2px"
+         padding="18px 40px 8px" font-family="'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif">
+  دروس لك
+</mj-text>
+<mj-section background-color="#141414" padding="0 28px 14px">
+  <mj-column css-class="card" width="33%" padding="6px">
+    <mj-raw>
+      <a href="https://www.maharat.com/ar" data-slot="element" style="display:block;text-decoration:none;">
+        <img src="https://m.autopilotapp.com/maharat/placeholder-portrait.png" width="176" alt="صورة المدرب" style="display:block;width:100%;max-width:176px;height:auto;border-radius:12px;border:0;">
+      </a>
+      <div style="padding:10px 2px 0;text-align:right;">
+        <div style="width:26px;height:3px;background:#009975;font-size:0;line-height:0;margin:8px 0 7px;">&nbsp;</div>
+        <div data-slot="copy" data-role="card-headline" data-lang="ar" data-copy-id="email-<campaign>-e1-lesson1-headline-ar" style="color:#FFFFFF;font-size:15px;font-weight:700;line-height:1.35;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">العنوان: النتيجة التي يحققها القارئ</div>
+        <div data-slot="copy" data-role="card-credential" data-lang="ar" data-copy-id="email-<campaign>-e1-lesson1-credential-ar" style="color:#E6E6E6;font-size:12px;line-height:1.5;padding-top:5px;font-family:'Lyon Arabic Display','29LT Azer',Tahoma,Arial,sans-serif;">مع اسم المدرب، سطر مصدق من صفحة الصف</div>
+        <div data-slot="copy" data-role="card-cta" data-lang="ar" data-copy-id="email-<campaign>-e1-lesson1-cta-ar" style="padding-top:8px;"><a href="https://www.maharat.com/ar" style="color:#009975;font-size:13px;font-weight:700;text-decoration:none;">ابدا التعلم</a></div>
+      </div>
+    </mj-raw>
+  </mj-column>
+</mj-section>

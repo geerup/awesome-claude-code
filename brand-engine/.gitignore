@@ -1,0 +1,34 @@
+# Personal brand & career engine: local-only and cache paths.
+# Everything else under brand-engine/ is committed (the root .gitignore carves
+# brand-engine/ back in; this deeper file re-ignores only caches and secrets).
+
+# Machine-local Claude Code permission tracking
+.claude/settings.local.json
+
+# Legacy MCP path. The committed config is brand-engine/.mcp.json and it uses
+# ${ENV_VAR} interpolation only, never inline secrets.
+.claude/.mcp.json
+
+# Installed Agent-Skills cache. The 29 brand skills are committed under
+# .claude/skills/; the .agents/skills/ install target is a cache. The
+# brand-context seam (.agents/brand-context.md) IS committed (negated below).
+.agents/skills/
+.agents/*-lock.json
+skills-lock.json
+!.agents/brand-context.md
+
+# Image byte cache (the asset library metadata is committed; raw bytes are pulled on demand)
+/.claude/assets/instructors/
+/.claude/assets/library-cache/
+
+# Build caches
+/.claude/skills/05-build-launch/email-html-build/mjml/node_modules/
+/.claude/skills/05-build-launch/email-html-build/mjml/package-lock.json
+/.claude/skills/05-build-launch/email-html-build/build/
+
+# Noise and secrets
+__pycache__/
+*.pyc
+.DS_Store
+*.swp
+.env
