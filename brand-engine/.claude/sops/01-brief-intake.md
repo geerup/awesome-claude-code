@@ -35,7 +35,7 @@ been validated. The orchestrator dispatches stream 1 before any other stream run
    audience. If it is missing or ambiguous, stop and ask. The entry point decides which
    streams run, so it cannot be guessed.
 5. Check the offer against guardrails. The offer must come from the brief, never invented. No
-   Skill Path title, instructor name, price, or promotion is assumed here. Confirm no
+   offer title, subject name, price, or promotion is assumed here. Confirm no
    accreditation claim is implied anywhere in the brief.
 6. Decide stop-or-proceed. If a variable a needed stream depends on is missing, stop and ask
    Ahmed. Do not fill the gap. If the gaps are only in streams this campaign does not run, the

@@ -62,7 +62,7 @@ An `aso-package` (wrapped in the common envelope, per `runtime/handoff-contract.
 - Store creatives pass design-qa: visual constants, RTL, Western numerals, no baked Arabic,
   store-spec dimensions and safe areas, premium and uncluttered.
 - Every keyword, field, and creative traces to the brief and the keyword map. No invented
-  offer, price, Skill Path title, content lineup, or instructor name.
+  offer, price, offer title, content lineup, or an unverified claim.
 - No accreditation implication in any listing field, creative, or review reply.
 - The store-access open item is surfaced; a store publish is blocked until access is confirmed
   and the human gate clears.

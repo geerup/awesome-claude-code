@@ -39,7 +39,7 @@ Route by need:
 - Any existing site data: current URLs, analytics, search console exports, when available.
 
 If a needed variable is absent from both brief and context, stop and ask. Do not fill the gap
-with an invented value, claim, Skill Path title, or instructor name.
+with an invented value, claim, offer title, or an unverified claim.
 
 ## Steps
 

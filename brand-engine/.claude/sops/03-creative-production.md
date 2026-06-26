@@ -15,7 +15,7 @@ accreditation claims.
 ## Trigger
 
 A campaign that needs visual assets, with a QA-passed `strategy-artifact` from stream 2. For
-the owned-audience non-payer flow, this runs only if the emails need visual assets.
+the owned-audience lapsed-contact flow, this runs only if the emails need visual assets.
 
 ## Inputs
 
@@ -27,7 +27,7 @@ the owned-audience non-payer flow, this runs only if the emails need visual asse
 
 1. Concept. The creative-director proposes a small set of concepts. Each concept has an id, a
    description, and a rationale tied directly to the angle from the strategy-artifact. No
-   concept relies on an invented Skill Path title, instructor name, or offer detail.
+   concept relies on an invented offer title, subject name, or offer detail.
 2. Write text-free prompts. Produce image or video prompts that carry no baked-in text, and
    no Arabic at all. The visual must leave room for copy to be overlaid later. Prompts respect
    the visual constants: near-black #141414, card surfaces #1A1A1A, emerald accent #009975,
@@ -55,7 +55,7 @@ This artifact hands off to streams 4 and 5.
 
 ## Quality bar
 
-- Every concept rationale traces to the strategy-artifact angle. No invented title, instructor,
+- Every concept rationale traces to the strategy-artifact angle. No invented title, subject,
   or offer detail in any concept or prompt.
 - Prompts are text-free and carry no Arabic. Copy-overlay slots are present and empty.
 - Visual constants honored: #141414, #1A1A1A, emerald #009975. Premium, uncluttered. RTL

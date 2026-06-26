@@ -1,7 +1,7 @@
-# SOP 07: Lifecycle, the non-payer email flow
+# SOP 07: Lifecycle, the lapsed-contact email flow
 
 Stream 7. Owner: lifecycle-architect. Mode: reasoning for the design, gated for the send.
-This is the deepest-built stream and the first build. It moves owned non-paying contacts
+This is the deepest-built stream and the first build. It moves owned lapsed contacts
 toward a first purchase or a subscription, by email, behind the human gate.
 
 No em dashes, no tatweel, Western numerals, English-first, empowering framing, no
@@ -11,9 +11,9 @@ accreditation claims.
 
 ## Where this SOP sits in the pattern library
 
-This SOP is the non-payer pattern: an owned, registered, never-purchased audience, objective a
+This SOP is the lapsed-contact pattern: an owned, registered, never-purchased audience, objective a
 first purchase or subscription. It is one of five lifecycle sequence patterns. The full pattern
-library (welcome, onboarding and activation, event and webinar, non-payer, winback) lives in
+library (welcome, onboarding and activation, event and webinar, lapsed-contact, winback) lives in
 `skills/07-lifecycle-messaging/templates/sequence-standards.md`, selected by the brief's
 audience and objective. Use that selector to confirm this is the right pattern before building.
 If the audience is a new subscriber, a new signup or trial, an event registrant, or a lapsed
@@ -23,12 +23,12 @@ contact, route to the matching pattern there instead.
 
 ## Trigger
 
-A brief with `entry_point: owned audience` targeting the non-paying email contacts. The
+A brief with `entry_point: owned audience` targeting the lapsed email contacts. The
 active first-build brief is `briefs/2026-06-nonpayer-email.md`.
 
 ## Inputs
 
-- The `strategy-artifact` from strategy-lead: segments of the non-payers, the angle, offer
+- The `strategy-artifact` from strategy-lead: segments of the lapsed-contacts, the angle, offer
   framing, success metric.
 - The `copy-package` from copywriter-ar: QA-passed Arabic email copy and subject lines.
 - The brief: offer (product, plan, price, promotion), schedule, send window, suppression.
@@ -37,7 +37,7 @@ active first-build brief is `briefs/2026-06-nonpayer-email.md`.
 
 ## Steps
 
-1. Resolve segments. Take the strategy-artifact segments of the about 18,000 non-payers.
+1. Resolve segments. Take the strategy-artifact segments of the about 18,000 lapsed-contacts.
    Typical cuts: never-engaged vs lapsed-engaged, prior single-class interest vs none,
    recency of last open. Do not invent segment sizes; use the data, flag where live data is
    needed at send time.
@@ -48,7 +48,7 @@ active first-build brief is `briefs/2026-06-nonpayer-email.md`.
    - Message 1, entry: lead with what the reader can build. The angle, one clear CTA. No
      pressure, no deficit framing.
    - Message 2, value: a concrete proof point or a useful free thing (a guide, a taste of a
-     Masterclass). Reinforce the angle.
+     offering). Reinforce the angle.
    - Message 3, offer: the offer made plain, with the price and promotion exactly as the
      brief gives them. One CTA. Never invent a discount.
    - Message 4, branch on engagement: openers and clickers get a nudge toward the offer;
@@ -67,14 +67,14 @@ A `lifecycle-package` (see `runtime/handoff-contract.md`):
 - flow: ordered messages, each with trigger, audience segment, channel, copy variant ref.
 - audience_size: resolved from live data (about 18,000 as the planning estimate).
 - send_on_approval: one plain sentence, for example "This sends a 4-message flow to about
-  18,000 non-paying contacts over 2 weeks, starting [date]."
+  18,000 lapsed contacts over 2 weeks, starting [date]."
 - suppression: who is excluded and why.
 
 ## Quality bar
 
 - Every message's copy is QA-passed: skill eval, then arabic-copy-qa, then brand-qa-reviewer.
 - The offer in the copy traces exactly to the brief. No invented price, promotion, title, or
-  instructor name.
+  subject name.
 - RTL renders. No em dashes, no tatweel, Western numerals. Empowering, never deficit-framed.
 - Suppression is correct: no paying contact, unsubscribe, or hard bounce receives the flow.
 - The platform open item is surfaced. If unresolved, the package is design-only and clearly
@@ -85,7 +85,7 @@ A `lifecycle-package` (see `runtime/handoff-contract.md`):
 ```
 flow:
   - id: msg-1-entry
-    trigger: enters non-payer flow
+    trigger: enters lapsed-contact flow
     segment: lapsed-engaged
     channel: email
     copy_ref: copy-package/variant-ar-lapsed-01
@@ -97,7 +97,7 @@ flow:
     copy_ref: copy-package/variant-ar-lapsed-offer
     note: price and promotion from brief; ASSUMPTION flags must be resolved before send
 audience_size: resolve at send (planning estimate ~18,000)
-send_on_approval: "Sends a 4-message Arabic email flow to the non-paying segment over 2 weeks."
+send_on_approval: "Sends a 4-message Arabic email flow to the lapsed segment over 2 weeks."
 suppression: paying contacts, unsubscribed, hard-bounced
 ```
 

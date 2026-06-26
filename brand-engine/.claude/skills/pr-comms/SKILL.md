@@ -13,7 +13,7 @@ sub-skill, and assembles the `pr-package`.
 
 PR carries the heaviest guardrail load in the engine. Public statements can embarrass or
 expose the brand. The hub enforces one hard rule above all: nothing in any PR output names an
-unannounced plan, a roadmap, fundraising, or an unconfirmed instructor. Only what is already
+unannounced plan, a roadmap, fundraising, or an unconfirmed subject. Only what is already
 public or confirmed in the brief may appear. When in doubt, it stays out and becomes an open
 item.
 
@@ -47,7 +47,7 @@ boundary, then the media list and outreach to distribute it. All three feed the 
   written here. The release runs the copy QA gates before it is package-ready.
 
 If a needed variable is absent from both brief and context, stop and ask. Do not fill the gap
-with an invented value. Never invent a Skill Path title, the content lineup, an instructor
+with an invented value. Never invent a offer title, the content lineup, a subject
 name, an offer, a price, or a target.
 
 ## Steps
@@ -97,9 +97,9 @@ brief_refs), per `runtime/handoff-contract.md`.
 - Distribution and publishing are gated actions. Nothing sends or publishes without the human
   gate. Approval is per distribution action and per campaign. Silence is not approval.
 - PR hard rule: never name an unannounced plan, a roadmap, fundraising, or an unconfirmed
-  instructor. Only what is already public or confirmed in the brief may appear. In doubt, it
+  subject. Only what is already public or confirmed in the brief may appear. In doubt, it
   stays out and becomes an open item.
-- Never invent a Skill Path title, the content lineup, an instructor name, an offer, a price,
+- Never invent a offer title, the content lineup, an subject name, an offer, a price,
   or a target. Missing, stop and ask.
 - No accreditation claims anywhere in any release, pitch, or quote.
 - Never put personal or sensitive data in a tracking URL parameter, and never mishandle a

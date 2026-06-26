@@ -61,7 +61,7 @@ A `content-package` (wrapped in the common envelope, per `runtime/handoff-contra
   for English, then brand-qa-reviewer, per `runtime/verification.md`). RTL renders correctly.
 - The calendar maps to the SEO clusters, the strategy angle, the segments, and the
   success_metric.
-- No invented offer, price, Skill Path title, content lineup, or instructor name in any brief
+- No invented offer, price, offer title, content lineup, or an unverified claim in any brief
   or article. No accreditation implication anywhere.
 - No personal or sensitive data in any tracking parameter in the routing.
 - Publishing is gated; nothing publishes before the human gate clears.

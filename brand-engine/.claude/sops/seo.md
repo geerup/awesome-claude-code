@@ -62,7 +62,7 @@ An `seo-package` (wrapped in the common envelope, per `runtime/handoff-contract.
 - On-page tags and any customer-facing copy are QA-passed (skill eval, arabic-copy-qa for
   Arabic, english-copy-qa for English, then brand-qa-reviewer, per `runtime/verification.md`).
 - Technical plan includes hreflang for AR and EN alternates and verified RTL correctness.
-- No invented offer, price, Skill Path title, content lineup, or instructor name in any tag or
+- No invented offer, price, offer title, content lineup, or an unverified claim in any tag or
   brief. No accreditation implication anywhere.
 - A live site change is gated; nothing publishes to production before the human gate clears.
 

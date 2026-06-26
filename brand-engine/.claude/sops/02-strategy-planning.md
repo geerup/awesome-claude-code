@@ -21,7 +21,7 @@ in-scope streams known.
 - The validated brief and scope note (stream 1).
 - The brief: audience, offer (product, plan, price, promotion), objective, success metric,
   channels, schedule.
-- Owned-audience data where it exists (for example the non-payer contacts), for segment
+- Owned-audience data where it exists (for example the lapsed-contact contacts), for segment
   definitions and sizes. Where live data is needed at send time, that is flagged, not guessed.
 - `context/` for facts about the platform and audience.
 
@@ -39,7 +39,7 @@ in-scope streams known.
    raise it as an open item to the human gate. Do not invent a target, a date, or a substitute
    metric, and do not quietly carry a weak one forward.
 2. Segment the audience. Cut the audience into a small number of meaningful segments from the
-   data. For an owned audience, cut the contacts (for example the about 18,000 non-payers) by
+   data. For an owned audience, cut the contacts (for example the about 18,000 lapsed-contacts) by
    real signals: engagement recency, prior interest, never-engaged versus lapsed. Use data for
    sizes. Where a size needs live data at send time, mark it pending, do not invent it.
 3. Set the angle. State the one core message and the rationale tied to the audience and the
@@ -47,7 +47,7 @@ in-scope streams known.
    so it is concrete, not a slogan.
 4. Frame the offer. Position the brief's offer for each segment. Show the price only if the
    brief gives it; if price is an ASSUMPTION, frame around value and mark the price pending.
-   Never invent a discount, plan, Skill Path title, or instructor name.
+   Never invent a discount, plan, offer title, or an unverified claim.
 5. Plan the channels. State which streams this campaign uses and the entry point (paid or
    owned), consistent with the scope note from stream 1.
 6. Assemble the strategy-artifact. Carry forward every unresolved ASSUMPTION and OPEN ITEM
@@ -73,7 +73,7 @@ This artifact hands off to streams 3, 4, and 7.
   never repaired by inventing a value.
 - The angle is empowering, never deficit-framed.
 - The offer framing shows a price only when the brief supplies it. No invented offer detail,
-  title, or instructor name.
+  title, or an unverified claim.
 - Gate: skill eval for structure and completeness. Internal artifact, so no arabic-copy-qa or
   brand-qa unless it carries customer-facing copy (see `verification.md`).
 

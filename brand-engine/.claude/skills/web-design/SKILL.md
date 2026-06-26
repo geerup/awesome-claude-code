@@ -83,5 +83,5 @@ brief_refs).
 - One primary action per view. Never put personal or sensitive data in URL parameters or tracking.
 - Generative or build tool choice runs through `build-vs-buy-eval`: Arabic capability is the
   decisive filter, and no tool is adopted without approval. Keep a human design check on any Arabic.
-- Do not invent Skill Path titles or name instructors. Never imply certificates are accredited.
+- Do not invent offer titles or name subjects. Never imply certificates are accredited.
 - No em dashes, no tatweel, Western numerals only. Empowering, never deficit-framed.

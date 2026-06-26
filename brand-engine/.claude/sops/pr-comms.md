@@ -8,7 +8,7 @@ a gated action at the human gate.
 
 PR carries the heaviest guardrail load in the engine. The hard rule sits above everything
 else: nothing in any PR output names an unannounced plan, a roadmap, fundraising, or an
-unconfirmed instructor. Only what is already public or confirmed in the brief may appear.
+unconfirmed subject. Only what is already public or confirmed in the brief may appear.
 
 English-first, no em dashes, no tatweel, Western numerals, no accreditation claims.
 
@@ -32,7 +32,7 @@ A brief with a public announcement in scope, or a channel_plan that includes PR.
 
 1. Set the announcement boundary first. Route to the announcement-plan skill: list the sayable
    set (only public-already or brief-confirmed facts), list the hold-out set (unannounced
-   plans, roadmap, fundraising, unconfirmed instructor names, unconfirmed Skill Path titles or
+   plans, roadmap, fundraising, unconfirmed subject names, unconfirmed offer titles or
    content lineup, any accreditation implication), and produce the guardrail_check. No release
    or outreach proceeds until this clears.
 2. Draft the press release inside the boundary. Route to the press-release skill: English-first,
@@ -66,9 +66,9 @@ A `pr-package` (wrapped in the common envelope, per `runtime/handoff-contract.md
 - The release and any pitch copy are QA-passed (skill eval, arabic-copy-qa for Arabic,
   english-copy-qa for English, compliance-privacy-check for outreach and data handling, then
   brand-qa-reviewer, per `runtime/verification.md`). RTL renders correctly.
-- No unannounced plan, roadmap, fundraising, or unconfirmed instructor name anywhere in the
+- No unannounced plan, roadmap, fundraising, or unconfirmed subject name anywhere in the
   release, the boilerplate, or any pitch.
-- No invented offer, price, Skill Path title, content lineup, or instructor name. No
+- No invented offer, price, offer title, content lineup, or an unverified claim. No
   accreditation implication. A quote is attributed only to an approved spokesperson.
 - Journalist personal data is need-to-know, never echoed into a tracking parameter or a public
   thread, never exposed beyond the outreach.

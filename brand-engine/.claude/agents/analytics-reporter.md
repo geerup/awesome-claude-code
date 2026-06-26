@@ -102,7 +102,7 @@ write or spend is a gated action that goes to the human gate, never executed her
 
 ## Worked example
 
-Trigger: "How did the non-payer flow perform, and what should we change." Measuring against the
+Trigger: "How did the lapsed-contact flow perform, and what should we change." Measuring against the
 `strategy-artifact` success_metric (paid conversions from the flow within the send window), a
 short illustrative readout (no invented numbers): "Open rate held; conversions concentrated in
 the recent-lapsed segment. what_to_change: move send 2 earlier by 1 day, test a single subject

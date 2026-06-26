@@ -11,7 +11,7 @@ No em dashes, no tatweel, Western numerals, English-first, RTL-correct, no accre
 ## Trigger
 
 A campaign that lands traffic and needs a page, a gate, or tracking. For the owned-audience
-non-payer flow, this runs only if the emails point to a page or a gated offer.
+lapsed-contact flow, this runs only if the emails point to a page or a gated offer.
 
 ## Inputs
 

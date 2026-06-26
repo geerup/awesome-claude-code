@@ -7,7 +7,7 @@ plan across Meta, Google, TikTok, and YouTube. The builder stages the campaign p
 human flips it live. The engine never spends.
 
 Budgets, targets, and schedules are brief inputs. They are never assumed. This stream does
-not run for the owned-audience non-payer flow (no paid build).
+not run for the owned-audience lapsed-contact flow (no paid build).
 
 No em dashes, Western numerals in any in-platform copy, no accreditation claims.
 

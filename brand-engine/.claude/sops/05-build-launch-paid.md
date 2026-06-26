@@ -5,7 +5,7 @@ and copy into a launch-ready paid campaign structure (Meta and Instagram focus, 
 YouTube secondary). It stages everything in a paused state and stops at the human gate. It
 never spends.
 
-This stream does not run for the owned-audience non-payer flow (no paid build). It is here so
+This stream does not run for the owned-audience lapsed-contact flow (no paid build). It is here so
 the engine is ready when a paid acquisition campaign is the active build.
 
 No em dashes, Western numerals in any in-platform copy, no accreditation claims.
