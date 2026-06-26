@@ -35,19 +35,20 @@ It does not emit a stream artifact. It returns a verdict that updates the asset'
 
 ## What it checks (WCAG 2.2 AA, scoped to what the engine ships)
 
-- Contrast: text and meaningful UI against the fixed palette (#141414 background, #1A1A1A
-  cards, emerald #009975 accent). Normal text at least 4.5:1, large text and UI at least 3:1.
-  Watch emerald-as-text on #141414 and on #1A1A1A: flag where it falls under AA and require a
-  larger size or weight, or reserve emerald for accents and large headings.
-- RTL and reading order: logical order matches visual order in Arabic, no LTR leakage, layout
-  mirrored correctly, Western numerals preserved in any rendered text.
+- Contrast: text and meaningful UI against the active profile visual constants
+  (context/brand-voice.md), background, cards, and accent. Normal text at least 4.5:1, large text
+  and UI at least 3:1. Watch the accent-as-text on the background and card colors: flag where it
+  falls under AA and require a larger size or weight, or reserve the accent for accents and large
+  headings.
+- RTL and reading order: when Arabic is in scope, logical order matches visual order, no LTR
+  leakage, layout mirrored correctly, Western numerals preserved in any rendered text.
 - Text alternatives: every meaningful image has an alt-text slot for the author to fill (AR by
-  copywriter-ar). Decorative images marked decorative. No meaning carried by image alone, and
-  no Arabic baked into a generated image, which design-qa also enforces.
+  copywriter-ar when Arabic is in scope). Decorative images marked decorative. No meaning carried
+  by image alone, and no Arabic baked into a generated image, which design-qa also enforces.
 - Structure: one logical heading order, landmarks present, lists marked as lists. Email carries
   semantic structure and a plain-text alternative, never image-only.
-- Controls and links: every link and button has a descriptive label, no bare "اضغط هنا" or
-  "click here"; signup-gate form fields have programmatic labels.
+- Controls and links: every link and button has a descriptive label, no bare "click here" (or
+  "اضغط هنا" when Arabic is in scope); signup-gate form fields have programmatic labels.
 - Target size and spacing: interactive targets large enough and not crowded, usable on mobile.
 - Keyboard and focus: focusable in a sensible order, focus visible, nothing reachable only on
   hover or pointer.
@@ -76,9 +77,9 @@ It does not emit a stream artifact. It returns a verdict that updates the asset'
 
 ## Worked example
 
-Trigger: "Accessibility check the non-payer landing page before it advances." The reviewer
-finds emerald body text on the dark card. A short fix item:
-`{ check: "contrast-AA", element: "plan benefit paragraph, #009975 on #1A1A1A", fix: "emerald falls under 4.5:1 at body size; set the paragraph to #FFFFFF and keep emerald for the heading and the CTA" }`.
+Trigger: "Accessibility check the landing page before it advances." The reviewer
+finds accent body text on the dark card. A short fix item:
+`{ check: "contrast-AA", element: "offer benefit paragraph, accent on card", fix: "the accent falls under 4.5:1 at body size; set the paragraph to white and keep the accent for the heading and the CTA" }`.
 Verdict: fail, returned to conversion-engineer; nothing advances until it resubmits clean.
 
 ## Decision heuristics and pre-handoff checklist
