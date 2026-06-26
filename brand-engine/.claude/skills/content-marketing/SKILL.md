@@ -8,7 +8,7 @@ description: Hub for the content-marketing stream, owned by content-marketer. Us
 The entry point for owned content planning. Owned by `content-marketer`. This hub does not
 write articles itself. It reads the inputs, routes to the right sub-skill, and assembles the
 `content-package` that copywriters author from and other owned streams distribute. English-first,
-with English in parallel, built on the SEO clusters and the strategy angle.
+with Arabic only when a brief sets it in scope, built on the SEO clusters and the strategy angle.
 
 ## Purpose
 
@@ -36,7 +36,7 @@ Route by need:
 - `context/brand-voice.md`: voice and the hard mechanical rules.
 
 If a needed variable is absent from both brief and context, stop and ask. Do not fill the gap
-with an invented value, claim, Skill Path title, or instructor name.
+with an invented value, claim, offer title, or subject name (context/subjects/).
 
 ## Steps
 

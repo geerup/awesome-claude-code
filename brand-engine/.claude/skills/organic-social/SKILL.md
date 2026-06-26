@@ -1,6 +1,6 @@
 ---
 name: organic-social
-description: Hub for organic social acquisition, owned by organic-social, the zero-media-cost entry point C that grows reach across the owned social accounts (about 180,000 followers) and feeds the signup gate then lifecycle. Use to plan organic content, schedule a post calendar, and run on-brand community engagement. Routes to organic-content-plan and community-engagement, and assembles the organic-package. Triggers on "organic social," "content plan," "post calendar," "what should we post," "community engagement," "reply to comments," "repurpose the video," "grow the social following."
+description: Hub for organic social acquisition, owned by organic-social, the zero-media-cost entry point C that grows reach across the owned social accounts and feeds the signup gate then lifecycle. Use to plan organic content, schedule a post calendar, and run on-brand community engagement. Routes to organic-content-plan and community-engagement, and assembles the organic-package. Triggers on "organic social," "content plan," "post calendar," "what should we post," "community engagement," "reply to comments," "repurpose the video," "grow the social following."
 ---
 
 # Organic Social Acquisition (hub)
@@ -12,8 +12,8 @@ hub does not write captions and does not publish. It validates inputs, routes to
 sub-skill, and assembles the `organic-package`.
 
 Organic acquisition lands traffic on the signup gate (email or WhatsApp), which is the entry
-to lifecycle (stream 7). The owned social audience is about 180,000 followers, a real asset
-and a zero-media-cost channel.
+to lifecycle (stream 7). The owned social audience is a real asset and a zero-media-cost
+channel.
 
 ## When to use
 
@@ -45,16 +45,17 @@ the same `organic-package`.
   success_metric.
 - The active `briefs/` file: objective, the owned social accounts in scope, posting cadence,
   the campaign window.
-- Captions and copy are routed to `copywriter-ar` (English-first) and the English copywriter,
-  never written here. Visual assets come from `creative-director` and the designer. Video
-  repurposing (one video into many formats) uses Blotato, gated and added on approval.
+- Captions and copy are routed to `copywriter-en` (English-first, the default author) and, only
+  when a brief sets Arabic in scope, `copywriter-ar`, never written here. Visual assets come
+  from `creative-director` and the designer. Video repurposing (one video into many formats)
+  uses Blotato, gated and added on approval.
 - `context/profiles/maharat/organic-social-style.md`: the voice-in-practice, the formatting legend, the
   bilingual convention, the engagement and CTA mechanics, and the reconciliation of the source
   organic copy doc against the engine hard rules. Read alongside `brand-voice.md`.
 
 If a needed variable is absent from both brief and context, stop and ask. Do not fill the gap
-with an invented value. Never invent a Skill Path title, the content lineup, an instructor
-name, an offer, a price, or a target.
+with an invented value. Never invent an offer title, the content lineup, a subject, a price,
+or a target.
 
 ## Steps
 
@@ -63,9 +64,9 @@ name, an offer, a price, or a target.
 2. Route to `organic-content-plan` to build the content plan, the post calendar, the channel
    mix, and the repurposing map.
 3. Route to `community-engagement` for the reply and escalation guidance around the posts.
-4. Route captions to `copywriter-ar` and the English copywriter; route assets to
-   `creative-director` and the designer. Sequence QA-passed copy variants by id; do not write
-   copy here.
+4. Route captions to `copywriter-en` (default), or to `copywriter-ar` when a brief sets Arabic
+   in scope; route assets to `creative-director` and the designer. Sequence QA-passed copy
+   variants by id; do not write copy here.
 5. Set `distribution_routing`: which post goes to which account and segment, and where the
    click lands (the signup gate, the entry to lifecycle).
 6. Assemble the `organic-package` and stop at the human gate. Posting is one gated action;

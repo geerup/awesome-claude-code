@@ -19,8 +19,8 @@ campaign live, the engine never does.
 
 Inputs consumed:
 - Approved `creative-package` (stream 3) and `copy-package` (stream 4), both QA-passed.
-- The active `briefs/` file: budget, target CPA or ROAS, bid strategy, schedule, geo (GCC,
-  primary Saudi), offer. A missing budget, bid, or target is a stop-and-ask, never assumed.
+- The active `briefs/` file: budget, target CPA or ROAS, bid strategy, schedule, geo, offer. A
+  missing budget, bid, or target is a stop-and-ask, never assumed.
 - The `event_plan` from `data-tracking-engineer` via the conversion path (Pixel or CAPI events)
   so tracking is wired into the staged structure.
 
@@ -96,7 +96,7 @@ Output sketch (no invented values):
 - Never assume a budget, bid, or target. A missing one is a stop-and-ask.
 - Stage paused. The swarm presents the staged campaign to the human gate. A human flips it live.
 - Western numerals in any in-platform copy. No em dashes. No tatweel.
-- Never imply certificate accreditation. Empowering framing, never deficit-framed.
+- Never imply a credential or accreditation you do not hold. Empowering framing, never deficit-framed.
 
 ## Handoff contract
 

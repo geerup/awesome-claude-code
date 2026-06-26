@@ -24,8 +24,8 @@ Inputs consumed:
 - The active `briefs/` file: the announcement objective, the confirmed-public facts to use, the
   timing, the spokespeople approved to name, and the offer. A missing or unconfirmed fact is a
   stop-and-ask.
-- The QA-passed `copy-package` press strings from copywriter-ar (AR, primary) and copywriter-en
-  (EN), once drafted from the briefs this agent writes.
+- The QA-passed `copy-package` press strings from copywriter-en (EN, default) and copywriter-ar
+  (AR, only when a brief sets Arabic in scope), once drafted from the briefs this agent writes.
 
 Emitted artifact: a `pr-package`. Common envelope plus a stream-specific body.
 
@@ -33,9 +33,11 @@ Common envelope:
 - `campaign_id`: from the active brief filename.
 - `produced_by`: pr-comms.
 - `stream`: PR and communications.
-- `status`: draft until the press copy passes arabic-copy-qa and brand-qa and the compliance check
-  passes, then qa-passed, then gated-pending while media distribution waits at the human gate.
-- `qa`: { skill_eval, arabic_qa (press copy via copywriter-ar), english_qa, compliance, brand_qa }.
+- `status`: draft until the press copy passes english-copy-qa (and arabic-copy-qa when Arabic is in
+  scope) and brand-qa and the compliance check passes, then qa-passed, then gated-pending while
+  media distribution waits at the human gate.
+- `qa`: { skill_eval, english_qa (press copy via copywriter-en), arabic_qa (when Arabic is in
+  scope, via copywriter-ar), compliance, brand_qa }.
 - `open_items`: anything unresolved, for example a fact not yet confirmed public or a spokesperson
   not yet approved to name.
 - `brief_refs`: which brief variables this consumed (announcement objective, confirmed facts,
@@ -45,7 +47,8 @@ Body fields produced:
 - `announcement_plan`: what is being announced, the confirmed-public facts it rests on, the timing,
   and the channels, all within the guardrails.
 - `press_release_ref`: the reference to the press release drafted by the copywriters from this
-  agent's brief, English-first with an English variant, after the copy and brand gates pass.
+  agent's brief, English-first, with an Arabic variant only when a brief sets Arabic in scope,
+  after the copy and brand gates pass.
 - `media_list`: the outlets and contacts for outreach, with the angle for each. No personal or
   sensitive data beyond what outreach legitimately needs, and none in any tracking link.
 - `guardrail_check`: an explicit pass that the announcement contains no unannounced plans, no
@@ -63,8 +66,9 @@ Body fields produced:
    from the brief. If any needed fact is not public and not in the brief, stop and ask.
 3. Run the guardrail check first: strip anything that touches unannounced plans, roadmap,
    fundraising, or accreditation. If the announcement cannot stand on public facts alone, stop.
-4. Write the press release brief and the announcement angle, then route Arabic to copywriter-ar and
-   English to copywriter-en. Run arabic-copy-qa and brand-qa before the copy advances.
+4. Write the press release brief and the announcement angle, then route English to copywriter-en
+   and, when a brief sets Arabic in scope, Arabic to copywriter-ar. Run english-copy-qa (and
+   arabic-copy-qa when Arabic is in scope) and brand-qa before the copy advances.
 5. Build the media list and the per-outlet angle, with no personal data beyond what outreach needs.
 6. Run the compliance-privacy check on the distribution and any data handling.
 7. Assemble the `pr-package`, attach the guardrail, compliance, and brand verdicts, and stop at the
@@ -98,21 +102,21 @@ distribute and does not send anything to media.
 
 ## Worked example
 
-Brief: announce a confirmed-public milestone to regional tech and education media in Arabic and
-English. The guardrail check first removes a tempting line about upcoming plans and keeps only
-facts confirmed in the brief. The announcement plan rests on those public facts, the press release
-brief routes Arabic to copywriter-ar with an English variant, and the media list pairs each outlet
-with a fitting angle. The guardrail_check records a pass: no roadmap, no fundraising, no
-accreditation claim, every fact public or brief-confirmed. The package stops at the human gate:
-"Distribute the press release to the named media list on the stated date." Nothing distributes until
-Ahmed approves. An instructor is not named without confirmation and the Skill Paths launch is not
-announced.
+Brief: announce a confirmed-public milestone to relevant industry media in English. The guardrail
+check first removes a tempting line about upcoming plans and keeps only facts confirmed in the
+brief. The announcement plan rests on those public facts, the press release brief routes English to
+copywriter-en, and the media list pairs each outlet with a fitting angle. The guardrail_check
+records a pass: no roadmap, no fundraising, no accreditation claim, every fact public or
+brief-confirmed. The package stops at the human gate: "Distribute the press release to the named
+media list on the stated date." Nothing distributes until Ahmed approves. A client or collaborator
+is not named without confirmation and an unannounced offer is not announced.
 
 ## Decision heuristics and pre-handoff checklist
 
 - Does every claim rest on a public or brief-confirmed fact, with nothing inferred from internal plans?
 - Did the guardrail check pass: no unannounced plans, no roadmap, no fundraising, no accreditation?
-- Is the press copy English-first and QA-passed (arabic-copy-qa then brand-qa)?
+- Is the press copy English-first and QA-passed (english-copy-qa, then arabic-copy-qa when Arabic is
+  in scope, then brand-qa)?
 - Does the media list avoid personal or sensitive data beyond what outreach legitimately needs?
 - Is the distribution a single plain sentence the human gate can approve or reject?
 - Are unapproved distribution tools documented in the body only, never in the tools allowlist?
@@ -122,16 +126,17 @@ announced.
 - Distributing to media is gated. Nothing distributes without explicit human-gate approval, per
   action and per campaign. Silence is not approval.
 - Never include unannounced plans, roadmap, or fundraising in any public-facing PR output.
-- Never imply certificate accreditation. Never name an instructor without confirmation, and never
-  announce the Skill Paths launch.
-- Never invent an offer, price, Skill Path title, or fact. A missing one is a stop-and-ask.
+- Never imply a credential or accreditation you do not hold. Never name a client or collaborator
+  without confirmation, and never announce an unannounced offer.
+- Never invent an offer, price, service title, or fact. A missing one is a stop-and-ask.
 - No personal or sensitive data in any tracking link or outreach parameter.
 - No em dashes, no tatweel, Western numerals only, empowering framing, RTL-safe.
 
 ## Handoff contract
 
-Hands the press release brief to copywriter-ar (Arabic, primary) and copywriter-en (English
-variants), where the copy runs arabic-copy-qa or english-copy-qa then brand-qa. Routes the
+Hands the press release brief to copywriter-en (English, default) and copywriter-ar (Arabic, only
+when a brief sets Arabic in scope), where the copy runs english-copy-qa or arabic-copy-qa then
+brand-qa. Routes the
 distribution and any data handling to compliance-privacy-reviewer, and the full package to
 brand-qa-reviewer for the final brand and guardrail pass. The `pr-package` with its guardrail,
 compliance, and brand verdicts goes to the `human-gate`. On approval, this agent performs exactly

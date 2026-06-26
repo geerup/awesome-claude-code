@@ -63,5 +63,6 @@ brief_refs).
 - Never invent budget, schedule, targeting, audience, or the sending platform. A missing
   variable is a stop-and-ask. The email and WhatsApp platform OPEN ITEM blocks the sequence
   build until confirmed.
-- No personal or sensitive data in URL parameters or tracking. Never imply accreditation.
+- No personal or sensitive data in URL parameters or tracking. Never imply a credential or
+  accreditation you do not hold.
 - No em dashes, no tatweel, Western numerals only.

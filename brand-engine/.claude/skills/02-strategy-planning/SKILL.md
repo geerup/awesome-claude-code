@@ -21,8 +21,8 @@ run, and what success looks like. If the brief changes, revalidate and replan.
 ## Sub-skills (routing)
 
 - `audience-segmentation`: cuts the campaign audience into segments from the data. For the
-  owned-audience flow, segments the roughly 18,000 non-payers (recency, prior interest,
-  engagement state). Use when you need the `segments[]` field. It never invents segment
+  owned-audience flow, segments the owned contacts who have not yet converted (recency, prior
+  interest, engagement state). Use when you need the `segments[]` field. It never invents segment
   sizes, it uses the context planning estimates and flags where live data is needed.
 - `offer-and-angle`: sets the core angle (the message and why it works) and frames the
   offer (how the brief's offer is positioned). Use when you need the `angle` and
@@ -87,5 +87,5 @@ brief_refs). See `templates/` in each sub-skill for the per-field shape.
 - Never invent an offer, price, target, segment size, or success-metric number. A missing
   variable the campaign needs is a stop-and-ask.
 - Empowering framing, never deficit-framed. English-first for any drafted customer text.
-- No em dashes, no tatweel, Western numerals only, no accreditation claims, no invented
-  Skill Path titles or instructor names.
+- No em dashes, no tatweel, Western numerals only, never imply a credential or accreditation
+  you do not hold, no invented offers or subject names.

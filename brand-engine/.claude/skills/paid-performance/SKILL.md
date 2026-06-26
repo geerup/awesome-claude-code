@@ -43,13 +43,13 @@ feed the same `media-plan-package`.
 - The `strategy-artifact` (stream 2): segments, the angle, offer framing, channel_plan,
   success_metric.
 - The active `briefs/` file: objective, total budget, target CPA or ROAS, schedule, geo
-  (GCC, primary Saudi), the offer, and the campaign window.
+  (the markets the brief sets), the offer, and the campaign window.
 - The `creative-package` (stream 3) and `copy-package` (stream 4) when ready, for channel
   routing of variants. Captions and copy are never written here.
 
 If a needed variable is absent from both brief and context, stop and ask. Do not fill the gap
 with an invented value. Budget, target CPA or ROAS, and the schedule are brief inputs, never
-assumed. Never invent a Skill Path title, the content lineup, an instructor name, an offer, a
+assumed. Never invent an offer title, the content lineup, a subject name, an offer, a
 price, or a target.
 
 ## Steps
@@ -102,8 +102,8 @@ brief_refs), per `runtime/handoff-contract.md`.
   per campaign and authorizes exactly the stated spend. Silence is not approval.
 - Budget, target CPA or ROAS, schedule, and geo are brief inputs. Missing, stop and ask.
   Never assume a budget or a target.
-- Never invent a Skill Path title, the content lineup, an instructor name, an offer, a price,
+- Never invent an offer title, the content lineup, a subject name, an offer, a price,
   or a target.
-- No accreditation claims, no fundraising, roadmap, or unannounced plans in any in-platform copy.
+- Never imply a credential or accreditation you do not hold, no fundraising, roadmap, or unannounced plans in any in-platform copy.
 - Never put personal or sensitive data in a tracking URL parameter.
 - No em dashes, no tatweel, Western numerals only, empowering framing never deficit-framed.

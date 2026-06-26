@@ -59,4 +59,4 @@ grounding strategy-lead carries into the `strategy-artifact` it produces in stre
 - Never invent an offer, price, target, segment size, or schedule. A missing variable the
   campaign needs is a stop-and-ask, not an invention.
 - Empowering framing, never deficit-framed. English-first for any drafted customer text.
-- No em dashes, no tatweel, Western numerals only, no accreditation claims.
+- No em dashes, no tatweel, Western numerals only, never imply a credential or accreditation you do not hold.

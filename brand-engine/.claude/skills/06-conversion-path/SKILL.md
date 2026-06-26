@@ -15,15 +15,16 @@ Owner: conversion-engineer. Mode: execution (gated). Follows `sops/06-conversion
 ## When to use
 
 - A campaign acquires traffic and needs a landing page, a signup gate, or tracking.
-- For the owned-audience non-payer flow, this runs only if the emails point to a page or a
+- For the owned-audience nurture flow, this runs only if the emails point to a page or a
   gated offer.
 - The orchestrator dispatches stream 6 (per `runtime/stream-ownership.md`).
 
 ## Sub-skills (routing)
 
-- `landing-page`: specifies the landing page. On brand, RTL-correct, fast, uncluttered.
-  Visual constants #141414, #1A1A1A, emerald #009975. One clear CTA. Copy comes from the
-  QA-passed copy-package, never invented here. Use when you need the page spec.
+- `landing-page`: specifies the landing page. On brand, fast, uncluttered, RTL-correct when
+  Arabic is in scope. The active profile visual constants (context/brand-voice.md). One clear
+  CTA. Copy comes from the QA-passed copy-package, never invented here. Use when you need the
+  page spec.
 - `event-tracking`: plans the events page_view, gate_view, submit, confirm, and maps each to
   Pixel or CAPI and to GA4. Mobile (Apple IAP, Google Play) mapping is a to-confirm open
   item. No personal data in URLs. Use when you need the measurement plan.
@@ -47,8 +48,9 @@ gap with an invented value.
 1. Validate the incoming envelope: right campaign_id, status at least qa-passed on the
    copy-package, required fields present, open_items read. If incomplete, return it.
 2. Route the page to `landing-page` and the measurement to `event-tracking`.
-3. Run the operational verification: the page renders RTL-correct, the events fire in test,
-   the gate submits to the right destination. A failing check blocks the package from the gate.
+3. Run the operational verification: the page renders correctly (RTL-correct when Arabic is in
+   scope), the events fire in test, the gate submits to the right destination. A failing check
+   blocks the package from the gate.
 4. Surface every open item. Carry platform-not-confirmed and mobile-mapping-to-confirm
    forward; never silently close them.
 5. Assemble the `conversion-package` and route go-live to the human gate.
@@ -71,12 +73,13 @@ brief_refs).
 
 - Consumes: `copy-package` (stream 4), `creative-package` (stream 3) when the page needs art.
 - Produces: `conversion-package` (stream 6 -> 7, 8, human gate).
-- Gate before advance: skill eval + `brand-qa-reviewer` on the page (arabic-copy-qa on AR
-  page copy), then the human gate for go-live, per `runtime/verification.md`.
+- Gate before advance: skill eval + `brand-qa-reviewer` on the page (english-copy-qa on the
+  page copy by default, arabic-copy-qa when Arabic is in scope), then the human gate for
+  go-live, per `runtime/verification.md`.
 
 ## Hard rules
 
 - Never put personal or sensitive data in URL parameters or tracking.
 - Confirm the gate platform before wiring sends. Block on the open platform item if unresolved.
-- RTL must render correctly. Western numerals. No em dashes, no tatweel.
-- Never imply certificates are accredited.
+- When Arabic is in scope, RTL must render correctly, Western numerals, no tatweel. No em dashes.
+- Never imply a credential or accreditation you do not hold.

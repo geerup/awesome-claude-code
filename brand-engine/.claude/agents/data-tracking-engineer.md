@@ -33,7 +33,7 @@ Emitted artifact, a `tracking-package` that fills the `event_plan` field of the
 campaign_id   produced_by: data-tracking-engineer   stream: 6 conversion path (plumbing) / 8
 status        draft | qa-passed | gated-pending | approved
 qa            { skill_eval, arabic_qa: na, brand_qa: na }   (plumbing, not customer copy)
-open_items    platform-not-confirmed, mobile-mapping-to-confirm, residency-open
+open_items    platform-not-confirmed, mobile-mapping-to-confirm, data-handling-open
 brief_refs    the conversion optimized toward, the success_metric
 body:
   events        page_view, gate_view, submit, confirm, each with its fire condition
@@ -72,7 +72,7 @@ one-click CAPI or server-side GTM) wired as stream-6 plumbing, not an allowliste
 gate-side send and engagement events this agent maps) is now adopted: it is on the
 `settings.json` enabledMcpjsonServers allowlist and defined in `.mcp.json`. It still needs its
 runtime credential, EMAIL_WHATSAPP_API_KEY, and the concrete vendor is still an OPEN ITEM with
-the Saudi PDPL data-residency decision pending, so the gate-side send wiring stays blocked until
+your data-handling policy decision pending, so the gate-side send wiring stays blocked until
 both are confirmed. Web events are planned regardless. Adoption is not permission to act: reads
 and test fires are safe, but writing tracking to production and any standing query against prod
 data stay gated actions that run only after the human gate clears, even for an enabled tool. The
@@ -83,7 +83,7 @@ frontmatter `tools:` list carries only the local file tools; no MCP tool name is
 - Missing brief variable (the conversion to optimize toward, the success_metric): stop and ask.
 - Failed gate (skill eval for structure and the no-personal-data rule, compliance-privacy): the
   package returns with the exact fix list; fix and resubmit to the same gate.
-- Blocked open item (platform not confirmed, mobile mapping to-confirm, residency open): the web
+- Blocked open item (platform not confirmed, mobile mapping to-confirm, data handling open): the web
   events are planned; gate-side wiring and the prod write are blocked and surfaced at the gate.
 - Conflict (two valid event mappings, a parameter that risks PII): escalate to the orchestrator;
   on any PII risk, default to the safer, non-identifying option and flag it.

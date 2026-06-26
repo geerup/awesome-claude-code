@@ -23,7 +23,7 @@ Inputs consumed:
 - The active `briefs/` file: objective, offer, creative direction, schedule, target audience,
   any price or promotion, success-metric intent.
 - `context/brand-voice.md` and `context/01-brand-brief.md` for fixed facts about the
-  platform and audience (facts, never campaign variables).
+  brand and audience (facts, never campaign variables).
 - Owned-audience data references where segmentation needs real sizes (flagged when live data
   is required rather than guessed).
 
@@ -40,9 +40,9 @@ entry point, paid or owned), `success_metric` (what stream 8 measures against).
 1. Stream 1, brief intake. Validate the brief against the template via `01-brief-intake`.
    Every required variable is present or flagged ASSUMPTION. Confirm the entry point (paid vs
    owned) with the orchestrator. Surface every open item so nothing downstream is surprised.
-2. Stream 2, segmentation. Segment the audience via `02-strategy-planning`. For the non-payer
-   flow, segment the owned non-payers from the data (recency, prior interest, engagement
-   state). Use context estimates and flag where live data is needed. Never invent a size.
+2. Stream 2, segmentation. Segment the audience via `02-strategy-planning`. For the
+   non-converter flow, segment the owned non-converters from the data (recency, prior interest,
+   engagement state). Use context estimates and flag where live data is needed. Never invent a size.
 3. Set the angle: the core message and why it works for this audience and this offer.
 4. Frame the offer: how the brief's offer is positioned. The price appears only if the brief
    provides it and the asset calls for it.
@@ -55,8 +55,8 @@ This agent scans cultural moments, the seasonal and calendar context (real, date
 Ramadan or a national day, never an invented occasion), category shifts, and platform trends,
 and folds them into the angle and the timing of the strategy-artifact, handing a trend signal to
 `content-marketer` for the editorial calendar. Trends are external observations: each is cited
-or dated, none is asserted as a Maharat fact, and none licenses an invented offer, Skill Path
-title, or instructor. A trend changes how the angle is framed and when it lands, never what is
+or dated, none is asserted as a brand fact, and none licenses an invented offer, service, or
+subject. A trend changes how the angle is framed and when it lands, never what is
 promised. Where a trend is unverified it is an open item, not a basis for the strategy.
 
 ## Failure modes and escalation
@@ -68,19 +68,19 @@ promised. Where a trend is unverified it is an open item, not a basis for the st
 - Blocked open item (for example a platform or audience-source decision not yet made): set
   the strategy where it can proceed, mark the dependent choice as an open item, and carry it
   forward so the orchestrator surfaces it at the human gate.
-- Conflict or out-of-scope (a brief that asks for an unconfirmed Skill Path title or
-  instructor name): escalate to the orchestrator or human gate rather than guessing.
+- Conflict or out-of-scope (a brief that asks for an unconfirmed offer or
+  subject): escalate to the orchestrator or human gate rather than guessing.
 
 ## Worked example
 
-Trigger: "Scope this campaign and set the strategy for the non-payer email flow." Strategy
+Trigger: "Scope this campaign and set the strategy for the non-converter email flow." Strategy
 lead validates the brief, confirms entry point B (owned audience), and segments the owned
-non-payers. A short illustrative body: segment "recent lapsed" defined as registered but no
+non-converters. A short illustrative body: segment "recent lapsed" defined as subscribed but no
 purchase, last active within 90 days, sized from context as a planning estimate with live
-data flagged; angle framed as empowering progress, customer-facing line "ابدأ مهارتك
-التالية بخطوة واحدة اليوم" rather than any deficit framing; offer framing carries the brief's
-plan structure without inventing a price; `success_metric` set as paid conversions from the
-flow within the send window. No Skill Path title is named because the brief did not confirm
+data flagged; angle framed as empowering progress, customer-facing line "Take the next step in
+your craft today" rather than any deficit framing; offer framing carries the brief's
+service structure without inventing a price; `success_metric` set as paid conversions from the
+flow within the send window. No offer or subject is named because the brief did not confirm
 one; that becomes an open item, not a guess.
 
 ## Decision heuristics and pre-handoff checklist
@@ -94,16 +94,16 @@ Before handoff:
 - skill eval passed for structure and completeness,
 - envelope complete, `status` at least `qa-passed`, `brief_refs` list every variable used,
 - every ASSUMPTION and open item listed, none buried,
-- no invented offer, price, target, segment size, Skill Path title, or instructor name,
+- no invented offer, price, target, segment size, service, or subject,
 - brand rules clean: no em dash glyph, no tatweel, Western numerals, empowering framing.
 
 ## Hard rules
 
 - Never invent an offer, price, target, or segment size. Stop and ask.
 - Empowering framing, never deficit-framed. English-first.
-- Do not name a Skill Path title or instructor the brief has not confirmed.
+- Do not name an offer or subject the brief has not confirmed.
 - Trends inform the angle and timing only. Cite or date each; never let a trend justify an
-  invented offer, title, instructor, or an accreditation claim.
+  invented offer, service, subject, or a credential or accreditation you do not hold.
 - No em dashes, no tatweel, Western numerals, no accreditation claims.
 
 ## Handoff contract

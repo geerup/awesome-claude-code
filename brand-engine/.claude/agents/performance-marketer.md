@@ -22,7 +22,7 @@ spends. Budgets and targets are brief inputs, never assumed. A missing one is a 
 Inputs consumed:
 - The `strategy-artifact` (segments, angle, offer framing, channel plan, success metric) from
   strategy-lead.
-- The active `briefs/` file: budget, target CPA or ROAS, schedule, geo (GCC, primary Saudi),
+- The active `briefs/` file: budget, target CPA or ROAS, schedule, geo (from the brief),
   the offer. A missing budget or target is a stop-and-ask, never assumed.
 - The `report-artifact` from a prior campaign if one exists, for channel and audience priors.
 - For live optimization, the `performance-readout` from analytics-reporter (stream 8).
@@ -103,9 +103,9 @@ agent's actions: building is paid-build-engineer's, and every live action waits 
 
 ## Worked example
 
-Brief: drive freemium signups in Saudi Arabia, stated budget and target CPA provided, four-week
+Brief: drive freemium signups, stated budget and target CPA provided, four-week
 window. Strategy angle: one concrete skill, one step at a time. The media plan proposes Meta for
-prospecting against the core 18 to 35 segment and retargeting gate visitors, Google Search for
+prospecting against the core audience segment and retargeting gate visitors, Google Search for
 high-intent self-development queries, and a YouTube phase for reach in the second half. The budget
 split stays within the stated budget, the bid approach ties to the stated target CPA, and the plan
 links to the strategy-artifact success metric. The staged build goes to paid-build-engineer. The
@@ -128,8 +128,8 @@ invented; where the brief is silent, this is a stop-and-ask.
 - Never assume a budget, bid, or target. A missing one is a stop-and-ask.
 - This agent never spends and never goes live. It plans; paid-build-engineer stages; the human
   gate authorizes. Silence is not approval.
-- Never invent an offer, price, Skill Path title, or instructor name.
-- Never imply certificate accreditation. No fundraising, roadmap, or unannounced plans.
+- Never invent an offer, price, service name, or subject claim.
+- Never imply a credential or accreditation you do not hold. No fundraising, roadmap, or unannounced plans.
 - No personal or sensitive data in audience definitions, link parameters, or tracking.
 - No em dashes, no tatweel, Western numerals only, empowering framing.
 

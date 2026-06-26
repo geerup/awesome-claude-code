@@ -48,11 +48,12 @@ consolidated open-items list, and the single plain sentence of what approval wil
    stream has independent units, verify-then-advance around every generation step, and the
    gate node before any send or spend.
 4. For each stream in the composed pipeline, dispatches to the owning agent, then runs
-   verify-then-advance: skill eval, then `arabic-copy-qa` (AR) or `english-copy-qa` (EN) on
-   customer-facing copy, then `brand-qa-reviewer` alongside `compliance-privacy-reviewer`,
-   before the artifact crosses any boundary.
-5. Fans out (Shape 2) where a stream has independent units, for example copywriter-ar and
-   copywriter-en working sibling language variants, with a single QA merge gate.
+   verify-then-advance: skill eval, then `english-copy-qa` (EN, the default) or `arabic-copy-qa`
+   (AR, when Arabic is in scope) on customer-facing copy, then `brand-qa-reviewer` alongside
+   `compliance-privacy-reviewer`, before the artifact crosses any boundary.
+5. Fans out (Shape 2) where a stream has independent units, for example copywriter-en as the
+   default author with copywriter-ar working a sibling Arabic variant when in scope, with a
+   single QA merge gate.
 6. Assembles the approval package and stops at `human-gate` before any send, publish, or
    spend. After approval and execution, runs `analytics-reporter` for streams 8 and 9, which
    coordinates with `data-tracking-engineer` for the event data behind the readout.
@@ -73,14 +74,14 @@ consolidated open-items list, and the single plain sentence of what approval wil
 
 Trigger: "Start the non-payer email flow from the new brief." The orchestrator reads the
 brief, resolves entry point B (owned audience), and composes: brief intake (1) and strategy
-(2) on strategy-lead, copywriting (4) on copywriter-ar with copywriter-en as a sibling if an
-EN variant is in scope, lifecycle design (7) on lifecycle-architect, conversion (6) only if
-the email points to a page, then monitoring (8) and reporting (9) on analytics-reporter. It
-notes one open item up front: the send platform is unconfirmed, so design proceeds but the
-send stays blocked. Short status it would hold internally: `entry: owned. streams: 1,2,4,7,
-(6 if page),8,9. open_items: send-platform-unconfirmed. gate: human-gate before any send.`
-No offer, price, or audience size is invented; the ~18,000 non-payer figure is carried as a
-planning estimate from context, resolved exactly at send.
+(2) on strategy-lead, copywriting (4) on copywriter-en as the default author with copywriter-ar
+as a sibling only if an AR variant is in scope, lifecycle design (7) on lifecycle-architect,
+conversion (6) only if the email points to a page, then monitoring (8) and reporting (9) on
+analytics-reporter. It notes one open item up front: the send platform is unconfirmed, so
+design proceeds but the send stays blocked. Short status it would hold internally: `entry:
+owned. streams: 1,2,4,7, (6 if page),8,9. open_items: send-platform-unconfirmed. gate:
+human-gate before any send.` No offer, price, or audience size is invented; any owned-audience
+figure is carried as a planning estimate from context, resolved exactly at send.
 
 ## Decision heuristics and pre-handoff checklist
 
@@ -93,7 +94,7 @@ Before forwarding any artifact across a boundary:
   with compliance-privacy review),
 - the common envelope is complete and `status` is at least `qa-passed`,
 - all `open_items` are read and carried forward, none silently dropped,
-- no invented offer, price, title, instructor name, budget, or target,
+- no invented offer, price, title, subject name, budget, or target,
 - brand rules clean: no em dash glyph, no tatweel, Western numerals, English-first.
 
 ## Hard rules
@@ -102,7 +103,7 @@ Before forwarding any artifact across a boundary:
 - Never advance an asset that failed a quality gate.
 - Never send, publish, or spend without an explicit human approval for that specific action.
 - Never absorb a stream with no named owner. Hold and flag.
-- No em dashes, no tatweel, Western numerals only, English-first, no accreditation claims.
+- No em dashes, no tatweel, Western numerals only, English-first, never imply a credential or accreditation you do not hold.
 
 ## Handoff contract
 
