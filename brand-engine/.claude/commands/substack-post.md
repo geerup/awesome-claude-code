@@ -1,6 +1,6 @@
 ---
 description: Produce a Substack post from a simple prompt - copy plus images in your brand - staged for your edit and control before publishing. Usage - /substack-post <topic or prompt>
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash, mcp__substack-api__create_draft_post
 ---
 
 # /substack-post
@@ -21,15 +21,25 @@ your say-so.
 4. Run `english-copy-qa` and `brand-qa-reviewer` on the copy.
 5. Assemble the post (title, subtitle, body, images, alt text) and STOP at the human gate: present
    it for your edit. This is the control point. Apply your edits.
-6. On your approval, publish via the chosen path:
-   - default: email-to-Substack (compose the post as a Gmail draft to your Substack publish
-     address; you send it), or
-   - Substack API if adopted (see `context/04-tools-and-access.md`).
-   Nothing publishes without your sign-off.
+6. On your approval, push it to Substack as a DRAFT via the chosen path:
+   - default: the Substack MCP, `mcp__substack-api__create_draft_post` with the title, subtitle,
+     and body. This creates a draft in your Substack; it does not publish. You open Substack,
+     do a final read, attach or confirm images, and hit publish yourself. (Needs the Substack
+     env vars; see `context/04-tools-and-access.md`.)
+   - fallback: email-to-Substack (compose the post as a Gmail draft to your Substack publish
+     address; you send it).
+   Either way, the live publish is your action in Substack, never the engine's.
+
+## Notes on the Substack MCP
+- `create_draft_post` takes plain title, subtitle, and body. Substack's editor handles final
+  formatting and image placement, so deliver clean body text and supply the generated images
+  separately for you to drop in (or confirm they are already hosted).
+- It uses Substack's unofficial session-token API, so if a draft call fails, fall back to the
+  email-to-Substack path and flag it for a re-check.
 
 ## Rules
 - Your voice and visuals, not generic. Verified claims only. Nothing under NDA.
 - One clear idea per post. No em dashes.
-- The draft-and-control step is mandatory; auto-publish is never the default.
+- The draft-and-control step is mandatory; the engine creates a draft, you publish.
 
 $ARGUMENTS

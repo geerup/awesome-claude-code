@@ -1,6 +1,16 @@
 {
   "$comment": "Personal brand & career engine MCP allowlist. No tool is adopted without a build-vs-buy pass (skills/build-vs-buy-eval) and your approval. Sending, publishing, and spending are governed by CLAUDE.md principle 4: you approve each asset or campaign, then it executes within the standing safeguards in runtime/send-safeguards.md. Adoption alone does not authorize a send. Permission rules live in the harness settings, not here. English-first, no em dashes; Western numerals / no tatweel only when Arabic is in scope.",
-  "enabledMcpjsonServers": ["firecrawl"],
+  "enabledMcpjsonServers": ["firecrawl", "substack-api"],
+  "_adopted_engine_mcps": {
+    "$comment": "Servers spun up by .mcp.json and enabled above. Credentials are env vars supplied at runtime, never committed.",
+    "substack-api": {
+      "owner": "content-marketer, copywriter-en (via /substack-post)",
+      "use": "create_draft_post: assemble a Substack post and create it as a DRAFT in your publication. You review and publish in Substack, so it cannot auto-publish (draft-and-control by construction).",
+      "needs": "SUBSTACK_PUBLICATION_URL, SUBSTACK_SESSION_TOKEN, SUBSTACK_USER_ID (see context/04-tools-and-access.md)",
+      "source": "github.com/marcomoauro/substack-mcp",
+      "caveat": "Unofficial Substack session-token API: best-effort, re-check after Substack changes. Drafts only; no publish, no list/read tools."
+    }
+  },
   "_session_provided_mcps": {
     "$comment": "The solo stack. These MCP servers are connected through the Claude Code harness (OAuth or session config), not spun up by this engine's .mcp.json, so they are not in enabledMcpjsonServers. They are the default tools for a one-person brand. Reasoning is always allowed; any send / publish / write stays a human-gate action (you).",
     "canva": {
@@ -36,7 +46,7 @@
     "$comment": "Documented, NOT enabled. Each needs a build-vs-buy pass (skills/build-vs-buy-eval) and your sign-off before moving to enabledMcpjsonServers or the session stack. Execution tools stay gated behind the human gate even after adoption.",
     "website": ["wordpress (REST API or MCP; for /manage-site write access, app-password, gated)"],
     "generative_media": ["image-gen MCP (Higgsfield already researched: references/maharat/2026-06-higgsfield-generative-tool-research.md)", "video-gen MCP"],
-    "publishing": ["substack API (default path is email-to-Substack via Gmail)"],
+    "publishing": ["ADOPTED: substack-api MCP (create_draft_post, draft-only) is now enabled; email-to-Substack via Gmail remains the fallback"],
     "scale_later": ["meta-ads", "google-ads", "ga4", "bigquery", "stripe", "google-search-console", "ahrefs-or-semrush"]
   },
   "_maharat_profile_tools": {

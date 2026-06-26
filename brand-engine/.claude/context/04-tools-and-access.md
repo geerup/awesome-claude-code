@@ -19,9 +19,28 @@ toolset for a one-person brand. Each maps to the agents and streams that use it:
 | Google Calendar | organic-social, content-marketer | content calendar and cadence | organic, creator |
 | GitHub | web-designer, conversion-engineer | ship/manage a static site or portfolio (Pages), version the engine | 6, `/build-website`, `/build-portfolio` |
 | WebSearch / WebFetch (built-in) | research-scout, competitor-analyst | web research and page fetch | 2 strategy, 8 monitoring |
+| Substack (substack-api MCP) | content-marketer, copywriter-en | create_draft_post: assemble a post as a Substack DRAFT (you publish) | 7 lifecycle, `/substack-post` |
 
 Firecrawl stays available as an optional `.mcp.json` server for heavier crawls (set
 `FIRECRAWL_API_KEY`); the built-in WebSearch/WebFetch are the default.
+
+### Substack MCP (adopted, draft-only)
+
+`substack-api` is spun up by `.mcp.json` (npx `substack-mcp@latest`, source
+github.com/marcomoauro/substack-mcp) and enabled in `settings.json`. It exposes one tool,
+`create_draft_post` (title, subtitle, body), which creates a DRAFT in your publication. It cannot
+publish, so it fits the engine's draft-and-control rule by construction: the engine drafts, you
+publish in Substack. It uses Substack's unofficial session-token API, so treat it as best-effort
+and re-check after Substack changes; `/substack-post` falls back to email-to-Substack via Gmail if
+a draft call fails.
+
+Three runtime env vars are required (no secrets are committed; the engine interpolates them):
+- `SUBSTACK_PUBLICATION_URL`: your publication URL, for example `https://yourname.substack.com`.
+- `SUBSTACK_USER_ID`: your numeric Substack user id.
+- `SUBSTACK_SESSION_TOKEN`: the `substack.sid` session cookie value. Get it from a logged-in
+  browser session (DevTools, Application, Cookies, copy the `substack.sid` value). It is a
+  credential: keep it out of the repo, set it only as an environment variable, and rotate it if
+  exposed. Set all three in the environment config, then start a fresh session so the server loads.
 
 ## Stream-to-tool map (how a solo run executes)
 
@@ -41,7 +60,7 @@ Firecrawl stays available as an optional `.mcp.json` server for heavier crawls (
   application password; writes stay human-gated.
 - An image-generation MCP and a video-generation MCP for `/build-visual` and creator content.
   Higgsfield is already researched: `references/maharat/2026-06-higgsfield-generative-tool-research.md`.
-- A Substack API path (the default is email-to-Substack via Gmail).
+- Substack: ADOPTED (the `substack-api` MCP, draft-only; see the section above). Email-to-Substack via Gmail stays as the fallback.
 - Scale-later: meta-ads, google-ads, GA4, BigQuery, Stripe, Search Console, Ahrefs/Semrush,
   ASO tools. All preserved as candidates; adopt when the brand needs paid, a store, or a warehouse.
 
