@@ -81,3 +81,49 @@ GAPS.md for adjudication rather than silently fixed (per rule 4):
    that "45% CAC reduction" and "+38% conversion" are agency-aggregate
    claims, not personally attributed campaigns (source: falcon md "Falcon
    Agency — Aggregate Scale").
+
+## Addendum - image + per-case copy scrape (2026-07-14, second pass)
+
+Live asanhoury.com remained blocked by the environment network policy
+(curl CONNECT 403; WebFetch 403) - re-verified this pass. Scrape executed
+against the canonical design-project snapshot instead, per the Phase 1 caveat.
+
+### Images - exhaustive sweep result
+
+Sources swept: both site snapshots (asanhoury-2026, ahmed-portfolio), all five
+superseded builds (Portfolio.html, Portfolio-standalone.html, Apple Style
+Portfolio.html, Case Study.html, Work Highlight.html), image-slot.js, and the
+.image-slots.state.json sidecar (the image-slot component's only persistence
+store; author src= attributes are the only other channel and none exist).
+
+- Exactly ONE real image exists in the entire project:
+  `extracted/images/about-photo.webp` (69,908 bytes, 1200px WebP) - the
+  portrait, decoded from the `about-photo` slot in .image-slots.state.json.
+  Slot framing state (s=1, x=0, y=0) recorded in
+  `extracted/images/manifest.json`.
+- Every other image reference is an UNFILLED placeholder: 11 image-slots in
+  Portfolio.html (hero-portrait, work-*, vid-ubuntu24, q-*), one
+  `cs-hero-<slug>` per case in Work Highlight.html, 8 <figure> placeholders
+  in Apple Style Portfolio.html. Zero <img> tags, zero external image URLs,
+  zero data URIs outside the sidecar. Both live-site builds are all-CSS.
+- Portfolio-standalone.html is a self-extracting bundle of the same files,
+  truncated at the 256KiB get_file cap; contains no distinct image data.
+
+### Per-case-study copy
+
+- `extracted/cases-data.js` - verbatim copy of the project's declared
+  source of truth (14 cases). Fidelity verified: re-fetched and spot-checked
+  37 exact figure strings + full structural parse (14/14 cases, array counts
+  match).
+- `extracted/site-copy/<slug>.md` - 14 per-case files generated
+  programmatically from cases-data.js (HTML tags stripped, copy verbatim):
+  client/sector/years/eyebrow, title, lede, numbers, challenge, what,
+  results table, pull quote, plus the unfilled hero-slot placeholder text.
+  NOTE: this is SITE copy as published - it includes figures the gap audit
+  disputes (2.58M stale audience, 481K mid-year LinkedIn figure, 870%, $19M
+  agency aggregates, "All organic" Goodwall headline). Cross-check GAPS.md
+  before reusing any number.
+- `raw/html/case-study-template.import.html` + 
+  `extracted/case-study-template.cases.js` - the older Apple-style case
+  template with its own embedded CASES object (13 cases; predates maharat).
+  Diffed vs cases-data.js: title/lede/quote identical for all 13 shared cases.

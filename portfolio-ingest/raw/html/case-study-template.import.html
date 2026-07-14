@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — Ahmed El Sanhoury</title>
+<style>
+/* ============================================================
+   APPLE-INSPIRED CASE STUDY TEMPLATE
+   Shared layout for all 11 case studies. Content is picked from
+   the CASES data object by ?case=slug. WordPress port: each
+   entry here maps 1:1 to a custom post type "case_study" —
+   the same field names used as ACF keys (title, eyebrow, hero,
+   headline, sub, meta[], challenge, what, results[], quote[], takeaway).
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f5f5f7;
+  --bg-dark: #000000;
+  --bg-dark-2: #1d1d1f;
+  --ink: #1d1d1f;
+  --ink-2: #424245;
+  --ink-mid: #6e6e73;
+  --ink-soft: #86868b;
+  --rule: #d2d2d7;
+  --rule-soft: #e8e8ed;
+  --link: #0071e3;
+  --link-hover: #0077ed;
+  --accent: #ca5c1f;
+
+  --sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  --max: 1100px;
+  --nav-h: 48px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sf);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 17px; line-height: 1.5;
+  letter-spacing: -0.016em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+::selection { background: rgba(0,113,227,.2); }
+
+/* ============================================================
+   NAV
+============================================================ */
+.apnav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  height: var(--nav-h);
+  background: rgba(255,255,255,.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  display: flex; justify-content: center;
+}
+.apnav-inner {
+  max-width: 1024px; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px; height: 100%;
+}
+.apnav-logo { font-size: 21px; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); }
+.apnav-logo .dot { color: var(--link); }
+.apnav ul { display: flex; gap: 28px; list-style: none; }
+.apnav ul a { font-size: 12px; color: var(--ink); opacity: .88; }
+.apnav ul a:hover { opacity: 1; text-decoration: none; }
+.apnav-cta { font-size: 12px; color: var(--link); }
+@media (max-width: 760px) { .apnav ul { display: none; } }
+
+/* ============================================================
+   WRAPPERS + TYPE
+============================================================ */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+.wrap-wide { max-width: 1240px; margin: 0 auto; padding: 0 22px; }
+
+.eyebrow {
+  font-size: 14px; font-weight: 600;
+  color: var(--accent); letter-spacing: 0;
+  margin-bottom: 10px;
+}
+.eyebrow.on-dark { color: #ff7a45; }
+.eyebrow.quiet { color: var(--ink-mid); }
+
+.display {
+  font-weight: 600; letter-spacing: -0.04em; line-height: 1.05;
+  color: var(--ink); text-wrap: balance;
+}
+.display.xxl { font-size: clamp(48px, 7vw, 88px); letter-spacing: -0.045em; }
+.display.xl  { font-size: clamp(40px, 5.4vw, 72px); }
+.display.lg  { font-size: clamp(32px, 3.8vw, 52px); }
+.display.md  { font-size: clamp(24px, 2.4vw, 36px); letter-spacing: -0.028em; }
+.display.sm  { font-size: 22px; letter-spacing: -0.022em; font-weight: 600; }
+
+.sub {
+  font-size: clamp(19px, 1.5vw, 24px);
+  color: var(--ink-2); line-height: 1.38;
+  letter-spacing: -0.02em; text-wrap: pretty;
+  max-width: 820px;
+}
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; color: var(--link);
+  margin-bottom: 36px;
+}
+.back-link::before { content: "‹"; font-size: 18px; line-height: 1; }
+
+/* ============================================================
+   HEADER — big editorial opener
+============================================================ */
+.case-head {
+  padding: calc(var(--nav-h) + 72px) 0 32px;
+  background: var(--bg);
+}
+.case-head .meta-row {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11.5px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-bottom: 22px; margin-bottom: 34px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.case-head .meta-row strong { color: var(--ink); font-weight: 600; }
+.case-head h1 { max-width: 18ch; margin-bottom: 22px; }
+.case-head .lede {
+  font-size: clamp(20px, 1.8vw, 28px);
+  color: var(--ink-2); line-height: 1.35;
+  letter-spacing: -0.022em; max-width: 780px;
+  margin-top: 20px; text-wrap: pretty;
+}
+
+/* ============================================================
+   HERO IMAGE + PLACEHOLDERS
+============================================================ */
+.hero-img { margin: 56px 0; }
+.ph {
+  position: relative;
+  background: repeating-linear-gradient(135deg,
+    #e8e8ed 0 14px, #dcdce0 14px 28px);
+  border-radius: 22px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-mid);
+  font-family: var(--mono); font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.ph .ph-label {
+  background: rgba(255,255,255,.86); padding: 8px 14px;
+  border-radius: 999px; border: 1px solid rgba(0,0,0,.06);
+}
+.ph.dark { background: repeating-linear-gradient(135deg,
+  #1d1d1f 0 14px, #2a2a2d 14px 28px); color: #86868b; }
+.ph.dark .ph-label { background: rgba(0,0,0,.5); color: #a1a1a6;
+  border-color: rgba(255,255,255,.1); }
+.ph.ratio-21 { aspect-ratio: 21/9; }
+.ph.ratio-16 { aspect-ratio: 16/9; }
+.ph.ratio-4  { aspect-ratio: 4/3; }
+.ph.ratio-1  { aspect-ratio: 1/1; }
+
+/* ============================================================
+   KEY NUMBERS — dark slab
+============================================================ */
+.numbers {
+  background: var(--bg-dark); color: #f5f5f7;
+  padding: 96px 0;
+}
+.numbers .grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.08); border-radius: 16px;
+  overflow: hidden; margin-top: 42px;
+}
+.numbers .cell { background: var(--bg-dark); padding: 36px 24px; text-align: center; }
+.numbers .big {
+  font-size: clamp(44px, 4.8vw, 68px);
+  font-weight: 600; letter-spacing: -0.038em;
+  color: #f5f5f7; line-height: 1; margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.numbers .big em { font-style: normal; color: #ff7a45; }
+.numbers .lbl { font-size: 13px; color: #a1a1a6; line-height: 1.4; letter-spacing: -0.005em; }
+.numbers h2 { color: #f5f5f7; margin: 0 auto 12px; text-align: center; max-width: 16ch; }
+.numbers .sub { color: #a1a1a6; margin: 0 auto; text-align: center; }
+@media (max-width: 860px) { .numbers .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .numbers .grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   BODY SECTIONS (challenge / what I did / takeaway)
+============================================================ */
+.body-sec { padding: 100px 0; border-top: 1px solid var(--rule-soft); }
+.body-sec:first-of-type { border-top: 0; }
+.body-sec .two {
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: 64px; align-items: start;
+}
+.body-sec .two .label {
+  font-family: var(--mono); font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-mid); padding-top: 10px;
+}
+.body-sec h2 { margin-bottom: 22px; max-width: 18ch; }
+.body-sec p {
+  font-size: 19px; color: var(--ink-2);
+  line-height: 1.55; letter-spacing: -0.012em;
+  margin-bottom: 18px; max-width: 700px;
+  text-wrap: pretty;
+}
+.body-sec p strong { color: var(--ink); font-weight: 600; }
+.body-sec p:last-child { margin-bottom: 0; }
+@media (max-width: 860px) {
+  .body-sec .two { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* Results table */
+.body-sec table {
+  width: 100%; max-width: 720px;
+  border-collapse: collapse;
+  font-size: 15.5px; margin-top: 8px;
+}
+.body-sec table td {
+  padding: 14px 0; border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-2); vertical-align: top;
+}
+.body-sec table td:first-child { color: var(--ink-mid); width: 45%; padding-right: 24px; }
+.body-sec table td:last-child { color: var(--ink); font-weight: 500; }
+.body-sec table tr:first-child td { border-top: 1px solid var(--ink); padding-top: 20px; }
+
+/* ============================================================
+   PULL QUOTE
+============================================================ */
+.case-quote {
+  background: var(--bg-alt);
+  padding: 120px 22px;
+  text-align: center;
+}
+.case-quote blockquote {
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 500; letter-spacing: -0.032em;
+  line-height: 1.15; color: var(--ink);
+  max-width: 900px; margin: 0 auto;
+  text-wrap: balance;
+}
+.case-quote blockquote em { color: var(--accent); font-style: italic; }
+
+/* ============================================================
+   NEXT CASE
+============================================================ */
+.next-case {
+  padding: 120px 0; background: var(--bg-dark);
+  color: #f5f5f7;
+}
+.next-case .eyebrow { color: #a1a1a6; }
+.next-case h2 { color: #f5f5f7; margin-bottom: 14px; max-width: 16ch; }
+.next-case p { color: #a1a1a6; font-size: 18px; margin-bottom: 26px; max-width: 560px; }
+.next-case .row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 44px; }
+.next-case a {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  padding: 32px 28px; border-radius: 18px;
+  display: flex; flex-direction: column; gap: 6px;
+  color: #f5f5f7; transition: background .2s;
+}
+.next-case a:hover { background: rgba(255,255,255,.1); text-decoration: none; }
+.next-case a .k { font-family: var(--mono); font-size: 11px;
+  color: #ff7a45; letter-spacing: 0.06em; text-transform: uppercase; }
+.next-case a .t { font-size: 22px; font-weight: 600; letter-spacing: -0.022em; }
+.next-case a .s { font-size: 13px; color: #a1a1a6; }
+.next-case a::after { content: "›"; font-size: 22px; color: #86868b; margin-top: 8px; }
+@media (max-width: 760px) { .next-case .row { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.apft {
+  background: var(--bg-alt); border-top: 1px solid var(--rule-soft);
+  padding: 36px 22px; font-size: 12px; color: var(--ink-soft);
+  text-align: center;
+}
+.apft a { color: var(--ink-mid); }
+
+.fade { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
+.fade.in { opacity: 1; transform: translateY(0); }
+
+/* 404-ish state */
+.notfound { padding: calc(var(--nav-h) + 120px) 22px 120px; text-align: center; }
+.notfound h1 { margin-bottom: 16px; }
+.notfound p { color: var(--ink-mid); font-size: 18px; margin-bottom: 28px; }
+</style>
+</head>
+<body>
+
+<nav class="apnav" aria-label="Primary">
+  <div class="apnav-inner">
+    <a href="Apple Style Portfolio.html" class="apnav-logo">Ahmed<span class="dot">.</span></a>
+    <ul>
+      <li><a href="Apple Style Portfolio.html#work">Work</a></li>
+      <li><a href="Apple Style Portfolio.html#capabilities">Capabilities</a></li>
+      <li><a href="Apple Style Portfolio.html#experience">Experience</a></li>
+      <li><a href="Apple Style Portfolio.html#testimonials">Testimonials</a></li>
+      <li><a href="Apple Style Portfolio.html#contact">Contact</a></li>
+    </ul>
+    <a href="Apple Style Portfolio.html#contact" class="apnav-cta">Get in touch ›</a>
+  </div>
+</nav>
+
+<main id="case-root"><!-- JS renders here --></main>
+
+<footer class="apft">
+  © 2026 Ahmed El Sanhoury · <a href="Apple Style Portfolio.html">Back to portfolio</a>
+</footer>
+
+<script>
+/* ============================================================
+   CASE DATA — maps 1:1 to ACF fields on a WordPress CPT
+============================================================ */
+const CASES = {
+  "canonical-social": {
+    client: "Canonical", sector: "Enterprise OSS", years: "2022 — 2024",
+    eyebrow: "Social & Demand Generation",
+    title: "A social function, built from zero — with Salesforce-attributed pipeline.",
+    lede: "Built Canonical's entire social and content function from scratch. 2.58M audience. 785 MQLs a year. Every number on a dashboard leadership could see.",
+    hero: "Canonical programme — social grid & pipeline dashboard",
+    numbers: [
+      {big:"2.58<em>M</em>+", lbl:"Total social audience, built from scratch"},
+      {big:"21<em>×</em>", lbl:"MQL growth in a single year, Salesforce-tracked"},
+      {big:"785+", lbl:"Annual social MQLs reported to leadership"},
+      {big:"5.18<em>%</em>", lbl:"Organic engagement rate, above benchmark"},
+      {big:"305<em>K</em>", lbl:"New followers in 2024 (+25% YoY)"},
+      {big:"481<em>K</em>", lbl:"LinkedIn engagements in 2024 (+169% YoY)"},
+      {big:"20<em>M</em>+", lbl:"Video views across the programme"},
+      {big:"4,000+", lbl:"Content assets produced across formats"}
+    ],
+    challenge: [
+      "Canonical had no structured social media function. Content was inconsistent, untracked, and disconnected from marketing pipeline.",
+      "There was no content calendar, no influencer programme, no process for tying social to MQLs or revenue."
+    ],
+    what: [
+      "Defined strategy across LinkedIn, X, YouTube, Facebook and Instagram — each with a distinct purpose, format mix and success metric.",
+      "Built a full content production system generating <strong>4,000+ assets</strong> including video, thought leadership, partner activations and live event coverage.",
+      "Integrated the entire function with <strong>Salesforce</strong> so social MQL contribution was measurable and reported to leadership.",
+      "Built a <strong>48-creator influencer network</strong> in the hardware, homelab and open source communities — the exact micro-communities where Canonical's developer and sysadmin audience lives.",
+      "Directed social and video strategy for 20+ global product launches with Dell, Intel, NVIDIA and Framework. MC'd Ubuntu Summit 2024 and ran social coverage 2022–2024."
+    ],
+    results: [
+      ["Total social audience", "2.58M+ (built from scratch)"],
+      ["New followers in 2024", "305K (+25% YoY)"],
+      ["Annual MQLs from social", "785+ (Salesforce-tracked)"],
+      ["MQL growth (2021→2022)", "8.8× YoY"],
+      ["Organic engagement rate", "5.18% (above benchmark)"],
+      ["LinkedIn engagements 2024", "481,686 (+169% YoY)"],
+      ["Video views total", "20M+"],
+      ["Ubuntu Summit engagement YoY", "+84% (5.1% → 9.4%)"],
+      ["Ubuntu Summit video views YoY", "+188%"],
+      ["Media features", "70+"],
+      ["Peak single-month impressions", "957,871 (Noble Numbat)"],
+      ["Single-activation leads", "131 across 52 countries"],
+      ["Content assets produced", "4,000+"]
+    ],
+    quote: "For B2B software companies, social doesn't have to be a <em>brand cost centre.</em> With the right tracking architecture and content built around developer communities, it drives measurable pipeline at scale.",
+    next: "canonical-ubuntu-summit"
+  },
+
+  "mindvalley-social": {
+    client: "Mindvalley", sector: "EdTech / B2C", years: "2017 — 2020",
+    eyebrow: "Social Media Growth",
+    title: "Zero to seven million followers — in six months.",
+    lede: "Fully organic. A YouTube Gold Play Button along the way. And an influencer function built from scratch, ROI-positive month one.",
+    hero: "Mindvalley social — creator & channel grid",
+    numbers: [
+      {big:"7<em>M</em>+", lbl:"Total social audience in six months"},
+      {big:"2<em>M</em>", lbl:"Facebook (from 300K)"},
+      {big:"1<em>M</em>", lbl:"YouTube — Gold Play Button awarded"},
+      {big:"250<em>K</em>", lbl:"Instagram (from 50K)"},
+      {big:"10<em>M</em>+", lbl:"Influencer network reach"},
+      {big:"Month 1", lbl:"Influencer programme ROI-positive"},
+      {big:"3<em>×</em>", lbl:"Promoted in three years"},
+      {big:"B2C", lbl:"Personal growth category"}
+    ],
+    challenge: [
+      "Active accounts, no unified strategy. Facebook at 300K, YouTube at 300K, Instagram at 50K. Organic was flat. There was no system for turning followers into leads."
+    ],
+    what: [
+      "Built a <strong>platform-specific content strategy</strong> for each channel simultaneously — distinct formats, cadences, audience growth tactics per platform.",
+      "Recruited and structured a social media team where there hadn't been one.",
+      "Launched and ran a KOL/influencer programme from zero — signed the first partners, built the ROI tracking framework, scaled to a network reaching 10M people, profitable month one.",
+      "Coordinated social with PR, SEO and events so every major moment had a cross-channel amplification plan."
+    ],
+    results: [
+      ["Total social audience", "7M+ in 6 months"],
+      ["Facebook", "300K → 2M"],
+      ["YouTube", "300K → 1M (Gold Play Button)"],
+      ["Instagram", "50K → 250K"],
+      ["Influencer network reach", "10M+"],
+      ["Influencer programme ROI", "Positive from month one"],
+      ["Promotions received", "3× in 3 years"]
+    ],
+    quote: "Audience at scale isn't a brand exercise — it's an <em>acquisition channel.</em> Platform-native content plus owned influencer partnerships plus a team structure that could execute consistently.",
+    next: "mindvalley-influencer"
+  },
+
+  "canonical-ubuntu-summit": {
+    client: "Canonical · Ubuntu Summit", sector: "Events & Earned Media", years: "2022 — 2024",
+    eyebrow: "Event Coverage & PR",
+    title: "Earned media grew 15× in two years. $519K AVE to $7.9M.",
+    lede: "Ubuntu Summit went from a modest media moment to Canonical's largest annual earned-media event — 946 mentions, 857M reach, and a 14.6× jump in max single-mention reach.",
+    hero: "Ubuntu Summit keynote & coverage mosaic",
+    numbers: [
+      {big:"$7.9<em>M</em>", lbl:"AVE in 2024, up 15× from 2022"},
+      {big:"857<em>M</em>", lbl:"Total reach in 2024 (56M in 2022)"},
+      {big:"946", lbl:"Media mentions in 2024 (+233%)"},
+      {big:"+670<em>%</em>", lbl:"Engagement vs. 2022 baseline"},
+      {big:"15.5<em>%</em>", lbl:"LinkedIn engagement rate (Summit tag)"},
+      {big:"9.4<em>%</em>", lbl:"Cross-network ER, all platforms"},
+      {big:"34.6<em>K</em>", lbl:"Views — Framework RISC-V breakout"},
+      {big:"127<em>M</em>", lbl:"Max single-mention reach"}
+    ],
+    challenge: [
+      "Conference coverage is easy to do badly: a few recap photos, a keynote recording, done. The coverage disappears within 24 hours and leaves no lasting organic footprint.",
+      "The brief: turn a 3-day event into a weeks-long content engine and a media moment that generated sustained earned media coverage."
+    ],
+    what: [
+      "<strong>Pre-event:</strong> speaker announcement series, session previews, community countdown content. Promoted through organic social and the 109K LinkedIn Newsletter so technical community, press and partners knew weeks in advance.",
+      "<strong>During:</strong> real-time social, session highlights, behind-the-scenes. Hero-to-snacks model — full sessions filmed for YouTube, clipped into short-form. The Framework RISC-V live session at Summit 2024 became the channel's second-highest-performing video of the year.",
+      "<strong>Post-event:</strong> full recordings published, highlight compilations, community reactions, press coordination. The Summit tag tracked 84 posts generating 618K impressions and 9.4% cross-network ER — LinkedIn specifically hitting 15.53%.",
+      "Each year the content strategy got more sophisticated. The earned-media numbers tracked that evolution directly."
+    ],
+    results: [
+      ["Mentions (2024 vs 2022)", "284 → 946 (+233%)"],
+      ["Total reach (2024 vs 2022)", "56M → 857M (+15.3×)"],
+      ["AVE (2024 vs 2022)", "$519K → $7.9M (+15.3×)"],
+      ["Engagement", "1,037 → 7,986 (+670%)"],
+      ["Positive sentiment shift", "25.7% → 36.3%"],
+      ["Max single-mention reach", "8.69M → 127M (+14.6×)"],
+      ["Summit-tagged posts (2024)", "84 · 618,704 impressions"],
+      ["LinkedIn engagement rate", "15.53%"],
+      ["Framework RISC-V YouTube", "34,678 views · 1,120 watch-hours"]
+    ],
+    quote: "Event coverage delivers <em>compounding returns</em> when it's treated as content production, not documentation. 15× AVE is what happens when organic social, influencer amplification, YouTube distribution and press all work off the same editorial plan.",
+    next: "canonical-20-years"
+  },
+
+  "canonical-20-years": {
+    client: "Canonical", sector: "Brand Campaign", years: "2024",
+    eyebrow: "Brand Campaign",
+    title: "20 Years of Ubuntu — a 14.4% engagement rate, on a 5% platform.",
+    lede: "Canonical's biggest brand moment of 2024. Anchored on the community, not the company. 2.1M LinkedIn impressions and 302K engagements from a single campaign.",
+    hero: "20 Years of Ubuntu — flagship video still",
+    numbers: [
+      {big:"2.1<em>M</em>", lbl:"LinkedIn impressions from the campaign"},
+      {big:"14.4<em>%</em>", lbl:"Engagement rate vs. ~5% benchmark"},
+      {big:"302<em>K</em>", lbl:"LinkedIn engagements"},
+      {big:"378<em>K</em>", lbl:"YouTube views on flagship video"},
+      {big:"1.04<em>M</em>", lbl:"YouTube impressions on flagship"},
+      {big:"5,441", lbl:"YouTube watch hours"},
+      {big:"392<em>K</em>", lbl:"Cross-platform video views"},
+      {big:"Hundreds", lbl:"UGC pieces from the community"}
+    ],
+    challenge: [
+      "Ubuntu's 20th anniversary was a meaningful milestone. Milestones are easy to get wrong — they produce self-congratulatory content that talks about the company rather than its community.",
+      "The goal: something that would resonate with the open source community, get shared organically, and serve as Canonical's biggest brand moment of 2024."
+    ],
+    what: [
+      "Developed and directed the campaign across all social channels — the highest-investment content production of the year.",
+      "<strong>Anchored on the community</strong>, not the company. Framed 20 years as a shared achievement of contributors.",
+      "Produced a flagship video (Ubuntu 24.04 LTS Noble Numbat / 20 Years) designed for organic sharing — the most produced video asset of the year.",
+      "Ran a coordinated publish across LinkedIn, YouTube, Facebook, Instagram and X with platform-specific formats.",
+      "Amplified UGC from the open source community and Canonical employees — hundreds of community pieces extended reach organically."
+    ],
+    results: [
+      ["LinkedIn impressions", "2,096,233"],
+      ["LinkedIn engagement rate", "14.4% (vs ~5% benchmark)"],
+      ["LinkedIn engagements", "302,426"],
+      ["YouTube views (flagship)", "378,699"],
+      ["YouTube impressions", "1,044,354"],
+      ["YouTube watch hours", "5,441"],
+      ["Cross-platform video views", "392,349"],
+      ["Total impressions (Sept YTD)", "1.8M+"],
+      ["UGC generated", "Hundreds of community posts"]
+    ],
+    quote: "The highest-performing content isn't always the most polished — it's the <em>most resonant.</em> When the audience sees themselves in the story, they share it. That's not a creative trick. It's a strategic orientation.",
+    next: "canonical-data-ai"
+  },
+
+  "canonical-data-ai": {
+    client: "Canonical · Data & AI Masters", sector: "Event & Demand Gen", years: "2024",
+    eyebrow: "Event & Demand Generation",
+    title: "4,731 registrations. 52 countries. One virtual event, multi-channel promotion.",
+    lede: "A virtual event series for Canonical's data and AI infrastructure products — promoted via organic social, LinkedIn event pages, and email at nearly double the B2B open-rate benchmark.",
+    hero: "Data & AI Masters — virtual event grid",
+    numbers: [
+      {big:"4,731", lbl:"Total event registrations"},
+      {big:"1,532", lbl:"Live attendees"},
+      {big:"52", lbl:"Countries reached"},
+      {big:"20.8<em>%</em>", lbl:"Email open rate vs 12% benchmark"},
+      {big:"23.5<em>%</em>", lbl:"Last-call email open rate"},
+      {big:"7.5<em>%</em>", lbl:"Organic social ER vs 5% benchmark"},
+      {big:"147<em>h</em>", lbl:"LinkedIn in-platform watch time"},
+      {big:"92.6<em>%</em>", lbl:"Attendees — in-person intent post-event"}
+    ],
+    challenge: [
+      "Canonical needed to grow awareness and generate qualified pipeline for data and AI infrastructure (Charmed Kafka, OpenSearch, MongoDB, MicroCloud) — in a market dominated by hyperscalers, without a massive event budget or household-brand recognition."
+    ],
+    what: [
+      "Conceived and produced <strong>Data & AI Masters</strong> — a virtual event series for practitioners and technical decision-makers.",
+      "Organic social promo hit 153,000 impressions and 7.5% ER vs 5% benchmark — targeted to developer and infrastructure audiences.",
+      "LinkedIn event page drove 426 registrations, 249 day-1 attendees, and 147 hours of in-platform watch time.",
+      "Email campaign to 120,000 addresses averaged 20.8% open rate vs 12% monthly benchmark. Last-call email hit 23.5%.",
+      "Produced 20+ reusable video sessions — repurposed for demand gen, social, and sales enablement through Q4."
+    ],
+    results: [
+      ["Total registrations", "4,731"],
+      ["Live attendees", "1,532"],
+      ["Countries reached", "52"],
+      ["LinkedIn registrations", "426 · 249 day-1"],
+      ["LinkedIn watch time", "147 hours"],
+      ["Organic social promo", "153K impressions · 7.5% ER"],
+      ["Email deliveries", "120,000"],
+      ["Avg email open rate", "20.8% (vs 12% benchmark)"],
+      ["Last-call email open", "23.5%"],
+      ["In-person intent post-event", "92.6%"],
+      ["Reusable video sessions", "20+"]
+    ],
+    quote: "Virtual events succeed or fail at the <em>promotion layer.</em> Each channel did specific work — social for trust, LinkedIn for community-native conversion, email for urgency and close.",
+    next: "mindvalley-pr"
+  },
+
+  "mindvalley-pr": {
+    client: "Mindvalley", sector: "PR & Earned Media", years: "2018 — 2020",
+    eyebrow: "PR & Earned Media",
+    title: "$2.8M+ earned media — and a 69% journalist reply rate.",
+    lede: "Built the PR machine that put Mindvalley in Forbes, SCMP, Thrive Global, Bernama, The Star and Vulcan Post. Research-first outreach, not spray-and-pray.",
+    hero: "Mindvalley press placements — masthead mosaic",
+    numbers: [
+      {big:"$2.8<em>M</em>+", lbl:"Earned media value"},
+      {big:"69<em>%</em>", lbl:"Journalist reply rate — Growthhacker benchmark"},
+      {big:"6+", lbl:"Tier-1 placements: Forbes, SCMP, Thrive, Bernama"},
+      {big:"Authored", lbl:"Foundr Magazine feature (Ahmed)"}
+    ],
+    challenge: [
+      "Mindvalley was a $40M e-learning company — functionally, a best-kept secret in most Western and Asian media markets.",
+      "Loyal community and growing social, but no authoritative press coverage to validate the brand to enterprise buyers, new audiences, and talent."
+    ],
+    what: [
+      "Built the PR function end-to-end. Defined target media tiers by region — Malaysian national press, SE Asian business, global personal-development and wellness, technology trade.",
+      "Identified story angles most likely to land: Vishen Lakhiani's iconoclast founder profile, unconventional company culture, the self-development/productivity intersection.",
+      "Built journalist outreach with a <strong>69% reply rate</strong> — cited by Growthhacker as a public benchmark. Every pitch researched, personalised, tied to a live story angle in the journalist's beat.",
+      "Arranged press junkets and media visits to KL HQ. Managed Vishen's media appearances including BERNAMA Radio.",
+      "Coordinated PR with SEO, influencer and social — a Forbes placement wasn't just earned media, it was a backlink compounding the SEO effect."
+    ],
+    results: [
+      ["Earned media value", "$2.8M+"],
+      ["Outreach reply rate", "69% (Growthhacker benchmark)"],
+      ["Key placements", "Forbes, SCMP, Thrive Global, Bernama, The Star, Vulcan Post"],
+      ["Industry recognition", "Public Growthhacker case study"],
+      ["Author credit", "Foundr Magazine — 'How to Get Subscribers on YouTube'"],
+      ["Agency managed", "ROOTS PR — RM 203,520 annual retainer"]
+    ],
+    quote: "A 69% reply rate isn't a volume play — it's a <em>research play.</em> When you know the journalist's last three pieces and why your story fits the next one, you don't need to spray and pray.",
+    next: "mindvalley-seo"
+  },
+
+  "mindvalley-seo": {
+    client: "Mindvalley", sector: "SEO & Organic Traffic", years: "2018 — 2019",
+    eyebrow: "SEO & Organic Traffic",
+    title: "870% organic growth in eleven months — 14K to 122K visits.",
+    lede: "A site with content but no SEO architecture. Rebuilt on-page, ran a 69%-reply outreach operation, compounded with PR. Organic went from noise to acquisition channel.",
+    hero: "SEO growth — traffic curve visual",
+    numbers: [
+      {big:"870<em>%</em>", lbl:"Organic traffic growth in 11 months"},
+      {big:"14<em>K</em> → 122<em>K</em>", lbl:"Monthly visits"},
+      {big:"69<em>%</em>", lbl:"Outreach reply rate"},
+      {big:"Featured", lbl:"Public Growthhacker case study"}
+    ],
+    challenge: [
+      "14K monthly visits — negligible for a $40M e-learning company with a massive social presence.",
+      "The site had content but no SEO architecture, no systematic link building, no outreach strategy. Organic wasn't a meaningful channel."
+    ],
+    what: [
+      "Audited on-page across the site. Rebuilt the content hierarchy around high-intent keywords tied to Mindvalley's courses and authors.",
+      "Built an off-page outreach operation targeting media, bloggers and podcasters in personal development and wellness — <strong>69% reply rate</strong>, cited by Growthhacker as a notable benchmark.",
+      "Coordinated with social and PR so high-authority placements reinforced organic ranking signals.",
+      "Measured and reported monthly. Adjusted based on keyword movement and traffic data."
+    ],
+    results: [
+      ["Organic traffic growth", "870% in 11 months"],
+      ["Monthly visits", "14K → 122K"],
+      ["Outreach reply rate", "69%"],
+      ["Industry recognition", "Growthhacker public case study"],
+      ["Publication", "Foundr Magazine authored piece"]
+    ],
+    quote: "SEO at scale requires three things in parallel: clean on-page, a <em>high-reply outreach operation</em>, and a PR function producing the authority links. When all three compound, the curve is non-linear.",
+    next: "mindvalley-influencer"
+  },
+
+  "mindvalley-influencer": {
+    client: "Mindvalley", sector: "Influencer / KOL", years: "2017 — 2020",
+    eyebrow: "Influencer Programme",
+    title: "Zero budget. 10M+ reach. ROI-positive month one.",
+    lede: "Built Mindvalley's first influencer department from scratch. Fully relationship-based — no paid placements. Creators got access to faculty; Mindvalley got authentic, high-converting distribution.",
+    hero: "Creator network visualisation",
+    numbers: [
+      {big:"10<em>M</em>+", lbl:"Network reach at peak"},
+      {big:"7<em>M</em>", lbl:"Reach added in a single quarter"},
+      {big:"9.2<em>%</em>", lbl:"New YouTube subs spike on partner-video day"},
+      {big:"$0", lbl:"Paid placements — relationship-based"},
+      {big:"Month 1", lbl:"ROI-positive"},
+      {big:"1,000", lbl:"Masterclass signups per campaign (OKR)"},
+      {big:"3", lbl:"Platforms core: YouTube, IG, Facebook"},
+      {big:"3<em>×</em>", lbl:"Promoted during this period"}
+    ],
+    challenge: [
+      "Influencer marketing didn't exist as a department. Ad hoc creator relationships, no programme, no strategy, no measurement, no defined relationship model.",
+      "The brief: a programme that was cost-effective, measurable, and scalable — in a category (personal growth) perfectly aligned with the creator economy."
+    ],
+    what: [
+      "<strong>The zero-cost model.</strong> Negotiated relationship-based agreements giving creators access to Mindvalley's most valuable asset — its faculty. Creators could interview Vishen, access quests and masterclasses, present content as something they genuinely engaged with.",
+      "<strong>Platform strategy.</strong> YouTube for long-form and organic conversions. Instagram for micro content and live-driven actions. Facebook for warm-audience partner posts. Strategic platforms — bloggers, Reddit, Pinterest — activated for niche and authority.",
+      "<strong>OKR framework.</strong> Brand awareness, traffic, lead gen — three measurable objectives, every partnership evaluated against them.",
+      "<strong>Measuring the unmeasurable.</strong> Tracked subscriber spikes on partner-video publish days. Example: 'Upgrade Your Consciousness' drove a 9.2% new-subscriber spike to the Mindvalley channel.",
+      "<strong>Campaigns shipped:</strong> #iAmEnough Uncompromised Life, Superbrain by Jim Kwik, event coverage programme for A-Fest, Mindvalley University and Summit."
+    ],
+    results: [
+      ["Network reach", "10M+ people"],
+      ["Quarterly growth", "7M reach added in Q1/Q2 2019"],
+      ["YouTube sub spike", "9.2% on partner-video day"],
+      ["Budget model", "Zero paid placements"],
+      ["ROI", "Positive from month one"],
+      ["OKR: awareness", "5% monthly social-share increase"],
+      ["OKR: leads", "1,000 masterclass sign-ups per campaign"],
+      ["Promotions resulting", "3× during this period"]
+    ],
+    quote: "Influencer marketing converts at a higher rate when creators are positioned as <em>genuine users of the product</em>, not paid advocates. Slower to build, harder to scale quickly — but significantly more durable per impression.",
+    next: "canonical-social"
+  },
+
+  "goodwall": {
+    client: "Goodwall", sector: "Social Impact / Gen Z", years: "2019 — 2020",
+    eyebrow: "Growth & Community Marketing",
+    title: "+20% MAU. -18% CAC. 150+ countries. All organic.",
+    lede: "A Geneva-HQ social impact platform for Gen Z with 1M members. The task: make growth sustainable, reduce acquisition cost, turn the community into a distribution asset.",
+    hero: "Goodwall community — map/app grid",
+    numbers: [
+      {big:"+20<em>%</em>", lbl:"Monthly Active Users in three months"},
+      {big:"-18<em>%</em>", lbl:"Monthly CAC reduction"},
+      {big:"1<em>M</em> → 1.3<em>M</em>", lbl:"Members · 150+ countries"},
+      {big:"10", lbl:"People — cross-functional team led"}
+    ],
+    challenge: [
+      "Impressive raw numbers but rising CAC and MAU not keeping pace with sign-ups. Team was cross-functional (10 people across web, content, email, paid, app) with no centralised strategy.",
+      "Youth platforms live or die on network effects — retention requires content and community mechanics that actually work."
+    ],
+    what: [
+      "<strong>Organic community activation.</strong> Rebuilt content architecture around triggers that brought users back — milestones, seasonal campaigns, social moments. Climate Action and GEW Launch were designed for members to post, share, invite peers.",
+      "<strong>Acquisition shift.</strong> Reduced reliance on paid installs. Newsletter, press release programme and community-led campaigns brought organic install traffic. Spending to reach new users became activating existing users to recruit their networks.",
+      "<strong>Infrastructure.</strong> Built top-level digital strategy (Keynote deck), Goodwall 2019 personas, marketing roadmap (Roadmunk). Shared understanding of who we targeted and how every piece of content fit the acquisition-activation-retention loop.",
+      "<strong>Cross-functional coordination.</strong> Led 10 people. Built roadmap, calendar and brief templates so functions executed coherently."
+    ],
+    results: [
+      ["MAU growth", "+20% in 3 months"],
+      ["CAC reduction", "-18% monthly"],
+      ["Members", "1M → 1.3M · 150+ countries"],
+      ["Team managed", "10 (web, content, email, paid, app)"],
+      ["Seasonal campaigns", "GEW, Climate Action, Halloween, Thanksgiving, Changemaker"],
+      ["Strategy artefacts", "Digital strategy, 2019 personas, Roadmunk roadmap"]
+    ],
+    quote: "CAC goes down when the <em>community does some of the acquisition work.</em> Your best growth channel is your existing user base — if you give them something worth sharing.",
+    next: "payd"
+  },
+
+  "payd": {
+    client: "PAYD / JustPayd", sector: "FinTech · APAC", years: "2021 — 2022",
+    eyebrow: "FinTech Marketing Build",
+    title: "50% email open rate. +35% APAC acquisition. Built from zero.",
+    lede: "Kuala Lumpur-based earned-wage-access startup. No marketing function, no martech, no messaging architecture. Built the full acquisition engine and doubled B2B email benchmarks.",
+    hero: "PAYD product + campaign mosaic",
+    numbers: [
+      {big:"50<em>%</em>", lbl:"Email open rate vs. 20–25% B2B SaaS benchmark"},
+      {big:"+35<em>%</em>", lbl:"APAC customer acquisition growth"},
+      {big:"From zero", lbl:"Marketing function, martech, brand, content"},
+      {big:"B2B2C", lbl:"Two-sided acquisition — employer + employee"}
+    ],
+    challenge: [
+      "No marketing function, no email acquisition system, no content or messaging architecture. EWA is a category-creation problem — educating an audience about a new financial model that competes with payday loans.",
+      "APAC isn't a single market — a campaign needs to function across significantly different financial cultures, regulations, and digital maturity."
+    ],
+    what: [
+      "<strong>Built the function from scratch.</strong> Brand identity, messaging framework, website copy, email infrastructure (Ortto), content templates, social presence.",
+      "<strong>Email acquisition.</strong> Lead capture and nurture for both sides of the B2B2C model — employer-facing (HR/finance) and employee-facing. <strong>50% open rate</strong> — more than double B2B SaaS benchmarks — from subject-line discipline, segmentation and content that actually answered questions.",
+      "<strong>APAC localisation.</strong> Campaigns adapted for language, payment culture, regulatory framing — drove a +35% acquisition increase without proportionally scaling spend.",
+      "<strong>Martech and automation.</strong> Selected and implemented the stack — CRM, Ortto, tracking — giving PAYD its first structured view of the funnel.",
+      "<strong>Brand and identity.</strong> Directed brand identity alongside product positioning — critical where trust is the primary purchase driver."
+    ],
+    results: [
+      ["Email open rate", "50% (vs 20–25% B2B SaaS)"],
+      ["APAC acquisition growth", "+35%"],
+      ["Marketing function", "Built from zero"],
+      ["Martech implemented", "Ortto, CRM, tracking"]
+    ],
+    quote: "The 50% open rate wasn't luck — it came from sequences that spoke <em>plainly about a real financial problem</em>, segmented precisely, and landed in inboxes with content that was genuinely useful rather than promotional.",
+    next: "agiliux"
+  },
+
+  "agiliux": {
+    client: "Agiliux", sector: "InsurTech SaaS · APAC", years: "2020 — 2021",
+    eyebrow: "Organic Content as Pipeline",
+    title: "+50% pipeline. +400% CTR. No spend increase.",
+    lede: "An APAC InsurTech SaaS with clicks that weren't converting. Rewrote the site, rebuilt the ad copy, ran email at 2.4× benchmark. Pipeline grew on content, not budget.",
+    hero: "Agiliux product + dashboard grid",
+    numbers: [
+      {big:"+50<em>%</em>", lbl:"Pipeline growth via lead magnets & content"},
+      {big:"+400<em>%</em>", lbl:"Ad CTR without spend increase"},
+      {big:"40.5<em>%</em>", lbl:"Email open rate peak vs 17% benchmark"},
+      {big:"14,550", lbl:"Contact database managed"},
+      {big:"+35<em>%</em>", lbl:"APAC customer acquisition"},
+      {big:"1.76<em>%</em>", lbl:"Email CTR peak vs 1.50% benchmark"},
+      {big:"v1.1, v1.2", lbl:"Full website rewrites shipped"},
+      {big:"Business", lbl:"Health Check tool built"}
+    ],
+    challenge: [
+      "Insurance is a trust industry. Buyers need to believe the vendor understands their world — compliance pressure, operational complexity, pain points of running an agency or underwriting desk in APAC. Generic SaaS copy wasn't cutting it.",
+      "Ads generated impressions and clicks, but CTR-to-pipeline conversion was poor. The brief: fix content quality and targeting, build a lead-gen system, grow pipeline without scaling spend."
+    ],
+    what: [
+      "<strong>Website rewrite.</strong> Full copy rebuild across Customer Engagement, Insurance Agencies, Insurance Companies pages (v1.1, v1.2). The site had to do commercial work, not decorate.",
+      "<strong>Lead-magnet architecture.</strong> Content offers insurance pros would exchange an email for. Replaced generic form fills with intent-qualified leads.",
+      "<strong>Ad rebuild.</strong> +400% CTR came from speaking directly to insurance-specific pain points, matched one-to-one with landing pages. Same language, same promise — less drop-off between click and convert.",
+      "<strong>Email nurture.</strong> 14,550-contact database. Open rates 36.13–40.46% vs 17.07% industry benchmark — 2.1–2.4× above. CTR 1.64–1.76% vs 1.50% benchmark.",
+      "<strong>Pipeline tracking.</strong> Attribution framework so decisions were data-driven, not intuition-based."
+    ],
+    results: [
+      ["Pipeline growth", "+50% via lead magnets & content"],
+      ["Ad CTR", "+400% (no spend increase)"],
+      ["APAC acquisition", "+35% via localisation & automation"],
+      ["Website", "Full rewrite — v1.1, v1.2"],
+      ["Email open rate", "36.13–40.46% vs 17.07% benchmark"],
+      ["Email CTR", "1.64–1.76% vs 1.50% benchmark"],
+      ["Database", "14,550 contacts"]
+    ],
+    quote: "+400% CTR without more spend is almost always a <em>creative and targeting problem</em>, not a budget problem. The ads were reaching the right people in the wrong language.",
+    next: "falcon"
+  },
+
+  "falcon": {
+    client: "Falcon Agency / 16Two", sector: "Agency — Global", years: "2014 — 2017",
+    eyebrow: "Agency · 40+ Brands",
+    title: "40+ global brands. Agency of the Year 2016. $19M client budgets.",
+    lede: "L'Oréal, Deliveroo, Uber, Motul, Manulife, Canon, Heinz. Three years at agency pace across 40+ brands. The muscle memory behind every engine built since.",
+    hero: "Falcon Agency — brand wall mosaic",
+    numbers: [
+      {big:"40<em>+</em>", lbl:"Global & regional brands"},
+      {big:"$19<em>M</em>", lbl:"Client budgets managed across portfolio"},
+      {big:"+22<em>%</em>", lbl:"ROAS — FinTech via predictive modelling"},
+      {big:"-45<em>%</em>", lbl:"CAC reduction for clients"},
+      {big:"+38<em>%</em>", lbl:"Conversion improvement across accounts"},
+      {big:"+140<em>%</em>", lbl:"Deliveroo SG fan growth in 3.5 months"},
+      {big:"16.8<em>M</em>", lbl:"Deliveroo monthly impressions"},
+      {big:"A+M '16", lbl:"Agency of the Year"}
+    ],
+    challenge: [
+      "Breadth was the job. In any given week: consumer FMCG, FinTech app, luxury automotive, QSR chain. The skill wasn't deep vertical expertise — it was the ability to quickly understand a brand's commercial reality and produce work that served it."
+    ],
+    what: [
+      "<strong>L'Oréal</strong> — ExOil / ShineWithConfidence full influencer storyboard and scripts. First time influencer storyboarding built into agency process as a standard deliverable.",
+      "<strong>Deliveroo Singapore</strong> — CatchTheRoo viral campaign (pitch v9, 1.5M projected reach, $31K SGD). Full social audit v1+v2, community management, UberEATS competitive analysis. 5,129 → 12,355 fans (+140.89%) in 3.5 months.",
+      "<strong>Ringgit Plus</strong> — +5% page conversion on paid traffic across CITI, HSBC, PBBK, MAYB campaigns. Personal commendation from client exec team.",
+      "<strong>Great Eastern Life</strong> — RM 350,536 budget, 5,000-lead KPI in 6 months, three-persona age-band targeting.",
+      "<strong>Performance muscle.</strong> Predictive budget models for FinTech clients — +22% ROAS over baseline.",
+      "<strong>Client knowledge programme.</strong> Five-part GDLP series: GDN, digital landscape, omni-channel, Facebook, CRO. Plus internal onboarding for new team members."
+    ],
+    results: [
+      ["Brands managed", "40+ global & regional"],
+      ["Agency recognition", "A+M Agency of the Year 2016"],
+      ["Client budgets", "$19M total portfolio"],
+      ["CAC reduction", "-45% (audience segmentation + content)"],
+      ["ROAS improvement", "+22% FinTech via predictive modelling"],
+      ["Ringgit Plus", "+5% CVR · personal client commendation"],
+      ["Conversion improvement", "+38% across accounts"],
+      ["Engagement rate", "+300% paid insurance campaign"],
+      ["Deliveroo SG ER", "4.46% avg · 9.66% peak post"],
+      ["Deliveroo SG questions", "78.95% response rate · 72% mobile"],
+      ["L'Oréal ExOil", "~$85K · Tammy Tay influencer storyboard"],
+      ["Knowledge sessions", "5-part GDLP programme delivered"]
+    ],
+    quote: "Three years across 40+ brands at agency pace builds a muscle in-house roles can't replicate — the ability to orient quickly in an <em>unfamiliar category</em>, identify what a brand actually needs (not what they asked for), and produce work that holds up commercially.",
+    next: "early-career"
+  },
+
+  "early-career": {
+    client: "Early Career · MizaTech · Joud · Insight", sector: "Cairo · Dubai · KL", years: "2010 — 2014",
+    eyebrow: "Foundation",
+    title: "Four years. Four roles. The pattern started here.",
+    lede: "Writing, editing, community managing, running paid campaigns, growing pages from zero. The work nobody assigns a title to — but where every instinct that came later was built.",
+    hero: "Early career — Cairo / Dubai / KL mosaic",
+    numbers: [
+      {big:"#12", lbl:"Qatar Happening — Facebook page in Qatar (organic)"},
+      {big:"$2,000", lbl:"Daily paid budgets managed at MizaTech"},
+      {big:"20<em>%</em>", lbl:"Mailchimp CTR (vs ~3% avg)"},
+      {big:"Cover-to-cover", lbl:"Lead journalist & editor, Insight Magazine"}
+    ],
+    challenge: [
+      "Before Falcon, Mindvalley, all of it. Four years across Cairo, Dubai and KL. This is where the pattern started."
+    ],
+    what: [
+      "<strong>MizaTech / Socialeyez — Cairo/Dubai, 2010–13.</strong> Managed social for a MENA brand portfolio in the early-Facebook era when organic reach was real. Grew Qatar Happening to the 12th-largest Facebook page in Qatar — organic only. Ran integrated paid campaigns up to $2,000/day. 20% Mailchimp CTR.",
+      "<strong>Joud — Cairo, 2013–14.</strong> Lifestyle and home-goods brand, 200+ SKUs, 6+ retail points. Built the FB community strategy from scratch: weekly plans, JoudNESS competition mechanics, newsletter, engagement rules. Hard KPIs — 10+ daily inquiries, 3+ daily orders. First full community playbook — structurally similar to editorial frameworks built at Canonical and Mindvalley a decade later.",
+      "<strong>Insight Magazine — Dubai/KL, 2012–14.</strong> Lead journalist and editor. Cover-to-cover editorial ownership. Writing, commissioning, editing, producing. This is where the writing discipline came from — magazine deadlines are different from content-marketing deadlines; the product is permanent and the standard is higher."
+    ],
+    results: [
+      ["Qatar Happening", "12th largest Facebook page in Qatar (organic)"],
+      ["Paid campaign scale", "$2,000/day integrated"],
+      ["Email CTR", "20% via Mailchimp (vs ~3% avg)"],
+      ["Joud Instagram", "1,200 → 3,500 target growth"],
+      ["Joud Facebook", "10+ inquiries/day · 3+ orders/day"],
+      ["Editorial output", "Lead journalist + editor, cover to cover"]
+    ],
+    quote: "When I say I can build a content and social function from scratch, this is what 'from scratch' looks like to me: not 'from the first hire' but from the <em>first blank document</em> where the strategy doesn't exist yet.",
+    next: "canonical-social"
+  }
+};
+
+const ORDER = ["canonical-social","canonical-ubuntu-summit","canonical-20-years","canonical-data-ai","mindvalley-social","mindvalley-influencer","mindvalley-pr","mindvalley-seo","goodwall","payd","agiliux","falcon","early-career"];
+
+const LABEL = {
+  "canonical-social": "Canonical · Social",
+  "canonical-ubuntu-summit": "Ubuntu Summit",
+  "canonical-20-years": "20 Years of Ubuntu",
+  "canonical-data-ai": "Data & AI Masters",
+  "mindvalley-social": "Mindvalley · Social",
+  "mindvalley-influencer": "Mindvalley · Influencer",
+  "mindvalley-pr": "Mindvalley · PR",
+  "mindvalley-seo": "Mindvalley · SEO",
+  "goodwall": "Goodwall",
+  "payd": "PAYD / JustPayd",
+  "agiliux": "Agiliux",
+  "falcon": "Falcon Agency",
+  "early-career": "Early Career"
+};
+
+/* ============================================================
+   RENDER
+============================================================ */
+function esc(s){ return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function mdish(s){ return s; } // already-trusted HTML strings in CASES
+
+function render() {
+  const q = new URLSearchParams(location.search);
+  const slug = q.get('case') || 'canonical-social';
+  const c = CASES[slug];
+  const root = document.getElementById('case-root');
+
+  if (!c) {
+    root.innerHTML = `<section class="notfound">
+      <h1 class="display xl">Case not found.</h1>
+      <p>No case study matches "${esc(slug)}". Try a different link.</p>
+      <a class="back-link" href="Apple Style Portfolio.html">Back to portfolio</a>
+    </section>`;
+    return;
+  }
+
+  document.title = `${c.client} — ${c.eyebrow} · Ahmed El Sanhoury`;
+
+  const nextSlug = c.next;
+  const curIdx = ORDER.indexOf(slug);
+  const prevSlug = ORDER[(curIdx - 1 + ORDER.length) % ORDER.length];
+
+  root.innerHTML = `
+    <section class="case-head">
+      <div class="wrap">
+        <a class="back-link" href="Apple Style Portfolio.html#work">Back to all work</a>
+        <div class="meta-row">
+          <span><strong>${esc(c.client)}</strong></span>
+          <span>${esc(c.sector)}</span>
+          <span>${esc(c.years)}</span>
+        </div>
+        <p class="eyebrow">${esc(c.eyebrow)}</p>
+        <h1 class="display xxl">${esc(c.title)}</h1>
+        <p class="lede">${esc(c.lede)}</p>
+      </div>
+      <div class="wrap-wide hero-img">
+        <figure class="ph ratio-21"><span class="ph-label">${esc(c.hero)}</span></figure>
+      </div>
+    </section>
+
+    <section class="numbers">
+      <div class="wrap-wide">
+        <p class="eyebrow on-dark" style="text-align:center;">By the numbers</p>
+        <h2 class="display xl">Results, unrounded.</h2>
+        <p class="sub">Every number below is Salesforce-tracked, platform-native analytics, or third-party verified.</p>
+        <div class="grid">
+          ${c.numbers.map(n => `
+            <div class="cell"><div class="big">${n.big}</div><div class="lbl">${esc(n.lbl)}</div></div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="body-sec">
+      <div class="wrap">
+        <div class="two">
+          <div class="label">Challenge</div>
+          <div>
+            <h2 class="display lg">The starting point.</h2>
+            ${c.challenge.map(p => `<p>${p}</p>`).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="body-sec">
+      <div class="wrap">
+        <div class="two">
+          <div class="label">What I did</div>
+          <div>
+            <h2 class="display lg">The work.</h2>
+            ${c.what.map(p => `<p>${p}</p>`).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="body-sec">
+      <div class="wrap">
+        <div class="two">
+          <div class="label">Results</div>
+          <div>
+            <h2 class="display lg">What shipped.</h2>
+            <table>
+              <tbody>
+                ${c.results.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-quote">
+      <blockquote>"${c.quote}"</blockquote>
+    </section>
+
+    <section class="next-case">
+      <div class="wrap">
+        <p class="eyebrow">Keep reading</p>
+        <h2 class="display xl">More case studies.</h2>
+        <p>Each one is a different category, a different problem. The engine underneath is recognisably the same.</p>
+        <div class="row">
+          <a href="?case=${prevSlug}">
+            <span class="k">Previous</span>
+            <span class="t">${esc(LABEL[prevSlug])}</span>
+            <span class="s">${esc(CASES[prevSlug].title)}</span>
+          </a>
+          <a href="?case=${nextSlug}">
+            <span class="k">Next</span>
+            <span class="t">${esc(LABEL[nextSlug])}</span>
+            <span class="s">${esc(CASES[nextSlug].title)}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+
+  /* reveal */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+  root.querySelectorAll('section').forEach(s => { s.classList.add('fade'); io.observe(s); });
+
+  /* scroll top on nav between cases */
+  window.scrollTo(0,0);
+}
+
+window.addEventListener('popstate', render);
+render();
+</script>
+</body>
+</html>
