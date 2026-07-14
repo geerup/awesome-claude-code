@@ -127,3 +127,26 @@ store; author src= attributes are the only other channel and none exist).
   `extracted/case-study-template.cases.js` - the older Apple-style case
   template with its own embedded CASES object (13 cases; predates maharat).
   Diffed vs cases-data.js: title/lede/quote identical for all 13 shared cases.
+
+## Addendum 2 - LIVE SITE ACQUIRED (2026-07-14, third pass)
+
+Network policy opened for asanhoury.com mid-session (user allowlisted the
+domain; propagation took ~25 minutes). Tier 1 executed against production.
+
+- 24 pages downloaded: home, 8 certy_portfolio cases, 8 certy_timeline CV
+  entries, 7 certy_clients pages (raw/live/). Site is WordPress + Certy
+  theme - a DIFFERENT build from the design-project snapshot. Phase 1
+  caveat resolved: the snapshot is NOT production; it is the next-site
+  draft. Full drift analysis + decision: extracted/live-drift-report.md.
+- 61/62 media originals downloaded (153MB, raw/live/media/); the 246MB
+  Summit highlight reel skipped for disk budget - URL preserved in
+  raw/live/media-urls.json. Media-to-page map: raw/live/media-map.json.
+- Per-page text extracted verbatim to extracted/live-copy/ (24 files).
+- Live-page screenshots NOT captured: the pre-installed Chromium cannot
+  CONNECT through this proxy (ERR_CONNECTION_RESET; curl works). HTML +
+  media + text are complete, so Tier 2 was unnecessary for content.
+- 10 new cross-source contradictions logged (live vs exports) - see
+  live-drift-report.md table L1-L10.
+- Vision check on "Visual Highlights" charts: they are generated
+  illustrations (one titled "Illustrative...", one filename "mock") -
+  excluded from proof use.
