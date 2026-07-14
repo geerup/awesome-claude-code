@@ -110,6 +110,34 @@
   .tbl-scroll{overflow-x:auto}
 
   .proof-links{display:flex;flex-wrap:wrap;gap:8px}
+
+  /* inline charts (pattern shared with stats.html) */
+  .chart-block{margin:18px 0 6px}
+  .chart-title{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:4px}
+  .chart-src{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);margin-bottom:16px}
+  .pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:720px}
+  .pair .pt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:12px}
+  .pair .duo{display:flex;align-items:flex-end;gap:12px;height:130px;border-bottom:1px solid var(--ink)}
+  .pair .duo .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0}
+  .pair .duo .b .fill{width:100%;background:var(--ink-2);border-radius:2px 2px 0 0}
+  .pair .duo .b.acc .fill{background:var(--accent)}
+  .pair .duo .b.dim .fill{background:var(--ink-mute)}
+  .pair .duo .b .v{font-family:var(--mono);font-size:10.5px;margin-bottom:6px;white-space:nowrap;color:var(--ink-mid)}
+  .pair .duo .b.acc .v{color:var(--accent);font-weight:600}
+  .pair .foot{display:flex;gap:12px;margin-top:6px}
+  .pair .foot span{flex:1;text-align:center;font-family:var(--mono);font-size:10px;color:var(--ink-mute)}
+  .pair .delta{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
+  .hbars{display:flex;flex-direction:column;gap:11px;max-width:720px}
+  .hb{display:grid;grid-template-columns:180px 1fr 74px;gap:12px;align-items:center}
+  .hb .l{font-family:var(--mono);font-size:11.5px;text-align:right;color:var(--ink-2)}
+  .hb .track{background:var(--paper-2);border-radius:2px;height:20px}
+  .hb .fillh{height:100%;background:var(--ink-2);border-radius:2px}
+  .hb.acc .fillh{background:var(--accent)}
+  .hb.dim .fillh{background:var(--ink-mute)}
+  .hb .v{font-family:var(--mono);font-size:11.5px;font-weight:600}
+  .hb.acc .v{color:var(--accent)}
+  .axis-note{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);margin-top:10px;max-width:70ch}
+
   .proof-imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
   .proof-imgs figure{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--paper-2);margin:0}
   .proof-imgs img{display:block;width:100%;height:auto}
@@ -191,7 +219,7 @@
 <div class="decision">
   <div class="wrap">
     <span class="k">Open decision - positioning</span>
-    <p>Draft R2. Ships the evidence-backed positioning ("social, content, organic growth"); the "AI-native / agentic systems" thesis stays out of the copy until /lab has a shipped artifact (GAPS.md &sect;0). R2 adds real proof imagery scraped from the live asanhoury.com (WordPress) build - whose copy is a third, drifted variant; where its numbers contradict the analytics exports, the exports win (see live-drift-report.md). Approve or revise before publish.</p>
+    <p>Draft R3. Ships the evidence-backed positioning ("social, content, organic growth"); the "AI-native / agentic systems" thesis stays out of the copy until /lab has a showable artifact (GAPS.md &sect;0 - the owner's stats sheet confirms Maharat agentic systems are documented separately, approval-gated, no live data). R3 integrates the owner-supplied verified stats dashboard (stats.html, master.json 2026-04-18): previously unsourced figures now carry receipts ($5M+ pipeline, 100M+ impressions, -28% PAYD CAC), the YouTube baseline is adjudicated at 125K, and the Canonical window is confirmed 2022 - 2025. Approve or revise before publish.</p>
   </div>
 </div>
 
@@ -201,6 +229,7 @@
     <div class="nav-links">
       <a href="#cases">Case studies</a>
       <a href="#work">Work</a>
+      <a href="stats.html">Numbers</a>
       <a href="#lab">Lab</a>
       <a href="#recs">Recommendations</a>
       <a href="#speaking">Speaking</a>
@@ -220,6 +249,7 @@
         <div class="cta-row">
           <a class="btn" href="mailto:ahmed@asanhoury.com">Let's talk</a>
           <a class="textlink" href="#cases">See the work</a>
+          <a class="textlink" href="stats.html">All 50 verified numbers</a>
         </div>
       </div>
       <div class="portrait">
@@ -273,7 +303,7 @@
         <aside class="case-meta">
           <div class="meta-item"><span class="k">Org</span><span class="v">Canonical (Ubuntu)</span></div>
           <div class="meta-item"><span class="k">Role</span><span class="v">Global Communications Manager</span></div>
-          <div class="meta-item"><span class="k">Window</span><span class="v">2022 - 2024 <span class="nh">NEEDS_HUMAN: site says 2024; recommendations and analytics run to 2025</span></span></div>
+          <div class="meta-item"><span class="k">Window</span><span class="v">2022 - 2025 (confirmed by role brief and Sprout exports through Q1 2025)</span></div>
         </aside>
         <div class="case-main">
           <div>
@@ -318,25 +348,76 @@
           </div>
           <div>
             <h4>Outcomes</h4>
+            <div class="chart-block">
+              <p class="chart-title">Social MQLs, one year</p>
+              <p class="chart-src">Source: Salesforce, every lead source-tracked; reported to leadership quarterly</p>
+              <div class="pairs">
+                <div class="pair">
+                  <p class="pt">Social MQLs</p>
+                  <div class="duo">
+                    <div class="b dim"><span class="v">36</span><div class="fill" style="height:5%"></div></div>
+                    <div class="b acc"><span class="v">785</span><div class="fill" style="height:100%"></div></div>
+                  </div>
+                  <div class="foot"><span>2022</span><span>2023</span></div>
+                  <p class="delta">21&times; in a single year</p>
+                </div>
+                <div class="pair">
+                  <p class="pt">LinkedIn engagements</p>
+                  <div class="duo">
+                    <div class="b dim"><span class="v">290,445</span><div class="fill" style="height:30%"></div></div>
+                    <div class="b acc"><span class="v">974,046</span><div class="fill" style="height:100%"></div></div>
+                  </div>
+                  <div class="foot"><span>2023</span><span>2024</span></div>
+                  <p class="delta">+235% YoY</p>
+                </div>
+                <div class="pair">
+                  <p class="pt">Follower acquisition</p>
+                  <div class="duo">
+                    <div class="b acc"><span class="v">195,395 organic</span><div class="fill" style="height:100%"></div></div>
+                    <div class="b dim"><span class="v">2,557 paid</span><div class="fill" style="height:2.5%"></div></div>
+                  </div>
+                  <div class="foot"><span>98.7%</span><span>1.3%</span></div>
+                  <p class="delta">Organic-first, provably</p>
+                </div>
+              </div>
+            </div>
             <div class="tbl-scroll">
             <table class="outcomes">
               <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
               <tr><td class="m">Social MQLs</td><td>36</td><td class="after">785</td><td>2023, single year</td><td class="src">Salesforce &middot; Vancouver Sprint 2024 deck</td></tr>
               <tr><td class="m">MQL growth</td><td>2021 level</td><td class="after">8.8&times;</td><td>2022 vs 2021</td><td class="src">Salesforce &middot; 2022 annual review deck</td></tr>
+              <tr><td class="m">Enterprise pipeline influenced</td><td>-</td><td class="after">$5M+</td><td>tenure</td><td class="src">Salesforce &middot; master.json 2026-04-18</td></tr>
               <tr><td class="m">Organic audience</td><td>2.1M (end 2022)</td><td class="after">2,813,262</td><td>to Apr 2025</td><td class="src">Sprout Social reporting 2025</td></tr>
-              <tr><td class="m">Organic engagement rate</td><td>1.3% (2022)</td><td class="after">5.18%</td><td>YTD 2024</td><td class="src">Sprout Social</td></tr>
-              <tr><td class="m">LinkedIn followers</td><td>90K (2022)</td><td class="after">551,962</td><td>Apr 2025</td><td class="src">Sprout tracker + on-record recommendation</td></tr>
-              <tr><td class="m">LinkedIn engagements</td><td>290,445 (2023)</td><td class="after">974,046</td><td>full year 2024</td><td class="src">Sprout profile performance export</td></tr>
-              <tr><td class="m">Website sessions from social</td><td>-</td><td class="after">621K</td><td>2022</td><td class="src">2022 annual review deck</td></tr>
+              <tr><td class="m">Annual impressions, all platforms</td><td>-</td><td class="after">100M+</td><td>2024 (254.8M total per platform mix)</td><td class="src">Sprout Social &middot; master.json 2026-04-18</td></tr>
+              <tr><td class="m">Organic engagement rate</td><td>1.3% (2022)</td><td class="after">5.18%</td><td>full year 2024</td><td class="src">Sprout Social</td></tr>
+              <tr><td class="m">LinkedIn followers</td><td>90K (2022)</td><td class="after">551,962</td><td>Apr 2025; 98.7% of new followers organic</td><td class="src">Sprout tracker + LinkedIn export</td></tr>
+              <tr><td class="m">LinkedIn newsletter</td><td>0</td><td class="after">109K</td><td>fully organic; 13K in one 30-day peak</td><td class="src">LinkedIn</td></tr>
+              <tr><td class="m">Ubuntu Pro earned media</td><td>-</td><td class="after">$6.17M</td><td>2024 &middot; 446 mentions &middot; 666.6M reach</td><td class="src">Meltwater</td></tr>
+              <tr><td class="m">Analyst recognition</td><td>none</td><td class="after">1st Gartner mention</td><td>Q4 2024, telcos vertical</td><td class="src">Gartner &middot; marketing contribution</td></tr>
+              <tr><td class="m">Website sessions from social</td><td>-</td><td class="after">621K</td><td>2022</td><td class="src">GA4 &middot; 2022 annual review deck</td></tr>
             </table>
+            </div>
+            <div class="chart-block">
+              <p class="chart-title">LinkedIn followers vs the category &middot; April 2025</p>
+              <p class="chart-src">Source: LinkedIn competitor benchmark, master.json</p>
+              <div class="hbars">
+                <div class="hb dim"><span class="l">Red Hat (IBM-backed)</span><div class="track"><div class="fillh" style="width:100%"></div></div><span class="v">1.43M</span></div>
+                <div class="hb acc"><span class="l">Canonical</span><div class="track"><div class="fillh" style="width:39.1%"></div></div><span class="v">560K</span></div>
+                <div class="hb"><span class="l">Linux Foundation</span><div class="track"><div class="fillh" style="width:24.7%"></div></div><span class="v">354K</span></div>
+                <div class="hb"><span class="l">HashiCorp</span><div class="track"><div class="fillh" style="width:20.9%"></div></div><span class="v">299K</span></div>
+                <div class="hb"><span class="l">SUSE</span><div class="track"><div class="fillh" style="width:12.2%"></div></div><span class="v">174K</span></div>
+              </div>
+              <p class="axis-note">Built from ~90K in 2022. The page now leads HashiCorp by 87%, SUSE by 3.2x, and the Linux Foundation by 58% - all had a years-long head start.</p>
             </div>
             <p style="margin-top:10px"><span class="nh">NEEDS_HUMAN: "from scratch" vs the 2.1M audience recorded at end-2022 - clarify what existed at joining</span></p>
           </div>
           <div>
             <h4>Proof</h4>
             <div class="proof-links">
-              <span class="nh">NEEDS_HUMAN: LinkedIn profile deep-link for the on-record recommendations</span>
-              <span class="nh">NEEDS_HUMAN: "70+ media features" list</span>
+              <a class="textlink" href="stats.html">Full stats sheet: 50 verified numbers with sources</a>
+            </div>
+            <div class="proof-links" style="margin-top:8px">
+              <span class="nh">NEEDS_HUMAN: LinkedIn profile deep-link for the on-record recommendations (stats sheet says /in/ahmed-el-sanhoury, site says /in/asanhoury - confirm which)</span>
             </div>
           </div>
           <div>
@@ -392,12 +473,46 @@
           </div>
           <div>
             <h4>Outcomes</h4>
+            <div class="chart-block">
+              <p class="chart-title">Ubuntu Summit earned media &middot; 2022 vs 2024</p>
+              <p class="chart-src">Source: Meltwater mention exports, Summit 2022 and 2024</p>
+              <div class="pairs">
+                <div class="pair">
+                  <p class="pt">Mentions</p>
+                  <div class="duo">
+                    <div class="b dim"><span class="v">284</span><div class="fill" style="height:30%"></div></div>
+                    <div class="b acc"><span class="v">946</span><div class="fill" style="height:100%"></div></div>
+                  </div>
+                  <div class="foot"><span>2022</span><span>2024</span></div>
+                  <p class="delta">+233%</p>
+                </div>
+                <div class="pair">
+                  <p class="pt">Total reach</p>
+                  <div class="duo">
+                    <div class="b dim"><span class="v">56M</span><div class="fill" style="height:6.5%"></div></div>
+                    <div class="b acc"><span class="v">857M</span><div class="fill" style="height:100%"></div></div>
+                  </div>
+                  <div class="foot"><span>2022</span><span>2024</span></div>
+                  <p class="delta">15.3&times;</p>
+                </div>
+                <div class="pair">
+                  <p class="pt">Earned media value (AVE)</p>
+                  <div class="duo">
+                    <div class="b dim"><span class="v">$519K</span><div class="fill" style="height:6.5%"></div></div>
+                    <div class="b acc"><span class="v">$7.93M</span><div class="fill" style="height:100%"></div></div>
+                  </div>
+                  <div class="foot"><span>2022</span><span>2024</span></div>
+                  <p class="delta">15.3&times;</p>
+                </div>
+              </div>
+            </div>
             <div class="tbl-scroll">
             <table class="outcomes">
               <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
               <tr><td class="m">Media mentions</td><td>284 (2022)</td><td class="after">946</td><td>2024</td><td class="src">Meltwater</td></tr>
               <tr><td class="m">Total reach</td><td>56,087,571 (2022)</td><td class="after">857,355,723</td><td>2024</td><td class="src">Meltwater</td></tr>
               <tr><td class="m">AVE</td><td>$518,810 (2022)</td><td class="after">$7,930,540</td><td>2024</td><td class="src">Meltwater</td></tr>
+              <tr><td class="m">Media features</td><td>-</td><td class="after">70+</td><td>Summits 2022 - 2024</td><td class="src">Meltwater</td></tr>
               <tr><td class="m">Summit-tag social</td><td>-</td><td class="after">9.4% ER</td><td>84 posts &middot; 618,704 impressions &middot; Apr 2024 - Apr 2025</td><td class="src">Sprout tag performance CSV</td></tr>
               <tr><td class="m">Framework RISC-V video</td><td>-</td><td class="after">34,678 views</td><td>1,120 watch-hours &middot; 4.56% CTR &middot; 2024</td><td class="src">YouTube uploads 2024 export</td></tr>
             </table>
@@ -468,10 +583,23 @@
               <tr><td class="m">LinkedIn impressions</td><td>-</td><td class="after">2,096,233</td><td>campaign period 2024</td><td class="src">October 2024 deck</td></tr>
               <tr><td class="m">LinkedIn engagement rate</td><td>~5% platform benchmark</td><td class="after">14.4%</td><td>campaign period</td><td class="src">October 2024 deck</td></tr>
               <tr><td class="m">LinkedIn engagements</td><td>-</td><td class="after">302,426</td><td>campaign period</td><td class="src">October 2024 deck</td></tr>
-              <tr><td class="m">Flagship video</td><td>-</td><td class="after">378,699 views</td><td>1,044,354 impressions &middot; 5,441 watch-hours &middot; 2024</td><td class="src">YouTube uploads 2024 export</td></tr>
+              <tr><td class="m">Flagship video</td><td>-</td><td class="after">378,699 views</td><td>1,044,354 impressions &middot; 5,441 watch-hours &middot; 6.04% CTR &middot; 2024</td><td class="src">YouTube Studio</td></tr>
             </table>
             </div>
-            <p style="margin-top:10px"><span class="nh">NEEDS_HUMAN: citable source for the ~5% benchmark; exact campaign window dates</span></p>
+            <div class="chart-block">
+              <p class="chart-title">Where 14.4% sits &middot; the organic engagement-rate ladder</p>
+              <p class="chart-src">Source: Sprout Social, 2024 - 2025 tag and campaign reports</p>
+              <div class="hbars">
+                <div class="hb dim"><span class="l">Industry benchmark</span><div class="track"><div class="fillh" style="width:7.2%"></div></div><span class="v">~2.6%</span></div>
+                <div class="hb"><span class="l">Full-year organic, 2024</span><div class="track"><div class="fillh" style="width:14.4%"></div></div><span class="v">5.18%</span></div>
+                <div class="hb"><span class="l">Ubuntu Summit 2024</span><div class="track"><div class="fillh" style="width:26.1%"></div></div><span class="v">9.4%</span></div>
+                <div class="hb acc"><span class="l">20 Years of Ubuntu</span><div class="track"><div class="fillh" style="width:40%"></div></div><span class="v">14.4%</span></div>
+                <div class="hb"><span class="l">ODM Day launch post</span><div class="track"><div class="fillh" style="width:63.9%"></div></div><span class="v">23%</span></div>
+                <div class="hb"><span class="l">Top event coverage</span><div class="track"><div class="fillh" style="width:100%"></div></div><span class="v">36%</span></div>
+              </div>
+              <p class="axis-note">Benchmark bar derived from the verified "5.18% = 2x industry benchmark" figure; every other bar is a directly measured result.</p>
+            </div>
+            <p style="margin-top:10px"><span class="nh">NEEDS_HUMAN: exact campaign window dates</span></p>
           </div>
           <div>
             <h4>Proof</h4>
@@ -639,7 +767,7 @@
           <figure><img src="assets/youtube-analytics.jpg" alt="YouTube analytics screenshot: 12.6M views on a flagship video, 1.1M subscribers"><figcaption>Channel screenshot: flagship video 12.6M views &middot; 1.1M subs</figcaption></figure>
         </div>
       </div>
-      <div class="nums"><b>~650K &rarr; 7M+</b> combined audience &middot; YouTube to 1M, Gold Play Button<span class="src">Self-reported &middot; NEEDS_HUMAN: window + YouTube baseline (site and live CV say 125K, case sources say 300K)</span></div>
+      <div class="nums"><b>7M+</b> combined audience in 6 months &middot; YouTube <b>125K &rarr; 1M</b>, Gold Play Button<span class="src">Platform data &middot; baseline 125K adjudicated by owner's verified stats sheet (master.json 2026-04-18); approach published in Foundr</span></div>
     </div>
 
     <div class="arc">
@@ -657,7 +785,7 @@
     <div class="arc">
       <div class="org">PAYD<span class="yr">2021 - 2022 &middot; Head of Marketing</span></div>
       <div class="desc">Earned-wage-access startup, category creation with a B2B2C double funnel. Built brand, messaging, email infrastructure (Ortto), and the first structured attribution view from nothing; localised per APAC market instead of one pan-APAC campaign.</div>
-      <div class="nums"><b>50%</b> email open rate (vs ~20-25% benchmark) &middot; <b>+35%</b> APAC acquisition<span class="src">Self-reported &middot; NEEDS_HUMAN: verify +35% is distinct from the Agiliux figure</span></div>
+      <div class="nums"><b>50%</b> email open rate (vs ~20-25% benchmark) &middot; <b>+35%</b> APAC acquisition &middot; <b>-28%</b> CAC<span class="src">PAYD data per verified stats sheet &middot; NEEDS_HUMAN: verify +35% is distinct from the Agiliux figure</span></div>
     </div>
 
     <div class="arc">
@@ -675,7 +803,7 @@
     <div class="arc">
       <div class="org">Goodwall<span class="yr">2019 - 2020 &middot; Marketing Director</span></div>
       <div class="desc">1M-member Gen Z platform. Shifted spend from paid installs toward activating existing users to recruit their networks; rebuilt content around return triggers; led 10 people across web, content, email, paid, app.</div>
-      <div class="nums"><b>+20%</b> MAU in 3 months &middot; <b>-18%</b> blended CAC &middot; 1M &rarr; 1.3M members<span class="src">Self-reported, blended paid + organic &middot; baselines unstated</span></div>
+      <div class="nums"><b>+20%</b> MAU in 3 months &middot; <b>-18%</b> blended CAC &middot; <b>50+</b> COP25 campaign partners incl. UNEP, WWF, Greenpeace, Oxfam<span class="src">Company data + campaign docs &middot; MAU/CAC baselines unstated</span></div>
     </div>
 
     <div class="arc">
@@ -697,7 +825,7 @@
     <div class="lab-hold">
       <span class="k accent">On hold - by design</span>
       <h3>This wing ships when there is something real to put in it.</h3>
-      <p>The source material contains zero repos, live tools, or shipped automations. A lab item without an artifact is a claim, not proof - so nothing is listed here yet, and the "AI-native / builds agentic systems" positioning stays out of the hero until this section can carry it.</p>
+      <p>A lab item without an artifact is a claim, not proof - so nothing is listed here yet, and the "AI-native / builds agentic systems" positioning stays out of the hero until this section can carry it. One material update from the owner's verified stats sheet: agentic systems built at Maharat ARE documented separately - they ran to an approval gate and have no live performance data, so no numbers are claimed. That documentation is this wing's strongest seed once it can be shown.</p>
       <p>What could honestly seed it today:</p>
       <ul>
         <li>One live, linkable artifact - the strongest candidate on the evidence: an attribution or reporting dashboard, or a content-ops automation, built with AI tooling and open-sourced or demoed on video.</li>
@@ -808,7 +936,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Ahmed El Sanhoury &middot; rebuild draft R2</p>
+    <p>Ahmed El Sanhoury &middot; rebuild draft R3</p>
     <p>Every number traces to projects.json &middot; gaps are marked, not papered over</p>
   </div>
 </footer>
