@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed El Sanhoury - Social, content, organic growth</title>
+<meta name="description" content="Marketing executive. I build social media engines that move pipeline. 36 to 785 social MQLs in one year, Salesforce-tracked.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE9DC; --paper-2:#E6DFCC; --paper-3:#DAD2BC;
+    --ink:#17140F; --ink-2:#2A251D; --ink-mid:#6A604F; --ink-mute:#948871;
+    --rule:rgba(23,20,15,.14); --rule-soft:rgba(23,20,15,.08);
+    --accent:#D2401E; --accent-soft:rgba(210,64,30,.10);
+    --moss:#2E4A2F; --night:#0E0C08; --night-2:#16130E; --night-rule:rgba(239,233,220,.14);
+    --display:'Instrument Serif','Times New Roman',serif;
+    --sans:'Geist',system-ui,-apple-system,sans-serif;
+    --mono:'Geist Mono',ui-monospace,'SF Mono',monospace;
+    --gutter:40px; --max:1240px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+  a{color:inherit}
+  ::selection{background:var(--accent);color:var(--paper)}
+
+  .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid)}
+  .k.accent{color:var(--accent)}
+
+  /* NEEDS_HUMAN chip */
+  .nh{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--accent);border:1.5px dashed var(--accent);background:var(--accent-soft);border-radius:3px;padding:3px 8px;margin:2px 0;line-height:1.5}
+
+  /* decision banner */
+  .decision{background:var(--night);color:var(--paper)}
+  .decision .wrap{display:flex;gap:18px;align-items:baseline;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+  .decision .k{color:var(--accent)}
+  .decision p{font-size:13.5px;color:rgba(239,233,220,.82);max-width:76ch}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:50}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+  .logo{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-decoration:none;font-weight:500}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:26px}
+  .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink-mid)}
+  .nav-links a:hover{color:var(--accent)}
+
+  /* hero */
+  .hero{padding:96px 0 72px;border-bottom:1px solid var(--rule)}
+  .hero h1{font-family:var(--display);font-size:clamp(54px,9vw,138px);line-height:.98;letter-spacing:-.01em;font-weight:400;max-width:12ch}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .sub{margin-top:28px;font-size:clamp(17px,2vw,21px);color:var(--ink-2);max-width:52ch}
+  .hero .cta-row{margin-top:40px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:3px}
+  .btn:hover{background:var(--accent)}
+  .textlink{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .textlink:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* proof strip */
+  .proof{padding:0 0 84px}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+  .proof-cell{padding:34px 30px;border-right:1px solid var(--rule);background:var(--paper)}
+  .proof-cell:last-child{border-right:none}
+  .proof-cell .num{font-family:var(--display);font-size:clamp(34px,3.6vw,52px);line-height:1.05}
+  .proof-cell .what{margin-top:8px;font-size:14.5px;color:var(--ink-2)}
+  .proof-cell .src{margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-mute);text-transform:uppercase}
+
+  /* section scaffolding */
+  section{padding:88px 0;border-bottom:1px solid var(--rule)}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;gap:20px;flex-wrap:wrap}
+  .sec-head h2{font-family:var(--display);font-size:clamp(36px,4.6vw,60px);font-weight:400;line-height:1.05}
+  .sec-intro{max-width:64ch;color:var(--ink-2);font-size:15.5px;margin-bottom:26px}
+
+  /* case study */
+  .case{border-top:1px solid var(--rule);padding:64px 0}
+  .case:first-of-type{border-top:none;padding-top:36px}
+  .case-head{display:grid;grid-template-columns:72px 1fr;gap:28px;align-items:baseline}
+  .case-no{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.08em}
+  .case-head h3{font-family:var(--display);font-size:clamp(28px,3.4vw,44px);font-weight:400;line-height:1.12;max-width:26ch}
+  .case-hook{grid-column:2;margin-top:14px;font-size:16.5px;color:var(--ink-2);max-width:64ch}
+  .case-body{display:grid;grid-template-columns:260px 1fr;gap:56px;margin-top:44px}
+  .case-meta{position:sticky;top:86px;align-self:start;display:flex;flex-direction:column;gap:18px}
+  .meta-item .k{display:block;margin-bottom:4px}
+  .meta-item .v{font-size:13.5px;color:var(--ink-2)}
+  .case-main>div{margin-bottom:34px}
+  .case-main h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--rule-soft)}
+  .case-main p{font-size:15px;color:var(--ink-2);max-width:68ch}
+  .case-main ul{list-style:none}
+  .case-main ul li{font-size:14.5px;color:var(--ink-2);padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--rule-soft);max-width:70ch}
+  .case-main ul li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:2px;background:var(--accent)}
+
+  .fork{border:1px solid var(--rule);border-radius:4px;padding:18px 20px;margin-bottom:12px;background:var(--paper)}
+  .fork .d{font-size:14.5px;font-weight:500;color:var(--ink)}
+  .fork .r-row{display:grid;grid-template-columns:110px 1fr;gap:10px;margin-top:9px;font-size:13px;color:var(--ink-mid)}
+  .fork .r-row .k{font-size:10px}
+
+  table.outcomes{width:100%;border-collapse:collapse;font-size:13px}
+  table.outcomes th{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--rule)}
+  table.outcomes td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top;color:var(--ink-2)}
+  table.outcomes td.m{font-weight:500;color:var(--ink)}
+  table.outcomes td.after{font-family:var(--display);font-size:17px;white-space:nowrap}
+  table.outcomes td.src{font-family:var(--mono);font-size:10.5px;color:var(--ink-mute)}
+  .tbl-scroll{overflow-x:auto}
+
+  .proof-links{display:flex;flex-wrap:wrap;gap:8px}
+
+  /* archive */
+  .arc{border-top:1px solid var(--rule);padding:26px 0;display:grid;grid-template-columns:190px 1fr 300px;gap:28px}
+  .arc:first-of-type{border-top:none}
+  .arc .org{font-weight:500;font-size:15px}
+  .arc .org .yr{display:block;font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);margin-top:3px;letter-spacing:.08em}
+  .arc .desc{font-size:14px;color:var(--ink-2);max-width:56ch}
+  .arc .nums{font-size:13px;color:var(--ink-2)}
+  .arc .nums b{font-family:var(--display);font-weight:400;font-size:16px}
+  .arc .nums .src{display:block;font-family:var(--mono);font-size:10px;color:var(--ink-mute);letter-spacing:.06em;margin-top:2px;text-transform:uppercase}
+
+  /* lab */
+  .lab-hold{border:1.5px dashed var(--accent);background:var(--accent-soft);border-radius:4px;padding:36px;max-width:840px}
+  .lab-hold h3{font-family:var(--display);font-size:26px;font-weight:400;margin-bottom:12px}
+  .lab-hold p{font-size:14.5px;color:var(--ink-2);max-width:66ch;margin-bottom:12px}
+  .lab-hold ul{list-style:none;margin:10px 0 0}
+  .lab-hold li{font-size:13.5px;color:var(--ink-2);padding:6px 0 6px 20px;position:relative}
+  .lab-hold li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:2px;background:var(--accent)}
+
+  /* recommendations - dark */
+  .recs{background:var(--night);color:var(--paper);border-bottom:none}
+  .recs .sec-head h2{color:var(--paper)}
+  .recs .k{color:rgba(239,233,220,.5)}
+  .recs .sec-intro{color:rgba(239,233,220,.72)}
+  .featured{border:1px solid var(--night-rule);border-radius:4px;padding:44px;margin-bottom:14px;background:var(--night-2)}
+  .featured blockquote{font-family:var(--display);font-size:clamp(21px,2.6vw,30px);line-height:1.32;font-weight:400;max-width:36ch}
+  .featured blockquote em{color:var(--accent);font-style:italic}
+  .quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .quote{border:1px solid var(--night-rule);border-radius:4px;padding:28px;background:var(--night-2)}
+  .quote blockquote{font-size:14px;line-height:1.65;color:rgba(239,233,220,.85)}
+  .who{margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(239,233,220,.55);text-transform:uppercase;line-height:1.7}
+  .who b{color:var(--paper);font-weight:500}
+  .recs .nh{background:rgba(210,64,30,.16)}
+
+  /* speaking */
+  .spk{border-top:1px solid var(--rule);padding:20px 0;display:grid;grid-template-columns:1fr 220px 260px;gap:24px;align-items:baseline}
+  .spk:first-of-type{border-top:none}
+  .spk .t{font-size:15.5px;font-weight:500}
+  .spk .role{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid)}
+
+  /* contact */
+  .contact{border-bottom:none;padding:110px 0 90px}
+  .contact h2{font-family:var(--display);font-size:clamp(44px,6.5vw,96px);font-weight:400;line-height:1.02;max-width:14ch}
+  .contact h2 em{font-style:italic;color:var(--accent)}
+  .contact .row{margin-top:44px;display:flex;gap:34px;flex-wrap:wrap;align-items:center}
+  .contact .meta{margin-top:34px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--ink-mute);text-transform:uppercase}
+
+  footer{border-top:1px solid var(--rule);padding:22px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink-mute);text-transform:uppercase}
+
+  @media(max-width:980px){
+    .case-body{grid-template-columns:1fr;gap:30px}
+    .case-meta{position:static;flex-direction:row;flex-wrap:wrap;gap:22px}
+    .quote-grid{grid-template-columns:1fr}
+    .arc{grid-template-columns:1fr;gap:8px}
+    .spk{grid-template-columns:1fr;gap:6px}
+  }
+  @media(max-width:720px){
+    :root{--gutter:22px}
+    .proof-grid{grid-template-columns:1fr}
+    .proof-cell{border-right:none;border-bottom:1px solid var(--rule)}
+    .proof-cell:last-child{border-bottom:none}
+    .case-head{grid-template-columns:1fr;gap:8px}
+    .case-hook{grid-column:1}
+    .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ OPEN DECISION BANNER (remove before publish) ============ -->
+<div class="decision">
+  <div class="wrap">
+    <span class="k">Open decision - positioning</span>
+    <p>This draft ships the evidence-backed positioning ("social, content, organic growth"). The proposed "AI-native / agentic systems" thesis has zero supporting artifacts in the source material (see GAPS.md &sect;0) and is held out of the copy until /lab has at least one shipped artifact. Approve or revise before publish.</p>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">AHMED EL SANHOURY<span>.</span></a>
+    <div class="nav-links">
+      <a href="#cases">Case studies</a>
+      <a href="#work">Work</a>
+      <a href="#lab">Lab</a>
+      <a href="#recs">Recommendations</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="k accent">Marketing executive &middot; Tallinn, EE &middot; 2010 - present</span>
+    <h1 style="margin-top:22px">Social, content, <em>organic growth.</em></h1>
+    <p class="sub">I build social media engines that move pipeline. Sixteen years across six countries: Canonical (Ubuntu), Mindvalley, Goodwall, PAYD, Agiliux, Falcon Agency, and today Maharat. Every number below ships with its baseline, window, and source.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:ahmed@asanhoury.com">Let's talk</a>
+      <a class="textlink" href="#cases">See the work</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROOF STRIP (3 numbers, all with named sources) ============ -->
+<div class="proof">
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="proof-cell">
+        <div class="num">36 &rarr; 785</div>
+        <div class="what">Social MQLs in one year</div>
+        <div class="src">Salesforce-tracked &middot; Canonical &middot; 2023</div>
+      </div>
+      <div class="proof-cell">
+        <div class="num">2.81M</div>
+        <div class="what">Total organic social audience</div>
+        <div class="src">Sprout Social &middot; Canonical &middot; Apr 2025</div>
+      </div>
+      <div class="proof-cell">
+        <div class="num">$519K &rarr; $7.9M</div>
+        <div class="what">Earned media AVE in two years</div>
+        <div class="src">Meltwater &middot; Ubuntu Summit &middot; 2022 - 2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CASE STUDIES ============ -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Case studies</h2>
+      <span class="k">Ranked by strength of evidence, not chronology</span>
+    </div>
+    <p class="sec-intro">Five cases, each told the same way: the problem, the call that was made, what shipped, and what it did - with the analytics export named next to every number.</p>
+
+    <!-- CASE 01: canonical-social -->
+    <article class="case" id="case-canonical-social">
+      <div class="case-head">
+        <span class="case-no">01</span>
+        <h3>A social function, built from zero - with Salesforce-attributed pipeline</h3>
+        <p class="case-hook">Built Canonical's entire social and content function from scratch: a 2.81M organic audience and social MQLs from 36 to 785 in one year, tracked in Salesforce.</p>
+      </div>
+      <div class="case-body">
+        <aside class="case-meta">
+          <div class="meta-item"><span class="k">Org</span><span class="v">Canonical (Ubuntu)</span></div>
+          <div class="meta-item"><span class="k">Role</span><span class="v">Global Communications Manager</span></div>
+          <div class="meta-item"><span class="k">Window</span><span class="v">2022 - 2024 <span class="nh">NEEDS_HUMAN: site says 2024; recommendations and analytics run to 2025</span></span></div>
+        </aside>
+        <div class="case-main">
+          <div>
+            <h4>Context</h4>
+            <p>Canonical had no structured social media function. Content was inconsistent, untracked, and disconnected from marketing pipeline. No content calendar, no influencer programme, no process for tying social to MQLs or revenue.</p>
+          </div>
+          <div>
+            <h4>Tension</h4>
+            <p>For an enterprise open source company selling to developers and sysadmins, social was a brand cost centre with no measurable pipeline contribution - and no tracking architecture existed to prove otherwise.</p>
+          </div>
+          <div>
+            <h4>Mandate</h4>
+            <p>Built the function from scratch and integrated it with Salesforce so social MQL contribution was measurable and reported to leadership. Marina Khachatryan (Senior Marketing Manager): he turned it "from a one-person operation to a full team".</p>
+          </div>
+          <div>
+            <h4>Decisions</h4>
+            <div class="fork">
+              <div class="d">Integrate the entire function with Salesforce from day one so every MQL from social was attributable.</div>
+              <div class="r-row"><span class="k">Rejected</span><span><span class="nh">NEEDS_HUMAN: alternatives considered</span></span></div>
+              <div class="r-row"><span class="k">Why</span><span>Social contribution had to be measurable and reported to leadership.</span></div>
+            </div>
+            <div class="fork">
+              <div class="d">Build a 48-creator influencer network in hardware, homelab, and open source micro-communities on a relationship basis.</div>
+              <div class="r-row"><span class="k">Rejected</span><span>Paid placements and rate-card influencer buying - creators who genuinely used Ubuntu got early access, technical support, and a relationship instead.</span></div>
+              <div class="r-row"><span class="k">Why</span><span>Those micro-communities are exactly where Canonical's developer and sysadmin audience lives.</span></div>
+            </div>
+            <div class="fork">
+              <div class="d">Platform-specific strategy across LinkedIn, X, YouTube, Facebook, Instagram - each with a distinct purpose, format mix, and success metric.</div>
+              <div class="r-row"><span class="k">Rejected</span><span><span class="nh">NEEDS_HUMAN: stated as approach, not argued against an alternative</span></span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Execution</h4>
+            <ul>
+              <li>Content production system generating 4,000+ assets: video, thought leadership, partner activations, live event coverage.</li>
+              <li>48-creator Always-On influencer network (CXO, mid-tier creator, key-voices tiers) - including ExplainingComputers, Jeff Geerling, Lawrence Systems, Level1Linux.</li>
+              <li>Directed social and video strategy for 20+ global product launches with Dell, Intel, NVIDIA, Framework.</li>
+              <li>LinkedIn Newsletter launched and grown organically to 109K subscribers (Sept 2024).</li>
+              <li>Introduced the carousel format (33 new carousels vs 5 previously) - became the top-performing content type.</li>
+              <li>Presented annual strategy to the commercial team; authored company-wide social guidelines; MC'd Ubuntu Summit 2024.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Outcomes</h4>
+            <div class="tbl-scroll">
+            <table class="outcomes">
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
+              <tr><td class="m">Social MQLs</td><td>36</td><td class="after">785</td><td>2023, single year</td><td class="src">Salesforce &middot; Vancouver Sprint 2024 deck</td></tr>
+              <tr><td class="m">MQL growth</td><td>2021 level</td><td class="after">8.8&times;</td><td>2022 vs 2021</td><td class="src">Salesforce &middot; 2022 annual review deck</td></tr>
+              <tr><td class="m">Organic audience</td><td>2.1M (end 2022)</td><td class="after">2,813,262</td><td>to Apr 2025</td><td class="src">Sprout Social reporting 2025</td></tr>
+              <tr><td class="m">Organic engagement rate</td><td>1.3% (2022)</td><td class="after">5.18%</td><td>YTD 2024</td><td class="src">Sprout Social</td></tr>
+              <tr><td class="m">LinkedIn followers</td><td>90K (2022)</td><td class="after">551,962</td><td>Apr 2025</td><td class="src">Sprout tracker + on-record recommendation</td></tr>
+              <tr><td class="m">LinkedIn engagements</td><td>290,445 (2023)</td><td class="after">974,046</td><td>full year 2024</td><td class="src">Sprout profile performance export</td></tr>
+              <tr><td class="m">Website sessions from social</td><td>-</td><td class="after">621K</td><td>2022</td><td class="src">2022 annual review deck</td></tr>
+            </table>
+            </div>
+            <p style="margin-top:10px"><span class="nh">NEEDS_HUMAN: "from scratch" vs the 2.1M audience recorded at end-2022 - clarify what existed at joining</span></p>
+          </div>
+          <div>
+            <h4>Proof</h4>
+            <div class="proof-links">
+              <span class="nh">NEEDS_HUMAN: LinkedIn profile deep-link for the on-record recommendations</span>
+              <span class="nh">NEEDS_HUMAN: "70+ media features" list</span>
+            </div>
+          </div>
+          <div>
+            <h4>Reflection</h4>
+            <p><span class="nh">NEEDS_HUMAN: what you'd do differently - not in source</span></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE 02: canonical-ubuntu-summit -->
+    <article class="case" id="case-ubuntu-summit">
+      <div class="case-head">
+        <span class="case-no">02</span>
+        <h3>Ubuntu Summit earned media - 15&times; in two years</h3>
+        <p class="case-hook">Turned a 3-day conference into Canonical's largest annual earned-media event: AVE from $519K to $7.9M and reach from 56M to 857M in two years.</p>
+      </div>
+      <div class="case-body">
+        <aside class="case-meta">
+          <div class="meta-item"><span class="k">Org</span><span class="v">Canonical &middot; Ubuntu Summit</span></div>
+          <div class="meta-item"><span class="k">Role</span><span class="v">Social and content strategy lead, all three years; MC in 2024</span></div>
+          <div class="meta-item"><span class="k">Window</span><span class="v">2022 - 2024</span></div>
+        </aside>
+        <div class="case-main">
+          <div>
+            <h4>Context</h4>
+            <p>Ubuntu Summit is Canonical's annual flagship conference - the largest gathering of Ubuntu contributors and community. In 2022 it was a significant event but a modest media moment.</p>
+          </div>
+          <div>
+            <h4>Tension</h4>
+            <p>Conference coverage is easy to do badly: recap photos and a keynote recording that disappear within 24 hours, leaving no lasting organic footprint. The brief was to turn a 3-day event into a weeks-long content engine with sustained earned media.</p>
+          </div>
+          <div>
+            <h4>Decisions</h4>
+            <div class="fork">
+              <div class="d">Hero-to-snacks model: film full sessions for YouTube, clip into short-form for social.</div>
+              <div class="r-row"><span class="k">Rejected</span><span>Documentation-style coverage (recap photos plus a keynote recording) - explicitly the failure mode to avoid.</span></div>
+              <div class="r-row"><span class="k">Why</span><span>Event coverage delivers compounding returns when treated as content production, not documentation.</span></div>
+            </div>
+            <div class="fork">
+              <div class="d">Three-phase editorial plan: pre-event speaker series and countdowns via the 109K LinkedIn Newsletter; real-time coverage during; recordings, compilations, and press coordination after.</div>
+              <div class="r-row"><span class="k">Why</span><span>Generate a media moment, not just social posts - press, community, and partners primed weeks in advance.</span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Execution</h4>
+            <ul>
+              <li>Pre-event: speaker announcements, session previews, community countdowns via organic social and the newsletter.</li>
+              <li>During: real-time posts, session highlights, behind-the-scenes; full sessions filmed and clipped.</li>
+              <li>Post-event: recordings, highlight compilations, community reaction content, press coordination.</li>
+              <li>The Framework Laptop RISC-V live session became Canonical's second-highest-performing YouTube video of 2024.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Outcomes</h4>
+            <div class="tbl-scroll">
+            <table class="outcomes">
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
+              <tr><td class="m">Media mentions</td><td>284 (2022)</td><td class="after">946</td><td>2024</td><td class="src">Meltwater</td></tr>
+              <tr><td class="m">Total reach</td><td>56,087,571 (2022)</td><td class="after">857,355,723</td><td>2024</td><td class="src">Meltwater</td></tr>
+              <tr><td class="m">AVE</td><td>$518,810 (2022)</td><td class="after">$7,930,540</td><td>2024</td><td class="src">Meltwater</td></tr>
+              <tr><td class="m">Summit-tag social</td><td>-</td><td class="after">9.4% ER</td><td>84 posts &middot; 618,704 impressions &middot; Apr 2024 - Apr 2025</td><td class="src">Sprout tag performance CSV</td></tr>
+              <tr><td class="m">Framework RISC-V video</td><td>-</td><td class="after">34,678 views</td><td>1,120 watch-hours &middot; 4.56% CTR &middot; 2024</td><td class="src">YouTube uploads 2024 export</td></tr>
+            </table>
+            </div>
+            <p style="margin-top:10px">Honest caveat: some of the 15&times; is the event itself growing (more speakers, bigger venue). The strategy's isolable contribution is the sustained social ER and the video programme. AVE has known limitations as a metric.</p>
+          </div>
+          <div>
+            <h4>Proof</h4>
+            <div class="proof-links">
+              <span class="nh">NEEDS_HUMAN: YouTube link to the Framework RISC-V session (public video exists)</span>
+            </div>
+          </div>
+          <div>
+            <h4>Reflection</h4>
+            <p><span class="nh">NEEDS_HUMAN: 2024 negative sentiment rose 0.4% to 3.9% - story behind it</span></p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE 03: canonical-20-years -->
+    <article class="case" id="case-20-years">
+      <div class="case-head">
+        <span class="case-no">03</span>
+        <h3>20 Years of Ubuntu - 14.4% engagement on a ~5% platform</h3>
+        <p class="case-hook">Anchored Ubuntu's 20th-anniversary campaign on the community rather than the company: 2.1M LinkedIn impressions at a 14.4% engagement rate.</p>
+      </div>
+      <div class="case-body">
+        <aside class="case-meta">
+          <div class="meta-item"><span class="k">Org</span><span class="v">Canonical</span></div>
+          <div class="meta-item"><span class="k">Role</span><span class="v">Campaign director</span></div>
+          <div class="meta-item"><span class="k">Window</span><span class="v">2024</span></div>
+        </aside>
+        <div class="case-main">
+          <div>
+            <h4>Context</h4>
+            <p>Ubuntu's 20th anniversary in 2024 - a meaningful milestone and Canonical's biggest planned brand moment of the year, and the highest-investment content production of the year.</p>
+          </div>
+          <div>
+            <h4>Tension</h4>
+            <p>Milestones are easy to get wrong: they produce self-congratulatory content that talks about the company rather than its community, and open source audiences punish that.</p>
+          </div>
+          <div>
+            <h4>The call</h4>
+            <div class="fork">
+              <div class="d">Anchor the campaign on the community, framing 20 years as a shared achievement of contributors.</div>
+              <div class="r-row"><span class="k">Rejected</span><span>Company-centric, self-congratulatory milestone content - named in the source as the failure mode.</span></div>
+              <div class="r-row"><span class="k">Why</span><span>"When the audience sees themselves in the story, they share it. That's not a creative trick - it's a strategic orientation."</span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Execution</h4>
+            <ul>
+              <li>Flagship video (Ubuntu 24.04 LTS / 20 Years) designed for organic sharing - the most-produced video asset of the year.</li>
+              <li>Coordinated publish across LinkedIn, YouTube, Facebook, Instagram, X with platform-specific formats.</li>
+              <li>Amplified community and employee UGC - hundreds of community pieces.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Outcomes</h4>
+            <div class="tbl-scroll">
+            <table class="outcomes">
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
+              <tr><td class="m">LinkedIn impressions</td><td>-</td><td class="after">2,096,233</td><td>campaign period 2024</td><td class="src">October 2024 deck</td></tr>
+              <tr><td class="m">LinkedIn engagement rate</td><td>~5% platform benchmark</td><td class="after">14.4%</td><td>campaign period</td><td class="src">October 2024 deck</td></tr>
+              <tr><td class="m">LinkedIn engagements</td><td>-</td><td class="after">302,426</td><td>campaign period</td><td class="src">October 2024 deck</td></tr>
+              <tr><td class="m">Flagship video</td><td>-</td><td class="after">378,699 views</td><td>1,044,354 impressions &middot; 5,441 watch-hours &middot; 2024</td><td class="src">YouTube uploads 2024 export</td></tr>
+            </table>
+            </div>
+            <p style="margin-top:10px"><span class="nh">NEEDS_HUMAN: citable source for the ~5% benchmark; exact campaign window dates</span></p>
+          </div>
+          <div>
+            <h4>Proof</h4>
+            <div class="proof-links">
+              <span class="nh">NEEDS_HUMAN: public link to the flagship video</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE 04: canonical-data-ai -->
+    <article class="case" id="case-data-ai">
+      <div class="case-head">
+        <span class="case-no">04</span>
+        <h3>Data &amp; AI Masters - 4,731 registrations on organic promotion</h3>
+        <p class="case-hook">A virtual event for Canonical's data and AI infrastructure products that pulled 4,731 registrations across 52 countries on organic social and email alone.</p>
+      </div>
+      <div class="case-body">
+        <aside class="case-meta">
+          <div class="meta-item"><span class="k">Org</span><span class="v">Canonical &middot; Data &amp; AI Masters</span></div>
+          <div class="meta-item"><span class="k">Role</span><span class="v">Conceived and produced the event and its full marketing programme</span></div>
+          <div class="meta-item"><span class="k">Window</span><span class="v">2024</span></div>
+        </aside>
+        <div class="case-main">
+          <div>
+            <h4>Context</h4>
+            <p>Canonical needed awareness and qualified pipeline for data and AI infrastructure (Charmed Kafka, OpenSearch, MongoDB, MicroCloud) in a market dominated by hyperscalers - without a massive event budget or household-brand recognition in the data space.</p>
+          </div>
+          <div>
+            <h4>Tension</h4>
+            <p>Make the case that open source, enterprise-grade data infrastructure deserved a seat at the table, against well-funded competitors, with organic channels doing the heavy lifting. "Virtual events succeed or fail at the promotion layer."</p>
+          </div>
+          <div>
+            <h4>The call</h4>
+            <div class="fork">
+              <div class="d">Give each channel a specific job: social for awareness and trust, LinkedIn for community-native conversion, email for urgency and close.</div>
+              <div class="r-row"><span class="k">Rejected</span><span><span class="nh">NEEDS_HUMAN: paid promotion implicitly rejected; source does not state the fork</span></span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Execution</h4>
+            <ul>
+              <li>Organic social promotion: 153,000 impressions at 7.5% ER (vs 5% benchmark), targeted to developer and infrastructure audiences.</li>
+              <li>LinkedIn event page: 426 registrations, 249 day-1 attendees, 147 hours in-platform watch time.</li>
+              <li>Email: 120,000 deliveries at 20.8% average open rate (vs 12% monthly benchmark); last-call email 23.5%.</li>
+              <li>20+ reusable video sessions repurposed for demand gen, social, and sales enablement through Q4 2024.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Outcomes</h4>
+            <div class="tbl-scroll">
+            <table class="outcomes">
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
+              <tr><td class="m">Registrations</td><td>-</td><td class="after">4,731</td><td>2024 event cycle</td><td class="src">Marketing townhall Oct 2024 deck</td></tr>
+              <tr><td class="m">Live attendees</td><td>-</td><td class="after">1,532</td><td>event days</td><td class="src">Townhall deck</td></tr>
+              <tr><td class="m">Countries</td><td>-</td><td class="after">52</td><td>event</td><td class="src">Townhall deck</td></tr>
+              <tr><td class="m">Email open rate</td><td>12% monthly benchmark</td><td class="after">20.8%</td><td>campaign; 23.5% last-call</td><td class="src">Townhall deck</td></tr>
+              <tr><td class="m">In-person intent</td><td>-</td><td class="after">92.6%</td><td>post-event survey</td><td class="src">Townhall deck</td></tr>
+            </table>
+            </div>
+            <p style="margin-top:10px">Honest gap, stated on purpose: registrations are not pipeline. <span class="nh">NEEDS_HUMAN: what the 4,731 registrations became in MQLs / pipeline - the strongest missing number in this case</span></p>
+          </div>
+          <div>
+            <h4>Proof</h4>
+            <div class="proof-links">
+              <span class="nh">NEEDS_HUMAN: event page or session recordings link</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- CASE 05: mindvalley-influencer -->
+    <article class="case" id="case-mv-influencer">
+      <div class="case-head">
+        <span class="case-no">05</span>
+        <h3>First influencer department - zero budget, ROI-positive month one</h3>
+        <p class="case-hook">Built Mindvalley's first influencer department on relationship-based agreements instead of paid placements: 10M+ network reach at peak. The same relationship model was reused at Canonical five years later.</p>
+      </div>
+      <div class="case-body">
+        <aside class="case-meta">
+          <div class="meta-item"><span class="k">Org</span><span class="v">Mindvalley</span></div>
+          <div class="meta-item"><span class="k">Role</span><span class="v">Built and led the KOL / influencer function</span></div>
+          <div class="meta-item"><span class="k">Window</span><span class="v">2017 - 2020</span></div>
+        </aside>
+        <div class="case-main">
+          <div>
+            <h4>Context</h4>
+            <p>Influencer marketing didn't exist as a department - ad hoc creator relationships, no programme, no measurement, no relationship model. The personal-growth category was perfectly aligned with the creator economy.</p>
+          </div>
+          <div>
+            <h4>Tension</h4>
+            <p>Build a programme that was cost-effective, measurable, and scalable - without a placement budget.</p>
+          </div>
+          <div>
+            <h4>Decisions</h4>
+            <div class="fork">
+              <div class="d">Zero-cost model: relationship-based agreements giving creators access to Mindvalley's faculty (founder interviews, quest and masterclass access) instead of paying for posts.</div>
+              <div class="r-row"><span class="k">Rejected</span><span>Paid placements - explicitly rejected.</span></div>
+              <div class="r-row"><span class="k">Why</span><span>Authentic creator engagement converts better; creators present content they genuinely engaged with.</span></div>
+            </div>
+            <div class="fork">
+              <div class="d">Concentrate on YouTube, Instagram, and Facebook where conversion was proven; activate bloggers, Reddit, Pinterest only strategically.</div>
+              <div class="r-row"><span class="k">Rejected</span><span>Spreading across all platforms equally.</span></div>
+              <div class="r-row"><span class="k">Why</span><span>YouTube had the highest organic conversions and time-on-message; IG for micro content and lives; FB for promotable warm-audience partner posts.</span></div>
+            </div>
+            <div class="fork">
+              <div class="d">OKR framework: 5% monthly share-of-mention increase, 5% site-visit increase from creators, 1,000 masterclass sign-ups per campaign.</div>
+              <div class="r-row"><span class="k">Rejected</span><span>Vanity reach metrics as the programme KPI.</span></div>
+              <div class="r-row"><span class="k">Why</span><span>Every partnership evaluated against measurable objectives.</span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Execution</h4>
+            <ul>
+              <li>Signed first partners, built ROI tracking, scaled the network to 10M+ reach.</li>
+              <li>Campaigns: #iAmEnough (Uncompromised Life), Superbrain by Jim Kwik, event coverage (A-Fest, Mindvalley University, Summit).</li>
+              <li>Attribution technique: tracked YouTube subscriber spikes on partner-video publish days - one video drove a 9.2% new-subscriber spike in a day.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Outcomes</h4>
+            <div class="tbl-scroll">
+            <table class="outcomes">
+              <tr><th>Metric</th><th>Before</th><th>After</th><th>Window</th><th>Source</th></tr>
+              <tr><td class="m">Network reach</td><td>0 (no programme)</td><td class="after">10M+</td><td>peak, 2017 - 2020</td><td class="src">Internal; Q2 2019 strategy doc confirms +7M prior period</td></tr>
+              <tr><td class="m">Subscriber spike, partner-video day</td><td>daily baseline unstated</td><td class="after">+9.2%</td><td>single video</td><td class="src">Internal tracking</td></tr>
+              <tr><td class="m">ROI</td><td>-</td><td class="after">positive, month one</td><td>programme start</td><td class="src">Self-reported</td></tr>
+            </table>
+            </div>
+            <p style="margin-top:10px"><span class="nh">NEEDS_HUMAN: ROI-positive measured against what, given $0 placements - team cost? opportunity cost?</span></p>
+          </div>
+          <div>
+            <h4>Reflection</h4>
+            <p>"Slower to build, harder to scale quickly - but significantly more durable per impression." (stated tradeoff, from source)</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ WORK ARCHIVE ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The rest of the record</h2>
+      <span class="k">2010 - present &middot; six countries</span>
+    </div>
+    <p class="sec-intro">Nine more roles and projects, compact. Numbers keep their qualifiers; agency-level aggregates are labelled as such.</p>
+
+    <div class="arc">
+      <div class="org">Maharat<span class="yr">2024 - present &middot; Senior Director, Marketing &amp; Communications</span></div>
+      <div class="desc">Arabic-first EdTech built on celebrity- and creator-led content for MENA. Leading marketing and communications end to end - team of 8 across content, performance, social, brand; reports to CEO.</div>
+      <div class="nums"><span class="nh">NEEDS_HUMAN: case study held until defensible metrics exist</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Mindvalley &middot; Social<span class="yr">2017 - 2020 &middot; promoted 3&times; in 3 years</span></div>
+      <div class="desc">Inherited active accounts with no unified strategy and flat organic (FB 300K, YouTube 300K, IG 50K). Built platform-specific strategies, recruited the social team, coordinated social with PR, SEO, and events.</div>
+      <div class="nums"><b>~650K &rarr; 7M+</b> combined audience &middot; YouTube to 1M, Gold Play Button<span class="src">Self-reported &middot; NEEDS_HUMAN: window + YouTube baseline (site said 125K, sources say 300K)</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Mindvalley &middot; PR<span class="yr">2018 - 2020 &middot; Head of PR &amp; Partnerships</span></div>
+      <div class="desc">Built the PR function end to end: media tiers by region, research-first personalised outreach (volume outreach explicitly rejected), junkets, founder appearances. Placements in Forbes, SCMP, Thrive Global, Bernama, The Star, Vulcan Post.</div>
+      <div class="nums"><b>69%</b> journalist reply rate, cited publicly by Growthhacker &middot; <b>$2.8M+</b> EMV<span class="src">NEEDS_HUMAN: EMV methodology + placement URLs</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Mindvalley &middot; SEO<span class="yr">2018 - 2019</span></div>
+      <div class="desc">Rebuilt SEO from noise to acquisition channel: on-page rebuild, high-reply outreach, and PR-driven authority links run in parallel rather than sequentially.</div>
+      <div class="nums"><b>14K &rarr; 122K</b> monthly organic visits in 11 months (8.7&times;)<span class="src">Self-reported &middot; NEEDS_HUMAN: analytics source; retire the "870%" phrasing</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">PAYD<span class="yr">2021 - 2022 &middot; Head of Marketing</span></div>
+      <div class="desc">Earned-wage-access startup, category creation with a B2B2C double funnel. Built brand, messaging, email infrastructure (Ortto), and the first structured attribution view from nothing; localised per APAC market instead of one pan-APAC campaign.</div>
+      <div class="nums"><b>50%</b> email open rate (vs ~20-25% benchmark) &middot; <b>+35%</b> APAC acquisition<span class="src">Self-reported &middot; NEEDS_HUMAN: verify +35% is distinct from the Agiliux figure</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Agiliux<span class="yr">2020 - 2021 &middot; Head of Marketing</span></div>
+      <div class="desc">APAC InsurTech SaaS. Rewrote ads and site in insurance-operations language matched one-to-one with landing pages; replaced generic forms with intent-qualified lead magnets; nurture across a 14,550-contact database.</div>
+      <div class="nums"><b>+50%</b> pipeline &middot; <b>+400%</b> ad CTR, no spend increase &middot; 36 - 40% email opens vs 17% benchmark<span class="src">Self-reported, baselines unstated</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Falcon Agency / 16Two<span class="yr">2014 - 2017 &middot; Digital Marketing Manager</span></div>
+      <div class="desc">Three years across a 40+ brand agency portfolio (L'Oreal, Deliveroo, Uber, Manulife) at the A+M Agency of the Year 2016. Led with the personally attributed work: the Deliveroo SG community turnaround and Ringgit Plus conversion programme.</div>
+      <div class="nums"><b>+140.89%</b> Deliveroo SG fans in 3.5 months (5,129 &rarr; 12,355) &middot; <b>+5%</b> Ringgit Plus page CVR &middot; <b>+22%</b> ROAS via predictive budget models<span class="src">Campaign reporting, personally attributed &middot; agency aggregates ($19M budgets, 8M followers) are agency-level, not claimed</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Goodwall<span class="yr">2019 - 2020 &middot; Marketing Director</span></div>
+      <div class="desc">1M-member Gen Z platform. Shifted spend from paid installs toward activating existing users to recruit their networks; rebuilt content around return triggers; led 10 people across web, content, email, paid, app.</div>
+      <div class="nums"><b>+20%</b> MAU in 3 months &middot; <b>-18%</b> blended CAC &middot; 1M &rarr; 1.3M members<span class="src">Self-reported, blended paid + organic &middot; baselines unstated</span></div>
+    </div>
+
+    <div class="arc">
+      <div class="org">Early career &middot; Cairo, Dubai, KL<span class="yr">2010 - 2014 &middot; MizaTech / Socialeyez &middot; Joud &middot; Insight Magazine</span></div>
+      <div class="desc">Where the instincts were built: community management as a performance discipline, first full community playbook at Joud, cover-to-cover editorial at Insight Magazine.</div>
+      <div class="nums"><b>12th</b> largest Facebook page in Qatar (Qatar Happening), organic &middot; <b>20%</b> email CTR vs ~3% average<span class="src">Self-reported &middot; ranking source unstated</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ LAB ============ -->
+<section id="lab">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Lab</h2>
+      <span class="k">Built-in-public artifacts</span>
+    </div>
+    <div class="lab-hold">
+      <span class="k accent">On hold - by design</span>
+      <h3>This wing ships when there is something real to put in it.</h3>
+      <p>The source material contains zero repos, live tools, or shipped automations. A lab item without an artifact is a claim, not proof - so nothing is listed here yet, and the "AI-native / builds agentic systems" positioning stays out of the hero until this section can carry it.</p>
+      <p>What could honestly seed it today:</p>
+      <ul>
+        <li>One live, linkable artifact - the strongest candidate on the evidence: an attribution or reporting dashboard, or a content-ops automation, built with AI tooling and open-sourced or demoed on video.</li>
+        <li>The Foundr Magazine authored article and the Growthhacker case study (external, linkable - public artifacts, though not built systems).</li>
+        <li>Talk recordings: TEDx, WTO, DMICON - if recordings exist.</li>
+      </ul>
+      <p style="margin-top:14px"><span class="nh">NEEDS_HUMAN: decision - hold the wing (current state) or seed it with the public artifacts above</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECOMMENDATIONS ============ -->
+<section class="recs" id="recs">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>On the record</h2>
+      <span class="k">Twelve recommendations &middot; six shown</span>
+    </div>
+    <p class="sec-intro">Verbatim, named, dated. The rest rotate in from the same file.</p>
+
+    <div class="featured">
+      <blockquote>"Thanks a lot for all the work you've done to raise the bar for social at Canonical and for putting Canonical on the virtual 'great companies of this world' map. Your passion, expertise, and <em>data orientation</em> make you stand out."</blockquote>
+      <div class="who"><b>Thibaut Rouffineau</b> &middot; VP of Marketing, Canonical &middot; direct manager</div>
+    </div>
+
+    <div class="quote-grid">
+      <div class="quote">
+        <blockquote>"He built our social media strategy from scratch, turning it from a one-person operation to a full team that works like a clock. ... I must also highlight his technical understanding, as at Canonical, we deal with a wide array of very technical products that Ahmed has been excellent at understanding how each and every product should be represented on socials to resonate with developer audiences."</blockquote>
+        <div class="who"><b>Marina Khachatryan</b> &middot; Sr. Marketing Manager, Canonical &middot; Jun 2025</div>
+      </div>
+      <div class="quote">
+        <blockquote>"When I joined the company we were hardly at 90K followers on LinkedIn, and now we are at a whopping 500K+. Not to forget the growth he brought to our YouTube channel, Instagram and Facebook. ... What sets Ahmed apart is his vision for the bigger picture, always thinking several steps ahead."</blockquote>
+        <div class="who"><b>Prithviraj Kola</b> &middot; PMM - Cloud, Canonical &middot; May 2025</div>
+      </div>
+      <div class="quote">
+        <blockquote>"He was a lynchpin of the social media team, managing the socials calendar across five portfolios and 20+ products. As the team grew, he didn't just keep pace - he raised the bar for content and collaboration."</blockquote>
+        <div class="who"><b>Richard Ferreira</b> &middot; PMM for Ubuntu, Canonical &middot; May 2025</div>
+      </div>
+      <div class="quote">
+        <blockquote>"I have never seen 'full-stack marketer' in action until I met Ahmed. With his vast knowledge across SEO, ASO, copywriting, PR, video marketing, CRO, social media, emails, ads, blogging, and beyond, he's the personification of a full-stack marketer."</blockquote>
+        <div class="who"><b>Christian Eilers</b> &middot; Channel Lead, Global SEO, J.P. Morgan &middot; reported to Ahmed at Goodwall &middot; Mar 2021</div>
+      </div>
+      <div class="quote">
+        <blockquote>"While leading the social media team, he brought a data-driven approach into the content marketing strategy of the company, jumpstarting the biggest growth curve in followers the company had seen till date."</blockquote>
+        <div class="who"><b>Annamaria Nagy</b> &middot; Content Writer, Mindvalley &middot; Jan 2021</div>
+      </div>
+      <div class="quote" style="display:flex;flex-direction:column;justify-content:center;gap:10px">
+        <span class="k">Six more in rotation</span>
+        <blockquote style="font-size:13px;color:rgba(239,233,220,.6)">Mauro Gaspari, May Myo Set Htwe, Michelle Tabirao (Canonical) &middot; Saranya Selladorai, Ashvin Sathasivam (Mindvalley era) &middot; May Li Leow (Goodwall)</blockquote>
+        <span class="nh">NEEDS_HUMAN: confirm the "View all 12 on LinkedIn" href works</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEAKING & PRESS ============ -->
+<section id="speaking">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Speaking &amp; press</h2>
+      <span class="k">All real per sources &middot; links pending</span>
+    </div>
+    <div class="spk">
+      <div class="t">TEDx talk</div>
+      <div class="role">Speaker</div>
+      <div><span class="nh">NEEDS_HUMAN: recording link</span></div>
+    </div>
+    <div class="spk">
+      <div class="t">World Trade Organization</div>
+      <div class="role">Keynote</div>
+      <div><span class="nh">NEEDS_HUMAN: recording / event page</span></div>
+    </div>
+    <div class="spk">
+      <div class="t">DMICON, Singapore</div>
+      <div class="role">Keynote</div>
+      <div><span class="nh">NEEDS_HUMAN: recording / event page</span></div>
+    </div>
+    <div class="spk">
+      <div class="t">Digital Marketing Leaders Summit, Hong Kong 2019</div>
+      <div class="role">Chair</div>
+      <div><span class="nh">NEEDS_HUMAN: event page</span></div>
+    </div>
+    <div class="spk">
+      <div class="t">Foundr Magazine</div>
+      <div class="role">Authored article</div>
+      <div><span class="nh">NEEDS_HUMAN: article URL - cheap credibility win</span></div>
+    </div>
+    <div class="spk">
+      <div class="t">Growthhacker case study - the 69% reply rate</div>
+      <div class="role">External citation</div>
+      <div><span class="nh">NEEDS_HUMAN: case study URL - the single cheapest proof win on the site</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="k accent">Contact</span>
+    <h2 style="margin-top:18px">If it should move pipeline, <em>let's talk.</em></h2>
+    <div class="row">
+      <a class="btn" href="mailto:ahmed@asanhoury.com">ahmed@asanhoury.com</a>
+      <a class="textlink" href="https://linkedin.com/in/asanhoury">linkedin.com/in/asanhoury</a>
+    </div>
+    <div class="meta">Tallinn, Estonia &middot; six countries worked &middot; 2010 - present</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Ahmed El Sanhoury &middot; rebuild draft R1</p>
+    <p>Every number traces to projects.json &middot; gaps are marked, not papered over</p>
+  </div>
+</footer>
+
+<script>
+  // reveal-on-scroll, matching the current site's behavior but safe for
+  // screenshot tooling: content is visible by default, animation is additive
+  const els = document.querySelectorAll('.case, .arc, .quote, .proof-cell');
+  els.forEach(el => { el.style.transition = 'opacity .5s ease, transform .5s ease'; });
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; io.unobserve(e.target); }
+      });
+    }, { threshold: .05 });
+    els.forEach(el => { el.style.opacity = .001; el.style.transform = 'translateY(14px)'; io.observe(el); });
+  }
+</script>
+</body>
+</html>

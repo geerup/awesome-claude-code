@@ -1,4 +1,13 @@
-# Design Brief - Claude Design Handoff (Phase 6, pending approval)
+# Design Brief - Claude Design Handoff (Phase 6, executed 2026-07-14)
+
+STATUS: Draft R1 built and pushed to the design project as `rebuild/index.html`
+(screenshots: `rebuild/screens/`). Handoff bundle attached under `handoff/`.
+Direction: asanhoury-2026 paper/vermilion tokens; positioning: current
+evidence-backed line, AI-native thesis held out pending /lab artifacts (both
+per this brief's own recommendations - awaiting user confirmation, flagged in
+a visible decision banner on the canvas). 29 NEEDS_HUMAN placeholders render
+on the page. Unsourced metrics ($5M+, -28% CAC, six-figure ARR, 100M+) are
+not in the copy.
 
 Target project: "portfolio" (debb232a-fc2f-4599-b1c5-5c236ad2b840) - existing,
 user-owned, canEdit confirmed.
