@@ -1,0 +1,706 @@
+{
+  "_conventions": {
+    "source_url_scheme": "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/<path> refers to files imported from the user's Claude Design project 'portfolio' (https://claude.ai/design/p/debb232a-fc2f-4599-b1c5-5c236ad2b840). site-snapshot://asanhoury-2026.html refers to the current site build imported from that project. The live domain asanhoury.com was not reachable from this environment (see TOOLING.md).",
+    "confidence_scale": "100 = verbatim from a data file that itself cites a named analytics export (Sprout/Meltwater/Salesforce deck via full-folder-scan-extract.json). 85 = verbatim from owner-authored case markdown citing master.json. 70 = verbatim from cases-data.js or site copy only, no underlying export named. 50 = appears only in site copy with no source file.",
+    "dates": "Sources give years only; months are unknown and flagged in needs_human. start/end use YYYY-01 placeholders ONLY where a month is confirmed, otherwise YYYY."
+  },
+  "projects": [
+    {
+      "slug": "canonical-social",
+      "title": "A social function, built from zero — with Salesforce-attributed pipeline",
+      "hook": "Built Canonical's entire social and content function from scratch: 2.81M organic audience and social MQLs from 36 to 785 in one year, tracked in Salesforce.",
+      "org": "Canonical (Ubuntu)",
+      "role": "Global Communications Manager",
+      "team_size": null,
+      "start": "2022",
+      "end": "2024 (site CV) / 2025 (recommendations + analytics run to Apr 2025) — NEEDS_HUMAN",
+      "pillars": ["P2", "P3", "P1-partial"],
+      "context": "Canonical had no structured social media function. Content was inconsistent, untracked, and disconnected from marketing pipeline. No content calendar, no influencer programme, no process for tying social to MQLs or revenue.",
+      "tension": "For an enterprise OSS company selling to developers and sysadmins, social was a brand cost centre with no measurable pipeline contribution — and no tracking architecture existed to prove otherwise.",
+      "mandate": "Built the function from scratch and integrated it with Salesforce so social MQL contribution was measurable and reported to leadership. (Source uses first person 'I' throughout; team composition and size at start vs end — NEEDS_HUMAN. Marina Khachatryan's recommendation says he turned it 'from a one-person operation to a full team'.)",
+      "decisions": [
+        {
+          "decision": "Integrated the entire function with Salesforce from day one so every MQL from social was attributable",
+          "alternatives_rejected": "NEEDS_HUMAN (source does not state what was rejected)",
+          "rationale": "Social contribution had to be measurable and reported to leadership (source: canonical-social-from-scratch.md)"
+        },
+        {
+          "decision": "Built a 48-creator influencer network in hardware, homelab and open source micro-communities on a relationship basis ($0 paid amplification per site copy)",
+          "alternatives_rejected": "Paid placements / rate-card influencer buying [Inference from mindvalley-influencer-zero-cost.md: 'creators who genuinely used Ubuntu... were given early access, technical support, and a relationship, not a rate card']",
+          "rationale": "The exact micro-communities where Canonical's developer and sysadmin audience lives"
+        },
+        {
+          "decision": "Platform-specific strategy across LinkedIn, X, YouTube, Facebook, Instagram — each with a distinct purpose, format mix and success metric",
+          "alternatives_rejected": "NEEDS_HUMAN",
+          "rationale": "NEEDS_HUMAN (stated as approach, not argued against an alternative)"
+        }
+      ],
+      "execution": [
+        "Built a content production system generating 4,000+ assets (video, thought leadership, partner activations, live event coverage)",
+        "Built the 48-creator Always-On influencer network (tiers: CXO, Mid Tier Creator, Key Voices) — named creators include ExplainingComputers, Jeff Geerling, Lawrence Systems, Level1Linux",
+        "Directed social and video strategy for 20+ global product launches with Dell, Intel, NVIDIA, Framework",
+        "Launched LinkedIn Newsletter, grown organically to 109K subscribers (Sept 2024)",
+        "Introduced carousel/multi-image format (33 new carousels vs 5 previously) which became top-performing content type (Madrid Sprint deck)",
+        "Presented annual strategy to the commercial team (Prague Sprint 2023, '4Es' framework); authored company-wide social guidelines (site copy); MC'd Ubuntu Summit 2024"
+      ],
+      "outcomes": [
+        { "metric": "Social MQLs", "before": "36", "after": "785", "window": "2023 (single year)", "attribution": "Salesforce-tracked; reported in Vancouver Sprint 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json (Social Media Findings Vancouver Sprint 2024.pptx)", "confidence": 100 },
+        { "metric": "MQL growth 2021→2022", "before": "baseline not stated (~2021 level)", "after": "8.8× of 2021", "window": "2022 vs 2021", "attribution": "Salesforce; 'How to Make Ubuntu Relevant on Social Media' 2022 review deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Total organic social audience", "before": "built from scratch (2.1M at end-2022 per Vancouver deck — function predates zero? NEEDS_HUMAN: 'from scratch' vs 2.1M starting audience needs reconciliation)", "after": "2,813,262 (April 2025)", "window": "2022–Apr 2025", "attribution": "Sprout Social / Social Media Reporting 2025.xlsx", "source_url": "design-project://.../uploads/canonical-analytics-extract.md", "confidence": 100 },
+        { "metric": "New followers 2024", "before": "—", "after": "305K (+25% YoY, +11.6% YTD)", "window": "2024", "attribution": "Social update October 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Organic engagement rate", "before": "1.3% (2022, per Vancouver deck '+47% to 1.9%' in 2023)", "after": "5.18% YTD 2024", "window": "2024", "attribution": "Sprout Social; benchmark comparison '~5% platform benchmark' is site framing", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "LinkedIn engagements", "before": "290,445 (2023)", "after": "974,046 (2024) — note: case copy says '481,686 (+169% YoY)' from the mid-2024 Madrid deck; full-year Sprout export says 974,046. Discrepancy flagged in GAPS", "window": "2024", "attribution": "Sprout Profile Performance export", "source_url": "design-project://.../uploads/canonical-analytics-extract.md", "confidence": 100 },
+        { "metric": "LinkedIn followers", "before": "90K (when Prithviraj Kola joined, per his recommendation)", "after": "500K+ (May 2025); 551,962 (Apr 2025 tracker)", "window": "2022–2025", "attribution": "LinkedIn recommendation + Sprout tracker", "source_url": "design-project://.../uploads/testimonials.md", "confidence": 90 },
+        { "metric": "Video views (programme total)", "before": "—", "after": "20M+", "window": "2022–2024", "attribution": "no single named export; case copy only", "source_url": "design-project://.../uploads/canonical-social-from-scratch.md", "confidence": 70 },
+        { "metric": "Website sessions from social", "before": "—", "after": "621K", "window": "2022", "attribution": "2022 annual review deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Enterprise pipeline influenced", "before": "—", "after": "$5M+", "window": "'24 per site hero", "attribution": "NO SOURCE FILE — appears only in site copy. NEEDS_HUMAN", "source_url": "site-snapshot://asanhoury-2026.html", "confidence": 50 },
+        { "metric": "Annual cross-platform impressions", "before": "—", "after": "100M+", "window": "2024", "attribution": "aggregate not stated in any export; plausible from platform tables (FB 2024 alone 162,098,943) but unstated. NEEDS_HUMAN", "source_url": "site-snapshot://asanhoury-2026.html", "confidence": 50 }
+      ],
+      "proof": [
+        { "type": "screenshot", "url": "", "asset_path": "raw/screens/asanhoury-2026.desktop.png" },
+        { "type": "press", "url": "NEEDS_HUMAN — '70+ media features' has no linked list", "asset_path": "" },
+        { "type": "link", "url": "NEEDS_HUMAN — LinkedIn recommendations URL (testimonials cite LinkedIn but no profile deep-link in sources)", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN (no 'what I'd do differently' in source)",
+      "assets": ["raw/screens/asanhoury-2026.desktop.png"],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/canonical-social-from-scratch.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/canonical-analytics-extract.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/full-folder-scan-extract.json",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/cases-data.js",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/testimonials.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 92,
+        "needs_human": [
+          "End date: 2024 (site) vs 2025 (recommendations, analytics) — pick one",
+          "Team size at Canonical (recommendation says 'one-person operation to a full team')",
+          "'From scratch' vs 2.1M audience already existing at end of 2022 — clarify what existed at joining",
+          "$5M+ pipeline influenced — provide source or drop",
+          "100M+ annual impressions — provide the aggregate export or drop",
+          "LinkedIn engagements 2024: 481,686 (mid-year deck) vs 974,046 (full-year Sprout export) — which to publish",
+          "cases-data.js '2.58M audience' is stale vs 2.81M Apr 2025 tracker",
+          "Decision forks and alternatives rejected",
+          "Start/end months"
+        ]
+      }
+    },
+    {
+      "slug": "canonical-ubuntu-summit",
+      "title": "Ubuntu Summit earned media — 15× in two years",
+      "hook": "Turned a 3-day conference into Canonical's largest annual earned-media event: AVE $519K to $7.9M and reach 56M to 857M in two years.",
+      "org": "Canonical · Ubuntu Summit",
+      "role": "Social and content strategy lead for the event (within Global Communications Manager role); MC at Summit 2024",
+      "team_size": null,
+      "start": "2022",
+      "end": "2024",
+      "pillars": ["P2", "P4"],
+      "context": "Ubuntu Summit is Canonical's annual flagship conference — the largest gathering of Ubuntu contributors and community. In 2022 it was a significant event but a modest media moment.",
+      "tension": "Conference coverage is easy to do badly: recap photos and a keynote recording that disappear within 24 hours, leaving no lasting organic footprint. The brief was to turn a 3-day event into a weeks-long content engine with sustained earned media.",
+      "mandate": "Owned social and content strategy for the Summit all three years (2022–2024); ran coverage and MC'd in 2024.",
+      "decisions": [
+        {
+          "decision": "Hero-to-snacks model: film full sessions for YouTube, clip into short-form for social",
+          "alternatives_rejected": "Documentation-style coverage (recap photos + keynote recording) — explicitly described as the failure mode to avoid",
+          "rationale": "Event coverage delivers compounding returns when treated as content production, not documentation (source: canonical-ubuntu-summit.md)"
+        },
+        {
+          "decision": "Three-phase editorial plan (pre-event speaker series and countdowns via the 109K LinkedIn Newsletter; real-time coverage during; recordings, compilations and press coordination after)",
+          "alternatives_rejected": "NEEDS_HUMAN",
+          "rationale": "Generate a media moment, not just social posts; press, community and partners primed weeks in advance"
+        }
+      ],
+      "execution": [
+        "Pre-event: speaker announcement series, session previews, community countdown content, promoted via organic social + LinkedIn Newsletter",
+        "During: real-time posts, session highlights, behind-the-scenes; full sessions filmed and clipped",
+        "Post-event: recordings published, highlight compilations, community reaction content, press coordination with comms team",
+        "Framework Laptop RISC-V live session became Canonical's second-highest-performing YouTube video of 2024"
+      ],
+      "outcomes": [
+        { "metric": "Media mentions", "before": "284 (2022)", "after": "946 (2024)", "window": "2022→2024", "attribution": "Meltwater media monitoring exports", "source_url": "design-project://.../uploads/canonical-ubuntu-summit.md", "confidence": 95 },
+        { "metric": "Total reach", "before": "56,087,571 (2022)", "after": "857,355,723 (2024)", "window": "2022→2024", "attribution": "Meltwater", "source_url": "design-project://.../uploads/canonical-ubuntu-summit.md", "confidence": 95 },
+        { "metric": "AVE", "before": "$518,810 (2022)", "after": "$7,930,540 (2024)", "window": "2022→2024", "attribution": "Meltwater; AVE as a metric has known limitations — flagged in GAPS", "source_url": "design-project://.../uploads/canonical-ubuntu-summit.md", "confidence": 95 },
+        { "metric": "Engagement", "before": "1,037 (2022)", "after": "7,986 (2024)", "window": "2022→2024", "attribution": "Meltwater", "source_url": "design-project://.../uploads/canonical-ubuntu-summit.md", "confidence": 95 },
+        { "metric": "Summit-tag social performance", "before": "—", "after": "84 posts · 618,704 impressions · 9.4% cross-network ER · LinkedIn 15.53% ER", "window": "Apr 2024–Apr 2025", "attribution": "Sprout Social Tag Performance CSV", "source_url": "design-project://.../uploads/canonical-ubuntu-summit.md", "confidence": 95 },
+        { "metric": "Framework RISC-V video", "before": "—", "after": "34,678 views · 1,120 watch-hours · 456,821 impressions · 4.56% CTR", "window": "2024", "attribution": "YouTube Uploads in 2024 only.xlsx", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — YouTube link to Framework RISC-V session (public video exists; URL not in sources)", "asset_path": "" },
+        { "type": "screenshot", "url": "", "asset_path": "raw/screens/asanhoury-2026.desktop.png" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/canonical-ubuntu-summit.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/full-folder-scan-extract.json"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 95,
+        "needs_human": ["Attribution honesty: how much of the 15× is the content strategy vs the event itself growing (more speakers, bigger venue, more attendees)? Source asserts strategy drove it; a skeptic will ask.", "Public links to coverage/videos", "2024 negative sentiment rose 0.4%→3.9% — story behind it?"]
+      }
+    },
+    {
+      "slug": "canonical-20-years",
+      "title": "20 Years of Ubuntu — 14.4% engagement rate on a ~5% platform",
+      "hook": "Anchored Ubuntu's 20th-anniversary campaign on the community rather than the company: 2.1M LinkedIn impressions and a 14.4% engagement rate against a ~5% benchmark.",
+      "org": "Canonical",
+      "role": "Campaign director (within Global Communications Manager role)",
+      "team_size": null,
+      "start": "2024",
+      "end": "2024",
+      "pillars": ["P2", "P4"],
+      "context": "Ubuntu's 20th anniversary in 2024 — a meaningful milestone and Canonical's biggest planned brand moment of the year.",
+      "tension": "Milestones are easy to get wrong: they produce self-congratulatory content that talks about the company rather than its community, and open source audiences punish that.",
+      "mandate": "Developed and directed the campaign across all social channels — the highest-investment content production of the year.",
+      "decisions": [
+        {
+          "decision": "Anchor the campaign on the community, framing 20 years as a shared achievement of contributors",
+          "alternatives_rejected": "Company-centric self-congratulatory milestone content — named in the source as the failure mode",
+          "rationale": "'When the audience sees themselves in the story, they share it. That's not a creative trick — it's a strategic orientation.' (source: canonical-20-years-ubuntu.md)"
+        }
+      ],
+      "execution": [
+        "Produced flagship video (Ubuntu 24.04 LTS Noble Numbat / 20 Years) designed for organic sharing — most-produced video asset of the year",
+        "Coordinated publish across LinkedIn, YouTube, Facebook, Instagram, X with platform-specific formats",
+        "Amplified UGC from the open source community and Canonical employees — hundreds of community pieces"
+      ],
+      "outcomes": [
+        { "metric": "LinkedIn impressions", "before": "—", "after": "2,096,233", "window": "campaign period 2024", "attribution": "Social update October 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "LinkedIn engagement rate", "before": "~5% platform benchmark (site framing; benchmark source not named)", "after": "14.4%", "window": "campaign period 2024", "attribution": "October 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "LinkedIn engagements", "before": "—", "after": "302,426", "window": "campaign period 2024", "attribution": "October 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Flagship video (YouTube)", "before": "—", "after": "378,699 views · 1,044,354 impressions · 5,441 watch-hours", "window": "2024", "attribution": "YouTube Uploads in 2024 only.xlsx", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Cross-platform video views", "before": "—", "after": "392,349", "window": "campaign period 2024", "attribution": "October 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — public link to the flagship video", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/canonical-20-years-ubuntu.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/full-folder-scan-extract.json"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 95,
+        "needs_human": ["'~5% benchmark' needs a citable source", "UGC count is 'hundreds' — soft number", "Campaign window dates"]
+      }
+    },
+    {
+      "slug": "canonical-data-ai",
+      "title": "Data & AI Masters — 4,731 registrations from organic promotion",
+      "hook": "A virtual event for Canonical's data/AI infrastructure products that pulled 4,731 registrations across 52 countries on organic social and email alone.",
+      "org": "Canonical · Data & AI Masters",
+      "role": "Conceived and produced the event and its full marketing programme",
+      "team_size": null,
+      "start": "2024",
+      "end": "2024",
+      "pillars": ["P2", "P3"],
+      "context": "Canonical needed awareness and qualified pipeline for data/AI infrastructure (Charmed Kafka, OpenSearch, MongoDB, MicroCloud) in a market dominated by hyperscalers — without a massive event budget or household-brand recognition in the data space.",
+      "tension": "Make the case that open source, enterprise-grade data infrastructure deserved a seat at the table, against well-funded competitors, with organic channels doing the heavy lifting.",
+      "mandate": "Conceived and produced Data & AI Masters and built the full promotion programme (social, LinkedIn event pages, email, cross-channel content).",
+      "decisions": [
+        {
+          "decision": "Channel-specific promotion jobs: social for awareness and trust, LinkedIn for community-native conversion, email for urgency and close",
+          "alternatives_rejected": "NEEDS_HUMAN (paid promotion implicitly rejected — site copy says 'zero paid spend' — but source md does not state the fork)",
+          "rationale": "'Virtual events succeed or fail at the promotion layer' (source: canonical-data-ai-masters.md)"
+        }
+      ],
+      "execution": [
+        "Organic social promo: 153,000 impressions at 7.5% ER (vs 5% benchmark) targeted to developer and infrastructure audiences",
+        "LinkedIn event page: 426 registrations, 249 day-1 attendees, 147 hours in-platform watch time",
+        "Email: 120,000 deliveries, 20.8% average open rate (vs 12% monthly benchmark), last-call email 23.5%",
+        "Produced 20+ reusable video sessions repurposed for demand gen, social and sales enablement through Q4 2024"
+      ],
+      "outcomes": [
+        { "metric": "Registrations", "before": "—", "after": "4,731", "window": "2024 event cycle", "attribution": "Marketing Townhall Oct 3 2024 deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Live attendees", "before": "—", "after": "1,532", "window": "event days", "attribution": "Townhall deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Countries", "before": "—", "after": "52", "window": "event", "attribution": "Townhall deck (also cited as '131 leads across 52 countries' single-activation in canonical-social-from-scratch.md — lead count NEEDS_HUMAN)", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "Email open rate", "before": "12% monthly benchmark", "after": "20.8% average; 23.5% last-call", "window": "campaign", "attribution": "Townhall deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 },
+        { "metric": "In-person intent", "before": "—", "after": "92.6% of attendees would attend in person", "window": "post-event survey", "attribution": "Townhall deck", "source_url": "design-project://.../uploads/full-folder-scan-extract.json", "confidence": 100 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — event page or session recordings link", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/canonical-data-ai-masters.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/full-folder-scan-extract.json"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 95,
+        "needs_human": ["MQL/pipeline outcome of the 4,731 registrations (registrations are not pipeline — strongest missing number)", "'Zero paid spend' appears on site but not in source md", "'131 leads across 52 countries' vs registration figures — reconcile"]
+      }
+    },
+    {
+      "slug": "mindvalley-social",
+      "title": "Zero to seven million followers in six months",
+      "hook": "Grew Mindvalley's combined social audience to 7M+ in six months, fully organic, earning a YouTube Gold Play Button.",
+      "org": "Mindvalley",
+      "role": "Social media lead → Head of PR & Partnerships (promoted 3× across 2017–2020; exact title during this project NEEDS_HUMAN)",
+      "team_size": null,
+      "start": "2017",
+      "end": "2018 (case window; role ran to 2020)",
+      "pillars": ["P3-partial"],
+      "context": "Mindvalley ($40M e-learning company) had active accounts but no unified strategy: Facebook 300K, YouTube 300K, Instagram 50K. Organic was flat.",
+      "tension": "No system existed for turning followers into leads, and no team structure existed behind content.",
+      "mandate": "Built the platform-specific content strategy, recruited and structured the social team, launched the KOL programme. (Source uses 'I' throughout; team size NEEDS_HUMAN.)",
+      "decisions": [
+        {
+          "decision": "Platform-specific strategies run simultaneously (distinct formats, cadences, growth tactics per platform) rather than one cross-posted feed",
+          "alternatives_rejected": "NEEDS_HUMAN",
+          "rationale": "Platform-native content as the growth mechanism (source: mindvalley-social-7m-followers.md)"
+        }
+      ],
+      "execution": [
+        "Recruited and structured a social media team where there hadn't been one",
+        "Launched KOL/influencer programme from zero (see mindvalley-influencer case)",
+        "Coordinated social with PR, SEO and events for cross-channel amplification of every major moment"
+      ],
+      "outcomes": [
+        { "metric": "Total social audience", "before": "~650K combined (FB 300K + YT 300K + IG 50K)", "after": "7M+", "window": "6 months", "attribution": "self-reported; no named export. Site says YouTube '125K → 1M' while sources say '300K → 1M' — CONTRADICTION flagged", "source_url": "design-project://.../uploads/mindvalley-social-7m-followers.md", "confidence": 70 },
+        { "metric": "Facebook", "before": "300K", "after": "2M", "window": "within 2017–18 push", "attribution": "self-reported", "source_url": "design-project://.../uploads/mindvalley-social-7m-followers.md", "confidence": 70 },
+        { "metric": "YouTube", "before": "300K (sources) / 125K (site copy) — NEEDS_HUMAN", "after": "1M — Gold Play Button awarded", "window": "within role", "attribution": "Gold Play Button is a verifiable artifact (physical award; channel milestone)", "source_url": "design-project://.../uploads/mindvalley-social-7m-followers.md", "confidence": 70 },
+        { "metric": "Instagram", "before": "50K", "after": "250K", "window": "within push", "attribution": "self-reported", "source_url": "design-project://.../uploads/mindvalley-social-7m-followers.md", "confidence": 70 },
+        { "metric": "Promotions", "before": "—", "after": "3× in 3 years", "window": "2017–2020", "attribution": "self-reported; corroborated by site CV", "source_url": "design-project://.../uploads/mindvalley-social-7m-followers.md", "confidence": 80 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — Mindvalley YouTube channel link; photo of Gold Play Button would be strong proof", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/mindvalley-social-7m-followers.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/cases-data.js"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 72,
+        "needs_human": ["YouTube baseline: 125K (site) vs 300K (sources)", "The '6 months' window: which 6 months, and 7M is cumulative total or net adds?", "Mindvalley-era numbers have no named exports (2017-20, pre-dating the Canonical-style tracking) — any surviving analytics screenshots would materially raise confidence", "Team size", "Exact title during this window"]
+      }
+    },
+    {
+      "slug": "mindvalley-influencer",
+      "title": "First influencer department — zero budget, ROI-positive month one",
+      "hook": "Built Mindvalley's first influencer department on relationship-based agreements instead of paid placements: 10M+ network reach, ROI-positive from month one.",
+      "org": "Mindvalley",
+      "role": "Built and led the KOL/influencer function",
+      "team_size": null,
+      "start": "2017",
+      "end": "2020",
+      "pillars": ["P3-partial"],
+      "context": "Influencer marketing didn't exist as a department — ad hoc creator relationships, no programme, no measurement, no relationship model. Personal-growth category perfectly aligned with the creator economy.",
+      "tension": "Build a programme that was cost-effective, measurable, and scalable — without a placement budget.",
+      "mandate": "Negotiated the agreements, built the ROI tracking framework, ran the programme.",
+      "decisions": [
+        {
+          "decision": "Zero-cost model: relationship-based agreements giving creators access to Mindvalley's faculty (interviews with Vishen Lakhiani, quest/masterclass access) instead of paying for posts",
+          "alternatives_rejected": "Paid placements — explicitly rejected ('Instead of paying for posts...')",
+          "rationale": "Authentic creator engagement converts better; creators present content they genuinely engaged with (source: mindvalley-influencer-zero-cost.md)"
+        },
+        {
+          "decision": "Concentrate on YouTube, Instagram, Facebook where conversion was proven; activate bloggers/Reddit/Pinterest only strategically",
+          "alternatives_rejected": "Spreading across all platforms equally [Inference]",
+          "rationale": "YouTube had highest organic conversions and time-on-message; IG for micro content and lives; FB for promotable warm-audience partner posts"
+        },
+        {
+          "decision": "OKR framework: awareness (5% monthly share/mention increase), traffic (5% site-visit increase from creators), leads (1,000 masterclass sign-ups per campaign)",
+          "alternatives_rejected": "Vanity reach metrics as programme KPI",
+          "rationale": "Every partnership evaluated against measurable objectives"
+        }
+      ],
+      "execution": [
+        "Signed first partners; built ROI tracking; scaled network to 10M+ reach",
+        "Campaigns: #iAmEnough (Uncompromised Life), Superbrain by Jim Kwik, event coverage programme (A-Fest, Mindvalley University, Summit)",
+        "Attribution technique: tracked YouTube subscriber spikes on partner-video publish days ('Upgrade Your Consciousness' drove a 9.2% new-subscriber spike)"
+      ],
+      "outcomes": [
+        { "metric": "Network reach", "before": "0 (no programme)", "after": "10M+ at peak", "window": "2017–2020", "attribution": "internal; Q2 2019 strategy doc confirms '+7M reach in the previous period'", "source_url": "design-project://.../uploads/mindvalley-influencer-zero-cost.md", "confidence": 75 },
+        { "metric": "ROI", "before": "—", "after": "positive from month one", "window": "programme start", "attribution": "self-reported; ROI calculation basis not in sources — NEEDS_HUMAN", "source_url": "design-project://.../uploads/mindvalley-influencer-zero-cost.md", "confidence": 65 },
+        { "metric": "YouTube subscriber spike on partner-video day", "before": "baseline daily subs not stated", "after": "+9.2% new subscribers that day", "window": "single partner video", "attribution": "internal tracking", "source_url": "design-project://.../uploads/mindvalley-influencer-zero-cost.md", "confidence": 75 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — Q2 2019 strategy PDF and Superbrain deck exist in personal archive (named in source footer) but are not linkable", "asset_path": "" }
+      ],
+      "reflection": "'Slower to build, harder to scale quickly — but significantly more durable per impression.' (stated tradeoff, source: mindvalley-influencer-zero-cost.md)",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/mindvalley-influencer-zero-cost.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 75,
+        "needs_human": ["ROI-positive: what was measured against what, given $0 placements (opportunity cost? team cost?)", "OKR figures are targets — actual attainment not stated"]
+      }
+    },
+    {
+      "slug": "mindvalley-pr",
+      "title": "$2.8M+ earned media and a 69% journalist reply rate",
+      "hook": "Built Mindvalley's PR function end-to-end: $2.8M+ earned media value and a 69% journalist reply rate cited publicly by Growthhacker.",
+      "org": "Mindvalley",
+      "role": "Head of PR & Partnerships",
+      "team_size": null,
+      "start": "2018",
+      "end": "2020",
+      "pillars": ["P4-partial"],
+      "context": "A $40M e-learning company that was functionally a best-kept secret in most Western and Asian media markets — loyal community, growing social, no authoritative press coverage.",
+      "tension": "Without tier-1 coverage the brand lacked validation for enterprise buyers, new audiences, and talent.",
+      "mandate": "Built the PR function end-to-end: media tiers, story angles, outreach, junkets, founder media appearances, agency management.",
+      "decisions": [
+        {
+          "decision": "Research-first personalised outreach — every pitch tied to a live story angle in the journalist's beat",
+          "alternatives_rejected": "Volume outreach / spray-and-pray — explicitly named and rejected",
+          "rationale": "'A 69% reply rate isn't a volume play — it's a research play.' (source: mindvalley-pr-2-8m.md)"
+        },
+        {
+          "decision": "Coordinate PR with SEO/influencer/social so placements compound (a Forbes placement is also a backlink)",
+          "alternatives_rejected": "PR as an isolated function [Inference]",
+          "rationale": "Multiplied earned media value of each placement"
+        }
+      ],
+      "execution": [
+        "Defined media tiers by region: Malaysian national, SE Asian business, global personal-development/wellness, tech trade",
+        "Story angles: Vishen Lakhiani iconoclast-founder profile, unconventional culture, self-development x productivity",
+        "Press junkets and media visits to KL HQ; managed founder appearances incl. BERNAMA Radio",
+        "Managed ROOTS PR agency retainer (RM 203,520/year, RM 16K/month, 12-month contract)"
+      ],
+      "outcomes": [
+        { "metric": "Earned media value", "before": "—", "after": "$2.8M+", "window": "2018–2020", "attribution": "self-reported EMV; methodology not stated — NEEDS_HUMAN", "source_url": "design-project://.../uploads/mindvalley-pr-2-8m.md", "confidence": 65 },
+        { "metric": "Journalist reply rate", "before": "—", "after": "69%", "window": "outreach programme", "attribution": "cited by Growthhacker in a public case study (external corroboration — strongest proof of the era)", "source_url": "design-project://.../uploads/mindvalley-pr-2-8m.md", "confidence": 85 },
+        { "metric": "Placements", "before": "—", "after": "Forbes, SCMP, Thrive Global, Bernama, The Star, Vulcan Post", "window": "2018–2020", "attribution": "named outlets; article URLs not in sources — NEEDS_HUMAN", "source_url": "design-project://.../uploads/mindvalley-pr-2-8m.md", "confidence": 75 }
+      ],
+      "proof": [
+        { "type": "press", "url": "NEEDS_HUMAN — URLs for the Growthhacker case study, Forbes/SCMP placements, Foundr Magazine authored piece", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/mindvalley-pr-2-8m.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 75,
+        "needs_human": ["$2.8M EMV methodology and window", "Live URLs for placements and the Growthhacker feature (these are the single cheapest credibility wins on the whole site)"]
+      }
+    },
+    {
+      "slug": "mindvalley-seo",
+      "title": "870% organic traffic growth in eleven months",
+      "hook": "Rebuilt Mindvalley's SEO from noise to acquisition channel: 14K to 122K monthly organic visits in 11 months.",
+      "org": "Mindvalley",
+      "role": "Led SEO rebuild (within social/PR remit)",
+      "team_size": null,
+      "start": "2018",
+      "end": "2019",
+      "pillars": ["P3-partial"],
+      "context": "14K monthly organic visits — negligible for a $40M e-learning company with a massive social presence. Content existed but no SEO architecture, no systematic link building, no outreach strategy.",
+      "tension": "Organic was not a meaningful acquisition channel while competitors compounded.",
+      "mandate": "Audited and rebuilt on-page, built the outreach operation, coordinated with PR and social.",
+      "decisions": [
+        {
+          "decision": "Run on-page rebuild, high-reply outreach, and PR-driven authority links in parallel rather than sequentially",
+          "alternatives_rejected": "NEEDS_HUMAN",
+          "rationale": "'When all three compound, the growth curve is non-linear.' (source: mindvalley-seo-870-percent.md)"
+        }
+      ],
+      "execution": [
+        "Rebuilt content hierarchy around high-intent keywords tied to courses and author ecosystem",
+        "Off-page outreach to media, bloggers, podcasters in personal development/wellness at 69% reply rate",
+        "Monthly measurement and adjustment on keyword movement and traffic"
+      ],
+      "outcomes": [
+        { "metric": "Organic monthly visits", "before": "14K", "after": "122K (870% growth)", "window": "11 months (2018–2019)", "attribution": "self-reported; analytics platform not named — NEEDS_HUMAN", "source_url": "design-project://.../uploads/mindvalley-seo-870-percent.md", "confidence": 70 }
+      ],
+      "proof": [
+        { "type": "press", "url": "NEEDS_HUMAN — Growthhacker case study URL; Foundr Magazine article URL", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/mindvalley-seo-870-percent.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 70,
+        "needs_human": ["Traffic source (GA screenshot or SEMrush chart would fix)", "870% math: 14K→122K is 771% increase (8.71×). '870%' reads as the multiple, not the delta — decide phrasing before publishing"]
+      }
+    },
+    {
+      "slug": "goodwall",
+      "title": "Community-led acquisition: +20% MAU, -18% CAC",
+      "hook": "Shifted a 1M-member Gen Z platform from paid installs to community-led acquisition: +20% MAU in three months while blended CAC fell 18%.",
+      "org": "Goodwall",
+      "role": "Marketing Director",
+      "team_size": 10,
+      "start": "2019",
+      "end": "2020",
+      "pillars": ["P3-partial"],
+      "context": "Geneva-HQ social impact platform for students and young professionals ('LinkedIn for Gen Z'), 1M+ members across 150+ countries.",
+      "tension": "CAC was climbing and MAU wasn't keeping pace with sign-ups; the 10-person cross-functional team had no centralised strategy.",
+      "mandate": "Grow MAU, reduce CAC, turn the community into a distribution asset; build the centralised strategy.",
+      "decisions": [
+        {
+          "decision": "Shift spend from paid installs toward activating existing users to recruit their networks",
+          "alternatives_rejected": "Continuing to scale Facebook/Instagram install ads — explicitly the prior approach being reduced",
+          "rationale": "'CAC goes down when the community does some of the acquisition work.' (source: goodwall-growth-machine.md)"
+        }
+      ],
+      "execution": [
+        "Rebuilt content architecture around return triggers: milestones, seasonal campaigns (GEW Launch, Climate Action, Halloween, Thanksgiving, Changemaker), social moments",
+        "Built top-level digital strategy (Keynote), 2019 personas, Roadmunk roadmap",
+        "Led 10 people across web, content, email, paid, app with shared roadmap/calendar/brief templates"
+      ],
+      "outcomes": [
+        { "metric": "MAU", "before": "baseline value not stated", "after": "+20%", "window": "3 months", "attribution": "self-reported", "source_url": "design-project://.../uploads/goodwall-growth-machine.md", "confidence": 70 },
+        { "metric": "CAC", "before": "baseline value not stated", "after": "-18% monthly", "window": "programme period", "attribution": "self-reported; blended CAC", "source_url": "design-project://.../uploads/goodwall-growth-machine.md", "confidence": 70 },
+        { "metric": "Members", "before": "1M+ (joined)", "after": "1.3M+ (exit)", "window": "2019–2020", "attribution": "self-reported", "source_url": "design-project://.../uploads/goodwall-growth-machine.md", "confidence": 75 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — Christian Eilers recommendation (ex-report, now J.P. Morgan) corroborates era; app store links possible", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/goodwall-growth-machine.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 72,
+        "needs_human": ["MAU and CAC absolute baselines", "'All organic' headline vs source describing a combined paid+organic programme — soften or substantiate"]
+      }
+    },
+    {
+      "slug": "payd",
+      "title": "FinTech marketing function built from zero — 50% email open rate",
+      "hook": "Built PAYD's marketing function from nothing (brand, martech, funnels) and ran email at 50% open rate — roughly double the B2B SaaS benchmark.",
+      "org": "PAYD / JustPayd",
+      "role": "Head of Marketing",
+      "team_size": null,
+      "start": "2021",
+      "end": "2022",
+      "pillars": ["P1-partial", "P3-partial"],
+      "context": "KL-based earned-wage-access (EWA) startup. No marketing function, no email system, no messaging architecture, in a category most APAC employers and employees hadn't encountered.",
+      "tension": "Category creation with a B2B2C double funnel: educate a new financial model against payday-loan alternatives while converting HR/finance leaders AND employees, across heterogeneous APAC markets.",
+      "mandate": "Build the infrastructure, own brand and martech, produce measurable acquisition growth on lean budgets.",
+      "decisions": [
+        {
+          "decision": "Two parallel content/conversion tracks (employer-facing HR/finance and employee-facing activation) rather than one funnel",
+          "alternatives_rejected": "Single generic funnel [Inference]",
+          "rationale": "B2B2C dynamic requires acquiring employers first, then employees through them"
+        },
+        {
+          "decision": "Localise campaigns per market (language, payment culture, regulatory framing)",
+          "alternatives_rejected": "One pan-APAC campaign — 'APAC is not a single market'",
+          "rationale": "Drove +35% acquisition without proportionally scaling spend"
+        }
+      ],
+      "execution": [
+        "Set up brand identity, messaging framework, website copy, email infrastructure (Ortto), content templates, social presence",
+        "Built lead capture and nurture for both funnel sides",
+        "Implemented martech stack: CRM, Ortto, tracking — first structured funnel/attribution view"
+      ],
+      "outcomes": [
+        { "metric": "Email open rate", "before": "~20-25% B2B SaaS benchmark", "after": "50%", "window": "programme period", "attribution": "self-reported (Ortto data)", "source_url": "design-project://.../uploads/payd-fintech-growth.md", "confidence": 70 },
+        { "metric": "APAC customer acquisition", "before": "baseline not stated", "after": "+35%", "window": "programme period", "attribution": "self-reported", "source_url": "design-project://.../uploads/payd-fintech-growth.md", "confidence": 70 },
+        { "metric": "CAC", "before": "—", "after": "-28% (SITE CV ONLY — no source file)", "window": "unknown", "attribution": "NEEDS_HUMAN", "source_url": "site-snapshot://asanhoury-2026.html", "confidence": 50 },
+        { "metric": "Co-launch partnerships ARR", "before": "—", "after": "'six-figure ARR' (SITE CV ONLY — no source file)", "window": "unknown", "attribution": "NEEDS_HUMAN", "source_url": "site-snapshot://asanhoury-2026.html", "confidence": 50 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — product/company link (justpayd) if still live", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/payd-fintech-growth.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 70,
+        "needs_human": ["-28% CAC and six-figure ARR appear only on the site — source or drop", "Open-rate volume context (list size, send count)"]
+      }
+    },
+    {
+      "slug": "agiliux",
+      "title": "InsurTech pipeline +50% on content, not budget",
+      "hook": "Rewrote Agiliux's site and ads in insurance-operations language: +50% pipeline and +400% ad CTR with no spend increase.",
+      "org": "Agiliux",
+      "role": "Head of Marketing",
+      "team_size": null,
+      "start": "2020",
+      "end": "2021",
+      "pillars": ["P3"],
+      "context": "APAC InsurTech SaaS (CRM/policy management for insurance agencies). Solid product, early-stage marketing: no content architecture, no nurture system, ads generating clicks that didn't convert.",
+      "tension": "Insurance is a trust industry; generic SaaS copy wasn't converting clicks to pipeline. Grow qualified pipeline without proportionally scaling spend.",
+      "mandate": "Fix content quality and targeting, build the lead-gen system, grow pipeline.",
+      "decisions": [
+        {
+          "decision": "Rewrite ads and site in insurance-operations language, matched one-to-one with landing pages",
+          "alternatives_rejected": "Increasing ad budget — '+400% CTR without more spend is almost always a creative and targeting problem, not a budget problem'",
+          "rationale": "The ads were reaching roughly the right people in the wrong language (source: agiliux-organic-pipeline.md)"
+        },
+        {
+          "decision": "Replace generic form fills with intent-qualified lead magnets",
+          "alternatives_rejected": "Generic contact forms",
+          "rationale": "Content insurance professionals would exchange an email for"
+        }
+      ],
+      "execution": [
+        "Full website rewrite (v1.1, v1.2): Customer Engagement, Insurance Agencies, Insurance Companies pages; Business Health Check tool",
+        "Email nurture across 14,550-contact database",
+        "Attribution framework for content/campaign pipeline contribution"
+      ],
+      "outcomes": [
+        { "metric": "Pipeline", "before": "baseline not stated", "after": "+50%", "window": "role period", "attribution": "via lead magnets and content programme; self-reported", "source_url": "design-project://.../uploads/agiliux-organic-pipeline.md", "confidence": 70 },
+        { "metric": "Ad CTR", "before": "baseline not stated", "after": "+400%", "window": "campaign rebuild", "attribution": "no spend increase; self-reported", "source_url": "design-project://.../uploads/agiliux-organic-pipeline.md", "confidence": 70 },
+        { "metric": "Email open rate", "before": "17.07% industry benchmark", "after": "36.13%–40.46%", "window": "programme", "attribution": "self-reported platform data", "source_url": "design-project://.../uploads/agiliux-organic-pipeline.md", "confidence": 75 },
+        { "metric": "Email CTR", "before": "1.50% benchmark", "after": "1.64%–1.76%", "window": "programme", "attribution": "self-reported", "source_url": "design-project://.../uploads/agiliux-organic-pipeline.md", "confidence": 75 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — agiliux.com live pages (rewrite may still be live; a diff or archive.org capture would prove authorship window)", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/agiliux-organic-pipeline.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 72,
+        "needs_human": ["+35% APAC acquisition appears in both PAYD and Agiliux cases with identical phrasing — verify it isn't one number double-counted across two roles", "Pipeline baseline"]
+      }
+    },
+    {
+      "slug": "falcon",
+      "title": "40+ global brands at agency pace",
+      "hook": "Three years across 40+ global brands (L'Oreal, Deliveroo, Uber, Manulife) at the A+M Agency of the Year 2016, with $19M in client budgets managed across the portfolio.",
+      "org": "Falcon Agency / 16Two",
+      "role": "Digital Marketing Manager",
+      "team_size": null,
+      "start": "2014",
+      "end": "2017",
+      "pillars": ["P3-partial", "P4-partial"],
+      "context": "Full-service digital agency across Malaysia and the GCC. In any given week: consumer FMCG, FinTech app, luxury automotive, QSR.",
+      "tension": "Breadth was the job — orient quickly in unfamiliar categories and produce work that holds up commercially.",
+      "mandate": "Content strategies, social management, paid campaigns, client knowledge sessions across the portfolio. (NOTE: aggregate numbers below split into personally-attributed vs agency-aggregate — the sources mix them.)",
+      "decisions": [
+        {
+          "decision": "Built influencer storyboarding into agency process as a standard deliverable (first time), via L'Oreal ExOil/ShineWithConfidence",
+          "alternatives_rejected": "NEEDS_HUMAN",
+          "rationale": "Influencer content needed the same creative rigor as ad creative [Inference]"
+        }
+      ],
+      "execution": [
+        "Deliveroo SG: CatchTheRoo viral campaign (pitch to v9, projected 1.5M reach, $31K SGD), social audits v1+v2, community management, UberEATS competitive analysis",
+        "L'Oreal ExOil ~$85K USD across 4 phases; Tammy Tay influencer storyboard (#ShineWithConfidence)",
+        "Great Eastern Life: RM 350,536 budget, 5,000-lead KPI in 6 months, three-persona age-band targeting",
+        "Ringgit Plus: CITI/HSBC/PBBK/MAYB campaigns, +5% page conversion on paid traffic, personal client commendation",
+        "Predictive budget models for FinTech clients: +22% ROAS over baseline",
+        "Five-part GDLP client knowledge programme (GDN, digital landscape, omni-channel, Facebook, CRO)"
+      ],
+      "outcomes": [
+        { "metric": "Deliveroo SG fans", "before": "5,129", "after": "12,355 (+140.89%)", "window": "3.5 months (2016)", "attribution": "campaign reporting; personally attributed", "source_url": "design-project://.../uploads/falcon-agency-40-brands.md", "confidence": 80 },
+        { "metric": "Deliveroo SG engagement", "before": "—", "after": "16.8M monthly impressions · 4.46% avg ER · 9.66% peak · 78.95% question response rate", "window": "2016", "attribution": "campaign reporting", "source_url": "design-project://.../uploads/falcon-agency-40-brands.md", "confidence": 80 },
+        { "metric": "Ringgit Plus conversion", "before": "—", "after": "+5% page CVR on paid traffic; personal commendation", "window": "multi-month", "attribution": "personally attributed", "source_url": "design-project://.../uploads/falcon-agency-40-brands.md", "confidence": 80 },
+        { "metric": "FinTech ROAS", "before": "baseline models", "after": "+22%", "window": "campaigns", "attribution": "predictive budget modelling; personally attributed", "source_url": "design-project://.../uploads/falcon-agency-40-brands.md", "confidence": 75 },
+        { "metric": "AGENCY-AGGREGATE: $19M budgets, -45% CAC, +38% conversion, 8M followers under management, 75K keywords, 16 countries", "before": "—", "after": "agency-level totals, not personal attribution", "window": "2014–2017", "attribution": "'Falcon Agency — Aggregate Scale' section; presenting these as personal results would fail a reference check — flagged in GAPS", "source_url": "design-project://.../uploads/falcon-agency-40-brands.md", "confidence": 70 },
+        { "metric": "A+M Agency of the Year 2016", "before": "—", "after": "won ('key strategist on winning campaigns' per source)", "window": "2016", "attribution": "agency award, personal contribution stated", "source_url": "design-project://.../uploads/falcon-agency-40-brands.md", "confidence": 80 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — A+M award announcement URL", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/falcon-agency-40-brands.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/all-projects-names-extract.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 78,
+        "needs_human": ["Which aggregate numbers can honestly be claimed vs 'the agency I worked at' — the site currently blurs this", "'Etisalat' appears in site CV brand list but not in the named-clients extract", "'+300% engagement rate — paid insurance campaign' lacks client/window"]
+      }
+    },
+    {
+      "slug": "early-career",
+      "title": "Foundation years: Cairo, Dubai, KL",
+      "hook": "Four years of writing, editing, community managing and paid campaigns — including growing Qatar Happening to the 12th-largest Facebook page in Qatar, organically.",
+      "org": "MizaTech / Socialeyez · Joud · Insight Magazine",
+      "role": "Content Creator · Editor · Community Manager",
+      "team_size": null,
+      "start": "2010",
+      "end": "2014",
+      "pillars": [],
+      "context": "Early-Facebook era MENA social media, when organic reach was real and community management was a performance discipline.",
+      "tension": "The work nobody assigns a title to — where the instincts were built.",
+      "mandate": "Managed brand portfolios' social (MizaTech/Socialeyez), built Joud's community strategy from scratch, cover-to-cover editorial at Insight Magazine.",
+      "decisions": [
+        {
+          "decision": "Wrote the first full community playbook at Joud (order response rules, competition logistics, engagement mechanics, brand voice)",
+          "alternatives_rejected": "NEEDS_HUMAN",
+          "rationale": "Structurally similar to editorial frameworks built at Canonical and Mindvalley a decade later (source: early-career-foundation.md)"
+        }
+      ],
+      "execution": [
+        "Grew Qatar Happening to 12th-largest Facebook page in Qatar, organic only",
+        "Ran integrated paid campaigns up to $2,000/day",
+        "Joud: weekly plans, JoudNESS competition, newsletter, hard KPIs (10+ daily inquiries, 3+ daily orders), Instagram 1,200 toward 3,500 target",
+        "Insight Magazine: lead journalist and editor, cover to cover (named interviews: Ghada Abdel Razek October 2013 cover, Arwa Gouda, Lara Scandar...)"
+      ],
+      "outcomes": [
+        { "metric": "Qatar Happening rank", "before": "—", "after": "12th largest Facebook page in Qatar", "window": "2010–2013", "attribution": "self-reported; ranking source not stated", "source_url": "design-project://.../uploads/early-career-foundation.md", "confidence": 65 },
+        { "metric": "Email CTR", "before": "~3% industry average", "after": "20% (Mailchimp)", "window": "MizaTech era", "attribution": "self-reported", "source_url": "design-project://.../uploads/early-career-foundation.md", "confidence": 65 }
+      ],
+      "proof": [
+        { "type": "link", "url": "NEEDS_HUMAN — Mohamed Kaloub (Miza Group) recommendation letter exists in personal docs", "asset_path": "" }
+      ],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": [
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/early-career-foundation.md",
+          "design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/uploads/all-projects-names-extract.md"
+        ],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 68,
+        "needs_human": ["Qatar Happening ranking source", "Joud KPIs were targets — attainment not stated"]
+      }
+    },
+    {
+      "slug": "maharat",
+      "title": "Marketing and comms for a celebrity- and creator-led learning platform",
+      "hook": "NEEDS_HUMAN (current role; source has placeholder metrics only)",
+      "org": "Maharat",
+      "role": "Senior Director, Marketing & Communications",
+      "team_size": 8,
+      "start": "2024",
+      "end": "present",
+      "pillars": ["P3-potential", "P4-potential"],
+      "context": "Arabic-first EdTech platform built on celebrity- and creator-led content for the MENA region, where premium EdTech is still category-defining.",
+      "tension": "NEEDS_HUMAN ('Context and specific mandate to be finalised with the team' — source's own placeholder)",
+      "mandate": "Leading marketing and communications end to end — team of 8 across content, performance, social, brand. Reports to CEO (site CV).",
+      "decisions": [],
+      "execution": [
+        "Setting content and social strategy for a celebrity- and creator-led platform tuned to MENA audiences",
+        "NEEDS_HUMAN — 'Detailed initiatives and shipped work to be added as the role progresses' (source's own placeholder)"
+      ],
+      "outcomes": [
+        { "metric": "Audience", "before": "", "after": "NEEDS_HUMAN ('[metric — to be supplied]' in source)", "window": "", "attribution": "", "source_url": "design-project://.../cases-data.js", "confidence": 0 },
+        { "metric": "Completion / retention", "before": "", "after": "NEEDS_HUMAN", "window": "", "attribution": "", "source_url": "design-project://.../cases-data.js", "confidence": 0 },
+        { "metric": "Pipeline / growth", "before": "", "after": "NEEDS_HUMAN", "window": "", "attribution": "", "source_url": "design-project://.../cases-data.js", "confidence": 0 }
+      ],
+      "proof": [],
+      "reflection": "NEEDS_HUMAN",
+      "assets": [],
+      "provenance": {
+        "source_urls": ["design-project://debb232a-fc2f-4599-b1c5-5c236ad2b840/cases-data.js"],
+        "extraction_method": "design-mcp-get_file (verbatim)",
+        "confidence": 60,
+        "needs_human": ["All metrics", "Whether to feature the current employer at all before results exist"]
+      }
+    }
+  ]
+}
