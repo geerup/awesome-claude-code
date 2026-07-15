@@ -87,3 +87,10 @@ Live verification note: foundr.com / talentcap.com / forwardleading.co.uk /
 ecomconnect.org / linkedin.com are outside this session's network allowlist -
 links ship on the strength of the archived captures; allowlist the domains
 or click through to verify liveness.
+
+Framed on-page (2026-07-15): first pages of four captures rendered to
+`rebuild/assets/proof-*.jpg` (900px wide, page-1 crop). Forward Leading,
+DMICON and Foundr now sit as a linked "On the record, externally" fig-row
+in `rebuild/case-mindvalley-influencer.html` section 03. The ITC capture
+(proof-itc-webinar.jpg) has no matching case page (2021 consultant era) -
+asset rendered and available; the link remains in the index Speaking rows.
