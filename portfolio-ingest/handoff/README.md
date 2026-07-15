@@ -5,12 +5,14 @@ Produced 2026-07-14 · Claude Code session (portfolio import + rebuild)
 
 | What | Where |
 |------|-------|
-| **The new site, draft R3** | `rebuild/index.html` - open this first |
-| **The Numbers page (50 verified stats)** | `rebuild/stats.html` - linked from the site nav |
-| Full-page renders of both | `rebuild/screens/` |
-| Proof imagery used by the site | `rebuild/assets/` |
+| **The new site (current draft)** | `rebuild/index.html` - open this first (root copy: REBUILD-R3.html) |
+| **The Numbers page** | `rebuild/stats.html` - 50 verified stats + SVG line/bar charts + the Sprout platform deep-dive (root copy: REBUILD-NUMBERS.html) |
+| **Case deep-dive pages** | `rebuild/case-*.html` - 7 pages, linked from every case on the index; `case-template.html` to add more |
+| Full-page renders | `rebuild/screens/` |
+| Proof imagery used by the site | `rebuild/assets/` (16 curated images) |
+| Chart generator | `scripts/gen_svg_charts.py` in the repo - regenerates all SVG charts between SVGCHART markers |
 
-Draft R3 implements the editorial spine: hero with three fully-sourced
+The draft implements the editorial spine: hero with three fully-sourced
 numbers + portrait, five ranked case studies (each with inline charts,
 outcome tables carrying baseline/window/source, and real proof imagery),
 a nine-item archive, a deliberately held /lab wing, six on-record
