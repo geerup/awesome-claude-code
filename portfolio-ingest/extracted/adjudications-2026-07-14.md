@@ -69,3 +69,21 @@ projects.json OR user-approved lines"):
   updated (PAYD -28% CAC, Goodwall COP25, Mindvalley 125K baseline);
   /lab hold text amended; window 2022 - 2025.
 - handoff (design project): both documents attached for the design phase.
+
+## Addendum - proof-capture adjudications (2026-07-15)
+
+Five owner-supplied PDF captures filed to `sources/proof/` (repo) and
+`handoff/proof/` (design project):
+
+| Capture | What it proves | Action taken |
+|---------|---------------|--------------|
+| foundr-article-capture-2020.pdf (71pp) | Foundr article EXISTS at foundr.com/how-to-get-subscribers-on-youtube ("Mindvalley's Method That Tripled Subscribers in 6 Months", Jul 2019) | Linked from Speaking. NEW FLAG: article says 125,000 -> 360,000 in under six months (+188% semi-annual); "1M in under a year" is NOT supported by this capture - 1M/Gold Play Button date NEEDS_HUMAN. Byline reads a Foundr staff writer - "authored" claim NEEDS_HUMAN |
+| dmicon-talentcap-qa-2020.pdf (+capture2) | DMICON keynote real: talentcap.com Q&A page, talk "Lead & Ecommerce Conversions..."; quote on record; "reach of 4.5 million" (2020) | Linked from Speaking with talk title |
+| forward-leading-speaker-page.pdf | forwardleading.co.uk/speakers/ahmed-el-sanhoury - "Head of Partnerships at Mindvalley... helped grow from 3 million to 10 million in reach" | NEW Speaking row; explains the forward-leading client logo on the live site |
+| itc-ecomconnect-webinar-2021.pdf | ITC (International Trade Centre) ecomConnect #AskTheExpert webinar, Jul 8 2021, ecomconnect.org/events/64648; bio: "former Head of PR and Partnerships at Mindvalley... currently VP of Marketing and a growth consultant" | NEW Speaking row; explains the itc client logo; adds VP-of-Marketing title for the 2021 era |
+| (same ITC page) | "Find him on LinkedIn: linkedin.com/in/ahmed-el-sanhoury/" | **HANDLE ADJUDICATED**: /in/ahmed-el-sanhoury (2 independent sources: stats sheet + ITC page). Site contact + recs links updated |
+
+Live verification note: foundr.com / talentcap.com / forwardleading.co.uk /
+ecomconnect.org / linkedin.com are outside this session's network allowlist -
+links ship on the strength of the archived captures; allowlist the domains
+or click through to verify liveness.
