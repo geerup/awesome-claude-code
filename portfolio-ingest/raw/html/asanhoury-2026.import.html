@@ -1,0 +1,1644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ahmed El Sanhoury — Social & Content Marketing, 16 Yrs</title>
+<meta name="description" content="Ahmed El Sanhoury — social media and content marketing leader. 2.81M organic audience built at Canonical, 7M followers in 6 months at Mindvalley, 21× MQL growth in a single year. Tallinn, Estonia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS
+============================================================ */
+:root{
+  --paper:        #EFE9DC;
+  --paper-2:      #E6DFCC;
+  --paper-3:      #DAD2BC;
+  --ink:          #17140F;
+  --ink-2:        #2A251D;
+  --ink-mid:      #6A604F;
+  --ink-mute:     #948871;
+  --rule:         rgba(23,20,15,.14);
+  --rule-soft:    rgba(23,20,15,.08);
+  --accent:       #D2401E;        /* vermilion */
+  --accent-soft:  rgba(210,64,30,.10);
+  --moss:         #2E4A2F;        /* secondary accent, used sparingly */
+  --night:        #0E0C08;        /* dark inversion */
+  --night-2:      #16130E;
+  --night-rule:   rgba(239,233,220,.14);
+
+  --display: 'Instrument Serif', 'Times New Roman', serif;
+  --sans:    'Geist', system-ui, -apple-system, sans-serif;
+  --mono:    'Geist Mono', ui-monospace, 'SF Mono', monospace;
+
+  --gutter: 40px;
+  --max:    1240px;
+}
+
+/* ============================================================
+   RESET
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.55;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"ss01","cv11";
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* paper grain (very subtle) */
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:1;
+  opacity:.035;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.6'/></svg>");
+  mix-blend-mode:multiply;
+}
+
+/* scrollbar */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--paper)}
+::-webkit-scrollbar-thumb{background:var(--paper-3);border-radius:8px;border:2px solid var(--paper)}
+::-webkit-scrollbar-thumb:hover{background:var(--ink-mute)}
+
+/* ============================================================
+   TYPE PRIMITIVES
+============================================================ */
+.mono       {font-family:var(--mono);font-feature-settings:"tnum"}
+.eyebrow    {font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid);font-weight:500}
+.eyebrow .dot{display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin:0 8px 1px 0;vertical-align:middle}
+
+.h-display{
+  font-family:var(--display);
+  font-weight:400;
+  line-height:.92;
+  letter-spacing:-.018em;
+  color:var(--ink);
+  font-feature-settings:"liga","kern","ss01";
+}
+.h-display em{font-style:italic;color:var(--accent);font-weight:400}
+.h-display .alt{font-style:italic;color:var(--ink-mid)}
+
+.h-sec{
+  font-family:var(--display);
+  font-size:clamp(34px,5.6vw,80px);
+  font-weight:400;
+  line-height:.95;
+  letter-spacing:-.018em;
+}
+.h-sec em{font-style:italic;color:var(--accent)}
+.h-sec .alt{font-style:italic;color:var(--ink-mid)}
+
+.body-l{font-size:17px;line-height:1.55;color:var(--ink-2)}
+.body-m{font-size:15px;line-height:1.6;color:var(--ink-2)}
+.body-s{font-size:13.5px;line-height:1.55;color:var(--ink-mid)}
+
+.tag{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:5px 9px;
+  border:1px solid var(--rule);
+  border-radius:2px;
+  color:var(--ink-mid);
+  background:var(--paper);
+}
+.tag.accent{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.tag.dark{border-color:var(--night-rule);color:var(--paper-2);background:transparent}
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+section{position:relative;z-index:2}
+
+/* ============================================================
+   TOP BAR
+============================================================ */
+.bar{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--gutter);
+  background:rgba(239,233,220,.78);
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--rule-soft);
+  transition:background .25s ease, border-color .25s ease;
+}
+.bar.scrolled{background:rgba(239,233,220,.92);border-bottom-color:var(--rule)}
+
+.brand{
+  display:flex;align-items:baseline;gap:10px;
+  font-family:var(--mono);
+  font-size:12.5px;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--ink);
+}
+.brand .num{color:var(--accent)}
+.brand .sep{color:var(--ink-mute)}
+
+.bar-nav{display:flex;align-items:center;gap:6px}
+.bar-nav a{
+  font-family:var(--mono);
+  font-size:11.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:8px 12px;
+  color:var(--ink-mid);
+  border-radius:3px;
+  transition:color .15s, background .15s;
+}
+.bar-nav a:hover{color:var(--ink);background:var(--paper-2)}
+.bar-cta{
+  font-family:var(--mono);
+  font-size:11.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:9px 14px;
+  background:var(--ink);
+  color:var(--paper);
+  border-radius:3px;
+  margin-left:8px;
+  transition:background .15s;
+}
+.bar-cta:hover{background:var(--accent)}
+
+.menu-btn{display:none;width:36px;height:36px;border:1px solid var(--rule);border-radius:3px;align-items:center;justify-content:center}
+.menu-btn span{display:block;width:16px;height:1.5px;background:var(--ink);position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:16px;height:1.5px;background:var(--ink)}
+.menu-btn span::before{top:-5px}.menu-btn span::after{top:5px}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  padding:140px var(--gutter) 60px;
+  position:relative;
+}
+.hero-meta{
+  max-width:var(--max);margin:0 auto 28px;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:18px;
+}
+.hero-meta .left{display:flex;gap:24px;flex-wrap:wrap;align-items:baseline}
+.hero-meta .item{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-mid);text-transform:uppercase}
+.hero-meta .item strong{color:var(--ink);font-weight:500}
+.hero-meta .vol{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:.05em;text-transform:uppercase}
+
+.hero-grid{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:1.45fr .9fr;gap:64px;
+  align-items:start;
+}
+.hero h1{
+  font-size:clamp(54px,9vw,138px);
+  margin-top:14px;
+  margin-bottom:36px;
+}
+.hero h1 .l1{display:block}
+.hero h1 .l2{display:block;padding-left:.6em}
+.hero h1 .l3{display:block}
+.hero h1 .l4{display:block;padding-left:1.6em}
+
+.hero-sub{
+  max-width:560px;
+  font-size:18px;line-height:1.55;
+  color:var(--ink-2);
+  margin-bottom:36px;
+}
+.hero-sub strong{color:var(--ink);font-weight:500;background:linear-gradient(to top,var(--accent-soft) 40%,transparent 40%);padding:0 2px}
+
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;
+  padding:14px 22px;border-radius:3px;
+  transition:all .18s ease;border:1px solid transparent;
+}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--accent)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn .arr{display:inline-block;transition:transform .2s}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* hero right column — editorial stat sheet */
+.sheet{
+  border-top:1px solid var(--ink);
+  padding-top:18px;
+  margin-top:30px;
+}
+.sheet-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid);
+  margin-bottom:24px;
+}
+.sheet-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:16px;
+  align-items:baseline;
+  padding:18px 0;
+  border-bottom:1px solid var(--rule);
+}
+.sheet-row:last-child{border-bottom:0}
+.sheet-num{
+  font-family:var(--display);
+  font-size:46px;
+  line-height:1;
+  color:var(--ink);
+  letter-spacing:-.02em;
+  font-feature-settings:"tnum","ss01";
+}
+.sheet-num .ital{font-style:italic;color:var(--accent);font-size:32px;margin-left:4px}
+.sheet-label{
+  font-size:13px;line-height:1.45;color:var(--ink-2);
+}
+.sheet-source{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-mute);
+  white-space:nowrap;
+}
+
+/* corner mark on hero (bottom-right asterisk) */
+.hero-mark{
+  position:absolute;right:var(--gutter);bottom:30px;
+  font-family:var(--display);font-size:48px;color:var(--accent);
+  font-style:italic;line-height:1;opacity:.85;
+}
+
+/* ============================================================
+   MARQUEE / TICKER
+============================================================ */
+.marquee{
+  background:var(--ink);
+  color:var(--paper);
+  overflow:hidden;
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  padding:18px 0;
+  position:relative;
+}
+.marquee-track{
+  display:inline-flex;
+  animation:scroll 60s linear infinite;
+  white-space:nowrap;
+}
+.marquee-track span{
+  display:inline-flex;align-items:center;gap:18px;
+  font-family:var(--display);
+  font-size:34px;
+  line-height:1;
+  padding:0 28px;
+}
+.marquee-track span em{font-style:italic;color:var(--accent);font-size:30px}
+.marquee-track .star{color:var(--accent);font-style:italic}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============================================================
+   SECTION HEADER PATTERN
+============================================================ */
+.s-head{
+  display:grid;grid-template-columns:160px 1fr;gap:48px;
+  margin-bottom:64px;align-items:start;
+}
+.s-head-meta{padding-top:8px}
+.s-head-meta .num{font-family:var(--mono);font-size:11.5px;color:var(--accent);letter-spacing:.06em;display:block;margin-bottom:6px}
+.s-head-meta .lbl{font-family:var(--mono);font-size:11.5px;color:var(--ink-mid);letter-spacing:.06em;text-transform:uppercase}
+.s-head h2{font-size:clamp(40px,6.4vw,84px)}
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about{padding:120px 0;border-top:1px solid var(--rule)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 320px;gap:80px;
+  align-items:start;margin-top:8px;
+}
+.about-body{max-width:680px;font-size:18px;line-height:1.6;color:var(--ink-2)}
+.about-body p+p{margin-top:22px}
+.about-body strong{color:var(--ink);font-weight:500}
+.about-body p:first-child::first-letter{
+  font-family:var(--display);
+  font-size:88px;
+  font-weight:400;
+  line-height:.85;
+  float:left;
+  margin:6px 12px -6px 0;
+  color:var(--accent);
+}
+.about-side{display:flex;flex-direction:column;gap:20px}
+.portrait{
+  width:100%;aspect-ratio:4/5;
+  background:
+    linear-gradient(180deg,var(--paper-2),var(--paper-3));
+  border:1px solid var(--rule);
+  display:flex;align-items:flex-end;justify-content:flex-start;
+  padding:18px;
+  position:relative;
+  overflow:hidden;
+}
+.portrait::after{
+  content:"";
+  position:absolute;inset:0;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.4'/></svg>");
+  opacity:.25;mix-blend-mode:multiply;
+}
+.portrait .ph{
+  font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);letter-spacing:.05em;text-transform:uppercase;
+  position:relative;z-index:1;
+}
+.portrait .silhouette{
+  position:absolute;left:50%;top:55%;transform:translate(-50%,-50%);
+  width:55%;height:auto;color:var(--paper);opacity:.5;
+}
+.facts{display:flex;flex-direction:column;border-top:1px solid var(--ink)}
+.fact{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--rule);
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+}
+.fact .k{color:var(--ink-mid);text-transform:uppercase;font-size:10.5px}
+.fact .v{color:var(--ink);font-weight:500}
+
+/* logos strip */
+.logos{
+  margin-top:80px;padding-top:40px;
+  border-top:1px solid var(--rule);
+}
+.logos-lbl{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
+.logos-row{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 32px;
+}
+.logo{
+  font-family:var(--display);
+  font-size:28px;
+  color:var(--ink-mid);
+  font-feature-settings:"ss01";
+  transition:color .15s;
+}
+.logo:hover{color:var(--accent)}
+.logo .it{font-style:italic}
+.logo .sep{color:var(--ink-mute);font-size:18px;margin:0 4px}
+
+/* ============================================================
+   BIG STATS — DARK INVERSION
+============================================================ */
+.darksec{
+  background:var(--night);
+  color:var(--paper-2);
+  padding:120px 0;
+  position:relative;
+  overflow:hidden;
+}
+.darksec::before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.5'/></svg>");
+  opacity:.06;
+}
+.darksec .h-sec{color:var(--paper)}
+.darksec .h-sec em{color:var(--accent)}
+.darksec .s-head-meta .lbl{color:var(--paper-3)}
+.darksec .s-head-meta .num{color:var(--accent)}
+
+.bignums{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--night-rule);
+  border:1px solid var(--night-rule);margin-top:48px;
+}
+.bignum{
+  background:var(--night);
+  padding:48px 36px;
+  display:flex;flex-direction:column;gap:14px;
+  position:relative;
+  transition:background .2s;
+}
+.bignum:hover{background:var(--night-2)}
+.bignum .idx{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-mute);text-transform:uppercase}
+.bignum .v{
+  font-family:var(--display);
+  font-size:clamp(72px,8vw,108px);
+  line-height:.9;color:var(--paper);
+  letter-spacing:-.02em;
+  font-feature-settings:"tnum","ss01";
+}
+.bignum .v em{font-style:italic;color:var(--accent)}
+.bignum .v .sm{font-size:.55em}
+.bignum .lbl{
+  font-size:14px;color:var(--paper-3);line-height:1.5;
+  max-width:220px;
+}
+.bignum .src{
+  font-family:var(--mono);font-size:10.5px;color:var(--ink-mute);
+  letter-spacing:.04em;text-transform:uppercase;
+}
+
+/* ============================================================
+   EXPERTISE — BENTO
+============================================================ */
+.expertise{padding:120px 0;border-top:1px solid var(--rule)}
+.bento{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  grid-auto-rows:minmax(220px,auto);
+  gap:14px;
+}
+.cell{
+  border:1px solid var(--rule);
+  background:var(--paper);
+  padding:30px;
+  display:flex;flex-direction:column;
+  position:relative;
+  transition:border-color .2s, background .2s;
+  overflow:hidden;
+}
+.cell:hover{border-color:var(--ink);background:var(--paper-2)}
+.cell .num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em;margin-bottom:18px}
+.cell h3{
+  font-family:var(--display);
+  font-size:32px;line-height:1.05;color:var(--ink);
+  letter-spacing:-.012em;font-weight:400;
+  margin-bottom:14px;
+}
+.cell h3 em{font-style:italic;color:var(--accent)}
+.cell p{font-size:14px;line-height:1.55;color:var(--ink-mid);flex:1}
+.cell .ev{
+  margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em;text-transform:uppercase;
+}
+/* spans */
+.c-1{grid-column:span 3;grid-row:span 2}     /* hero pillar tall */
+.c-2{grid-column:span 3}
+.c-3{grid-column:span 3}
+.c-4{grid-column:span 2}
+.c-5{grid-column:span 2}
+.c-6{grid-column:span 2}
+.cell.feature{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cell.feature h3{color:var(--paper)}
+.cell.feature h3 em{color:var(--accent)}
+.cell.feature p{color:var(--paper-3)}
+.cell.feature .num{color:var(--accent)}
+.cell.feature .ev{border-top-color:var(--night-rule);color:var(--paper-2)}
+.cell.feature:hover{background:var(--night-2);border-color:var(--ink)}
+.cell .big-stat{
+  font-family:var(--display);
+  font-size:120px;line-height:.92;
+  color:var(--accent);font-style:italic;
+  letter-spacing:-.02em;margin:auto 0 14px;
+  font-feature-settings:"tnum";
+}
+
+/* ============================================================
+   CASE STUDIES — EDITORIAL BENTO
+============================================================ */
+.work{padding:120px 0;border-top:1px solid var(--rule)}
+.filter{
+  display:flex;gap:6px;flex-wrap:wrap;margin-bottom:42px;
+  padding-bottom:24px;border-bottom:1px solid var(--rule);
+}
+.fbtn{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  padding:9px 16px;border:1px solid var(--rule);border-radius:3px;
+  color:var(--ink-mid);background:transparent;
+  transition:all .15s;
+}
+.fbtn:hover{color:var(--ink);border-color:var(--ink)}
+.fbtn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.cases{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;
+  grid-auto-flow:dense;
+}
+.case{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  padding:26px;
+  display:flex;flex-direction:column;
+  transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.case:hover{transform:translateY(-3px);border-color:var(--ink)}
+.case .ribbon{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-mid);
+  margin-bottom:18px;
+}
+.case .ribbon .swatch{width:8px;height:8px;border-radius:50%;background:var(--ink-mute)}
+.case[data-cat~="brand"] .ribbon .swatch{background:var(--moss)}
+.case[data-cat~="brand"] .ribbon .cat{color:var(--moss)}
+.case[data-cat~="pipeline"] .ribbon .swatch{background:var(--accent)}
+.case[data-cat~="pipeline"] .ribbon .cat{color:var(--accent)}
+.case[data-cat~="organic"] .ribbon .swatch{background:#1A6FC4}
+.case[data-cat~="organic"] .ribbon .cat{color:#1A6FC4}
+.case[data-cat~="agency"] .ribbon .swatch{background:#9C6B14}
+.case[data-cat~="agency"] .ribbon .cat{color:#9C6B14}
+
+.case .stat{
+  font-family:var(--display);
+  font-size:72px;line-height:.95;
+  color:var(--ink);letter-spacing:-.02em;
+  margin-bottom:14px;
+  font-feature-settings:"tnum","ss01";
+}
+.case .stat em{font-style:italic;color:var(--accent)}
+.case h3{
+  font-family:var(--display);
+  font-size:24px;line-height:1.15;font-weight:400;
+  letter-spacing:-.01em;
+  color:var(--ink);margin-bottom:10px;
+}
+.case p{font-size:14px;color:var(--ink-mid);line-height:1.6;flex:1}
+.case .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+
+.case.size-lg{grid-column:span 4;grid-row:span 2}
+.case.size-md{grid-column:span 3}
+.case.size-sm{grid-column:span 2}
+.case.size-lg .stat{font-size:120px}
+.case.size-lg h3{font-size:34px;line-height:1.1}
+.case.size-lg p{font-size:15.5px;max-width:540px}
+
+.case.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.case.dark .stat{color:var(--paper)}
+.case.dark .ribbon{color:var(--paper-3)}
+.case.dark h3{color:var(--paper)}
+.case.dark p{color:var(--paper-3)}
+
+.case.hidden{display:none}
+
+/* ============================================================
+   EXPERIENCE — STICKY
+============================================================ */
+.exp{padding:120px 0;border-top:1px solid var(--rule);background:var(--paper-2)}
+.exp-grid{display:grid;grid-template-columns:300px 1fr;gap:80px;align-items:start}
+.exp-stick{position:sticky;top:96px}
+.exp-stick .yrs{
+  font-family:var(--display);
+  font-size:120px;line-height:.9;
+  color:var(--ink);font-style:italic;
+  letter-spacing:-.025em;
+  margin-bottom:18px;
+}
+.exp-stick .desc{font-size:15px;color:var(--ink-2);line-height:1.55;margin-bottom:24px}
+.exp-stick .mini{
+  display:flex;flex-direction:column;gap:10px;
+  border-top:1px solid var(--rule);padding-top:20px;
+}
+.mini-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+}
+.mini-row .k{color:var(--ink-mid)}
+.mini-row .v{color:var(--ink);font-weight:500}
+
+.roles{display:flex;flex-direction:column}
+.role{
+  display:grid;grid-template-columns:90px 1fr;gap:32px;
+  padding:28px 0;
+  border-top:1px solid var(--rule);
+  position:relative;
+}
+.role:first-child{border-top:1px solid var(--ink)}
+.role:last-child{border-bottom:1px solid var(--ink)}
+.role-yr{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;
+  color:var(--ink-mid);padding-top:6px;
+}
+.role .co{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  color:var(--accent);text-transform:uppercase;font-weight:500;
+  margin-bottom:6px;
+}
+.role .ti{
+  font-family:var(--display);
+  font-size:30px;line-height:1.15;font-weight:400;color:var(--ink);
+  letter-spacing:-.01em;
+  margin-bottom:6px;
+}
+.role .meta{
+  font-family:var(--mono);font-size:11px;color:var(--ink-mute);
+  letter-spacing:.04em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.role .blurb{font-size:15px;color:var(--ink-2);line-height:1.6;margin-bottom:16px;max-width:600px}
+.role .pills{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ============================================================
+   TESTIMONIALS — EDITORIAL
+============================================================ */
+.tests{padding:120px 0;border-top:1px solid var(--rule)}
+.test-feature{
+  margin:0 auto 60px;
+  max-width:960px;
+  padding:48px 0;
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  text-align:center;
+}
+.test-feature blockquote{
+  font-family:var(--display);
+  font-size:clamp(28px,3.6vw,46px);
+  line-height:1.2;
+  color:var(--ink);letter-spacing:-.012em;
+  font-weight:400;
+  max-width:880px;margin:0 auto 28px;
+}
+.test-feature blockquote em{font-style:italic;color:var(--accent)}
+.test-feature blockquote::before{content:"\201C";color:var(--accent);font-style:italic;display:block;font-size:1em;line-height:.5;margin-bottom:18px}
+.test-feature blockquote::after{content:"\201D";color:var(--accent);font-style:italic;display:block;font-size:1em;line-height:.5;margin-top:18px;text-align:right;max-width:880px;}
+.test-feature .author{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid);
+}
+.test-feature .author strong{color:var(--ink);font-weight:500;display:block;margin-bottom:4px;letter-spacing:.04em}
+
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.test{
+  border:1px solid var(--rule);
+  padding:32px;
+  background:var(--paper);
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.test::before{
+  content:"\201C";
+  font-family:var(--display);font-style:italic;color:var(--accent);
+  font-size:64px;line-height:.4;
+  position:absolute;top:24px;left:28px;
+}
+.test blockquote{
+  font-family:var(--display);
+  font-size:22px;line-height:1.3;letter-spacing:-.005em;
+  color:var(--ink);font-weight:400;margin:34px 0 24px;flex:1;
+}
+.test blockquote em{font-style:italic;color:var(--accent)}
+.test .author{
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mid);
+  padding-top:18px;border-top:1px solid var(--rule);
+}
+.test .author strong{color:var(--ink);font-weight:500;display:block;margin-bottom:3px;letter-spacing:.04em}
+
+.tests-foot{margin-top:36px;text-align:center}
+.tests-foot a{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:3px;
+}
+
+/* ============================================================
+   SPEAKING / NOW STRIP
+============================================================ */
+.speak{padding:120px 0;border-top:1px solid var(--rule);background:var(--paper-2)}
+.spk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.spk{
+  background:var(--paper-2);
+  padding:32px 28px;
+  display:flex;flex-direction:column;gap:10px;
+  transition:background .2s;
+}
+.spk:hover{background:var(--paper)}
+.spk .where{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;font-weight:500}
+.spk h4{
+  font-family:var(--display);
+  font-size:22px;line-height:1.15;color:var(--ink);font-weight:400;
+  letter-spacing:-.005em;
+}
+.spk h4 em{font-style:italic}
+.spk p{font-size:13.5px;color:var(--ink-mid);line-height:1.55}
+
+/* ============================================================
+   CONTACT — DARK CTA
+============================================================ */
+.cta{
+  background:var(--ink);color:var(--paper);
+  padding:140px 0 100px;
+  position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.5'/></svg>");
+  opacity:.06;
+}
+.cta-inner{position:relative;z-index:1}
+.cta h2{
+  font-family:var(--display);
+  font-size:clamp(48px,8.5vw,140px);
+  line-height:.95;letter-spacing:-.022em;
+  color:var(--paper);font-weight:400;
+  margin-bottom:48px;
+}
+.cta h2 em{font-style:italic;color:var(--accent)}
+.cta-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:80px;
+  margin-top:56px;align-items:start;
+}
+.cta-text{font-size:18px;color:var(--paper-3);line-height:1.55;max-width:520px;margin-bottom:36px}
+.cta-text strong{color:var(--paper)}
+.contact-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--night-rule)}
+.contact-item{
+  display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:center;
+  padding:18px 0;border-bottom:1px solid var(--night-rule);
+  transition:padding .2s;
+}
+.contact-item:hover{padding-left:8px}
+.contact-item .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-3)}
+.contact-item .v{font-family:var(--mono);font-size:14px;color:var(--paper);letter-spacing:.01em}
+.contact-item .arr{font-family:var(--mono);color:var(--accent);font-size:14px}
+
+.openpanel{
+  border:1px solid var(--night-rule);
+  padding:32px;
+  background:var(--night-2);
+}
+.openpanel h3{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--paper-3);margin-bottom:24px;font-weight:500;
+}
+.openpanel ul{list-style:none;display:flex;flex-direction:column;gap:0}
+.openpanel li{
+  padding:13px 0;border-bottom:1px solid var(--night-rule);
+  font-size:14.5px;color:var(--paper-2);
+  display:flex;align-items:center;gap:12px;
+}
+.openpanel li:last-child{border-bottom:0}
+.openpanel li::before{
+  content:"";width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0;
+}
+.openpanel .creds{
+  margin-top:24px;padding-top:20px;border-top:1px solid var(--night-rule);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--ink-mute);text-transform:uppercase;
+  line-height:1.6;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{
+  background:var(--night);color:var(--ink-mute);
+  padding:32px var(--gutter);
+  border-top:1px solid var(--night-rule);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+}
+footer .col{display:flex;align-items:center;gap:14px}
+footer .dot{width:6px;height:6px;background:var(--accent);border-radius:50%}
+
+/* ============================================================
+   FADE-IN
+============================================================ */
+.fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease, transform .7s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+/* ============================================================
+   MOBILE OVERLAY
+============================================================ */
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:90;
+  background:var(--paper);
+  flex-direction:column;align-items:center;justify-content:center;gap:24px;
+}
+.mobile-nav.open{display:flex}
+.mobile-nav a{
+  font-family:var(--display);font-size:36px;color:var(--ink);
+}
+.mobile-nav a em{font-style:italic;color:var(--accent)}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 1024px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-side{flex-direction:row;gap:24px}
+  .portrait{width:48%;aspect-ratio:1/1.1}
+  .facts{flex:1}
+  .bento{grid-template-columns:repeat(4,1fr)}
+  .c-1{grid-column:span 4;grid-row:span 1}
+  .c-2,.c-3{grid-column:span 4}
+  .c-4,.c-5,.c-6{grid-column:span 4;grid-row:auto}
+  .cases{grid-template-columns:repeat(4,1fr)}
+  .case.size-lg{grid-column:span 4;grid-row:span 1}
+  .case.size-md{grid-column:span 4}
+  .case.size-sm{grid-column:span 2}
+  .exp-grid{grid-template-columns:1fr;gap:40px}
+  .exp-stick{position:static}
+  .exp-stick .yrs{font-size:80px}
+  .test-grid{grid-template-columns:1fr}
+  .spk-grid{grid-template-columns:1fr}
+  .cta-grid{grid-template-columns:1fr;gap:48px}
+  .s-head{grid-template-columns:1fr;gap:16px}
+}
+@media (max-width: 720px){
+  :root{--gutter:24px}
+  .bar-nav{display:none}
+  .menu-btn{display:flex}
+  .hero{padding-top:100px}
+  .hero h1 .l2{padding-left:0}
+  .hero h1 .l4{padding-left:0}
+  .marquee-track span{font-size:24px;padding:0 18px}
+  .marquee-track span em{font-size:22px}
+  .bignums{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr}
+  .c-1,.c-2,.c-3,.c-4,.c-5,.c-6{grid-column:span 1}
+  .cases{grid-template-columns:1fr}
+  .case.size-lg,.case.size-md,.case.size-sm{grid-column:span 1}
+  .role{grid-template-columns:1fr;gap:8px}
+  .test-feature blockquote{font-size:24px}
+  .test-feature blockquote::after{text-align:center}
+  .about-side{flex-direction:column}
+  .portrait{width:100%}
+  .cta h2{font-size:50px}
+  .contact-item{grid-template-columns:1fr;gap:6px}
+  footer{flex-direction:column;align-items:flex-start;text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     TOP BAR
+════════════════════════════════════════════════════════════ -->
+<header class="bar" id="bar">
+  <div class="brand"><span class="num">№ 01</span><span class="sep">/</span><span>A. El Sanhoury</span></div>
+  <nav class="bar-nav">
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#work">Work</a>
+    <a href="#experience">CV</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#cta" class="bar-cta">Get in touch ↗</a>
+  </nav>
+  <button class="menu-btn" aria-label="Menu" onclick="toggleMenu()"><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mnav">
+  <a href="#about" onclick="toggleMenu()"><em>About</em></a>
+  <a href="#expertise" onclick="toggleMenu()">Expertise</a>
+  <a href="#work" onclick="toggleMenu()"><em>Work</em></a>
+  <a href="#experience" onclick="toggleMenu()">CV</a>
+  <a href="#testimonials" onclick="toggleMenu()"><em>Reviews</em></a>
+  <a href="#cta" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-meta">
+    <div class="left">
+      <span class="item">Vol. <strong>16</strong></span>
+      <span class="item">Issue <strong>2026</strong></span>
+      <span class="item">Tallinn · <strong>EE</strong></span>
+      <span class="item"><span class="dot" style="display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:5px"></span>Open to senior roles</span>
+    </div>
+    <div class="vol">A portfolio in long form</div>
+  </div>
+
+  <div class="hero-grid">
+    <div>
+      <h1 class="h-display">
+        <span class="l1">Social,</span>
+        <span class="l2"><em>content,</em></span>
+        <span class="l3">organic</span>
+        <span class="l4"><span class="alt">growth.</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        I build social media engines that move pipeline. From <strong>36 to 785 MQLs</strong> in one year at Canonical. From <strong>zero to 7M followers</strong> in six months at Mindvalley. <strong>870% organic traffic</strong> growth in eleven months. Sixteen years across EdTech, SaaS, FinTech and enterprise open source — the pattern holds.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-ink">See the work <span class="arr">→</span></a>
+        <a href="#cta" class="btn btn-ghost">Let's talk</a>
+      </div>
+    </div>
+
+    <aside>
+      <div class="sheet">
+        <div class="sheet-head">
+          <span>Headline figures</span>
+          <span>· Verified ·</span>
+        </div>
+
+        <div class="sheet-row">
+          <div class="sheet-num">2.81<span class="ital">m</span></div>
+          <div class="sheet-label">Organic social audience built from scratch at Canonical</div>
+          <div class="sheet-source">Sprout · '25</div>
+        </div>
+        <div class="sheet-row">
+          <div class="sheet-num">21<span class="ital">×</span></div>
+          <div class="sheet-label">MQL growth in a single year — Salesforce-tracked, 36 → 785</div>
+          <div class="sheet-source">Canonical · '23</div>
+        </div>
+        <div class="sheet-row">
+          <div class="sheet-num">7<span class="ital">m</span></div>
+          <div class="sheet-label">Followers across FB, IG, YT in six months — fully organic</div>
+          <div class="sheet-source">Mindvalley · '18</div>
+        </div>
+        <div class="sheet-row">
+          <div class="sheet-num">$5<span class="ital">m+</span></div>
+          <div class="sheet-label">Enterprise pipeline influenced by social and content programmes</div>
+          <div class="sheet-source">Canonical · '24</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero-mark">*</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     MARQUEE
+════════════════════════════════════════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>2.81M Organic Audience <em class="star">*</em></span>
+    <span>21<em>×</em> MQL Growth <em class="star">*</em></span>
+    <span>870% SEO Traffic <em class="star">*</em></span>
+    <span>$7.9M Earned Media <em class="star">*</em></span>
+    <span>7M Followers / 6 Months <em class="star">*</em></span>
+    <span>YouTube <em>Gold</em> Play Button <em class="star">*</em></span>
+    <span>109K Newsletter Subscribers <em class="star">*</em></span>
+    <span>48-Creator Influencer Network <em class="star">*</em></span>
+    <span>40+ Global Brands <em class="star">*</em></span>
+    <!-- duplicate for seamless loop -->
+    <span>2.81M Organic Audience <em class="star">*</em></span>
+    <span>21<em>×</em> MQL Growth <em class="star">*</em></span>
+    <span>870% SEO Traffic <em class="star">*</em></span>
+    <span>$7.9M Earned Media <em class="star">*</em></span>
+    <span>7M Followers / 6 Months <em class="star">*</em></span>
+    <span>YouTube <em>Gold</em> Play Button <em class="star">*</em></span>
+    <span>109K Newsletter Subscribers <em class="star">*</em></span>
+    <span>48-Creator Influencer Network <em class="star">*</em></span>
+    <span>40+ Global Brands <em class="star">*</em></span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 01</span>
+        <span class="lbl">Profile</span>
+      </div>
+      <h2 class="h-sec">The common thread<br><span class="alt">across sixteen years.</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-body fade">
+        <p>I'm a social media and content marketing leader with sixteen years of building things that move numbers — audiences, traffic, leads, revenue. Not vanity metrics. Numbers that show up in Salesforce reports.</p>
+        <p>I built Mindvalley's social to <strong>seven million followers in six months</strong>. Earned them a YouTube Gold Play Button. Generated <strong>$2.8M in PR value</strong> and grew organic traffic 870% in under a year. Then moved to Canonical and built their entire content and social function from scratch — <strong>2.81M audience</strong>, 785+ MQLs a year from social tracked in Salesforce, a 5.18% organic engagement rate roughly double the industry benchmark, and a 109K-subscriber LinkedIn newsletter grown entirely organically.</p>
+        <p>I've done this across EdTech, SaaS, FinTech, and open source software. Agency-side and in-house. B2C and B2B. Six countries, four continents, 40+ global brands. My edge isn't creative instinct alone — it's the combination: I can write the strategy, direct the content, build the influencer network, and hand you the Salesforce report showing exactly what it generated.</p>
+      </div>
+
+      <aside class="about-side fade">
+        <div class="portrait">
+          <svg class="silhouette" viewBox="0 0 100 120" fill="currentColor"><circle cx="50" cy="38" r="18"/><path d="M10 120 C10 80, 30 65, 50 65 C70 65, 90 80, 90 120 Z"/></svg>
+          <span class="ph">Add portrait →</span>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="k">Based</span><span class="v">Tallinn, EE</span></div>
+          <div class="fact"><span class="k">Mode</span><span class="v">Remote-first</span></div>
+          <div class="fact"><span class="k">Tenure</span><span class="v">16 years</span></div>
+          <div class="fact"><span class="k">Reports</span><span class="v">Team of 8</span></div>
+          <div class="fact"><span class="k">Languages</span><span class="v">EN · AR · FR</span></div>
+          <div class="fact"><span class="k">Status</span><span class="v" style="color:var(--accent)">● Listening</span></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="logos fade">
+      <div class="logos-lbl">Built and shipped for</div>
+      <div class="logos-row">
+        <span class="logo">Canonical</span><span class="logo sep">/</span>
+        <span class="logo"><span class="it">Mindvalley</span></span><span class="logo sep">/</span>
+        <span class="logo">Maharat</span><span class="logo sep">/</span>
+        <span class="logo">Goodwall</span><span class="logo sep">/</span>
+        <span class="logo">PAYD</span><span class="logo sep">/</span>
+        <span class="logo">Agiliux</span><span class="logo sep">/</span>
+        <span class="logo"><span class="it">L'Oréal</span></span><span class="logo sep">/</span>
+        <span class="logo">Deliveroo</span><span class="logo sep">/</span>
+        <span class="logo">Canon</span><span class="logo sep">/</span>
+        <span class="logo">Heinz</span><span class="logo sep">/</span>
+        <span class="logo">Manulife</span><span class="logo sep">/</span>
+        <span class="logo">Uber</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     BIG STATS — DARK INVERSION
+════════════════════════════════════════════════════════════ -->
+<section class="darksec">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 02</span>
+        <span class="lbl">By the numbers</span>
+      </div>
+      <h2 class="h-sec">Six figures<br>that <em>hold up.</em></h2>
+    </div>
+
+    <div class="bignums fade">
+      <div class="bignum">
+        <span class="idx">№ 01 / Audience</span>
+        <span class="v">2.81<em>m</em></span>
+        <span class="lbl">Organic social audience built from scratch at Canonical</span>
+        <span class="src">Sprout Social · April 2025</span>
+      </div>
+      <div class="bignum">
+        <span class="idx">№ 02 / Pipeline</span>
+        <span class="v">21<em>×</em></span>
+        <span class="lbl">MQL growth in a single year — 36 to 785, Salesforce-tracked</span>
+        <span class="src">Canonical · 2023</span>
+      </div>
+      <div class="bignum">
+        <span class="idx">№ 03 / Followers</span>
+        <span class="v">7<em>m</em></span>
+        <span class="lbl">Social followers in six months across FB, IG, YouTube</span>
+        <span class="src">Mindvalley · 2017–18</span>
+      </div>
+      <div class="bignum">
+        <span class="idx">№ 04 / SEO</span>
+        <span class="v">870<em>%</em></span>
+        <span class="lbl">Organic traffic growth in 11 months — 14K to 122K visits</span>
+        <span class="src">Mindvalley · 2018</span>
+      </div>
+      <div class="bignum">
+        <span class="idx">№ 05 / Earned Media</span>
+        <span class="v">$7.9<em>m</em></span>
+        <span class="lbl">Ubuntu Summit AVE — 15× growth in two years</span>
+        <span class="src">Meltwater · 2024</span>
+      </div>
+      <div class="bignum">
+        <span class="idx">№ 06 / Reach</span>
+        <span class="v">100<em>m</em><span class="sm">+</span></span>
+        <span class="lbl">Annual cross-platform impressions at Canonical</span>
+        <span class="src">All channels · 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     EXPERTISE — BENTO
+════════════════════════════════════════════════════════════ -->
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 03</span>
+        <span class="lbl">Expertise</span>
+      </div>
+      <h2 class="h-sec">Six things I<br><em>build well.</em></h2>
+    </div>
+
+    <div class="bento">
+      <article class="cell c-1 feature fade">
+        <div class="num">№ 01 — Social & Audience</div>
+        <div class="big-stat">7M+</div>
+        <h3>Followers, not just <em>follower counts.</em></h3>
+        <p>I build platforms, not vanity metrics. At Canonical: 2.81M+ organic audience from scratch. At Mindvalley: 7M followers in 6 months — earning a YouTube Gold Play Button along the way. The metric I actually track: whether those followers ever became leads.</p>
+        <div class="ev">7M+ · Gold Play Button · 5.18% ER · 109K newsletter</div>
+      </article>
+
+      <article class="cell c-2 fade">
+        <div class="num">№ 02 — Content That Converts</div>
+        <h3>Organic content as a <em>pipeline channel.</em></h3>
+        <p>785+ MQLs in a year at Canonical — 21× from 36, tracked in Salesforce. Every content system I build has a job: awareness, nurture, or conversion.</p>
+        <div class="ev">785+ MQLs · 21× growth · 4,731 event registrations</div>
+      </article>
+
+      <article class="cell c-3 fade">
+        <div class="num">№ 03 — SEO & Organic Traffic</div>
+        <h3>14K → 122K monthly visits in <em>eleven months.</em></h3>
+        <p>870% organic growth at Mindvalley. On-page rebuilt, content briefs aligned to intent, and an outreach operation with a 69% journalist reply rate.</p>
+        <div class="ev">870% growth · 69% reply rate · Growthhacker feature</div>
+      </article>
+
+      <article class="cell c-4 fade">
+        <div class="num">№ 04 — PR & Earned Media</div>
+        <h3>$7.9<em>m</em> AVE.</h3>
+        <p>Forbes, SCMP, Thrive Global at Mindvalley. Ubuntu Summit AVE 15× in two years to $7.9M, reaching 857M people. First Canonical mention in Gartner.</p>
+        <div class="ev">$7.9M AVE · 857M reach · Gartner</div>
+      </article>
+
+      <article class="cell c-5 fade">
+        <div class="num">№ 05 — Influencer & KOL</div>
+        <h3>48 creators, <em>always-on.</em></h3>
+        <p>Built Mindvalley's first influencer department from zero — ROI-positive month one. At Canonical, a 3-tier always-on network across hardware, homelab, cloud and open source.</p>
+        <div class="ev">10M reach · 48 creators · 3-tier model</div>
+      </article>
+
+      <article class="cell c-6 fade">
+        <div class="num">№ 06 — Leadership</div>
+        <h3>Built four marketing functions <em>from zero.</em></h3>
+        <p>Promoted 3× at Mindvalley. Teams up to 10. Reports to CEO level. WTO keynote. TEDx. Chaired the Digital Marketing Leaders Summit, Hong Kong 2019.</p>
+        <div class="ev">3× promoted · WTO · TEDx · Chair, DMLS HK</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     SELECTED WORK
+════════════════════════════════════════════════════════════ -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 04</span>
+        <span class="lbl">Selected work</span>
+      </div>
+      <h2 class="h-sec">Results that hold<br><em>under scrutiny.</em></h2>
+    </div>
+
+    <div class="filter fade">
+      <button class="fbtn on" data-f="all">All work</button>
+      <button class="fbtn" data-f="brand">Brand</button>
+      <button class="fbtn" data-f="pipeline">Pipeline</button>
+      <button class="fbtn" data-f="organic">Organic</button>
+      <button class="fbtn" data-f="agency">Agency</button>
+    </div>
+
+    <div class="cases">
+
+      <article class="case size-lg dark fade" data-cat="pipeline organic brand">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Canonical · Enterprise OSS</span><span style="margin-left:auto">2022 — 2024</span></div>
+        <div class="stat">2.81<em>m</em></div>
+        <h3>Social function built from <em>zero</em> to 2.81M — with Salesforce-attributed pipeline.</h3>
+        <p>Built Canonical's entire social media and content programme from scratch across five platforms. Integrated with Salesforce for full pipeline attribution from day one. Social MQLs went from 36 to 785 in a single year (21×). Built a 48-creator influencer network and launched a 109K-subscriber LinkedIn Newsletter — zero paid promotion.</p>
+        <div class="pills">
+          <span class="tag dark">21× MQL growth</span>
+          <span class="tag dark">109K newsletter</span>
+          <span class="tag dark">48 creators</span>
+          <span class="tag dark">5.18% ER</span>
+          <span class="tag dark">$5M+ pipeline influenced</span>
+        </div>
+      </article>
+
+      <article class="case size-sm fade" data-cat="brand">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Brand</span></div>
+        <div class="stat">14.4<em>%</em></div>
+        <h3>20 Years of <em>Ubuntu</em> — flagship campaign.</h3>
+        <p>Directed Ubuntu's 20th anniversary campaign. 2.1M LinkedIn impressions. 302K engagements. Hundreds of organic UGC posts amplifying without incentive.</p>
+      </article>
+
+      <article class="case size-md fade" data-cat="brand">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Earned media</span></div>
+        <div class="stat">$7.9<em>m</em></div>
+        <h3>Ubuntu Summit earned media — 15× in two years.</h3>
+        <p>Built content and media strategy around Canonical's flagship conference. AVE: $519K → $7.9M. Reach: 56M → 857M. Mentions: 284 → 946. 70+ media features across three years. LinkedIn post peaked at 15.53% engagement.</p>
+      </article>
+
+      <article class="case size-md fade" data-cat="pipeline">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Event marketing</span></div>
+        <div class="stat">4,731</div>
+        <h3>Data &amp; AI Masters — <em>organic</em> event lead-gen.</h3>
+        <p>Virtual event promoted entirely through organic social and email. 52 countries. 92.6% said they'd attend in person. 120K email deliveries at 20.8% open rate vs 12% benchmark. Zero paid spend.</p>
+      </article>
+
+      <article class="case size-sm fade" data-cat="organic brand">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Mindvalley · EdTech</span></div>
+        <div class="stat">7<em>m</em></div>
+        <h3>7M followers in <em>six months.</em></h3>
+        <p>Facebook 300K → 2M. Instagram 50K → 250K. YouTube 125K → 1M with a Gold Play Button. All earned, no paid follower campaigns.</p>
+      </article>
+
+      <article class="case size-sm fade" data-cat="organic">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Mindvalley · SEO</span></div>
+        <div class="stat">870<em>%</em></div>
+        <h3>14K → 122K monthly visits.</h3>
+        <p>Rebuilt SEO from scratch: on-page, backlinks at a 69% journalist reply rate, content briefs aligned to intent, writer training. 11 months.</p>
+      </article>
+
+      <article class="case size-sm fade" data-cat="brand">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Mindvalley · PR</span></div>
+        <div class="stat">$2.8<em>m</em></div>
+        <h3>Forbes, SCMP, Thrive Global.</h3>
+        <p>Built and ran the PR function: outreach at 69% reply rate, $2.8M+ in earned media. Managed ROOTS PR retainer (RM 203K/yr).</p>
+      </article>
+
+      <article class="case size-sm fade" data-cat="pipeline organic">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Goodwall · Community</span></div>
+        <div class="stat">+20<em>%</em></div>
+        <h3>Community-led acquisition.</h3>
+        <p>Shifted acquisition mix from paid installs to community activation at a 1M+ member platform. MAU growth, blended CAC down 18%.</p>
+      </article>
+
+      <article class="case size-sm fade" data-cat="pipeline">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">PAYD · FinTech</span></div>
+        <div class="stat">50<em>%</em></div>
+        <h3>FinTech build — <em>2× the benchmark</em> open rate.</h3>
+        <p>Built CRM, email funnels, and content from zero for an Earned Wage Access FinTech. 50% open rate vs 25% B2B SaaS average. +35% APAC acquisition.</p>
+      </article>
+
+      <article class="case size-sm fade" data-cat="pipeline organic">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Agiliux · InsurTech</span></div>
+        <div class="stat">+50<em>%</em></div>
+        <h3>InsurTech SaaS pipeline.</h3>
+        <p>Full website rewrite, content strategy, and email programme. +50% pipeline. +400% CTR without spend increase. 36–40% open rate vs 17% industry average.</p>
+      </article>
+
+      <article class="case size-md fade" data-cat="agency">
+        <div class="ribbon"><span class="swatch"></span><span class="cat">Falcon Agency · 40+ brands</span></div>
+        <div class="stat">$19<em>m</em></div>
+        <h3>L'Oréal, Deliveroo, Canon, Heinz, <em>Uber.</em></h3>
+        <p>40+ global brands across 16 countries. +22% ROAS for FinTech clients. 45% CAC reduction. Deliveroo SG: +140.89% fan growth in 3.5 months. A+M Agency of the Year 2016.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     EXPERIENCE
+════════════════════════════════════════════════════════════ -->
+<section class="exp" id="experience">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 05</span>
+        <span class="lbl">Curriculum vitae</span>
+      </div>
+      <h2 class="h-sec">Sixteen years,<br><em>six countries.</em></h2>
+    </div>
+
+    <div class="exp-grid">
+      <aside class="exp-stick fade">
+        <div class="yrs">10—26</div>
+        <p class="desc">From Cairo to Dubai to Kuala Lumpur to Geneva to Tallinn. Agency, in-house, B2C, B2B, EdTech, OSS, FinTech, SaaS.</p>
+        <div class="mini">
+          <div class="mini-row"><span class="k">Roles led</span><span class="v">8</span></div>
+          <div class="mini-row"><span class="k">Industries</span><span class="v">6</span></div>
+          <div class="mini-row"><span class="k">Brands shipped</span><span class="v">40+</span></div>
+          <div class="mini-row"><span class="k">Direct reports</span><span class="v">Up to 10</span></div>
+          <div class="mini-row"><span class="k">Promotions</span><span class="v">3×</span></div>
+        </div>
+      </aside>
+
+      <div class="roles">
+        <article class="role fade">
+          <div class="role-yr">2024 —<br>Now</div>
+          <div>
+            <div class="co">Maharat — EdTech, MENA</div>
+            <div class="ti">Senior Director, Marketing &amp; Communications</div>
+            <div class="meta">Tallinn, EE · Remote · Reports to CEO</div>
+            <p class="blurb">Leading marketing and communications for a fast-growing EdTech platform serving the MENA region. Team of 8 across content, performance, social, and brand.</p>
+            <div class="pills">
+              <span class="tag">EdTech</span>
+              <span class="tag">MENA</span>
+              <span class="tag">Team of 8</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2022 —<br>2024</div>
+          <div>
+            <div class="co">Canonical (Ubuntu) — Enterprise OSS</div>
+            <div class="ti">Global Communications Manager</div>
+            <div class="meta">Tallinn, EE · Remote</div>
+            <p class="blurb">Built Canonical's entire social and content function from scratch. 3M+ audience, 100M+ annual impressions, $5M+ enterprise pipeline influenced, 785+ social MQLs/yr (Salesforce-tracked), 109K-subscriber LinkedIn Newsletter, 48-creator influencer network — $0 paid amplification. Authored company-wide social and communications guidelines. MC and broadcast lead at Ubuntu Summit.</p>
+            <div class="pills">
+              <span class="tag accent">3M+ audience</span>
+              <span class="tag">$5M+ pipeline</span>
+              <span class="tag">100M impressions/yr</span>
+              <span class="tag">21× MQL growth</span>
+              <span class="tag">109K newsletter</span>
+              <span class="tag">$7.9M AVE</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2021 —<br>2022</div>
+          <div>
+            <div class="co">JustPayd (PAYD) — FinTech, EWA</div>
+            <div class="ti">Head of Marketing</div>
+            <div class="meta">Kuala Lumpur, MY</div>
+            <p class="blurb">Built brand, growth, and communications from scratch for an Earned Wage Access FinTech. CRM, email funnels, brand identity, and co-launch partnerships with HR/payroll platforms generating six-figure ARR.</p>
+            <div class="pills">
+              <span class="tag">50% email open rate</span>
+              <span class="tag">+35% APAC acquisition</span>
+              <span class="tag">−28% CAC</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2020 —<br>2021</div>
+          <div>
+            <div class="co">Agiliux — InsurTech SaaS, APAC</div>
+            <div class="ti">Head of Marketing</div>
+            <div class="meta">Kuala Lumpur, MY</div>
+            <p class="blurb">Content strategy and demand generation for an InsurTech SaaS. Full website rewrite, LinkedIn programme, email marketing, and pipeline attribution from scratch.</p>
+            <div class="pills">
+              <span class="tag">+50% pipeline</span>
+              <span class="tag">+400% CTR</span>
+              <span class="tag">36–40% open rate</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2019 —<br>2020</div>
+          <div>
+            <div class="co">Goodwall — EdTech, Global Community</div>
+            <div class="ti">Marketing Director</div>
+            <div class="meta">Geneva, CH · Remote · 1M+ members</div>
+            <p class="blurb">Led growth and community marketing for a 1M+ member global platform across 150+ countries. Team of 10. Community-led acquisition strategy drove MAU growth and reduced CAC.</p>
+            <div class="pills">
+              <span class="tag">+20% MAU</span>
+              <span class="tag">−18% CAC</span>
+              <span class="tag">1M+ members</span>
+              <span class="tag">150+ countries</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2017 —<br>2020</div>
+          <div>
+            <div class="co">Mindvalley — EdTech / Consumer</div>
+            <div class="ti">Head of PR &amp; Partnerships <span style="font-family:var(--mono);font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-left:6px;">↗ promoted 3×</span></div>
+            <div class="meta">Kuala Lumpur, MY · $40M company</div>
+            <p class="blurb">Grew combined social to 7M+ followers in 6 months. YouTube Gold Play Button (125K → 1M). 870% SEO growth in 11 months. $2.8M+ earned media. Built first influencer department from scratch — ROI-positive month one.</p>
+            <div class="pills">
+              <span class="tag accent">7M followers in 6 months</span>
+              <span class="tag">Gold Play Button</span>
+              <span class="tag">870% SEO</span>
+              <span class="tag">$2.8M+ PR</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2014 —<br>2017</div>
+          <div>
+            <div class="co">Falcon Agency / 16Two — Digital agency</div>
+            <div class="ti">Digital Marketing Manager</div>
+            <div class="meta">Kuala Lumpur, MY</div>
+            <p class="blurb">40+ global brands across 16 countries: L'Oréal, Deliveroo, Canon, Heinz, Motul, Manulife, Etisalat, CIMB, Uber, Domino's. USD 19M in client budgets. A+M Agency of the Year 2016. +22% ROAS for FinTech. 45% CAC reduction.</p>
+            <div class="pills">
+              <span class="tag">40+ brands</span>
+              <span class="tag">USD 19M managed</span>
+              <span class="tag">Agency of the Year</span>
+              <span class="tag">+22% ROAS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="role fade">
+          <div class="role-yr">2010 —<br>2014</div>
+          <div>
+            <div class="co">Mizatech · Socialeyez · Joud · Insight Magazine</div>
+            <div class="ti">Content Creator · Editor · Community Manager</div>
+            <div class="meta">Cairo / Dubai / Kuala Lumpur</div>
+            <p class="blurb">Grew Qatar Happening to the 12th largest Facebook page in Qatar through organic community management. Lead journalist and editor at Insight Magazine. $2K/day integrated paid campaigns. Dubai SME (Government of Dubai) client via Correct Digital.</p>
+            <div class="pills">
+              <span class="tag">12th largest FB page in Qatar</span>
+              <span class="tag">20% email CTR</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════════════════════ -->
+<section class="tests" id="testimonials">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 06</span>
+        <span class="lbl">In their words</span>
+      </div>
+      <h2 class="h-sec">Twelve recommendations.<br><em>Six on the record.</em></h2>
+    </div>
+
+    <div class="test-feature fade">
+      <blockquote>Thanks for all the work to <em>raise the bar</em> for social at Canonical and for putting Canonical on the virtual "great companies of this world" map. Your passion, expertise, and data orientation make you stand out.</blockquote>
+      <div class="author"><strong>Thibaut Rouffineau</strong>VP of Marketing · Canonical</div>
+    </div>
+
+    <div class="test-grid">
+      <article class="test fade">
+        <blockquote>Ahmed is an incredible marketer with a vision and plan how to get you there. He built our social media strategy from scratch, turning it from a one-person operation to a full team that <em>works like a clock.</em> Easy to work with, open to experimenting, and does not mind going the extra mile. His technical understanding is remarkable — at Canonical, we deal with very technical products that Ahmed was excellent at understanding, and representing on socials to resonate with developer audiences.</blockquote>
+        <div class="author"><strong>Marina Khachatryan</strong>Senior Marketing Manager · Canonical · June 2025</div>
+      </article>
+
+      <article class="test fade">
+        <blockquote>One of the most dynamic and insightful social media professionals I have encountered in my marketing career. When I joined the company we were hardly at <em>90K followers</em> on LinkedIn, and now we are at a <em>whopping 500K+.</em> Not to forget the growth he brought to YouTube, Instagram and Facebook. Ahmed is also a natural mentor — I not only consider him a reliable colleague, but also a dear friend.</blockquote>
+        <div class="author"><strong>Prithviraj Kola</strong>Product Marketing Manager — Cloud · Canonical · May 2025</div>
+      </article>
+
+      <article class="test fade">
+        <blockquote>He was a lynchpin of the social media team, managing the socials calendar across <em>five portfolios and 20+ products.</em> As the team grew, he didn't just keep pace — he raised the bar for content and collaboration. From leading the socials side of product launches to dreaming up creative initiatives, Ahmed brought both strategy and spark. I'd jump at the chance to work with him again.</blockquote>
+        <div class="author"><strong>Richard Ferreira</strong>PMM for Ubuntu · Canonical · May 2025</div>
+      </article>
+
+      <article class="test fade">
+        <blockquote>I have never seen <em>"full-stack marketer"</em> in action until I met Ahmed. With his vast knowledge across SEO, copywriting, PR, video marketing, CRO, social media, emails, ads, and blogging — his expertise ranges wide but also quite deep. Always calm, always fair, always level-headed. A singularly adept marketing professional.</blockquote>
+        <div class="author"><strong>Christian Eilers</strong>SEO Channel Lead · J.P. Morgan (ex-Goodwall) · 2021</div>
+      </article>
+
+      <article class="test fade">
+        <blockquote>In-depth knowledge of multiple marketing areas from social media strategy, SEO, and copywriting to partnerships and PR. Someone who never runs out of ideas and backs them up with dedicated research and relevant data. While leading the social media team at Mindvalley, he brought a data-driven approach into content marketing strategy, jumpstarting <em>the biggest growth curve in followers</em> the company had seen to that date.</blockquote>
+        <div class="author"><strong>Annamaria Nagy</strong>Content Strategist · ex-Mindvalley · 2021</div>
+      </article>
+    </div>
+
+    <div class="tests-foot fade">
+      <a href="https://linkedin.com/in/asanhoury" target="_blank" rel="noopener">View all 12 recommendations on LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     SPEAKING / PRESS
+════════════════════════════════════════════════════════════ -->
+<section class="speak">
+  <div class="wrap">
+    <div class="s-head fade">
+      <div class="s-head-meta">
+        <span class="num">§ 07</span>
+        <span class="lbl">On stage &amp; in print</span>
+      </div>
+      <h2 class="h-sec">Speaking &amp;<br><em>press.</em></h2>
+    </div>
+
+    <div class="spk-grid fade">
+      <div class="spk">
+        <span class="where">TEDx</span>
+        <h4>Scaling brands through <em>data-driven</em> storytelling.</h4>
+        <p>Full TEDx talk on the intersection of data and brand storytelling at scale.</p>
+      </div>
+      <div class="spk">
+        <span class="where">World Trade Organization</span>
+        <h4>Growing business through <em>integrated marketing.</em></h4>
+        <p>Keynote at the WTO on integrated marketing and international growth.</p>
+      </div>
+      <div class="spk">
+        <span class="where">DMICON · Singapore</span>
+        <h4>Lead &amp; revenue through <em>social selling.</em></h4>
+        <p>Keynote on social-led pipeline — turning followers into measurable revenue.</p>
+      </div>
+      <div class="spk">
+        <span class="where">Hong Kong · 2019</span>
+        <h4>Chair, <em>Digital Marketing Leaders Summit.</em></h4>
+        <p>Chaired the summit — facilitating sessions across content, data, and brand strategy.</p>
+      </div>
+      <div class="spk">
+        <span class="where">Foundr Magazine</span>
+        <h4>"How to get <em>subscribers</em> on YouTube."</h4>
+        <p>Feature on the playbook behind Mindvalley's YouTube Gold Play Button.</p>
+      </div>
+      <div class="spk">
+        <span class="where">Growthhacker</span>
+        <h4>Featured: <em>69%</em> journalist reply rate.</h4>
+        <p>Cited as a benchmark case study for earned media outreach efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════════════════ -->
+<section class="cta" id="cta">
+  <div class="wrap cta-inner">
+    <div class="s-head fade">
+      <div class="s-head-meta" style="color:var(--paper-3)">
+        <span class="num">§ 08</span>
+        <span class="lbl" style="color:var(--paper-3)">Contact</span>
+      </div>
+      <div></div>
+    </div>
+
+    <h2 class="fade">Let's talk about<br>what you're <em>building.</em></h2>
+
+    <div class="cta-grid">
+      <div class="fade">
+        <p class="cta-text">Open to senior <strong>content, social, and organic growth</strong> roles — enterprise B2B, SaaS, open source, or EdTech. Remote-first preferred. Based in Tallinn, Estonia. Currently leading marcomms at Maharat; quietly listening for the next chapter.</p>
+
+        <div class="contact-list">
+          <a href="mailto:ahmed@asanhoury.com" class="contact-item">
+            <span class="k">Email</span>
+            <span class="v">ahmed@asanhoury.com</span>
+            <span class="arr">→</span>
+          </a>
+          <a href="https://linkedin.com/in/asanhoury" target="_blank" rel="noopener" class="contact-item">
+            <span class="k">LinkedIn</span>
+            <span class="v">linkedin.com/in/asanhoury</span>
+            <span class="arr">↗</span>
+          </a>
+          <a href="https://asanhoury.com" target="_blank" rel="noopener" class="contact-item">
+            <span class="k">Web</span>
+            <span class="v">asanhoury.com</span>
+            <span class="arr">↗</span>
+          </a>
+          <div class="contact-item" style="cursor:default">
+            <span class="k">Locale</span>
+            <span class="v">Tallinn · CET / EEST</span>
+            <span class="arr" style="color:var(--paper-3)">●</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="openpanel fade">
+        <h3>Open to</h3>
+        <ul>
+          <li>Social Media Director / Head of Social</li>
+          <li>Head of Organic / Organic Growth Lead</li>
+          <li>Head of Content Marketing</li>
+          <li>Director, Demand Gen — B2B pipeline focus</li>
+          <li>VP Marketing — content-led growth</li>
+          <li>Enterprise B2B · SaaS · OSS · EdTech</li>
+          <li>Remote-first · Europe / Global</li>
+        </ul>
+        <div class="creds">
+          Bachelor of Law · Cairo University · 2013<br>
+          GA4 · HubSpot · Meta Blueprint · SEMrush · Sprout Social
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="col">
+    <span class="dot"></span>
+    <span>© 2026 A. El Sanhoury</span>
+    <span style="color:var(--ink-mute)">·</span>
+    <span>All metrics verified</span>
+  </div>
+  <div class="col">
+    <span>Sprout Social · Salesforce · YouTube Studio · Meltwater</span>
+  </div>
+  <div class="col">
+    <span>Tallinn · EE</span>
+    <span style="color:var(--ink-mute)">·</span>
+    <span>ahmed@asanhoury.com</span>
+  </div>
+</footer>
+
+<script>
+// mobile menu
+function toggleMenu(){ document.getElementById('mnav').classList.toggle('open'); }
+
+// scroll bar effect
+const bar = document.getElementById('bar');
+window.addEventListener('scroll', ()=>{
+  bar.classList.toggle('scrolled', window.scrollY > 30);
+}, { passive:true });
+
+// fade-in
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, { threshold:0.08, rootMargin:'0px 0px -50px 0px' });
+document.querySelectorAll('.fade').forEach((el,i)=>{ el.style.transitionDelay = `${(i%4)*70}ms`; io.observe(el); });
+
+// case study filter
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const f = b.dataset.f;
+    document.querySelectorAll('.case').forEach(c=>{
+      if(f==='all'){ c.classList.remove('hidden'); return; }
+      const cats = (c.dataset.cat||'').split(' ');
+      c.classList.toggle('hidden', !cats.includes(f));
+    });
+  });
+});
+</script>
+</body>
+</html>
