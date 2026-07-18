@@ -2,6 +2,14 @@
 
 Binding amendments, overrides, and stated assumptions. Newest first. Format: date, type (AMENDMENT | OVERRIDE | ASSUMPTION | FLAG), scope, files touched.
 
+## 2026-07-18, OVERRIDE, San ruled the open conflicts and approved the gate packs
+San: "All good on suggestions proceed." Rulings applied: CV is authoritative over the dashboard wherever they conflict (Goodwall 2M members, growth via paid plus lifecycle); the "3x to 3M" shorthand stands with the precise 2,810,000+ stored alongside; Arabic rendering أحمد السنهوري confirmed; Director-title-acceptable-when-scope-is-senior is now a standing rule. All twelve gated pack files flipped to SAN APPROVED; publishing, sending, and submitting remain manual acts by San, no auto-send path exists. Still open: relocation or remote stance for MENA-market roles.
+Files: engine/data/master.json (v1.2.0), engine/skills/arabic-adaptation.md, engine/outputs/gated/*.
+
+## 2026-07-18, AMENDMENT, Domain T added: technical portfolio integrated
+San: "include the out of scope." CLAUDE.md and PROJECTS.md committed verbatim under engine/tech-portfolio/ after passing their own sanitization scan (all pattern hits are the rulebook quoting its own scan patterns; no live secrets). A24 Tech Portfolio Agent wraps them. Domain T runs on CLAUDE.md's rules, not brand.json; shared law is the human gate and the honesty rule. Phase 0 inventory written to tech-portfolio/STATUS.md: owner choice and all source files still needed from San; BUILD-status repos (ansible-homelab, monitoring-stack, backup-restic) are scaffoldable in-session on San's word. M00 v2 should formalize the fourth domain; until then this entry is the authority.
+Files: engine/tech-portfolio/*, engine/agents/A24-tech-portfolio-v1.md, engine/data/master.json.
+
 ## 2026-07-18, AMENDMENT, San approved the plan; source import pass 1 applied
 San: "approve the plan and start working," with five files supplied. master.json bumped to v1.1.0, status APPROVED_TO_BUILD. Imported: Ahmed_El_Sanhoury__CV_5.pdf (all titles, dates, wins, skills, speaking, testimonials), careerstatsdashboard.html (50 source-verified stats, Sprout/Salesforce/Meltwater/YT Studio/GA4/LinkedIn exports), canonicalrolejoblisting.md (scope artifact). Gated packs remain individually PENDING SAN APPROVAL.
 Files: engine/data/master.json, engine/data/brand.json.

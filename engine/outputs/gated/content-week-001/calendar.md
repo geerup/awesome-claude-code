@@ -1,5 +1,5 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
 risk_note: Week one leans entirely on the governed-systems pillar and master.json facts because the seven case study source files are import_required. Weeks two onward need that import or the long-form well runs dry.

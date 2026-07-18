@@ -1,5 +1,5 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
 risk_note: Built without linkedin-copy.md (import_required), so this refresh is a from-facts draft, no continuity with current live copy. Experience bullets below Canonical wait on the wins import. Banner brief needs the headshot decision A13 tracks.

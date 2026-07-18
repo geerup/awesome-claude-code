@@ -1,8 +1,8 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
-risk_note: Interim markdown path; the Node build chain (generate-cvs.js, validate-facts.js, docx) is still import_required. Rebuilt 2026-07-18 on master.json v1.1.0: real titles and dates for every role, Tallinn base stated honestly for a Dubai-hybrid role (relocation stance is San's to set). Goodwall figures held back pending the 1M vs 2M conflict ruling.
+risk_note: Interim markdown path; the Node build chain (generate-cvs.js, validate-facts.js, docx) is still import_required. Real titles and dates for every role; Tallinn base stated honestly for a Dubai-hybrid role (relocation stance still San's to set). Goodwall ruled at 2M per CV; the earlier-roles line may now carry it if a variant needs it.
 ```
 
 # CV variant, application-001 (A04)

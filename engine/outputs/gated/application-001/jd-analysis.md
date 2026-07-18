@@ -1,5 +1,5 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
 risk_note: Requirement map runs against a master.json still carrying import_required gaps for Mindvalley, Goodwall, Payd, Agiliux, Falcon wins. Evidence below uses only populated fields.

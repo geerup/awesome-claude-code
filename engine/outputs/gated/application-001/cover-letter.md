@@ -1,5 +1,5 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
 risk_note: Letter covers the brand-and-content half of the mandate with the Canonical case; demand-program proof waits on the wins import. If the recruiter probes demand programs first, this letter under-serves the conversation.

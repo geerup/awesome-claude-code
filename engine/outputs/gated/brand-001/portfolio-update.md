@@ -1,5 +1,5 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
 risk_note: New case written from master.json facts; the HTML surfaces (asanhoury-2026.html, portfolio.html) are import_required, so this ships as copy ready to slot in, no live page edit. Open items headshot placeholder and Socialeyez prominence remain open, tracked by A13.

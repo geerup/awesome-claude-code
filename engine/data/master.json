@@ -2,19 +2,23 @@
   "meta": {
     "file": "master.json",
     "role": "Single source of truth. Every metric in every output traces here or does not appear.",
-    "version": "1.1.0",
-    "status": "APPROVED_TO_BUILD. San, 2026-07-18: 'approve the plan and start working'. Import pass 1 applied from San-supplied sources; open conflicts listed in meta.conflicts await San's ruling.",
+    "version": "1.2.0",
+    "status": "APPROVED_TO_BUILD. San, 2026-07-18: 'approve the plan and start working', then 'all good on suggestions proceed + include the out of scope'. Conflicts ruled; rulings recorded in meta.conflicts_resolved and log/decisions.md.",
     "sources_imported": [
       "Ahmed_El_Sanhoury__CV_5.pdf (San upload, 2026-07-18): titles, dates, wins, skills, speaking, education, testimonials",
       "careerstatsdashboard.html (San upload, 2026-07-18): 50 source-verified stats citing Sprout Social, Salesforce, Meltwater, YouTube Studio, GA4, LinkedIn exports; states 'synced 2026-04-18' against the source project's master.json",
       "canonicalrolejoblisting.md (San upload, 2026-07-18): Canonical role scope restated as a listing; artifact, not a fact source where it conflicts with the CV"
     ],
-    "conflicts": [
-      "Goodwall community size: CV says 2M-member community across 150+ countries; dashboard stat 46 says 1M-member platform. Both stored; no output uses either figure until San rules.",
-      "Goodwall MAU driver: CV credits paid advertising and lifecycle marketing; dashboard framing credits community over paid installs. San rules.",
-      "Canonical social proof shorthand: CV and M00 use '3x to 3M'; dashboard precise peak is 2,810,000+ (Apr 2025). Shorthand kept as San's own CV phrasing; precise figure stored alongside.",
-      "Canonical title: CV says Marketing and Communications Manager; the reconstructed listing artifact uses Global Communications Manager, Social & Content. CV wins.",
-      "Maharat title: M00 said Senior Director of Marketing and Communications; CV says Senior Director, Marketing, Communications & Product. CV adopted as amendment, logged 2026-07-18. One word from San reverses it."
+    "conflicts_resolved": [
+      "RULED 2026-07-18 (San, blanket approval of engine suggestions): CV is the authoritative source wherever it conflicts with the dashboard.",
+      "Goodwall: 2M-member community across 150+ countries (CV); growth via paid advertising and lifecycle marketing (CV). Dashboard's 1M and community-over-paid framing superseded.",
+      "Canonical social proof shorthand '3x to 3M' approved as standing phrasing; Sprout-verified peak 2,810,000+ stored alongside for precision contexts.",
+      "Canonical title: Marketing and Communications Manager (CV). Maharat title: Senior Director, Marketing, Communications & Product (CV).",
+      "Arabic name rendering confirmed: أحمد السنهوري."
+    ],
+    "standing_rules": [
+      "A Director title is acceptable when scope and reporting line are senior (CEO or equivalent). San, 2026-07-18, via fit-verdict approval.",
+      "Blanket approvals cover engine suggestions and gate packs as drafted; publishing, sending, and submitting remain manual acts by San."
     ],
     "governed_by": "engine/M00.md",
     "last_amended": "2026-07-18"
@@ -167,7 +171,7 @@
       "budget": "$250K+ (M00; not restated on CV)",
       "wins_by_category": {
         "growth": [
-          { "claim": "MAU +20% in three months; CAC fell 18% monthly. Community size: CV says 2M members across 150+ countries, dashboard says 1M; UNRESOLVED, see meta.conflicts. Growth channels: CV credits app installs, ASO, email, web and paid plus lifecycle; dashboard frames community over paid installs; UNRESOLVED.", "source": "CV; company data" },
+          { "claim": "Directed growth and user acquisition for a 2M-member community across 150+ countries through app installs, ASO, email, and web; MAU +20% in three months through paid advertising and lifecycle marketing; CAC fell 18% monthly.", "source": "CV (San-ruled authoritative over dashboard variant, 2026-07-18); company data" },
           { "claim": "50+ partner organisations secured for the COP25 Climate Action Campaign, including UNEP, WWF, Greenpeace, and Oxfam.", "source": "campaign docs" }
         ]
       }
@@ -264,16 +268,20 @@
     "portfolio_open_items": ["headshot placeholder", "Socialeyez prominence"]
   },
 
-  "out_of_scope_holdings": {
-    "technical_portfolio_project": "San supplied CLAUDE.md and PROJECTS.md for a separate public-repo portfolio (homelab, uConsole, monitoring, Tor tooling) targeting NOC/sysadmin/DevOps/SOC roles under the san-media-tech org. Outside M00's three domains; not built here; files not committed (they reference private infrastructure). Held for San's direction. Relevant to A14 only as evidence of the systems-builder lane."
+  "tech_portfolio": {
+    "status": "Integrated as Domain T per San, 2026-07-18: 'include the out of scope'. Governing docs live verbatim in engine/tech-portfolio/ (CLAUDE.md, PROJECTS.md); A24 wraps them.",
+    "scope": "12 public-repo portfolio candidates (homelab, uconsole, tor-rotate, dotfiles, kiwix-guide, ansible-homelab, monitoring-stack, backup-restic, packet-analysis, headscale-stack, node-stack, profile) targeting NOC / Linux sysadmin / DevOps / SOC roles.",
+    "governance_note": "Domain T runs on CLAUDE.md's own rules (no-secrets scan, private-first repos, operator review gates, plain technical voice). Engine brand voice rules do NOT apply; the shared law is the human gate and the honesty rule.",
+    "environment_constraint": "Source material (compose files, uConsole guides, dotfiles) and GitHub owner access (san-media-tech) are not present in this cloud session; STATUS.md tracks what is buildable where.",
+    "positioning_use": "Evidence for the systems-builder lane (A14): the same person builds governed marketing systems and runs real infrastructure."
   },
 
   "gaps": [
-    "Goodwall community size and growth-driver conflicts (see meta.conflicts)",
     "The seven case study source files and linkedin-copy.md",
     "The Node CV build chain and remaining 8 legacy skill configs",
     "Known-contacts reference pool for A10",
-    "Arabic rendering of the name: أحمد السنهوري assumed across engine files, unconfirmed by San",
-    "Per-agency date splits inside the 2010 to 2017 era (Socialeyez from 2014 per M00; rest unconfirmed)"
+    "Per-agency date splits inside the 2010 to 2017 era (Socialeyez from 2014 per M00; rest unconfirmed)",
+    "Relocation or remote stance for MENA-market roles: unset, needed by A03/A09",
+    "Tech portfolio: GitHub owner choice (personal vs san-media-tech) and source-file access from San's machine"
   ]
 }

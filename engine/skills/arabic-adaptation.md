@@ -10,7 +10,7 @@ Adapt approved-track pieces into native Gulf-register Arabic that carries the me
 2. Extract the piece's core: one pillar, one audience (usually MENA operators), the proof points, and the line serving the positioning sentence.
 3. Rebuild the piece in Gulf register from that core. Restructure hooks, idioms, and rhythm for how the audience actually reads and speaks. Example rendering of the positioning idea: "نبني الأنظمة اللي تدير التسويق، مو بس الحملات."
 4. Keep every number exactly as it traces to data/master.json. Adaptation changes register and structure; it never touches figures. Example proof line: "مجتمع ٣ ملايين، نموّه أورجانيك ثلاث أضعاف في كانونيكال."
-5. Use MENA naming throughout: "Ahmed El Sanhoury" (أحمد السنهوري, rendering pending San's confirmation, tracked in master.json.gaps), never the Western form with (San).
+5. Use MENA naming throughout: "Ahmed El Sanhoury" (أحمد السنهوري, confirmed by San 2026-07-18), never the Western form with (San).
 6. Anchor the piece in the Arabic-first MENA growth lane, rooted in Socialeyez and BSocial work from 2014, where the brief calls for it.
 7. Submit the adaptation to the full review tier as a new asset: machine pass, R01, R02, R03, then the gate.
 

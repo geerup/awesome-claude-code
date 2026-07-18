@@ -1,5 +1,5 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
 risk_note: Adaptation of post-001 for MENA operators, Gulf register, not a translation; the vendor-question close is reframed as an operator question because the Arabic audience here builds in-house more than it buys. Native review by San before approval is the real QA on register.

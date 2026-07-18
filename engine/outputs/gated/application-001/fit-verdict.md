@@ -1,8 +1,8 @@
 ```
-status: PENDING SAN APPROVAL
+status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
-risk_note: Verdict rests on a synthetic JD. The title step-down flag is real and will recur on live roles; San should set a standing rule (see open question).
+risk_note: Verdict rests on a synthetic JD. Title step-down rule now standing (San, 2026-07-18); relocation stance for MENA-market roles remains the one open input.
 ```
 
 # Fit verdict, application-001 (A03)
@@ -19,5 +19,5 @@ risk_note: Verdict rests on a synthetic JD. The title step-down flag is real and
 - Title is Director; current title is Senior Director, Marketing, Communications & Product, Maharat. Step-down risk.
 - Role is Dubai hybrid; San is based in Tallinn. Relocation or remote terms need a standing rule from San.
 
-## Open question for San
-Standing rule requested: is a Director title acceptable when scope and reporting line are senior? This verdict assumes yes for a CEO-reporting function-builder role. Overrides logged per M00.
+## Standing rule (answered)
+San ruled 2026-07-18: a Director title is acceptable when scope and reporting line are senior (CEO or equivalent). Recorded in master.json.standing_rules. Still open: relocation or remote stance for MENA-market roles.
