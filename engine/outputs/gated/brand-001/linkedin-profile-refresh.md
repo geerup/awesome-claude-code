@@ -10,28 +10,30 @@ risk_note: Built without linkedin-copy.md (import_required), so this refresh is 
 Surface: linkedin.com/in/ahmed-el-sanhoury. Audience: recruiters. Pillar: governed agentic marketing systems.
 
 ## Headline
-Senior Director of Marketing and Communications, Maharat | Builds the systems that run marketing, not just the campaigns | Arabic-first MENA growth
+Senior Director, Marketing, Communications & Product, Maharat | Builds the systems that run marketing, not just the campaigns | Arabic-first MENA growth
 
 ## About
 I build the systems that run marketing, not just the campaigns.
 
 At Maharat I lead marketing and communications with AED 350K+ in annual ad spend, and I built the function's next layer: multi-agent content and campaign pipelines with human-approval gates. 21 agents, 4 swarm patterns, a 73-skill layer with formal evals, built to approval-ready and dev-handoff-ready state. Nothing publishes without a human yes. That gate is the point; judgment is the credential.
 
-At Canonical (2022 to 2025) I led marketing communications, content marketing, and social media campaigns on a $250K budget, partnering with product marketing, regional marketing, and PMs. The community reached 3M, grown 3x organically.
+At Canonical (2022 to 2025) I led marketing communications, content marketing, and social media campaigns on a $250K budget, partnering with product marketing, regional marketing, and PMs. The organic audience grew 3x to 3M across five platforms, and social became a pipeline channel: MQLs up 21x in one year, Salesforce-tracked, with $5M+ enterprise pipeline influenced.
 
 I have worked Arabic-first since 2014, from Socialeyez and BSocial to today's Gulf market. Across the brands I have served, combined audiences exceed 10M.
 
-Dubai-based. Open to conversations routed through recruiters and referrals.
+Based in Tallinn, working MENA and global markets. Open to conversations routed through recruiters and referrals.
 
 ## Experience, Maharat (2025 to Present)
-Senior Director of Marketing and Communications
+Senior Director, Marketing, Communications & Product
 - Built the Maharat Marketing Engine, multi-agent content and campaign pipelines with human-approval gates: 21 agents, 4 swarm patterns, 73-skill layer with formal evals, at approval-ready state.
 - Shipped the Skill Paths pipeline: 6 versioned contracts, four-tier review.
 - Run AED 350K+ annual ad spend; tooling selected with Arabic capability as the decisive filter.
 
 ## Experience, Canonical (2022 to 2025)
+Marketing and Communications Manager
 - Led marketing communications, content marketing, and social media campaigns; $250K budget; partnered with product marketing, regional marketing, and PMs.
-- Grew the social community 3x organically, reaching 3M.
+- Grew the organic audience 3x to 3M across five platforms; LinkedIn 90K to 500K+ with a 109K-subscriber newsletter.
+- MQLs up 21x in one year (36 to 785), Salesforce-tracked; $5M+ enterprise pipeline influenced.
 
 ## Featured section
 1. Portfolio, asanhoury.com.

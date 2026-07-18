@@ -19,11 +19,11 @@ log/decisions.md    binding amendments, overrides, stated assumptions
 Every output passes the machine pass (`python3 evals/machine_check.py <file>`), then LLM QA review by R01, R02, R03 (reviewers surface defects only; writers fix; a second review confirms), then stops at the gate. Nothing publishes, sends, submits, or spends without San's explicit yes, logged in `log/decisions.md`. No auto-send path exists in this codebase.
 
 ## Current state (2026-07-18)
-- Phase 0 delivered: canonical master.json merge, awaiting San's approval. Import gaps listed in `master.json.gaps`.
-- Phases 1 to 3 built as working increments; proof-run packs sit in `outputs/gated/` (application-001 uses a marked sample JD, see decisions log).
-- Legacy career assets (Node CV build, 19-skill configs, portfolio HTML, case study files) are absent from this repository; wrapper contracts bind to them and activate on import.
+- Phase 0 approved by San ("approve the plan and start working"); master.json at v1.1.0, APPROVED_TO_BUILD, with the CV and the 50-stat dashboard imported. Remaining conflicts in `master.json.meta.conflicts`.
+- Phases 1 to 3 built as working increments; proof-run packs sit in `outputs/gated/` on v1.1.0 facts (application-001 uses a marked sample JD, see decisions log).
+- Still import_required: the Node CV build chain, 8 legacy skill configs, portfolio HTML surfaces, linkedin-copy.md, the seven case study files.
 
 ## First actions for San
-1. Approve or amend `data/master.json` (Phase 0 gate).
-2. Import the source-project assets named in `master.json.legacy_assets` and `content_source_material`.
-3. Rule on the three gated packs and the standing question in `outputs/gated/application-001/fit-verdict.md`.
+1. Rule on `master.json.meta.conflicts` (Goodwall 1M vs 2M is the material one) and confirm the Arabic name rendering.
+2. Rule on the three gated packs and the title-step-down and relocation questions in `outputs/gated/application-001/fit-verdict.md`.
+3. Import the remaining source-project assets named in `master.json.legacy_assets`.

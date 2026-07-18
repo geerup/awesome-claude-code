@@ -17,7 +17,7 @@ Marketing teams are about to be sold a thousand agentic stacks. Most will be jud
 
 ## The volume problem solved itself
 
-At Maharat, where I serve as Senior Director of Marketing and Communications, I built the function's agentic layer: multi-agent content and campaign pipelines with human-approval gates. The scale facts are simple. 21 agents. 4 swarm patterns. A 73-skill layer in which every skill carries formal eval cases and a failing skill is blocked from use. A sibling system, the Skill Paths pipeline, runs on 6 versioned contracts with four-tier review.
+At Maharat, where I serve as Senior Director of Marketing, Communications & Product, I built the function's agentic layer: multi-agent content and campaign pipelines with human-approval gates. The scale facts are simple. 21 agents. 4 swarm patterns. A 73-skill layer in which every skill carries formal eval cases and a failing skill is blocked from use. A sibling system, the Skill Paths pipeline, runs on 6 versioned contracts with four-tier review.
 
 None of this was hard in the way people expect. Volume is cheap now. The genuinely hard part was governance: designing a codebase in which no auto-send path exists. Every campaign, every post, every asset runs to a gate where a human decides.
 
@@ -25,7 +25,7 @@ None of this was hard in the way people expect. Volume is cheap now. The genuine
 
 The engine is at approval-ready and dev-handoff-ready state. It has produced campaigns to the gate and nothing beyond it, which means there are no live performance figures, and you will not find one in this article. The numbers above prove scope, and scope is all they prove.
 
-I write that plainly because the discipline is the credential. A system that cannot show you its restraint will eventually show you its incident report. I learned the shape of this at Canonical (2022 to 2025), leading marketing communications, content marketing, and social media campaigns: the community reached 3M, grown 3x organically, and the growth held because a small set of editorial gates held for three years.
+I write that plainly because the discipline is the credential. A system that cannot show you its restraint will eventually show you its incident report. I learned the shape of this at Canonical (2022 to 2025), leading marketing communications, content marketing, and social media campaigns: the organic audience grew 3x to 3M, MQLs grew 21x in a single Salesforce-tracked year, and the growth held because a small set of editorial gates held for three years.
 
 ## What to ask a vendor, or your own team
 

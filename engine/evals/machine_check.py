@@ -32,7 +32,7 @@ STRUCTURAL = {str(n) for n in range(13)}
 YEAR = re.compile(r"^(19|20)\d\d$")
 # Numeric tokens preceded by a word char or hyphen are identifiers (R01, A13,
 # B2B, application-001), never metrics. "day N" is cadence scheduling.
-NUM_TOKEN = re.compile(r"(?<![\w-])\d[\d,.]*[KMB+x%]*")
+NUM_TOKEN = re.compile(r"(?<![\w.-])\d[\d,.]*[KMB+x%]*")
 DAY_REF = re.compile(r"\bday\s+\d+", re.I)
 
 

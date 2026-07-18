@@ -7,7 +7,7 @@ Produce headline, about, and experience copy for the ahmed-el-sanhoury profile t
 
 ## Method
 1. Read master.json and brand.json; select audience emphasis from recruiters, CMOs, founders, MENA operators.
-2. Draft the headline around the invariant title, Senior Director of Marketing and Communications, Maharat, plus one lane.
+2. Draft the headline around the invariant title, Senior Director, Marketing, Communications & Product, Maharat, plus one lane.
 3. Write the about section: positioning first, then proof. Register for the agentic work: multi-agent content and campaign pipelines with human-approval gates.
 4. Write experience entries only for roles with canonical dates: Canonical 2022 to 2025, Maharat 2025 to Present. Roles with null dates wait for import.
 5. Place social proof: 3M grown 3x organically at Canonical; 10M+ as the career combined figure only, never per role.
@@ -34,7 +34,7 @@ Produce headline, about, and experience copy for the ahmed-el-sanhoury profile t
 
 ### E3
 **Input:** Draft headline reads "Marketing Director at Maharat".
-**Expected:** Corrected to the full invariant title, Senior Director of Marketing and Communications.
+**Expected:** Corrected to the full invariant title, Senior Director, Marketing, Communications & Product.
 **Fail if:** The title is abbreviated or downgraded anywhere on the profile.
 
 ### E4

@@ -21,7 +21,7 @@ WRAPPER note: this contract wraps `linkedin-copy.md`. On import it becomes the w
 Profile refresh pack: headline, About, per-role bullets, featured list, banner brief. Staged by A00 to `outputs/gated/brand-<n>/`.
 
 ## Hard rules
-- Title invariant on every surface: Senior Director of Marketing and Communications, Maharat. Never abbreviated, never downgraded.
+- Title invariant on every surface: Senior Director, Marketing, Communications & Product, Maharat. Never abbreviated, never downgraded.
 - Naming on this surface: "Ahmed (San) El Sanhoury". Slug stays `ahmed-el-sanhoury`.
 - 3M grown 3x organically is Canonical only. 10M+ appears only as the career combined figure.
 - Maharat systems read approval-ready and dev-handoff-ready, never live. The gate is framed as judgment.

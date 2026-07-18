@@ -2,6 +2,22 @@
 
 Binding amendments, overrides, and stated assumptions. Newest first. Format: date, type (AMENDMENT | OVERRIDE | ASSUMPTION | FLAG), scope, files touched.
 
+## 2026-07-18, AMENDMENT, San approved the plan; source import pass 1 applied
+San: "approve the plan and start working," with five files supplied. master.json bumped to v1.1.0, status APPROVED_TO_BUILD. Imported: Ahmed_El_Sanhoury__CV_5.pdf (all titles, dates, wins, skills, speaking, testimonials), careerstatsdashboard.html (50 source-verified stats, Sprout/Salesforce/Meltwater/YT Studio/GA4/LinkedIn exports), canonicalrolejoblisting.md (scope artifact). Gated packs remain individually PENDING SAN APPROVAL.
+Files: engine/data/master.json, engine/data/brand.json.
+
+## 2026-07-18, AMENDMENT, Title and base corrected from CV, patched in one pass
+Title: Senior Director, Marketing, Communications & Product, Maharat (CV) replaces Senior Director of Marketing and Communications (M00). Base: Tallinn, Estonia (CV and dashboard) replaces the engine's wrong Dubai assumption; MENA stays the primary target market. One word from San reverses the title amendment.
+Files: engine/data/master.json, engine/data/brand.json, outputs/gated/application-001/{cv-variant,jd-analysis,fit-verdict,outreach,cover-letter}.md, outputs/gated/brand-001/linkedin-profile-refresh.md, outputs/gated/content-week-001/longform-001.md.
+
+## 2026-07-18, FLAG, Conflicts awaiting San's ruling (no output uses these until ruled)
+1. Goodwall: CV says 2M members, dashboard says 1M; CV credits paid plus lifecycle, dashboard credits community over paid. 2. Canonical social shorthand "3x to 3M" vs Sprout-verified peak 2,810,000+; shorthand kept as San's own CV phrasing. 3. The reconstructed Canonical listing uses a different title than the CV; CV wins. Full list in master.json meta.conflicts.
+Files: engine/data/master.json.
+
+## 2026-07-18, FLAG, Out-of-scope holdings: technical portfolio project
+CLAUDE.md and PROJECTS.md describe a separate public-repo portfolio (homelab, uConsole, monitoring, Tor tooling) for NOC/sysadmin/DevOps/SOC roles under san-media-tech. Outside M00's three domains; nothing built; files not committed here because they reference private infrastructure. Held for San's direction; relevant to A14 only as systems-builder evidence.
+Files: engine/data/master.json (out_of_scope_holdings).
+
 ## 2026-07-18, ASSUMPTION, Contract skeleton standardized on the full section list
 A01 to A23 carry Mission / Inputs / Process / Outputs / Hard rules / Skills used / Escalation and flags / Version history. A00 and R01 to R03 keep the shorter governance skeleton they were seeded with; harmonizing them is a v2 amendment if San wants strict parity. Other standing calls: A08 defines a stall as no transition since the last weekly digest (a day-count threshold would be an invented number; San sets one when ready); A16 pitches ride the P02 review tier via A00; the weekly Arabic slot is encoded in both A17 and A22 with P03 controlling.
 Files: engine/agents/*.

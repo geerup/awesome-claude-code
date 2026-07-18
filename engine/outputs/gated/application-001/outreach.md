@@ -11,7 +11,7 @@ risk_note: Cadence assumes a retained-search firm of the Fontes and Maxwell Mars
 
 Subject: Marketing Director, Dubai. Systems builder, Arabic-first.
 
-[Name], the Director brief you are running reads like my file. Senior Director of Marketing and Communications at Maharat, Dubai-based, running AED 350K+ in annual ad spend. Before that, Canonical, where the community reached 3M, grown 3x organically under a content system the team held for three years. Arabic-first since 2014. CV attached, portfolio at asanhoury.com. Open to a call this week.
+[Name], the Director brief you are running reads like my file. Senior Director, Marketing, Communications & Product at Maharat, running AED 350K+ in annual ad spend across KSA and UAE. Before that, Canonical, where the community reached 3M, grown 3x organically under a content system the team held for three years. Arabic-first since 2014. CV attached, portfolio at asanhoury.com. Open to a call this week.
 
 Ahmed El Sanhoury
 

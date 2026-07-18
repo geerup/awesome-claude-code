@@ -2,7 +2,7 @@
 status: PENDING SAN APPROVAL
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
-risk_note: Interim markdown path; the Node build chain (generate-cvs.js, validate-facts.js, docx) is import_required, so no docx exists yet. Mindvalley, Goodwall, Payd, Agiliux, Falcon carry no dates or wins in master.json and ship as a single earlier-roles line until import. This CV is deliberately thin below the top two roles.
+risk_note: Interim markdown path; the Node build chain (generate-cvs.js, validate-facts.js, docx) is still import_required. Rebuilt 2026-07-18 on master.json v1.1.0: real titles and dates for every role, Tallinn base stated honestly for a Dubai-hybrid role (relocation stance is San's to set). Goodwall figures held back pending the 1M vs 2M conflict ruling.
 ```
 
 # CV variant, application-001 (A04)
@@ -13,26 +13,28 @@ Variant: MENA, Marketing Director (B2B SaaS, Dubai). Naming per market rule.
 
 # Ahmed El Sanhoury
 
-Dubai, UAE · asanhoury.com · linkedin.com/in/ahmed-el-sanhoury
+Tallinn, Estonia · ahmed@asanhoury.com · asanhoury.com · linkedin.com/in/ahmed-el-sanhoury
 
-Builds the systems that run marketing, not just the campaigns. Marketing leader across MENA and global markets; Arabic-first operator since 2014; career combined audience of 10M+ across brands served.
+Builds the systems that run marketing, not just the campaigns. 16+ years across open source, EdTech, SaaS, FinTech, and agency; Arabic-first operator since 2014; 10M+ combined organic audience grown across the career.
 
-## Senior Director of Marketing and Communications, Maharat
-2025 to Present · Dubai · AED 350K+ annual ad spend
+## Senior Director, Marketing, Communications & Product, Maharat
+2025 to Present · EdTech serving MENA · AED 350K+ annual ad spend across KSA and UAE · reports to the CEO
 
-- Designed and built the Maharat Marketing Engine, multi-agent content and campaign pipelines with human-approval gates: 21 agents, 4 swarm patterns, and a 73-skill layer with formal evals, built to approval-ready and dev-handoff-ready state.
-- Shipped the Skill Paths production pipeline under the same governance: 6 versioned contracts and four-tier review, with every output passing machine evals and human approval before release.
-- Set the function's tooling standard with Arabic capability as the decisive selection filter.
+- Built multi-agent content and campaign pipelines with human-approval gates: 21 agents, 4 swarm patterns, a 73-skill layer with formal evals, at approval-ready and dev-handoff-ready state.
+- Run Arabic-first lifecycle marketing across the funnel, from acquisition and onboarding through retention and win-back.
+- Shipped two complete learning paths (10 levels, ~120 lessons each) behind a governed content production system, QA'd end to end.
 
-## Canonical, Marketing Communications Leadership [exact title pending import]
-2022 to 2025 · Remote, global · $250K budget
+## Marketing and Communications Manager, Canonical (Ubuntu)
+2022 to 2025 · Enterprise open source · $250K budget
 
 - Led marketing communications, content marketing, and social media campaigns; partnered with product marketing, regional marketing, and PMs.
-- Grew the social community 3x organically, reaching 3M.
+- Grew the organic audience 3x to 3M across five platforms with zero paid follower spend; LinkedIn 90K to 500K+ with a 109K-subscriber newsletter.
+- Turned social into a pipeline channel: MQLs up 21x in one year (36 to 785), Salesforce-tracked; $5M+ enterprise pipeline influenced.
+- Directed the social side of 20+ global launches with Dell, Intel, NVIDIA, and Framework; took Ubuntu Summit earned media from $519K to $7.93M in three years.
 
 ## Earlier roles
-Marketing leadership across Mindvalley, Goodwall, Payd, Agiliux, and Falcon portfolio companies; budgets from $100K to $250K+. Arabic-first social practice built at Socialeyez and BSocial from 2014.
+Head of PR & Partnerships, Mindvalley (2017 to 2020, promoted 3x): YouTube Gold Play Button, 125K to 1M subscribers in under a year; $2.8M+ earned media. Fractional Marketing Director, Goodwall (2019 to 2020). Head of Marketing, Payd (2021 to 2022) and Agiliux (2020 to 2021). Agency and early career 2010 to 2017 across Falcon, Socialeyez, and BSocial: USD 19M client budgets, bilingual Arabic-English work for Etisalat, Canon, and Dubai government entities.
 
 ---
 
-Build note (A04): the Canonical role heading carries a bracketed placeholder because the exact title is import_required in master.json; the validator blocks the docx build until the field is populated.
+Build note (A04): master.json v1.1.0 supplied all titles and dates; the docx build remains blocked until the Node chain imports. Goodwall member count omitted per meta.conflicts.

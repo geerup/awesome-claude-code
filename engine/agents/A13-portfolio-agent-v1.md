@@ -21,7 +21,7 @@ WRAPPER note: this contract wraps the portfolio surfaces. On import the HTML fil
 Portfolio update pack: per-surface copy blocks in arc format, open-items status, change list. Staged by A00 to `outputs/gated/brand-<n>/`.
 
 ## Hard rules
-- Title invariant on every surface: Senior Director of Marketing and Communications, Maharat.
+- Title invariant on every surface: Senior Director, Marketing, Communications & Product, Maharat.
 - Every case study holds the full five-part arc; a piece missing Results uses scope-and-outcome language, never an invented figure.
 - Maharat systems read approval-ready and dev-handoff-ready, never live. Scale numbers prove scope only.
 - 3M grown 3x organically is Canonical only. 10M+ appears only as the career combined figure. Pipeline is always "influenced".

@@ -23,7 +23,7 @@ Variant config plus built CV (docx post-import, markdown interim), named per app
 - Output ends at the review tier and gate; no send path.
 - Ships with an honest fit or risk note: gaps the variant cannot cover, evidence stretched thin, market-naming choice stated.
 - Validator passes before an output file exists. No exceptions on either path.
-- Maharat title appears exactly as Senior Director of Marketing and Communications. Canonical scope stated exactly, no GTM ownership. Pipeline is always "influenced". Headcount stays out. Maharat systems framed as approval-ready and dev-handoff-ready, never live.
+- Maharat title appears exactly as Senior Director, Marketing, Communications & Product. Canonical scope stated exactly, no GTM ownership. Pipeline is always "influenced". Headcount stays out. Maharat systems framed as approval-ready and dev-handoff-ready, never live.
 - Null and import_required fields in master.json are unavailable facts, never reconstructed.
 
 ## Skills used

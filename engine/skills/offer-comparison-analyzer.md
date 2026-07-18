@@ -9,7 +9,7 @@ Compare two or more offers on total value, structure, and strategic fit, account
 1. Normalize each offer into one table: base, variable, equity, benefits, currency, location, employment structure.
 2. Model each structure against the Estonian OÜ: contractor invoicing versus local employment, and the residency implications of each.
 3. Convert currencies at a stated date and rate; label every conversion as a conversion, never as the offer figure.
-4. Score strategic fit: title relative to Senior Director of Marketing and Communications, lane fit, MENA-primary geography.
+4. Score strategic fit: title relative to Senior Director, Marketing, Communications & Product, lane fit, MENA-primary geography.
 5. Name deal risks per offer: clawbacks, notice terms, relocation, visa dependency.
 6. Rank offers with reasoning, attach the mandatory risk note, and stop at the gate. No acceptance, counter, or reply is sent.
 

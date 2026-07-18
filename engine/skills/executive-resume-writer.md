@@ -15,7 +15,7 @@ Write the master executive resume: Senior Director level, positioning-led, every
 
 ## Rules
 - Every metric traces to data/master.json or it does not appear. No estimates, no rounding.
-- Title invariant: Senior Director of Marketing and Communications, Maharat. Never abbreviated, never downgraded.
+- Title invariant: Senior Director, Marketing, Communications & Product, Maharat. Never abbreviated, never downgraded.
 - Canonical scope: led marketing communications, content marketing, and social media campaigns; partnered with product marketing, regional marketing, and PMs; did not own GTM.
 - No bullet opens with Boosted, Achieved, or Delivered; no em dash characters; headcount stays out.
 - Naming per audience: "Ahmed (San) El Sanhoury" Western and global, "Ahmed El Sanhoury" MENA.

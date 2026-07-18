@@ -16,7 +16,7 @@ Title says Director; scope says function builder reporting to the CEO. The syste
 | Brand, content, demand across GCC | Canonical scope_exact: led marketing communications, content marketing, social media campaigns | Demand programs evidence sits in import_required wins |
 | Builds marketing systems and reporting | Maharat systems: 21 agents, 4 swarm patterns, 73-skill layer, formal evals; approval-ready, dev-handoff-ready | None |
 | Arabic-capable team | Arabic-first capability rooted in Socialeyez and BSocial work from 2014 | None |
-| GCC market depth | Base Dubai; Maharat AED 350K+ annual ad spend managed in market | None |
+| GCC market depth | Maharat AED 350K+ annual ad spend run across KSA and UAE; based Tallinn, relocation stance is San's call | Named: not resident in market |
 | Partners with product and sales leadership | Canonical scope_exact: partnered with product marketing, regional marketing, and PMs | Sales partnership evidence is import_required |
 
 ## Case selection for A05

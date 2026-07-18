@@ -14,5 +14,5 @@ Governed by M00. Domain 2. Profile and portfolio surfaces, current state to gate
 
 ## Hard rules
 - Naming by market (brand.json). Slug ahmed-el-sanhoury.
-- Title invariant on every surface: Senior Director of Marketing and Communications, Maharat.
+- Title invariant on every surface: Senior Director, Marketing, Communications & Product, Maharat.
 - A16 Visibility Agent pitches ride this same review tier before entering the gate.

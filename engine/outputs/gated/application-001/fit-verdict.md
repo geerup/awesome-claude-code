@@ -16,7 +16,8 @@ risk_note: Verdict rests on a synthetic JD. The title step-down flag is real and
 
 ## Named gaps
 - Demand-program evidence is thin until the source-project wins import lands. The letter leans on the Canonical organic case, which covers brand and content, half the stated scope.
-- Title is Director; current title is Senior Director of Marketing and Communications, Maharat. Step-down risk.
+- Title is Director; current title is Senior Director, Marketing, Communications & Product, Maharat. Step-down risk.
+- Role is Dubai hybrid; San is based in Tallinn. Relocation or remote terms need a standing rule from San.
 
 ## Open question for San
 Standing rule requested: is a Director title acceptable when scope and reporting line are senior? This verdict assumes yes for a CEO-reporting function-builder role. Overrides logged per M00.
