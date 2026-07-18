@@ -1,0 +1,21 @@
+---
+- name: Install Tailscale (official install script, pinned to apt afterwards)
+  ansible.builtin.shell: |
+    set -o pipefail
+    curl -fsSL https://tailscale.com/install.sh | sh
+  args:
+    creates: /usr/sbin/tailscaled
+
+- name: Enable tailscaled
+  ansible.builtin.systemd:
+    name: tailscaled
+    enabled: true
+    state: started
+
+# Auth key is a runtime variable only (-e tailscale_authkey=...), never in vars files.
+- name: Bring interface up when an auth key is supplied
+  ansible.builtin.command: tailscale up --authkey={{ tailscale_authkey }} --ssh
+  when: tailscale_authkey is defined
+  register: ts_up
+  changed_when: "'already' not in (ts_up.stderr | default(''))"
+  no_log: true

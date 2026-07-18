@@ -2,7 +2,7 @@
 status: SAN APPROVED, 2026-07-18 (blanket: 'all good on suggestions proceed'). Publishing, sending, and submitting remain manual acts by San.
 machine_pass: 2026-07-18, clean
 qa_pass: R01 PASS | R02 PASS | R03 PASS (build-session review)
-risk_note: Interim markdown path; the Node build chain (generate-cvs.js, validate-facts.js, docx) is still import_required. Real titles and dates for every role; Tallinn base stated honestly for a Dubai-hybrid role (relocation stance still San's to set). Goodwall ruled at 2M per CV; the earlier-roles line may now carry it if a variant needs it.
+risk_note: Interim markdown path; the Node build chain (generate-cvs.js, validate-facts.js, docx) is still import_required. Location omitted per standing rule (San, 2026-07-18); if a recruiter asks residency for a Dubai-hybrid role, San answers live. Goodwall ruled at 2M per CV.
 ```
 
 # CV variant, application-001 (A04)
@@ -13,7 +13,7 @@ Variant: MENA, Marketing Director (B2B SaaS, Dubai). Naming per market rule.
 
 # Ahmed El Sanhoury
 
-Tallinn, Estonia · ahmed@asanhoury.com · asanhoury.com · linkedin.com/in/ahmed-el-sanhoury
+ahmed@asanhoury.com · asanhoury.com · linkedin.com/in/ahmed-el-sanhoury
 
 Builds the systems that run marketing, not just the campaigns. 16+ years across open source, EdTech, SaaS, FinTech, and agency; Arabic-first operator since 2014; 10M+ combined organic audience grown across the career.
 

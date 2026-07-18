@@ -13,9 +13,9 @@ repos can be scaffolded here; PUBLISH repos need source files from San's machine
 | tor-rotate       | not-started | rotaton/rotatoff notes, absent      | partial BUILD possible once notes supplied      |
 | dotfiles         | not-started | ~/.bashrc, ~/.tmux.conf, absent     | PUBLISH; needs files                            |
 | kiwix-guide      | not-started | guide.html, absent                  | PUBLISH; needs file                             |
-| ansible-homelab  | not-started | none needed                         | BUILD; scaffoldable in-session on San's word    |
-| monitoring-stack | not-started | screenshots needed later            | BUILD; compose/config scaffoldable in-session   |
-| backup-restic    | not-started | none needed                         | BUILD; scaffoldable in-session                  |
+| ansible-homelab  | in-review   | scaffolded at repos/ansible-homelab | 4 roles, runtime-only auth key; acceptance test = wipe-and-rebuild on San's machine |
+| monitoring-stack | in-review   | scaffolded at repos/monitoring-stack| overlay-bound stack; starter dashboard hand-authored and labeled; screenshots after real deploy |
+| backup-restic    | in-review   | scaffolded at repos/backup-restic   | timers, prune policy, restore drill script; runbook says last-tested PENDING honestly |
 | packet-analysis  | not-started | lab captures needed                 | BUILD; docs scaffoldable, pcaps from San        |
 | headscale-stack  | not-started | blocked (not deployed)              | scaffold as planned/evaluated                   |
 | node-stack       | not-started | blocked (RAM constraint)            | scaffold as planned; capacity analysis first    |
@@ -23,7 +23,8 @@ repos can be scaffolded here; PUBLISH repos need source files from San's machine
 
 States: not-started -> scaffolding -> in-review -> published-private -> public
 
-Next step (per CLAUDE.md Phase 0): San picks the first repo and sets the owner. Priority
-order says homelab or uconsole; both need source files supplied to whichever session
-does the scaffold. If San wants in-session progress now, the BUILD repos
-(ansible-homelab, monitoring-stack, backup-restic) are startable without any uploads.
+Scaffold pass ran 2026-07-18 on San's word ("scaffold"): the three BUILD repos are staged
+under repos/ and sanitization-scanned clean. Next steps: San reviews the three scaffolds;
+sets the GitHub owner; supplies source files for homelab and uconsole (the two PUBLISH
+repos with the highest signal). Publishing runs from an environment with owner access,
+private first, per CLAUDE.md Phase 2.

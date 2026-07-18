@@ -1,0 +1,20 @@
+---
+# Copy to group_vars/all.yml (gitignored) and fill in real values.
+
+admin_user: REPLACE_WITH_ADMIN_USER
+admin_ssh_pubkey: "ssh-ed25519 AAAA_REPLACE_WITH_PUBLIC_KEY"
+
+# Packages installed by the base role on every host.
+base_packages:
+  - tmux
+  - git
+  - curl
+  - htop
+  - ufw
+  - unattended-upgrades
+
+# Where the services role deploys the compose stack.
+stack_dir: /opt/stack
+
+# Tailscale auth key is NEVER set here. Pass at runtime:
+#   ansible-playbook ... -e tailscale_authkey=REPLACE_WITH_TAILSCALE_AUTHKEY

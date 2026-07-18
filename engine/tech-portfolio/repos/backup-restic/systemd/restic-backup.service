@@ -1,0 +1,11 @@
+[Unit]
+Description=restic backup run
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/restic/backup.env
+ExecStart=/usr/local/bin/restic-backup.sh
+Nice=10
+IOSchedulingClass=idle

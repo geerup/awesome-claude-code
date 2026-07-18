@@ -2,6 +2,14 @@
 
 Binding amendments, overrides, and stated assumptions. Newest first. Format: date, type (AMENDMENT | OVERRIDE | ASSUMPTION | FLAG), scope, files touched.
 
+## 2026-07-18, OVERRIDE, Location rule set: omit from all outbound materials
+San: "dont include" on the relocation/remote question. Standing rule recorded: location and relocation stay out of outbound materials; Tallinn base remains ground truth in master.json; the topic is handled live only if a counterpart raises it. Patched in one pass: CV variant header, LinkedIn About line, jd-analysis GCC row, fit-verdict.
+Files: engine/data/master.json, engine/outputs/gated/application-001/{cv-variant,jd-analysis,fit-verdict}.md, engine/outputs/gated/brand-001/linkedin-profile-refresh.md.
+
+## 2026-07-18, AMENDMENT, Domain T scaffold pass: three BUILD repos staged
+San: "scaffold." ansible-homelab (4 roles, site.yml, examples-only inventory), monitoring-stack (overlay-bound Prometheus/Grafana/node_exporter/smartctl_exporter, hand-authored starter dashboard labeled as such), backup-restic (systemd timer units, retention and prune policy, restore drill script, runbook with last-tested PENDING) staged under engine/tech-portfolio/repos/. CLAUDE.md sanitization scan clean after renaming a placeholder that matched its own tskey pattern. Honesty rule held: all three READMEs say in progress and name their acceptance tests; no faked screenshots, exports, or test dates. No remote repos created; STATUS.md rows moved to in-review.
+Files: engine/tech-portfolio/repos/*, engine/tech-portfolio/STATUS.md.
+
 ## 2026-07-18, OVERRIDE, San ruled the open conflicts and approved the gate packs
 San: "All good on suggestions proceed." Rulings applied: CV is authoritative over the dashboard wherever they conflict (Goodwall 2M members, growth via paid plus lifecycle); the "3x to 3M" shorthand stands with the precise 2,810,000+ stored alongside; Arabic rendering أحمد السنهوري confirmed; Director-title-acceptable-when-scope-is-senior is now a standing rule. All twelve gated pack files flipped to SAN APPROVED; publishing, sending, and submitting remain manual acts by San, no auto-send path exists. Still open: relocation or remote stance for MENA-market roles.
 Files: engine/data/master.json (v1.2.0), engine/skills/arabic-adaptation.md, engine/outputs/gated/*.

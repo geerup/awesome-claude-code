@@ -16,4 +16,6 @@ Governance split, deliberate:
 - Shared law across all four domains: the human gate, and no invented facts.
 
 State lives in `STATUS.md`. Nothing in this directory creates a remote repository;
-scaffolds are staged under `repos/` (gitignored candidates reviewed before any publish).
+scaffolds are staged under `repos/<name>/` on this branch for San's review. Publishing
+to GitHub (private first, per CLAUDE.md Phase 2) happens only on San's explicit word,
+from an environment that has the chosen owner's access.

@@ -21,7 +21,7 @@ At Canonical (2022 to 2025) I led marketing communications, content marketing, a
 
 I have worked Arabic-first since 2014, from Socialeyez and BSocial to today's Gulf market. Across the brands I have served, combined audiences exceed 10M.
 
-Based in Tallinn, working MENA and global markets. Open to conversations routed through recruiters and referrals.
+Working MENA and global markets. Open to conversations routed through recruiters and referrals.
 
 ## Experience, Maharat (2025 to Present)
 Senior Director, Marketing, Communications & Product

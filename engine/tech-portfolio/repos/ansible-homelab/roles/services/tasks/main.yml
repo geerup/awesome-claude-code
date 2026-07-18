@@ -1,0 +1,23 @@
+---
+- name: Create stack directory
+  ansible.builtin.file:
+    path: "{{ stack_dir }}"
+    state: directory
+    owner: "{{ admin_user }}"
+    mode: "0750"
+
+- name: Sync compose files to host
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ stack_dir }}/"
+    owner: "{{ admin_user }}"
+    mode: "0640"
+  with_fileglob:
+    - "files/compose/*.yml"
+
+- name: Deploy stack (no-op when unchanged)
+  ansible.builtin.command:
+    cmd: docker compose up -d
+    chdir: "{{ stack_dir }}"
+  register: compose_up
+  changed_when: "'Started' in compose_up.stderr or 'Created' in compose_up.stderr"
