@@ -1,0 +1,9 @@
+---
+- name: Provision homelab host from fresh OS
+  hosts: homelab
+  become: true
+  roles:
+    - { role: base, tags: [base] }
+    - { role: docker, tags: [docker] }
+    - { role: overlay, tags: [overlay] }
+    - { role: services, tags: [services] }

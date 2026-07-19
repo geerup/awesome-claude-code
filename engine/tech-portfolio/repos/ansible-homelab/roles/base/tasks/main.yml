@@ -1,0 +1,47 @@
+---
+- name: Install base packages
+  ansible.builtin.apt:
+    name: "{{ base_packages }}"
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Create admin user with sudo
+  ansible.builtin.user:
+    name: "{{ admin_user }}"
+    groups: sudo
+    append: true
+    shell: /bin/bash
+
+- name: Authorize admin SSH key
+  ansible.posix.authorized_key:
+    user: "{{ admin_user }}"
+    key: "{{ admin_ssh_pubkey }}"
+
+- name: Harden sshd (key-only, no root login)
+  ansible.builtin.copy:
+    dest: /etc/ssh/sshd_config.d/90-hardening.conf
+    mode: "0644"
+    content: |
+      PermitRootLogin no
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+      X11Forwarding no
+  notify: Restart sshd
+
+- name: UFW default deny incoming, allow SSH
+  community.general.ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
+
+- name: UFW allow SSH
+  community.general.ufw:
+    rule: allow
+    name: OpenSSH
+
+- name: Enable unattended upgrades
+  ansible.builtin.systemd:
+    name: unattended-upgrades
+    enabled: true
+    state: started
