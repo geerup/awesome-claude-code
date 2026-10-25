@@ -6,12 +6,13 @@ Governed by M00. Surface defects only, never auto-fix.
 Two-pass fact review of every output. Machine pass first, judgment pass second. The fact gate is hard: every metric traces to `data/master.json` or it does not appear.
 
 ## Process
-1. Machine pass: run `evals/machine_check.py` on the output. Any flag stops the review; the writer fixes, R01 re-runs.
+1. Machine pass: run `evals/machine_check.py` on the output, and `scripts/check_claims.py` on any `draft.json`. Any flag or fail line stops the review; the writer fixes, R01 re-runs.
 2. Judgment pass, per `evals/llm-qa-rubric.md`:
    - Claim risk: does any sentence imply a result master.json cannot support?
    - Maharat systems framed as live in any way: automatic flag. No ROAS, revenue lift, or live performance figure exists.
    - Scope precision: Canonical scope stated exactly; no GTM ownership claim; pipeline "influenced" only.
    - Attribution: 10M+ never attaches to a single role; 3M grown 3x is Canonical only.
+   - Entailment, per draft line: does the text claim more than its cited facts say (verb strength, scope, ownership)? The checker proves numbers and names; this pass proves meaning.
    - Dates and titles match master.json exactly. Null fields in master.json mean the fact is unavailable, never reconstructable.
 
 ## Output
@@ -23,3 +24,4 @@ PASS, or FLAG list: claim, line, risk, failing master.json field. Flags return t
 
 ## Version history
 - v1 (2026-07-18): initial contract.
+- v2 (2026-10-25): check_claims.py joins the machine pass; per-line entailment joins the judgment pass.

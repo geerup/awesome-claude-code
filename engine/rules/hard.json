@@ -1,0 +1,56 @@
+{
+  "file": "rules/hard.json",
+  "role": "Layer 1 of the rules engine. Immutable to agents: the guard hook asks San before any edit. Enforced by scripts/check_claims.py on every draft.json, before rendering.",
+  "version": "1.0.0",
+  "governed_by": "engine/M00.md",
+  "sources": [
+    "M00 section 0 (fact discipline, voice)",
+    "data/brand.json banned list",
+    "data/master.json language_rules and meta.standing_rules"
+  ],
+  "forbidden_characters": {
+    "—": "em dash",
+    "–": "en dash"
+  },
+  "banned_openers": ["boosted", "achieved", "delivered"],
+  "banned_words_source": "data/brand.json banned.words",
+  "pipeline": {
+    "banned_adjacent": ["sourced", "generated"],
+    "quantified_requires": "influenced",
+    "note": "A sentence that puts a $ or % figure on pipeline must say 'influenced'. The agentic register ('content and campaign pipelines') carries no figure and passes."
+  },
+  "headcount_patterns": [
+    "\\bteam of \\d",
+    "\\b\\d[\\d,]*\\+?[- ](person|people|strong|member)\\s+team\\b",
+    "\\b\\d[\\d,]*\\+?\\s+(direct\\s+)?reports\\b",
+    "\\bheadcount\\b",
+    "\\bFTEs?\\b",
+    "\\b(managed|managing|led|leading|lead)\\s+\\d[\\d,]*\\+?\\s+(people|staff|marketers|employees|reports)\\b"
+  ],
+  "location_terms": ["Tallinn", "Estonia"],
+  "section_rules": {
+    "MAH": {
+      "forbidden_patterns": ["\\broas\\b", "revenue lift", "\\blive\\b"],
+      "reason": "Maharat systems are approval-ready and dev-handoff-ready, NOT live. No live performance figure exists."
+    },
+    "CAN": {
+      "forbidden_patterns": ["\\b(own|owned|owning|led|lead|leading|ran|run|headed)\\b[^.;]*\\b(GTM|go-to-market)\\b"],
+      "reason": "Canonical scope: did not own GTM."
+    }
+  },
+  "role_sections_cite_own_entry_only": true,
+  "headline_facts_outside_role_sections_only": true,
+  "numbers_must_appear_in_cited_facts": true,
+  "entities_must_appear_in_cited_facts": true,
+  "entity_allowlist": [
+    "A", "I", "CV", "Present", "Earlier", "Head", "Director", "Manager", "Senior",
+    "Marketing", "Communications", "Product", "Partnerships", "PR", "Built", "Run", "Ran",
+    "Led", "Grew", "Turned", "Shipped", "Directed", "Took", "Owned", "Agency", "The"
+  ],
+  "render": {
+    "max_pages": 2,
+    "single_column": true,
+    "hidden_text": "never",
+    "status": "Enforced at render time; render chain (Node build, docx) still import_required."
+  }
+}

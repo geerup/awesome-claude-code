@@ -7,6 +7,11 @@ Governed multi-agent system for Ahmed (San) El Sanhoury. Four domains: career gr
 M00.md              master contract, governs everything below
 data/master.json    canonical facts, single source of truth (status: PENDING_SAN_APPROVAL)
 data/brand.json     voice rules, banned list, positioning, pillars, audiences
+data/facts.jsonl    atomic facts derived from master.json (generated, gitignored; scripts/fact_bank.py)
+data/variants.jsonl approved phrasings, append-only via scripts/approve_variant.py
+rules/hard.json     hard rules enforced in code by scripts/check_claims.py
+schemas/            JSON Schema for facts, entries, variants, drafts, factchecks
+hooks/              Claude Code hooks: write guard, draft validator, stop gate (.claude/settings.json)
 agents/             27 versioned contracts: A00 coordinator, A01-A10 career, A11-A16 brand, A17-A23 content, R01-R03 review tier
 skills/             knowledge files, each with 3+ eval cases; failing skills are blocked
 pipelines/          P01 application, P02 brand refresh, P03 content week
