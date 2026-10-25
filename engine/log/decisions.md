@@ -2,6 +2,18 @@
 
 Binding amendments, overrides, and stated assumptions. Newest first. Format: date, type (AMENDMENT | OVERRIDE | ASSUMPTION | FLAG), scope, files touched.
 
+## 2026-10-25, AMENDMENT, Phase 0 of the resume machine blueprint: hard rules move from prompts into code
+Built under the standing blanket approval of engine suggestions; one word from San reverts it. master.json stays the single source of truth. `scripts/fact_bank.py` derives 167 atomic facts with stable ids. `rules/hard.json` encodes the M00 and brand.json hard rules, and `scripts/check_claims.py` enforces them per line: numbers and names must appear in the cited facts, and titles, dates and the market name must match exactly. It also fails dashes, headcount, uninfluenced pipeline figures, location, cross-role attribution, live-metric language in Maharat sections and GTM ownership in Canonical sections. Hooks in `.claude/settings.json` deny writes to generated files, ask San before ground-truth edits, deny failing drafts, and block the stop on unchecked drafts. Proof run: application-001's approved CV converted to `draft.json`, its 15 lines recorded as approved variants under the 2026-07-18 gate-pack approval, result 15 pass, 0 fail. A04 and R01 bumped to v2. 34 tests in `engine/tests/`.
+Files: .claude/settings.json, .gitignore, engine/{CLAUDE.md,README.md,rules/,schemas/,scripts/,hooks/,tests/}, engine/data/variants.jsonl, engine/outputs/gated/application-001/{draft,factcheck}.json, engine/agents/{A04,R01}-*.md.
+
+## 2026-10-25, ASSUMPTION, Fact status mapping
+Facts whose master.json source names an export (Sprout, Salesforce, GA4, Meltwater, YouTube Studio, LinkedIn export, company or agency data) carry status Folder. Facts sourced only to the CV, M00 or peer confirmation carry San only: usable, flagged for interview prep. Location atoms (Tallinn, Estonia) are unusable per the 2026-07-18 location rule.
+Files: engine/scripts/fact_bank.py.
+
+## 2026-10-25, FLAG, For San's ruling
+1. Agiliux: master.json says "lifted pipeline 50%" without "influenced". The checker fails it as written; San rules the phrasing ("influenced pipeline up 50%"?) before any draft uses it. 2. application-001 CAN-4 says "Directed the social side of 20+ global launches"; master.json says "launch content strategy" for the same launches. It passes the numbers-and-names check, but R01's entailment pass should confirm the verb. 3. Mindvalley "partnerships reaching 10M+ people" shares the 10M+ figure M00 reserves for the career combined audience. It is a distinct fact, but a reader can conflate the two. 4. M00 section 1 still lists the pre-amendment Maharat title; master.json and the checker use the amended CV title. 5. This repository is public on GitHub. The blueprint keeps the brain, jobs and tracker out of public repos. master.json was already public before this change, and the generated bank is gitignored. Making the repo private is San's call.
+Files: none changed.
+
 ## 2026-07-18, OVERRIDE, Location rule set: omit from all outbound materials
 San: "dont include" on the relocation/remote question. Standing rule recorded: location and relocation stay out of outbound materials; Tallinn base remains ground truth in master.json; the topic is handled live only if a counterpart raises it. Patched in one pass: CV variant header, LinkedIn About line, jd-analysis GCC row, fit-verdict.
 Files: engine/data/master.json, engine/outputs/gated/application-001/{cv-variant,jd-analysis,fit-verdict}.md, engine/outputs/gated/brand-001/linkedin-profile-refresh.md.

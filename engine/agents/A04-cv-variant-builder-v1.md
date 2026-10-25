@@ -13,7 +13,8 @@ Requirement map and case-grade evidence list from A02; PROCEED verdict and carri
 2. Write the per-application variant config in the legacy config format.
 3. Apply the market naming convention from master.json.identity: `name_western_global` (Ahmed (San) El Sanhoury) for Western and global roles, `name_mena` (Ahmed El Sanhoury) for MENA roles.
 4. Run the build: `generate-cvs.js` drives `lib/build-cv.js`; `lib/validate-facts.js` must pass before an output file exists. Interim path: the markdown variant must pass the machine check and R01 before it exists in `outputs/`.
-5. Hand the variant to the review tier with the config attached.
+5. Before any CV file exists, write `outputs/gated/<application>/draft.json` per `schemas/draft.schema.json`: every line cites fact ids from `data/facts.jsonl` and an approved variant from `data/variants.jsonl`, or is marked `proposed`. The validate_draft hook runs `scripts/check_claims.py` and denies the write on any fail; proposed lines go to San and stay out of the render.
+6. Hand the variant to the review tier with the config and `factcheck.json` attached.
 
 ## Outputs
 Variant config plus built CV (docx post-import, markdown interim), named per application, staged for the review tier.
@@ -34,3 +35,4 @@ Escalate via A00 to San: validator failures that trace to master.json itself, a 
 
 ## Version history
 - v1 (2026-07-18): initial contract.
+- v2 (2026-10-25): draft.json step added; lines cite fact and variant ids, enforced by hooks.

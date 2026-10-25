@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "factcheck.schema.json",
+  "title": "Claim-check report (outputs/**/factcheck.json, written only by scripts/check_claims.py)",
+  "type": "object",
+  "required": ["draft", "draft_sha256", "master_sha256", "summary", "draft_errors", "lines"],
+  "additionalProperties": false,
+  "properties": {
+    "draft": {"type": "string"},
+    "draft_sha256": {"type": "string"},
+    "master_sha256": {"type": "string"},
+    "summary": {
+      "type": "object",
+      "required": ["pass", "fail", "needs_human"],
+      "properties": {
+        "pass": {"type": "integer"}, "fail": {"type": "integer"}, "needs_human": {"type": "integer"}
+      }
+    },
+    "draft_errors": {"type": "array", "items": {"type": "string"}},
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["line_id", "status", "reasons"],
+        "additionalProperties": false,
+        "properties": {
+          "line_id": {"type": "string"},
+          "status": {"enum": ["pass", "fail", "needs_human"]},
+          "reasons": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

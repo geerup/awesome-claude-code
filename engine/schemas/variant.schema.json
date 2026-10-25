@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "variant.schema.json",
+  "title": "Approved phrasing variant (one line of data/variants.jsonl, written only by scripts/approve_variant.py)",
+  "type": "object",
+  "required": ["variant_id", "fact_ids", "angle", "text", "status", "approved_by",
+               "decision_ref", "approved_on"],
+  "additionalProperties": false,
+  "properties": {
+    "variant_id": {"type": "string", "pattern": "^V-[A-Za-z0-9_-]+$"},
+    "fact_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "angle": {"enum": ["leadership-scope", "commercial-impact", "brand-and-content",
+                       "product-marketing", "regional-GCC", "developer-community",
+                       "transformation", "agentic-systems", "identity"]},
+    "text": {"type": "string", "minLength": 1},
+    "status": {"const": "approved"},
+    "approved_by": {"const": "San"},
+    "decision_ref": {"type": "string", "description": "Exact '## ' heading text of the log/decisions.md entry recording San's approval."},
+    "approved_on": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+  }
+}
